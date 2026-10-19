@@ -1,0 +1,40 @@
+{
+  "status": "completed",
+  "startedAt": "2026-10-19T08:31:02.086Z",
+  "endpoint": "https://ark.cn-beijing.volces.com/api/v3/images/generations",
+  "model": "doubao-seedream-5-0-pro-260628",
+  "prompt": "图1锁定正面正交布局，图2只参考炭炉结构不要其写实材质和斜视角，图3只参考像素材质。1920×1080横版高细节手工像素铁匠铺，无透视消失点、无远近缩放。砖墙砖顶带石地基，无木建筑。左侧炭炉采用图2厚石砌圆肩炉身：炉口抬到腰高、小拱口内是红热炭块与少量短焰，厚炉台可平放剑，下方镂空拱座，禁止落地壁炉大口和木柴篝火。竖直烟道接实天花板。中央一个空工作台和铁砧，右侧砖墙仅有一行水平金属双挂钩，间距相等并延伸到右画外；不能有第二行、架子、搁板、木背板。炭床主暖光只局部照亮炉口，弱中性补光，无斜射光柱和紫色轮廓。硬边像素簇，砖石木纹可读，无人物剑锤、文字UI水印。",
+  "size": "1920x1080",
+  "watermark": false,
+  "mode": "generation",
+  "references": [
+    {
+      "file": "assets/incoming/seedream-charcoal-single-row-20261019/layout-guide.png",
+      "sha256": "8f5ce3a3a719279a2e5cfa20d5e1ee989229374436ffc1dcaa8778d8897ac2ca"
+    },
+    {
+      "file": "assets/incoming/seedream-orthographic-20261019/charcoal-reference.jpg",
+      "sha256": "a3c20edacf1d57250f58639916aa2ba84f10e522d0f2e5eb81918ead7906bd32"
+    },
+    {
+      "file": "assets/incoming/seedream-orthographic-20261019/scene/image.png",
+      "sha256": "aee6f260910b23ff5230a5185e7f5a637704ed3550c889ce2a5ac56da4108561"
+    }
+  ],
+  "created": 1792398752,
+  "usage": {
+    "input_images": 3,
+    "generated_images": 1,
+    "output_tokens": 8100,
+    "total_tokens": 8100
+  },
+  "completedAt": "2026-10-19T08:32:33.047Z",
+  "outputs": [
+    {
+      "file": "image.png",
+      "size": "1920x1080",
+      "sha256": "c18df0dcb675a7dcb2382e240ec9f2bc169473f89d4439396c1aeb90e3389510",
+      "bytes": 2189392
+    }
+  ]
+}

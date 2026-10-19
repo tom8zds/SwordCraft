@@ -1,0 +1,32 @@
+{
+  "status": "completed",
+  "startedAt": "2026-10-19T08:13:04.368Z",
+  "endpoint": "https://ark.cn-beijing.volces.com/api/v3/images/generations",
+  "model": "doubao-seedream-5-0-pro-260628",
+  "prompt": "只参考图中的像素密度、材质和色板，生成单个完整火炉游戏素材，不要重画房间。固定严格正面，炉口朝玩家，不要侧面或转面图。独立耐火砖、错缝灰浆、崩角、裂纹、烟熏、焦黑砖，拱形炉膛有厚度；铁箍、铆钉、进风格栅、烟囱、灰门和火钳清晰。炉膛内有木柴、煤块、红热裂纹与黄白核心橙红外焰，火焰仅在炉口内。高细节手工像素画，统一方形像素簇、硬边阶梯轮廓、有限色板，不是照片、油画或平滑3D。暖色受火面、冷紫暗面。单体完整居中，占画面高度约八成，四周留空；背景完全纯绿色#00FF00，没有地面投影、房间、其他设施、人物、武器、文字、UI或水印。",
+  "size": "1920x1080",
+  "watermark": false,
+  "mode": "generation",
+  "references": [
+    {
+      "file": "assets/incoming/seedream-samples-20261019/background/image.png",
+      "sha256": "11fd16245030ccf453d735dc9c2f1762ffe3db1c381ff56c712034b0d4cdac89"
+    }
+  ],
+  "created": 1792397621,
+  "usage": {
+    "input_images": 1,
+    "generated_images": 1,
+    "output_tokens": 8100,
+    "total_tokens": 8100
+  },
+  "completedAt": "2026-10-19T08:13:42.480Z",
+  "outputs": [
+    {
+      "file": "image.png",
+      "size": "1920x1080",
+      "sha256": "60c45ccacb34c52096b5771b9ef3ac3dc832cbf19c54517b670dd2bce3b4cdf8",
+      "bytes": 2746525
+    }
+  ]
+}

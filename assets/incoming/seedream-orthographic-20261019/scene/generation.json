@@ -1,0 +1,36 @@
+{
+  "status": "completed",
+  "startedAt": "2026-10-19T08:23:30.319Z",
+  "endpoint": "https://ark.cn-beijing.volces.com/api/v3/images/generations",
+  "model": "doubao-seedream-5-0-pro-260628",
+  "prompt": "以图1为严格布局参考，仅图2参考材质与像素风，不沿用图2的透视。生成1920×1080高细节手工像素游戏场景。严格正面正交立面，类似横版2D游戏，无消失点、无远近缩放、无斜侧墙、无收缩地板，不俯视物件。砖顶带、砖墙、石地基，禁止任何木质建筑结构。左侧火炉的竖直烟道接入顶棚，无顶盖无缝隙；中央空工作台和一个铁砧，同一地面基线。右侧砖墙上直接固定三行四列金属双挂钩，空置待挂剑，绝无木架、搁板或木背板。火炉是唯一主暖光源，亮度随距离自然衰减；中性微弱环境光保证细节可见，无斜射光束、蓝紫发光边。砖灰裂纹、燃料、铁件和家具木纹可读，像素簇硬边。无人物、剑锤、文字、水印。",
+  "size": "1920x1080",
+  "watermark": false,
+  "mode": "generation",
+  "references": [
+    {
+      "file": "assets/incoming/seedream-orthographic-20261019/layout-guide.png",
+      "sha256": "ff690ee001cd1f3808152eb101e7a4c95458126c49419c47793d834f02850c82"
+    },
+    {
+      "file": "assets/incoming/seedream-brick-room-20261019/scene/image.png",
+      "sha256": "5243d06fa5267945f51a658177a071fcdeeb9ee2580675200cd55caf14bfabe0"
+    }
+  ],
+  "created": 1792398303,
+  "usage": {
+    "input_images": 2,
+    "generated_images": 1,
+    "output_tokens": 8100,
+    "total_tokens": 8100
+  },
+  "completedAt": "2026-10-19T08:25:04.544Z",
+  "outputs": [
+    {
+      "file": "image.png",
+      "size": "1920x1080",
+      "sha256": "aee6f260910b23ff5230a5185e7f5a637704ed3550c889ce2a5ac56da4108561",
+      "bytes": 2250079
+    }
+  ]
+}

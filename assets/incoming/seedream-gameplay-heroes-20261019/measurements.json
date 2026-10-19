@@ -1,0 +1,17 @@
+{
+  "coordinateSystem": "original PNG pixels, top-left origin",
+  "hammer": {
+    "visualInspection": "Original PNG inspected: complete centered hammer; both head ends and handle cap have green margins; broad front-facing head has empty dark circular recess, no baked probability UI; no regeneration needed.",
+    "ring": {
+      "center": { "x": 775, "y": 497 },
+      "radius": 172,
+      "outerRadius": 184,
+      "measurement": "Visually inspected circular recess. Contiguous dark scan through center spans x=585..962 at y=495 and y=309..685 at x=776; usable radius reduced below the approximately 188px interior to keep overlays off the iron rim."
+    }
+  },
+  "sword": {
+    "visualInspection": "Original PNG inspected: full sword tip, both guard ends and complete pommel visible with green margins; vertical tip-up blade has ridge/fuller's dark channel, iron wear, riveted guard and leather wrap; no regeneration needed."
+  },
+  "generationCount": { "hammer": 1, "sword": 1, "regenerations": 0 },
+  "watermark": false
+}

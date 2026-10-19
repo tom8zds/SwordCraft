@@ -1,0 +1,144 @@
+.shop-panel .pointer-ware {
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  cursor: grab;
+}
+
+.shop-panel [role='button']:focus-visible,
+.shop-panel button:focus-visible {
+  outline: 3px solid #f3d38b;
+  outline-offset: 4px;
+}
+
+.shop-panel [aria-disabled='true'],
+.shop-panel .pointer-ware:disabled {
+  cursor: not-allowed;
+}
+
+.shop-panel [role='button'][aria-disabled='true']:not(.sold-out) {
+  opacity: .65;
+}
+
+.shop-panel header p {
+  max-width: 560px;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.ware-stock,
+.ware-discount {
+  display: block;
+  margin-top: 5px;
+  color: #b5a386;
+  font-size: 11px;
+}
+
+.ware-discount {
+  color: #d9bd77;
+}
+
+.shop-drag-preview {
+  position: fixed;
+  z-index: 1000;
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  min-width: 70px;
+  max-width: 160px;
+  padding: 9px 12px;
+  color: #f3d38b;
+  background: #211a15cc;
+  border: 2px solid #c9a761;
+  box-shadow: 4px 5px 0 #0006;
+  opacity: .78;
+  transform: translate(-50%, -65%);
+  pointer-events: none;
+  user-select: none;
+}
+
+.shop-drag-preview > span {
+  font-size: 35px;
+}
+
+.shop-drag-preview small {
+  text-align: center;
+  font-size: 11px;
+}
+
+.sacrifice-slots {
+  flex-wrap: wrap;
+}
+
+.sacrifice-list > .book-scroll-content > button {
+  display: grid;
+  place-items: center;
+  min-height: 48px;
+  padding: 5px;
+  color: #c5b493;
+  background: #2d251e;
+  border: 2px solid #4c3d2f;
+  font: inherit;
+  font-size: 23px;
+}
+
+.sacrifice-list > .book-scroll-content > button small {
+  font-size: 11px;
+}
+
+.sacrifice-list > .book-scroll-content > button:disabled {
+  opacity: .5;
+}
+
+.shop-empty {
+  grid-column: 1 / -1;
+  padding: 12px 0;
+  color: #b5a386;
+  line-height: 1.6;
+}
+
+.shop-notice {
+  padding: 9px 12px;
+  color: #e4c364;
+  border: 1px solid #80603d;
+}
+
+@media (max-width: 700px) {
+  .shop-panel {
+    padding: 16px;
+  }
+
+  .shop-panel header {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-right: 18px;
+  }
+
+  .shop-panel header > div {
+    flex: 1;
+    min-width: 160px;
+  }
+
+  .shop-panel .wares-grid,
+  .shop-panel .relic-offers {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .shop-panel .wares-grid article,
+  .shop-panel .relic-offers article {
+    min-width: 0;
+    min-height: 170px;
+    padding: 11px;
+  }
+
+  .shop-panel .relic-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .shop-panel .sacrifice-list > .book-scroll-content {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}

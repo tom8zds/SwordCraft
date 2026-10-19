@@ -1,0 +1,248 @@
+{
+  "version": 1,
+  "status": "runtime-textures-exported; final in-game acceptance owned by integration",
+  "canvas": {
+    "width": 1920,
+    "height": 1080
+  },
+  "textures": {
+    "background": "/assets/game/smithy/background.png",
+    "forge": "/assets/game/smithy/forge.png",
+    "workbench": "/assets/game/smithy/workbench.png",
+    "hook": "/assets/game/smithy/hook.png",
+    "wallExtension": "/assets/game/smithy/wall-extension.png",
+    "hammer": "/assets/game/smithy/hammer.png"
+  },
+  "assets": {
+    "background": {
+      "localSlot": "background",
+      "textureUrl": "/assets/game/smithy/background.png",
+      "file": "background.png",
+      "width": 1920,
+      "height": 1080,
+      "pivot": {
+        "x": 0,
+        "y": 0
+      },
+      "source": "public/assets/art-preview/charcoal-single-row/background.png",
+      "sourceSha256": "006768acea4167bf47918c7bd736b42839c710d32407033838c62ebbaffc667e",
+      "processing": "byte-identical copy of approved scene texture",
+      "provenance": "approvedScene"
+    },
+    "forge": {
+      "localSlot": "forge",
+      "textureUrl": "/assets/game/smithy/forge.png",
+      "file": "forge.png",
+      "width": 1920,
+      "height": 1080,
+      "pivot": {
+        "x": 0,
+        "y": 0
+      },
+      "source": "public/assets/art-preview/charcoal-single-row/forge.png",
+      "sourceSha256": "dba6b291937268c47d23303966741081c2d291894138894adff0d7a0043b49fa",
+      "processing": "byte-identical copy of approved scene texture",
+      "provenance": "approvedScene"
+    },
+    "workbench": {
+      "localSlot": "workbench",
+      "textureUrl": "/assets/game/smithy/workbench.png",
+      "file": "workbench.png",
+      "width": 1920,
+      "height": 1080,
+      "pivot": {
+        "x": 0,
+        "y": 0
+      },
+      "source": "public/assets/art-preview/charcoal-single-row/workbench.png",
+      "sourceSha256": "0cab46ebebdf9ee2ba39ee308e1da8c62764ee94322b13f6ada2ae61c65d2606",
+      "processing": "byte-identical copy of approved scene texture",
+      "provenance": "approvedScene"
+    },
+    "hook": {
+      "localSlot": "hook",
+      "textureUrl": "/assets/game/smithy/hook.png",
+      "file": "hook.png",
+      "width": 50,
+      "height": 34,
+      "pivot": {
+        "x": 0,
+        "y": 0
+      },
+      "source": "public/assets/art-preview/charcoal-single-row/hook.png",
+      "sourceSha256": "fbc1522c52d4efee10fdea7637247fad2ace8a1fb4c8bfe2693b7b897bce11bf",
+      "processing": "byte-identical copy of approved scene texture",
+      "provenance": "approvedScene"
+    },
+    "wallExtension": {
+      "localSlot": "wallExtension",
+      "textureUrl": "/assets/game/smithy/wall-extension.png",
+      "file": "wall-extension.png",
+      "width": 544,
+      "height": 1080,
+      "pivot": {
+        "x": 0,
+        "y": 0
+      },
+      "source": "public/assets/art-preview/charcoal-single-row/background.png",
+      "sourceSha256": "006768acea4167bf47918c7bd736b42839c710d32407033838c62ebbaffc667e",
+      "sourceRectangle": {
+        "x": 1376,
+        "y": 0,
+        "width": 544,
+        "height": 1080
+      },
+      "processing": "crop only; alternate mirrored repeats at runtime, never repeat the complete forge scene",
+      "provenance": "approvedScene"
+    },
+    "hammer": {
+      "localSlot": "hammer",
+      "textureUrl": "/assets/game/smithy/hammer.png",
+      "file": "hammer.png",
+      "width": 320,
+      "height": 400,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.88
+      },
+      "source": "assets/incoming/seedream-gameplay-heroes-20261019/hammer/image.png",
+      "sourceSha256": "06c65f64b1754a1345fe4143a057ccf6fbad07dd26377c43fd84f9ebf87b3548",
+      "sourceMetadata": "assets/incoming/seedream-gameplay-heroes-20261019/hammer/generation.json",
+      "sourceDimensions": {
+        "width": 1536,
+        "height": 2048
+      },
+      "sourceBounds": {
+        "x": 156,
+        "y": 149,
+        "width": 1227,
+        "height": 1777
+      },
+      "contentBounds": {
+        "x": 30.187957231288692,
+        "y": 12,
+        "width": 259.6240855374226,
+        "height": 376
+      },
+      "scale": 0.21159257175014068,
+      "processing": "green chroma key; alpha trim; uniform nearest-neighbor resize; centered transparent padded canvas",
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false,
+      "provenance": "generatedHeroes",
+      "ring": {
+        "center": {
+          "x": 161.16375914462577,
+          "y": 85.63421496904895
+        },
+        "radius": 36.393922341024194,
+        "outerRadius": 38.93303320202588,
+        "source": {
+          "center": {
+            "x": 775,
+            "y": 497
+          },
+          "radius": 172,
+          "outerRadius": 184,
+          "measurement": "Visually inspected circular recess. Contiguous dark scan through center spans x=585..962 at y=495 and y=309..685 at x=776; usable radius reduced below the approximately 188px interior to keep overlays off the iron rim."
+        }
+      }
+    },
+    "sword": {
+      "localSlot": "sword",
+      "textureUrl": "/assets/game/smithy/sword.png",
+      "file": "sword.png",
+      "width": 96,
+      "height": 256,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "source": "assets/incoming/seedream-gameplay-heroes-20261019/sword/image.png",
+      "sourceSha256": "020d4c02bfba115d70e9f82c035b78370bfcfc5742063fe2d12a33d98616e628",
+      "sourceMetadata": "assets/incoming/seedream-gameplay-heroes-20261019/sword/generation.json",
+      "sourceDimensions": {
+        "width": 1536,
+        "height": 2048
+      },
+      "sourceBounds": {
+        "x": 542,
+        "y": 83,
+        "width": 461,
+        "height": 1885
+      },
+      "contentBounds": {
+        "x": 18.652519893899203,
+        "y": 8,
+        "width": 58.69496021220159,
+        "height": 240
+      },
+      "scale": 0.1273209549071618,
+      "processing": "green chroma key; alpha trim; uniform nearest-neighbor resize; centered transparent padded canvas",
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false,
+      "provenance": "generatedHeroes"
+    }
+  },
+  "hammerRing": {
+    "textureLocalPixels": true,
+    "center": {
+      "x": 161.16375914462577,
+      "y": 85.63421496904895
+    },
+    "radius": 36.393922341024194,
+    "outerRadius": 38.93303320202588,
+    "source": {
+      "center": {
+        "x": 775,
+        "y": 497
+      },
+      "radius": 172,
+      "outerRadius": 184,
+      "measurement": "Visually inspected circular recess. Contiguous dark scan through center spans x=585..962 at y=495 and y=309..685 at x=776; usable radius reduced below the approximately 188px interior to keep overlays off the iron rim."
+    },
+    "spritePivot": {
+      "x": 0.5,
+      "y": 0.88
+    },
+    "pivotUnits": "normalized texture coordinates"
+  },
+  "hooks": {
+    "x": 1376,
+    "y": 354,
+    "spacing": 130,
+    "rows": 1
+  },
+  "extension": {
+    "startX": 1920,
+    "width": 544,
+    "height": 1080,
+    "firstStripMirrored": true,
+    "alternateMirror": true
+  },
+  "provenance": {
+    "approvedScene": {
+      "original": "assets/incoming/seedream-charcoal-single-row-20261019/scene/image.png",
+      "generation": "assets/incoming/seedream-charcoal-single-row-20261019/scene/generation.json",
+      "layers": "assets/incoming/seedream-charcoal-single-row-20261019/layers/generation.json",
+      "previewManifest": "public/assets/art-preview/charcoal-single-row/manifest.json",
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false,
+      "referenceUrl": "https://preview.free3d.com/img/2020/07/2202370631066977695/bzv3iy4g.jpg",
+      "referenceUse": "user-provided structural reference only, not redistributed as a runtime texture",
+      "license": "generated output subject to user Volcengine Ark service/account terms; no third-party reference redistribution rights asserted",
+      "termsSource": "User Volcengine Ark account agreement; account-specific agreement was not supplied",
+      "rightsReview": "commercial release rights must be confirmed by account holder; reference license not verified"
+    },
+    "generatedHeroes": {
+      "originals": "assets/incoming/seedream-gameplay-heroes-20261019",
+      "prompts": "docs/assets/gameplay-hero-prompts.json",
+      "reference": "public/assets/art-preview/charcoal-single-row/original.png",
+      "license": "generated output subject to user Volcengine Ark service/account terms; not claimed CC0 or independently licensed",
+      "termsSource": "User Volcengine Ark account agreement; account-specific agreement was not supplied",
+      "rightsReview": "commercial release rights must be confirmed by account holder",
+      "processingScript": "scripts/prepare-smithy-assets.mjs",
+      "processedSources": "assets/processed/smithy-gameplay-20261019",
+      "credentials": "not included; signed download URLs remain local ignored files"
+    }
+  }
+}

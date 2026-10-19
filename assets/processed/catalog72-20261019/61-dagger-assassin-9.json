@@ -1,0 +1,53 @@
+{
+  "index": 61,
+  "id": "dagger:assassin:9",
+  "name": "淬毒短刃",
+  "kind": "dagger",
+  "path": "assassin",
+  "level": 9,
+  "evolutionStage": 3,
+  "family": "dagger",
+  "familyLabel": "匕首",
+  "slug": "61-dagger-assassin-9",
+  "file": "61-dagger-assassin-9.png",
+  "width": 128,
+  "height": 256,
+  "sha256": "1ad6252b0f00cf06dbcb0536b62246669d3676dcdecb4e8ce17fc45815740e97",
+  "pixelSha256": "8761ab94b958866bd65b749b993b6984e04421dbf7fff172b463c09d026c6440",
+  "silhouetteSha256": "06253474e351a16e3d617ceeaf751f4e387d65ab3c00bdca7d29eeb481c1d34e",
+  "source": "assets/incoming/seedream-catalog72-20261019/61-dagger-assassin-9/image.png",
+  "sourceSha256": "7f864b8f88db4e276fbc77b0d44c9d551173fd52eb7ddf4c76dc7ea5fd856e25",
+  "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/61-dagger-assassin-9/generation.json",
+  "sourceDimensions": {
+    "width": 1536,
+    "height": 2048
+  },
+  "sourceBounds": {
+    "x": 547,
+    "y": 216,
+    "width": 411,
+    "height": 1670
+  },
+  "contentBounds": {
+    "x": 42,
+    "y": 40,
+    "width": 43,
+    "height": 176
+  },
+  "opaquePixels": 3061,
+  "greenSpill": 0,
+  "alpha": "binary; transparent RGB cleared",
+  "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+  "scalePolicy": "short dagger family fitted proportionally within 112x176, centered in 128x256; source blade-to-grip ratio preserved",
+  "sourceVariance": "small green guard ring in generated source keyed out with the green background; blade, grip and violet poison capsule retained",
+  "model": "doubao-seedream-5-0-pro-260628",
+  "watermark": false,
+  "usage": {
+    "input_images": 1,
+    "generated_images": 1,
+    "output_tokens": 12288,
+    "total_tokens": 12288
+  },
+  "correction": null,
+  "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+}

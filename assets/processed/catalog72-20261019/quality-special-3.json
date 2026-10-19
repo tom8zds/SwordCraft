@@ -1,0 +1,634 @@
+{
+  "group": "special-3",
+  "count": 12,
+  "contactSheets": [
+    "assets/processed/catalog72-20261019/special-3-contact-1.png"
+  ],
+  "assets": [
+    {
+      "index": 60,
+      "id": "dagger:assassin:0",
+      "name": "匕首",
+      "kind": "dagger",
+      "path": "assassin",
+      "level": 0,
+      "evolutionStage": 0,
+      "family": "dagger",
+      "familyLabel": "匕首",
+      "slug": "60-dagger-assassin-0",
+      "design": "真正短匕首而非长剑：单刃短宽钢刃，尖端朝上，刃背有一道浅血槽和不对称缺口；小弧形护手、木芯皮缠握柄、金属柄首三件分离清楚，整把短而可握。",
+      "prompt": "为同一款中世纪铁匠铺游戏绘制一件全新独立武器生产素材，参考图只锁定像素画材质与照明，不照抄其形状。高细节硬边像素簇、阶梯轮廓、可信铁钢锻打纹、清楚刃口高光和暗部层次，旧棕皮革与真实部件连接。固定正面正交投影，无透视倾斜，武器主轴竖直，尖端或头部朝上、握持末端朝下，左上方中性主光。轮廓、刃形、护手、柄首和实物结构必须清楚，能在小图辨认，不能只换颜色，不能绘制一个大色块。高阶可有克制的异质金属、宝石、雕刻、实物环和复合部件，但不要泛光云雾遮盖结构。只能画描述的这一件完整武器或组装武器套装，整件居中，剑尖、柄尾与两侧结构距离四边至少12%，不能裁切。背景必须完全均匀的纯绿色#00FF00用于抠图，没有地面、阴影、场景、人物、手臂、展架、文字、数字、标签、边框、UI或水印。武器任何部分不得使用绿色或绿色反光；植物使用青蓝叶、金叶、赤叶或枯棕木，生命光纹用青金色。禁止圆滑矢量插画、塑料3D渲染或摄影，不得输出多格图集或多件候选。\n作品名称：匕首。独立造型要求：真正短匕首而非长剑：单刃短宽钢刃，尖端朝上，刃背有一道浅血槽和不对称缺口；小弧形护手、木芯皮缠握柄、金属柄首三件分离清楚，整把短而可握。",
+      "file": "60-dagger-assassin-0.png",
+      "width": 128,
+      "height": 256,
+      "sha256": "2d805d21438d344cb27c4797e1af19e7f273cf4b5394dd9410e05f30228a8245",
+      "pixelSha256": "7ca8706ea89f68e0fca4dc1f20819846bfbdd20f7910cd68f68059b28b8ee17b",
+      "silhouetteSha256": "121747127cb227a9e5f69579810d54a8f525efbea59c887b6c201eebd3c4c0ea",
+      "source": "assets/incoming/seedream-catalog72-20261019/60-dagger-assassin-0/image.png",
+      "sourceSha256": "4873b61fd18517c14e6abbffd0d2a50cf90257973e741b687ddc34db9f4c4e86",
+      "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/60-dagger-assassin-0/generation.json",
+      "sourceDimensions": {
+        "width": 1536,
+        "height": 2048
+      },
+      "sourceBounds": {
+        "x": 560,
+        "y": 99,
+        "width": 416,
+        "height": 1860
+      },
+      "contentBounds": {
+        "x": 37,
+        "y": 8,
+        "width": 54,
+        "height": 240
+      },
+      "opaquePixels": 5508,
+      "greenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false,
+      "usage": {
+        "input_images": 1,
+        "generated_images": 1,
+        "output_tokens": 12288,
+        "total_tokens": 12288
+      },
+      "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+    },
+    {
+      "index": 61,
+      "id": "dagger:assassin:9",
+      "name": "淬毒短刃",
+      "kind": "dagger",
+      "path": "assassin",
+      "level": 9,
+      "evolutionStage": 3,
+      "family": "dagger",
+      "familyLabel": "匕首",
+      "slug": "61-dagger-assassin-9",
+      "design": "淬毒短刃是窄身单刃：刃尖偏向一侧、刃面有两道毒液导槽与锯齿微缺口，护手为一侧下弯挡指片；深紫毒囊环在护手旁，短柄有三圈皮缠，不能变长剑。",
+      "prompt": "为同一款中世纪铁匠铺游戏绘制一件全新独立武器生产素材，参考图只锁定像素画材质与照明，不照抄其形状。高细节硬边像素簇、阶梯轮廓、可信铁钢锻打纹、清楚刃口高光和暗部层次，旧棕皮革与真实部件连接。固定正面正交投影，无透视倾斜，武器主轴竖直，尖端或头部朝上、握持末端朝下，左上方中性主光。轮廓、刃形、护手、柄首和实物结构必须清楚，能在小图辨认，不能只换颜色，不能绘制一个大色块。高阶可有克制的异质金属、宝石、雕刻、实物环和复合部件，但不要泛光云雾遮盖结构。只能画描述的这一件完整武器或组装武器套装，整件居中，剑尖、柄尾与两侧结构距离四边至少12%，不能裁切。背景必须完全均匀的纯绿色#00FF00用于抠图，没有地面、阴影、场景、人物、手臂、展架、文字、数字、标签、边框、UI或水印。武器任何部分不得使用绿色或绿色反光；植物使用青蓝叶、金叶、赤叶或枯棕木，生命光纹用青金色。禁止圆滑矢量插画、塑料3D渲染或摄影，不得输出多格图集或多件候选。\n作品名称：淬毒短刃。独立造型要求：淬毒短刃是窄身单刃：刃尖偏向一侧、刃面有两道毒液导槽与锯齿微缺口，护手为一侧下弯挡指片；深紫毒囊环在护手旁，短柄有三圈皮缠，不能变长剑。",
+      "file": "61-dagger-assassin-9.png",
+      "width": 128,
+      "height": 256,
+      "sha256": "4dcaa3d0d3d4e8eb94a2d9d85c30ae48be230169497aa9abb7eefaf6d5bae073",
+      "pixelSha256": "622ec0a8253b97b8034727a62388dab9135c74211da4061a87e8df2e115d46d6",
+      "silhouetteSha256": "290d4bbf951ddc45fa5809db4488009c891280295812d409464fde19cd6fdfc7",
+      "source": "assets/incoming/seedream-catalog72-20261019/61-dagger-assassin-9/image.png",
+      "sourceSha256": "7f864b8f88db4e276fbc77b0d44c9d551173fd52eb7ddf4c76dc7ea5fd856e25",
+      "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/61-dagger-assassin-9/generation.json",
+      "sourceDimensions": {
+        "width": 1536,
+        "height": 2048
+      },
+      "sourceBounds": {
+        "x": 547,
+        "y": 216,
+        "width": 411,
+        "height": 1670
+      },
+      "contentBounds": {
+        "x": 34,
+        "y": 8,
+        "width": 59,
+        "height": 240
+      },
+      "opaquePixels": 5699,
+      "greenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false,
+      "usage": {
+        "input_images": 1,
+        "generated_images": 1,
+        "output_tokens": 12288,
+        "total_tokens": 12288
+      },
+      "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+    },
+    {
+      "index": 62,
+      "id": "dagger:assassin:18",
+      "name": "暗影刃",
+      "kind": "dagger",
+      "path": "assassin",
+      "level": 18,
+      "evolutionStage": 6,
+      "family": "dagger",
+      "familyLabel": "匕首",
+      "slug": "62-dagger-assassin-18",
+      "design": "暗影刃是黑灰反曲短刃：刀尖与刃背呈不对称弧线，中央镂空暗槽，短护手两端高低不同；握柄有偏置护指环和菱形柄首，边缘蓝紫冷光克制，完整显示单刃与握持结构。",
+      "prompt": "为同一款中世纪铁匠铺游戏绘制一件全新独立武器生产素材，参考图只锁定像素画材质与照明，不照抄其形状。高细节硬边像素簇、阶梯轮廓、可信铁钢锻打纹、清楚刃口高光和暗部层次，旧棕皮革与真实部件连接。固定正面正交投影，无透视倾斜，武器主轴竖直，尖端或头部朝上、握持末端朝下，左上方中性主光。轮廓、刃形、护手、柄首和实物结构必须清楚，能在小图辨认，不能只换颜色，不能绘制一个大色块。高阶可有克制的异质金属、宝石、雕刻、实物环和复合部件，但不要泛光云雾遮盖结构。只能画描述的这一件完整武器或组装武器套装，整件居中，剑尖、柄尾与两侧结构距离四边至少12%，不能裁切。背景必须完全均匀的纯绿色#00FF00用于抠图，没有地面、阴影、场景、人物、手臂、展架、文字、数字、标签、边框、UI或水印。武器任何部分不得使用绿色或绿色反光；植物使用青蓝叶、金叶、赤叶或枯棕木，生命光纹用青金色。禁止圆滑矢量插画、塑料3D渲染或摄影，不得输出多格图集或多件候选。\n作品名称：暗影刃。独立造型要求：暗影刃是黑灰反曲短刃：刀尖与刃背呈不对称弧线，中央镂空暗槽，短护手两端高低不同；握柄有偏置护指环和菱形柄首，边缘蓝紫冷光克制，完整显示单刃与握持结构。",
+      "file": "62-dagger-assassin-18.png",
+      "width": 128,
+      "height": 256,
+      "sha256": "ca350c91ca52f20fa0aaa199c24da15fa0f40a52543d9264230fc887a789c59f",
+      "pixelSha256": "9c7bc456c21bcb25d1aec40ac6fa21134fc420b8c2a1a166de25a8de5ee5ecc7",
+      "silhouetteSha256": "6df713c82245665fa54321a25168b99b3f14942a4858e013cd16234d72ebd303",
+      "source": "assets/incoming/seedream-catalog72-20261019/62-dagger-assassin-18/image.png",
+      "sourceSha256": "9423d4d8666cd70c27e1f9d41b1254da40a1a157b616e8b2b1dc4a41f14fcb3c",
+      "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/62-dagger-assassin-18/generation.json",
+      "sourceDimensions": {
+        "width": 1536,
+        "height": 2048
+      },
+      "sourceBounds": {
+        "x": 588,
+        "y": 107,
+        "width": 386,
+        "height": 1847
+      },
+      "contentBounds": {
+        "x": 39,
+        "y": 8,
+        "width": 50,
+        "height": 240
+      },
+      "opaquePixels": 5134,
+      "greenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false,
+      "usage": {
+        "input_images": 1,
+        "generated_images": 1,
+        "output_tokens": 12288,
+        "total_tokens": 12288
+      },
+      "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+    },
+    {
+      "index": 63,
+      "id": "dagger:assassin:27",
+      "name": "刺客双刃",
+      "kind": "dagger",
+      "path": "assassin",
+      "level": 27,
+      "evolutionStage": 9,
+      "family": "dagger",
+      "familyLabel": "匕首",
+      "slug": "63-dagger-assassin-27",
+      "design": "刺客双刃是两把独立并列短刃：左右刃形镜像但一长一短，各有独立刃槽和尖端，中央以横向双刃护手与共同皮握柄连接；两侧刃间留明显空隙，双刃完整不重叠。",
+      "prompt": "为同一款中世纪铁匠铺游戏绘制一件全新独立武器生产素材，参考图只锁定像素画材质与照明，不照抄其形状。高细节硬边像素簇、阶梯轮廓、可信铁钢锻打纹、清楚刃口高光和暗部层次，旧棕皮革与真实部件连接。固定正面正交投影，无透视倾斜，武器主轴竖直，尖端或头部朝上、握持末端朝下，左上方中性主光。轮廓、刃形、护手、柄首和实物结构必须清楚，能在小图辨认，不能只换颜色，不能绘制一个大色块。高阶可有克制的异质金属、宝石、雕刻、实物环和复合部件，但不要泛光云雾遮盖结构。只能画描述的这一件完整武器或组装武器套装，整件居中，剑尖、柄尾与两侧结构距离四边至少12%，不能裁切。背景必须完全均匀的纯绿色#00FF00用于抠图，没有地面、阴影、场景、人物、手臂、展架、文字、数字、标签、边框、UI或水印。武器任何部分不得使用绿色或绿色反光；植物使用青蓝叶、金叶、赤叶或枯棕木，生命光纹用青金色。禁止圆滑矢量插画、塑料3D渲染或摄影，不得输出多格图集或多件候选。\n作品名称：刺客双刃。独立造型要求：刺客双刃是两把独立并列短刃：左右刃形镜像但一长一短，各有独立刃槽和尖端，中央以横向双刃护手与共同皮握柄连接；两侧刃间留明显空隙，双刃完整不重叠。",
+      "file": "63-dagger-assassin-27.png",
+      "width": 128,
+      "height": 256,
+      "sha256": "c0c6e5c99bf3921d6e11a30eb91b8d1b807649a607b3f6504410d68d570f709e",
+      "pixelSha256": "5953d6056b6c19313d2909af7e4ce5bb44f72bcfc06d109b9e063ca44757f0dd",
+      "silhouetteSha256": "64821faecf59d760600e4fe7ea2daa9eafdc12ae9a1d68aee8f59c167b0d2dff",
+      "source": "assets/incoming/seedream-catalog72-20261019/63-dagger-assassin-27/image.png",
+      "sourceSha256": "c352a3338a274eb50c22506bc430b40348c42fc82567235b9f64ddc46b47f9de",
+      "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/63-dagger-assassin-27/generation.json",
+      "sourceDimensions": {
+        "width": 1536,
+        "height": 2048
+      },
+      "sourceBounds": {
+        "x": 510,
+        "y": 72,
+        "width": 515,
+        "height": 1896
+      },
+      "contentBounds": {
+        "x": 31,
+        "y": 8,
+        "width": 65,
+        "height": 240
+      },
+      "opaquePixels": 7319,
+      "greenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false,
+      "usage": {
+        "input_images": 1,
+        "generated_images": 1,
+        "output_tokens": 12288,
+        "total_tokens": 12288
+      },
+      "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+    },
+    {
+      "index": 64,
+      "id": "dagger:assassin:36",
+      "name": "夜幕獠牙",
+      "kind": "dagger",
+      "path": "assassin",
+      "level": 36,
+      "evolutionStage": 12,
+      "family": "dagger",
+      "familyLabel": "匕首",
+      "slug": "64-dagger-assassin-36",
+      "design": "夜幕獠牙是成对弯钩獠牙短刃：两刃不对称向外弯，刃背有獠牙状钝齿，中央黑铁握桥带双护指环；每把刃根有独立铆钉和深蓝刃脊，双短刃与握桥的穿插关系清楚。",
+      "prompt": "为同一款中世纪铁匠铺游戏绘制一件全新独立武器生产素材，参考图只锁定像素画材质与照明，不照抄其形状。高细节硬边像素簇、阶梯轮廓、可信铁钢锻打纹、清楚刃口高光和暗部层次，旧棕皮革与真实部件连接。固定正面正交投影，无透视倾斜，武器主轴竖直，尖端或头部朝上、握持末端朝下，左上方中性主光。轮廓、刃形、护手、柄首和实物结构必须清楚，能在小图辨认，不能只换颜色，不能绘制一个大色块。高阶可有克制的异质金属、宝石、雕刻、实物环和复合部件，但不要泛光云雾遮盖结构。只能画描述的这一件完整武器或组装武器套装，整件居中，剑尖、柄尾与两侧结构距离四边至少12%，不能裁切。背景必须完全均匀的纯绿色#00FF00用于抠图，没有地面、阴影、场景、人物、手臂、展架、文字、数字、标签、边框、UI或水印。武器任何部分不得使用绿色或绿色反光；植物使用青蓝叶、金叶、赤叶或枯棕木，生命光纹用青金色。禁止圆滑矢量插画、塑料3D渲染或摄影，不得输出多格图集或多件候选。\n作品名称：夜幕獠牙。独立造型要求：夜幕獠牙是成对弯钩獠牙短刃：两刃不对称向外弯，刃背有獠牙状钝齿，中央黑铁握桥带双护指环；每把刃根有独立铆钉和深蓝刃脊，双短刃与握桥的穿插关系清楚。",
+      "file": "64-dagger-assassin-36.png",
+      "width": 128,
+      "height": 256,
+      "sha256": "48f735dd9859d8850ea8aee1d62294a566a19c069d57772328ed0c3acfd5925d",
+      "pixelSha256": "05801eb5d407dacba08e4eb022d9dae7ae153f88419579105dd490edb9bc3f9f",
+      "silhouetteSha256": "7f2cff9d8b76e318d18009e49b7876f912c806ce8270adab60df1427b02f8c03",
+      "source": "assets/incoming/seedream-catalog72-20261019/64-dagger-assassin-36/image.png",
+      "sourceSha256": "f4ebdc70b2c20a11c8e9b05bed289acadfa9f9e9b1c2d7431b3996629428273b",
+      "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/64-dagger-assassin-36/generation.json",
+      "sourceDimensions": {
+        "width": 1536,
+        "height": 2048
+      },
+      "sourceBounds": {
+        "x": 315,
+        "y": 116,
+        "width": 892,
+        "height": 1864
+      },
+      "contentBounds": {
+        "x": 8,
+        "y": 11,
+        "width": 112,
+        "height": 234
+      },
+      "opaquePixels": 10603,
+      "greenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false,
+      "usage": {
+        "input_images": 1,
+        "generated_images": 1,
+        "output_tokens": 12288,
+        "total_tokens": 12288
+      },
+      "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+    },
+    {
+      "index": 65,
+      "id": "dagger:assassin:45",
+      "name": "无声死神",
+      "kind": "dagger",
+      "path": "assassin",
+      "level": 45,
+      "evolutionStage": 15,
+      "family": "dagger",
+      "familyLabel": "匕首",
+      "slug": "65-dagger-assassin-45",
+      "design": "无声死神是窄长但仍为短匕首的单刃：镰状内弯刃尖、哑光黑刃面、背侧三段微齿；护手是半月形实体挡片，柄部有下垂短绳与骨质柄首，刃根铆接和握持比例明确。",
+      "prompt": "为同一款中世纪铁匠铺游戏绘制一件全新独立武器生产素材，参考图只锁定像素画材质与照明，不照抄其形状。高细节硬边像素簇、阶梯轮廓、可信铁钢锻打纹、清楚刃口高光和暗部层次，旧棕皮革与真实部件连接。固定正面正交投影，无透视倾斜，武器主轴竖直，尖端或头部朝上、握持末端朝下，左上方中性主光。轮廓、刃形、护手、柄首和实物结构必须清楚，能在小图辨认，不能只换颜色，不能绘制一个大色块。高阶可有克制的异质金属、宝石、雕刻、实物环和复合部件，但不要泛光云雾遮盖结构。只能画描述的这一件完整武器或组装武器套装，整件居中，剑尖、柄尾与两侧结构距离四边至少12%，不能裁切。背景必须完全均匀的纯绿色#00FF00用于抠图，没有地面、阴影、场景、人物、手臂、展架、文字、数字、标签、边框、UI或水印。武器任何部分不得使用绿色或绿色反光；植物使用青蓝叶、金叶、赤叶或枯棕木，生命光纹用青金色。禁止圆滑矢量插画、塑料3D渲染或摄影，不得输出多格图集或多件候选。\n作品名称：无声死神。独立造型要求：无声死神是窄长但仍为短匕首的单刃：镰状内弯刃尖、哑光黑刃面、背侧三段微齿；护手是半月形实体挡片，柄部有下垂短绳与骨质柄首，刃根铆接和握持比例明确。",
+      "file": "65-dagger-assassin-45.png",
+      "width": 128,
+      "height": 256,
+      "sha256": "ea2bf9cb8a18fc9da7b70c1735208c9b773afad2349ba722418080e52d28325a",
+      "pixelSha256": "6a7b0b6087e72d8e23232013c80fa85911cff67425a7cb9dba92b71c1574bba8",
+      "silhouetteSha256": "f9d4e1d42856d0ede185f37b02069a557eaa2f0664c181d9d2dfa1209bd1926e",
+      "source": "assets/incoming/seedream-catalog72-20261019/65-dagger-assassin-45/image.png",
+      "sourceSha256": "c49315474d5f4c9f322c8c231a1bf6a7e9eb75b0fc23e1aac56f78fc1a8324a9",
+      "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/65-dagger-assassin-45/generation.json",
+      "sourceDimensions": {
+        "width": 1536,
+        "height": 2048
+      },
+      "sourceBounds": {
+        "x": 515,
+        "y": 95,
+        "width": 461,
+        "height": 1850
+      },
+      "contentBounds": {
+        "x": 34,
+        "y": 8,
+        "width": 60,
+        "height": 240
+      },
+      "opaquePixels": 5402,
+      "greenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false,
+      "usage": {
+        "input_images": 1,
+        "generated_images": 1,
+        "output_tokens": 12288,
+        "total_tokens": 12288
+      },
+      "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+    },
+    {
+      "index": 66,
+      "id": "dagger:assassin:54",
+      "name": "命运终剪",
+      "kind": "dagger",
+      "path": "assassin",
+      "level": 54,
+      "evolutionStage": 18,
+      "family": "dagger",
+      "familyLabel": "匕首",
+      "slug": "66-dagger-assassin-54",
+      "design": "命运终剪是剪刀式双短刃：两片相对弧刃在中央铰轴交叉，刃尖朝上形成剪口，左右握柄是短皮环与金属指环；铰轴大铆钉、两条独立刃背和闭合结构可见，绝不画成普通双剑。",
+      "prompt": "为同一款中世纪铁匠铺游戏绘制一件全新独立武器生产素材，参考图只锁定像素画材质与照明，不照抄其形状。高细节硬边像素簇、阶梯轮廓、可信铁钢锻打纹、清楚刃口高光和暗部层次，旧棕皮革与真实部件连接。固定正面正交投影，无透视倾斜，武器主轴竖直，尖端或头部朝上、握持末端朝下，左上方中性主光。轮廓、刃形、护手、柄首和实物结构必须清楚，能在小图辨认，不能只换颜色，不能绘制一个大色块。高阶可有克制的异质金属、宝石、雕刻、实物环和复合部件，但不要泛光云雾遮盖结构。只能画描述的这一件完整武器或组装武器套装，整件居中，剑尖、柄尾与两侧结构距离四边至少12%，不能裁切。背景必须完全均匀的纯绿色#00FF00用于抠图，没有地面、阴影、场景、人物、手臂、展架、文字、数字、标签、边框、UI或水印。武器任何部分不得使用绿色或绿色反光；植物使用青蓝叶、金叶、赤叶或枯棕木，生命光纹用青金色。禁止圆滑矢量插画、塑料3D渲染或摄影，不得输出多格图集或多件候选。\n作品名称：命运终剪。独立造型要求：命运终剪是剪刀式双短刃：两片相对弧刃在中央铰轴交叉，刃尖朝上形成剪口，左右握柄是短皮环与金属指环；铰轴大铆钉、两条独立刃背和闭合结构可见，绝不画成普通双剑。",
+      "file": "66-dagger-assassin-54.png",
+      "width": 128,
+      "height": 256,
+      "sha256": "1588d0dda335cf7c5e81fa10417021f8c2bbc5f577ea05bd50cdf5a1e7cb4623",
+      "pixelSha256": "d73a0016e9d6c2f03e87c0e18c4baea415dcf220d43bcb76db26a16ed67085bc",
+      "silhouetteSha256": "297a026eee11e63e1bec98011d75cfc517b36e12a7cb90a32ecfaea67a46b217",
+      "source": "assets/incoming/seedream-catalog72-20261019/66-dagger-assassin-54/image.png",
+      "sourceSha256": "2a24670640cb4b3baa344dd0504fe7487e330d5c8ec8e7716c49a94f280ed429",
+      "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/66-dagger-assassin-54/generation.json",
+      "sourceDimensions": {
+        "width": 1536,
+        "height": 2048
+      },
+      "sourceBounds": {
+        "x": 250,
+        "y": 123,
+        "width": 1058,
+        "height": 1805
+      },
+      "contentBounds": {
+        "x": 8,
+        "y": 32,
+        "width": 112,
+        "height": 191
+      },
+      "opaquePixels": 6733,
+      "greenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false,
+      "usage": {
+        "input_images": 1,
+        "generated_images": 1,
+        "output_tokens": 12288,
+        "total_tokens": 12288
+      },
+      "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+    },
+    {
+      "index": 67,
+      "id": "dagger:assassin:63",
+      "name": "虚空短刃",
+      "kind": "dagger",
+      "path": "assassin",
+      "level": 63,
+      "evolutionStage": 21,
+      "family": "dagger",
+      "familyLabel": "匕首",
+      "slug": "67-dagger-assassin-63",
+      "design": "虚空短刃是一对不接触的悬空短刃：左右一长一短的直刃各有断裂缺口与黑紫内凹刃槽，由中央实体护手架保持间距；双握片、两组铆接和不对称尖端完整，边缘微光不覆盖刃形。",
+      "prompt": "为同一款中世纪铁匠铺游戏绘制一件全新独立武器生产素材，参考图只锁定像素画材质与照明，不照抄其形状。高细节硬边像素簇、阶梯轮廓、可信铁钢锻打纹、清楚刃口高光和暗部层次，旧棕皮革与真实部件连接。固定正面正交投影，无透视倾斜，武器主轴竖直，尖端或头部朝上、握持末端朝下，左上方中性主光。轮廓、刃形、护手、柄首和实物结构必须清楚，能在小图辨认，不能只换颜色，不能绘制一个大色块。高阶可有克制的异质金属、宝石、雕刻、实物环和复合部件，但不要泛光云雾遮盖结构。只能画描述的这一件完整武器或组装武器套装，整件居中，剑尖、柄尾与两侧结构距离四边至少12%，不能裁切。背景必须完全均匀的纯绿色#00FF00用于抠图，没有地面、阴影、场景、人物、手臂、展架、文字、数字、标签、边框、UI或水印。武器任何部分不得使用绿色或绿色反光；植物使用青蓝叶、金叶、赤叶或枯棕木，生命光纹用青金色。禁止圆滑矢量插画、塑料3D渲染或摄影，不得输出多格图集或多件候选。\n作品名称：虚空短刃。独立造型要求：虚空短刃是一对不接触的悬空短刃：左右一长一短的直刃各有断裂缺口与黑紫内凹刃槽，由中央实体护手架保持间距；双握片、两组铆接和不对称尖端完整，边缘微光不覆盖刃形。",
+      "file": "67-dagger-assassin-63.png",
+      "width": 128,
+      "height": 256,
+      "sha256": "46cea3eb0e323df4a6e4723e4ab0bb7b1dad5e9f7166991f71093a5e0e7e51cc",
+      "pixelSha256": "d1276c6c450d9fc8f0927475f4581e7628a50b701e5879a00af53115da60e6ae",
+      "silhouetteSha256": "9e1a4d64649e32d11c7f8199a4b780aa5d8412b62f7beff9f0c00343728283e4",
+      "source": "assets/incoming/seedream-catalog72-20261019/67-dagger-assassin-63/image.png",
+      "sourceSha256": "db5713d30ea9e20a12a09b00130b1e9eb4cdb0675ebc8e508e41ae77e72b2448",
+      "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/67-dagger-assassin-63/generation.json",
+      "sourceDimensions": {
+        "width": 1536,
+        "height": 2048
+      },
+      "sourceBounds": {
+        "x": 565,
+        "y": 131,
+        "width": 414,
+        "height": 1796
+      },
+      "contentBounds": {
+        "x": 36,
+        "y": 8,
+        "width": 55,
+        "height": 240
+      },
+      "opaquePixels": 7600,
+      "greenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false,
+      "usage": {
+        "input_images": 1,
+        "generated_images": 1,
+        "output_tokens": 12288,
+        "total_tokens": 12288
+      },
+      "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+    },
+    {
+      "index": 68,
+      "id": "dagger:assassin:72",
+      "name": "时隙獠牙",
+      "kind": "dagger",
+      "path": "assassin",
+      "level": 72,
+      "evolutionStage": 24,
+      "family": "dagger",
+      "familyLabel": "匕首",
+      "slug": "68-dagger-assassin-72",
+      "design": "时隙獠牙是两把时间裂齿短匕首：一把反曲、一把直刃，均有阶梯状缺口和獠牙刃脊；中间错位护手含两个圆环转轴，下方为分叉短柄，双刃的前后层次、刃根铆钉和握法清楚。",
+      "prompt": "为同一款中世纪铁匠铺游戏绘制一件全新独立武器生产素材，参考图只锁定像素画材质与照明，不照抄其形状。高细节硬边像素簇、阶梯轮廓、可信铁钢锻打纹、清楚刃口高光和暗部层次，旧棕皮革与真实部件连接。固定正面正交投影，无透视倾斜，武器主轴竖直，尖端或头部朝上、握持末端朝下，左上方中性主光。轮廓、刃形、护手、柄首和实物结构必须清楚，能在小图辨认，不能只换颜色，不能绘制一个大色块。高阶可有克制的异质金属、宝石、雕刻、实物环和复合部件，但不要泛光云雾遮盖结构。只能画描述的这一件完整武器或组装武器套装，整件居中，剑尖、柄尾与两侧结构距离四边至少12%，不能裁切。背景必须完全均匀的纯绿色#00FF00用于抠图，没有地面、阴影、场景、人物、手臂、展架、文字、数字、标签、边框、UI或水印。武器任何部分不得使用绿色或绿色反光；植物使用青蓝叶、金叶、赤叶或枯棕木，生命光纹用青金色。禁止圆滑矢量插画、塑料3D渲染或摄影，不得输出多格图集或多件候选。\n作品名称：时隙獠牙。独立造型要求：时隙獠牙是两把时间裂齿短匕首：一把反曲、一把直刃，均有阶梯状缺口和獠牙刃脊；中间错位护手含两个圆环转轴，下方为分叉短柄，双刃的前后层次、刃根铆钉和握法清楚。",
+      "file": "68-dagger-assassin-72.png",
+      "width": 128,
+      "height": 256,
+      "sha256": "a40fac718f1b5b1a215bbf727e198a85682ac26199a61362e988bb1b74371c93",
+      "pixelSha256": "15c011a848ef7a89771ea9b1b321b036371321b1ebd20c359208113e0d5a4098",
+      "silhouetteSha256": "0eecad06c36d14e096d200cfdadd0fb577873f631f0b1ad0e3fb5874b75d9ccf",
+      "source": "assets/incoming/seedream-catalog72-20261019/68-dagger-assassin-72/image.png",
+      "sourceSha256": "8a7a6d98b0e8cdedd67ec047c23cceb73c4576a145aacb5b9d9b40de9f31e973",
+      "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/68-dagger-assassin-72/generation.json",
+      "sourceDimensions": {
+        "width": 1536,
+        "height": 2048
+      },
+      "sourceBounds": {
+        "x": 503,
+        "y": 109,
+        "width": 497,
+        "height": 1848
+      },
+      "contentBounds": {
+        "x": 31,
+        "y": 8,
+        "width": 65,
+        "height": 240
+      },
+      "opaquePixels": 8796,
+      "greenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false,
+      "usage": {
+        "input_images": 1,
+        "generated_images": 1,
+        "output_tokens": 12288,
+        "total_tokens": 12288
+      },
+      "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+    },
+    {
+      "index": 69,
+      "id": "dagger:assassin:81",
+      "name": "无形裁决",
+      "kind": "dagger",
+      "path": "assassin",
+      "level": 81,
+      "evolutionStage": 27,
+      "family": "dagger",
+      "familyLabel": "匕首",
+      "slug": "69-dagger-assassin-81",
+      "design": "无形裁决是极简实体单刃：细窄透明感灰钢短刃仍有硬轮廓、偏心尖端和一条断续刃槽；不对称护手由一侧尖挡片和一侧圆护环组成，短握柄有可见金属芯与皮缠，不能只画光线。",
+      "prompt": "为同一款中世纪铁匠铺游戏绘制一件全新独立武器生产素材，参考图只锁定像素画材质与照明，不照抄其形状。高细节硬边像素簇、阶梯轮廓、可信铁钢锻打纹、清楚刃口高光和暗部层次，旧棕皮革与真实部件连接。固定正面正交投影，无透视倾斜，武器主轴竖直，尖端或头部朝上、握持末端朝下，左上方中性主光。轮廓、刃形、护手、柄首和实物结构必须清楚，能在小图辨认，不能只换颜色，不能绘制一个大色块。高阶可有克制的异质金属、宝石、雕刻、实物环和复合部件，但不要泛光云雾遮盖结构。只能画描述的这一件完整武器或组装武器套装，整件居中，剑尖、柄尾与两侧结构距离四边至少12%，不能裁切。背景必须完全均匀的纯绿色#00FF00用于抠图，没有地面、阴影、场景、人物、手臂、展架、文字、数字、标签、边框、UI或水印。武器任何部分不得使用绿色或绿色反光；植物使用青蓝叶、金叶、赤叶或枯棕木，生命光纹用青金色。禁止圆滑矢量插画、塑料3D渲染或摄影，不得输出多格图集或多件候选。\n作品名称：无形裁决。独立造型要求：无形裁决是极简实体单刃：细窄透明感灰钢短刃仍有硬轮廓、偏心尖端和一条断续刃槽；不对称护手由一侧尖挡片和一侧圆护环组成，短握柄有可见金属芯与皮缠，不能只画光线。",
+      "file": "69-dagger-assassin-81.png",
+      "width": 128,
+      "height": 256,
+      "sha256": "603125788d74ed38a5e5b03f9601aebca09c7966f9d9f57e604f89601674476c",
+      "pixelSha256": "62f78c8652e83b96d4d3a77dee6b2a0cd4503cd1dc4737ede9f41de9db04868b",
+      "silhouetteSha256": "92c93f05fcb34bf41cd8f926386c41e61e96858b513f14ad0116dbeeff340855",
+      "source": "assets/incoming/seedream-catalog72-20261019/69-dagger-assassin-81/image.png",
+      "sourceSha256": "e8bab58ef0b6a09017852ce7b353969bc0e6e29c2da895b731f73a92a032708f",
+      "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/69-dagger-assassin-81/generation.json",
+      "sourceDimensions": {
+        "width": 1536,
+        "height": 2048
+      },
+      "sourceBounds": {
+        "x": 555,
+        "y": 138,
+        "width": 467,
+        "height": 1777
+      },
+      "contentBounds": {
+        "x": 32,
+        "y": 8,
+        "width": 63,
+        "height": 240
+      },
+      "opaquePixels": 4329,
+      "greenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false,
+      "usage": {
+        "input_images": 1,
+        "generated_images": 1,
+        "output_tokens": 12288,
+        "total_tokens": 12288
+      },
+      "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+    },
+    {
+      "index": 70,
+      "id": "dagger:assassin:90",
+      "name": "绝命双星",
+      "kind": "dagger",
+      "path": "assassin",
+      "level": 90,
+      "evolutionStage": 30,
+      "family": "dagger",
+      "familyLabel": "匕首",
+      "slug": "70-dagger-assassin-90",
+      "design": "绝命双星是两枚独立星形短刃：左右一把直三角刃、一把弧背刃，各自有星芒切口与血槽，通过中央交叉护手和双指握环连接；两把短刃完整分离，铆轴、护手、柄首和刃尖方向明确。",
+      "prompt": "为同一款中世纪铁匠铺游戏绘制一件全新独立武器生产素材，参考图只锁定像素画材质与照明，不照抄其形状。高细节硬边像素簇、阶梯轮廓、可信铁钢锻打纹、清楚刃口高光和暗部层次，旧棕皮革与真实部件连接。固定正面正交投影，无透视倾斜，武器主轴竖直，尖端或头部朝上、握持末端朝下，左上方中性主光。轮廓、刃形、护手、柄首和实物结构必须清楚，能在小图辨认，不能只换颜色，不能绘制一个大色块。高阶可有克制的异质金属、宝石、雕刻、实物环和复合部件，但不要泛光云雾遮盖结构。只能画描述的这一件完整武器或组装武器套装，整件居中，剑尖、柄尾与两侧结构距离四边至少12%，不能裁切。背景必须完全均匀的纯绿色#00FF00用于抠图，没有地面、阴影、场景、人物、手臂、展架、文字、数字、标签、边框、UI或水印。武器任何部分不得使用绿色或绿色反光；植物使用青蓝叶、金叶、赤叶或枯棕木，生命光纹用青金色。禁止圆滑矢量插画、塑料3D渲染或摄影，不得输出多格图集或多件候选。\n作品名称：绝命双星。独立造型要求：绝命双星是两枚独立星形短刃：左右一把直三角刃、一把弧背刃，各自有星芒切口与血槽，通过中央交叉护手和双指握环连接；两把短刃完整分离，铆轴、护手、柄首和刃尖方向明确。",
+      "file": "70-dagger-assassin-90.png",
+      "width": 128,
+      "height": 256,
+      "sha256": "97f7176784e3fc8d15716d8d678dfe0a1baff7e283e24aadb1d6e6d52b29e80c",
+      "pixelSha256": "ac80a5a9407854800e28d799c91b045be983d76cdf8182710558725dbffca773",
+      "silhouetteSha256": "71d891410dc486a66f648a134fd51b3469e6764880dbdada7dce03a47da30e91",
+      "source": "assets/incoming/seedream-catalog72-20261019/70-dagger-assassin-90/image.png",
+      "sourceSha256": "2d93d41210aa11426142311aa48edc795742eb7857efaba4e69b1c0ec691ba27",
+      "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/70-dagger-assassin-90/generation.json",
+      "sourceDimensions": {
+        "width": 1536,
+        "height": 2048
+      },
+      "sourceBounds": {
+        "x": 442,
+        "y": 133,
+        "width": 650,
+        "height": 1784
+      },
+      "contentBounds": {
+        "x": 20,
+        "y": 8,
+        "width": 87,
+        "height": 240
+      },
+      "opaquePixels": 9920,
+      "greenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false,
+      "usage": {
+        "input_images": 1,
+        "generated_images": 1,
+        "output_tokens": 12288,
+        "total_tokens": 12288
+      },
+      "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+    },
+    {
+      "index": 71,
+      "id": "dagger:assassin:99",
+      "name": "因果断刃",
+      "kind": "dagger",
+      "path": "assassin",
+      "level": 99,
+      "evolutionStage": 33,
+      "family": "dagger",
+      "familyLabel": "匕首",
+      "slug": "71-dagger-assassin-99",
+      "design": "因果断刃是最终不对称双刃匕首：前侧长弧单刃与后侧反向短断刃围绕偏心圆铰盘相扣，刃面各有不同因果刻槽和断口；双层护手、双皮握环、铰盘铆钉与两种刃脊均清晰，保持短刃尺度而非长剑。",
+      "prompt": "为同一款中世纪铁匠铺游戏绘制一件全新独立武器生产素材，参考图只锁定像素画材质与照明，不照抄其形状。高细节硬边像素簇、阶梯轮廓、可信铁钢锻打纹、清楚刃口高光和暗部层次，旧棕皮革与真实部件连接。固定正面正交投影，无透视倾斜，武器主轴竖直，尖端或头部朝上、握持末端朝下，左上方中性主光。轮廓、刃形、护手、柄首和实物结构必须清楚，能在小图辨认，不能只换颜色，不能绘制一个大色块。高阶可有克制的异质金属、宝石、雕刻、实物环和复合部件，但不要泛光云雾遮盖结构。只能画描述的这一件完整武器或组装武器套装，整件居中，剑尖、柄尾与两侧结构距离四边至少12%，不能裁切。背景必须完全均匀的纯绿色#00FF00用于抠图，没有地面、阴影、场景、人物、手臂、展架、文字、数字、标签、边框、UI或水印。武器任何部分不得使用绿色或绿色反光；植物使用青蓝叶、金叶、赤叶或枯棕木，生命光纹用青金色。禁止圆滑矢量插画、塑料3D渲染或摄影，不得输出多格图集或多件候选。\n作品名称：因果断刃。独立造型要求：因果断刃是最终不对称双刃匕首：前侧长弧单刃与后侧反向短断刃围绕偏心圆铰盘相扣，刃面各有不同因果刻槽和断口；双层护手、双皮握环、铰盘铆钉与两种刃脊均清晰，保持短刃尺度而非长剑。",
+      "file": "71-dagger-assassin-99.png",
+      "width": 128,
+      "height": 256,
+      "sha256": "3064a0b46439418de14e3f1a5e3cd5f61bac7da180246efab531a2156080b53e",
+      "pixelSha256": "023143633a6bd838b901614b45f0702a391791f3a5fb232079e9badec28b586c",
+      "silhouetteSha256": "504da8b0c3915e35638c264bbf25abc5bc8dbcc093989f21963ad200bced7057",
+      "source": "assets/incoming/seedream-catalog72-20261019/71-dagger-assassin-99/image.png",
+      "sourceSha256": "b6c6e8cc94117e0ac89647eafc11021f93b2c230bf53a4f1f7ff739fdbded423",
+      "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/71-dagger-assassin-99/generation.json",
+      "sourceDimensions": {
+        "width": 1536,
+        "height": 2048
+      },
+      "sourceBounds": {
+        "x": 481,
+        "y": 105,
+        "width": 566,
+        "height": 1843
+      },
+      "contentBounds": {
+        "x": 27,
+        "y": 8,
+        "width": 74,
+        "height": 240
+      },
+      "opaquePixels": 7311,
+      "greenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false,
+      "usage": {
+        "input_images": 1,
+        "generated_images": 1,
+        "output_tokens": 12288,
+        "total_tokens": 12288
+      },
+      "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+    }
+  ],
+  "visualAcceptance": "pending contact-sheet inspection by production owner"
+}

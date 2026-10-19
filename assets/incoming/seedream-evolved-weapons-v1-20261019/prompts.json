@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "model": "doubao-seedream-5-0-pro-260628",
+  "references": ["assets/incoming/seedream-gameplay-heroes-20261019/sword/image.png"],
+  "generationPolicy": "Exactly one sequential paid request per route; no automatic paid retries. Never retry an unknown outcome. New unique directories only; existing approved hero and scene untouched.",
+  "sharedPrompt": "你正在为同一款铁匠铺游戏绘制基础铁剑的进化家族。参考图中的铁剑是已批准的唯一风格与材质标尺，必须延续它的硬边像素阶梯轮廓、细密但克制的像素簇、深炭灰外轮廓、银灰铁刃、左侧亮银刃口和右侧冷暗钢刃面、垂直刃脊血槽、微小锻打旧痕、深棕色皮革缠绕和深钢护手。不能改成金色卡通装备、圆润矢量插图、光滑3D模型或写实摄影。固定正面正交投影，物件平行于画面，没有透视倾斜，所有垂直剑身保持严格竖直，剑尖朝上，柄首朝下；左上方中性主光，绝无紫蓝魔法光、光晕和绿色反光。画面仅有描述的一套完整武器，没有文字、水印、边框、场景、地面、投影或人物。完整物件居中且所有边缘留至少10%安全空白。背景必须完全均匀纯绿 #00FF00，用于后期抠图；武器本身不能有绿色材料。保持与参考图相同像素细节密度和金属层次，而不是只给参考剑换色。",
+  "assets": [
+    {
+      "id": "swordOneHand",
+      "file": "sword-one-hand.png",
+      "size": "1536x2048",
+      "outputDirectory": "assets/incoming/seedream-evolved-weapons-v1-20261019/one-hand",
+      "prompt": "只绘制一把实用银铁单手剑，作为基础铁剑的轻巧但明确升级版本。剑刃细长、锐利而保持可信厚度，直剑双刃，长刃约全剑72%，窄长暗血槽和分层钢铁刃面可辨。护手比参考图略有向上弯的两翼与结实的钢制护指结构，但不是华丽金色饰物；一只手长度的深棕旧皮革握柄，紧实多面钢制柄首，少量铜铆钉。剪影整体细长灵活、质感真实，护手最宽处约全剑高度的24%，与参考铁剑同一锻造家族。"
+    },
+    {
+      "id": "swordGreatsword",
+      "file": "sword-greatsword.png",
+      "size": "1536x2048",
+      "outputDirectory": "assets/incoming/seedream-evolved-weapons-v1-20261019/greatsword",
+      "prompt": "只绘制一把完整沉重双手巨剑，必须明显区别于参考图的单手剑但保持完全一致的像素材质与照明。宽厚直双刃剑身，刃宽至少是参考单手剑相对全长的1.8倍，厚重银灰钢刃、锐利斜刃与宽暗血槽，强韧肩部和锻打划痕；不能细成普通长剑。全剑上方约62%为宽刃，下方约25%为足够两只手上下握持的很长深棕皮革缠绕握柄，其余是重钢横护手、剑格与粗壮多面钢柄首。宽重横护手略向剑尖收拢，护手宽度约全剑高度32%；无金色装饰、宝石或魔法发光。通过宽刃、长双手柄、重钢护手产生明显厚重剪影。"
+    },
+    {
+      "id": "swordShield",
+      "file": "sword-shield.png",
+      "size": "1536x2048",
+      "outputDirectory": "assets/incoming/seedream-evolved-weapons-v1-20261019/sword-shield",
+      "prompt": "绘制一套由完整铁剑与实体防护盾牌组装的单件静态武器贴图，恰好一把剑加一面盾，不能只画一把护手变大的剑。完整细长银灰双刃铁剑竖直位于整套左侧，剑尖和棕皮握柄钢柄首必须全部清楚可见；右侧紧邻并轻微叠在剑身下半部分之后的是结实中型鸢形盾，盾顶处于剑身约45%高度，盾底不低于剑柄首，盾牌高约整套高度48%、宽约整套高度32%，不要让盾牌挡住左侧剑的护手和握柄。盾牌有厚冷灰铁包边、磨损铆钉、铁中央脊和深棕旧皮革包覆木板盾面，木纹与旧皮磨痕清楚、整体为可承担冲击的实体盾；不是发光能量盾，不是浮空符文。整套外形高而紧凑，总宽约全高42%，两件在同一正面正交平面静态组装，没有手臂、支架或人物，和参考剑完全相同的硬边像素、银铁明暗与棕皮材质。"
+    }
+  ]
+}

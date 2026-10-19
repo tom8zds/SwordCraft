@@ -1,0 +1,53 @@
+{
+  "index": 1,
+  "id": "iron:base:3",
+  "name": "精良铁剑",
+  "kind": "iron",
+  "path": null,
+  "level": 3,
+  "evolutionStage": 1,
+  "family": "iron-base",
+  "familyLabel": "普通铁剑",
+  "slug": "01-iron-base-3",
+  "file": "01-iron-base-3.png",
+  "width": 128,
+  "height": 256,
+  "sha256": "5344675b017075bccc54cf3933f34fec795634b063858fcabaed86ac1b7e02f9",
+  "pixelSha256": "9aa6c8bb5aec3b0805e28121ed4d1eba18c9bad90c56159832d87618e9f59819",
+  "silhouetteSha256": "60e0f9fb6dc0ba7bb341f39fdbce3805ba3511ff602c28449d3c4edc36eefd11",
+  "source": "assets/incoming/seedream-catalog72-20261019/01-iron-base-3/image.png",
+  "sourceSha256": "cb7dccf5161d8391ae3f64e5d3abacba804607518cc1760ee1b2574c670ade3a",
+  "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/01-iron-base-3/generation.json",
+  "sourceDimensions": {
+    "width": 1536,
+    "height": 2048
+  },
+  "sourceBounds": {
+    "x": 525,
+    "y": 102,
+    "width": 490,
+    "height": 1852
+  },
+  "contentBounds": {
+    "x": 32,
+    "y": 8,
+    "width": 63,
+    "height": 240
+  },
+  "opaquePixels": 5358,
+  "greenSpill": 0,
+  "alpha": "binary; transparent RGB cleared",
+  "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+  "scalePolicy": "proportional fit within 112x240",
+  "sourceVariance": null,
+  "model": "doubao-seedream-5-0-pro-260628",
+  "watermark": false,
+  "usage": {
+    "input_images": 1,
+    "generated_images": 1,
+    "output_tokens": 12288,
+    "total_tokens": 12288
+  },
+  "correction": null,
+  "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+}

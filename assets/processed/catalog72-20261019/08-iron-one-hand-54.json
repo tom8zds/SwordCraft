@@ -1,0 +1,53 @@
+{
+  "index": 8,
+  "id": "iron:one-hand:54",
+  "name": "星界锋芒",
+  "kind": "iron",
+  "path": "one-hand",
+  "level": 54,
+  "evolutionStage": 18,
+  "family": "one-hand",
+  "familyLabel": "单手剑",
+  "slug": "08-iron-one-hand-54",
+  "file": "08-iron-one-hand-54.png",
+  "width": 128,
+  "height": 256,
+  "sha256": "ef8e4e10fae3dc4364cdaa587880373a83f8791817269710bf7bde7184ff139f",
+  "pixelSha256": "26e076283877365a6a4461ddab2a0ff38d7ef02496d080e5bb61a841cf8abf72",
+  "silhouetteSha256": "daef193d2791043d342df9e2d84787682d8c277f1ed18414c6426fb573e16b17",
+  "source": "assets/incoming/seedream-catalog72-20261019/08-iron-one-hand-54/image.png",
+  "sourceSha256": "ecb9b9353d668a48aac1e0df1f0c65aa19d453cd6d39987c99ee88620767fda5",
+  "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/08-iron-one-hand-54/generation.json",
+  "sourceDimensions": {
+    "width": 1536,
+    "height": 2048
+  },
+  "sourceBounds": {
+    "x": 543,
+    "y": 95,
+    "width": 452,
+    "height": 1847
+  },
+  "contentBounds": {
+    "x": 34,
+    "y": 8,
+    "width": 59,
+    "height": 240
+  },
+  "opaquePixels": 5353,
+  "greenSpill": 0,
+  "alpha": "binary; transparent RGB cleared",
+  "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+  "scalePolicy": "proportional fit within 112x240",
+  "sourceVariance": null,
+  "model": "doubao-seedream-5-0-pro-260628",
+  "watermark": false,
+  "usage": {
+    "input_images": 1,
+    "generated_images": 1,
+    "output_tokens": 12288,
+    "total_tokens": 12288
+  },
+  "correction": null,
+  "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+}

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#16171e" />
+    <title>铸剑录 · 炭炉与挂剑墙样片</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>炭炉与挂剑墙</h1>
+        <p>正面正交投影 · 砖房 · 整个场景可向右浏览</p>
+      </header>
+      <section class="art-frame" aria-label="可操作的炭炉铁匠铺样片">
+        <div id="art-stage"></div>
+        <div id="load-state" role="status">正在载入已生成素材…</div>
+      </section>
+      <section class="review-controls" aria-label="样片显示设置">
+        <label><input type="checkbox" id="show-swords" checked />显示示意剑</label>
+        <label>镜头位置 <input id="camera-position" type="range" min="0" max="1" step="1" value="0" /></label>
+        <output id="camera-readout">0 / 0</output>
+        <span id="selection" role="status">拖动场景空白处，或用滚轮向右浏览整个铁匠铺</span>
+      </section>
+      <p class="review-note">镜头移动时，砖墙、炭炉、工作台和单排挂剑整体移动，页面控件固定。此验收页不影响游戏存档；剑仍是程序化示意素材，取剑拖动不触发镜头平移，放开后归位。</p>
+      <nav aria-label="素材下载">
+        <a href="/assets/art-preview/charcoal-single-row/original.png" target="_blank">生成原图</a>
+        <a href="/assets/art-preview/charcoal-single-row/reconstructed.png" target="_blank">同坐标重组</a>
+        <a href="/assets/art-preview/charcoal-single-row/layers-contact-sheet.png" target="_blank">图层对照</a>
+        <a href="/assets/art-preview/charcoal-single-row/manifest.json" target="_blank">坐标清单</a>
+      </nav>
+    </main>
+    <script type="module" src="/src/preview/charcoal.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+{
+  "index": 20,
+  "id": "iron:greatsword:63",
+  "name": "裂陆剑",
+  "kind": "iron",
+  "path": "greatsword",
+  "level": 63,
+  "evolutionStage": 21,
+  "family": "greatsword",
+  "familyLabel": "双手剑",
+  "slug": "20-iron-greatsword-63",
+  "file": "20-iron-greatsword-63.png",
+  "width": 128,
+  "height": 256,
+  "sha256": "dbe3908e5875e1ee0a382fec312426a1063fa62b87162a01c3eb4571ce8db04a",
+  "pixelSha256": "13c394f41bc8dad2b485d2924fe89f05a81df499e4ddc658b8ca9b7b929e43ee",
+  "silhouetteSha256": "c14548e1c038ead412da0cdbcae60f3e4a318e9cfd42fba725e38e6d5c1aaa7f",
+  "source": "assets/incoming/seedream-catalog72-20261019/20-iron-greatsword-63/image.png",
+  "sourceSha256": "35e43b67c3b2217bb817f748b40c3c892339647926b78e151658fabca72a2de5",
+  "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/20-iron-greatsword-63/generation.json",
+  "sourceDimensions": {
+    "width": 1536,
+    "height": 2048
+  },
+  "sourceBounds": {
+    "x": 525,
+    "y": 95,
+    "width": 473,
+    "height": 1874
+  },
+  "contentBounds": {
+    "x": 33,
+    "y": 8,
+    "width": 61,
+    "height": 240
+  },
+  "opaquePixels": 6026,
+  "greenSpill": 0,
+  "alpha": "binary; transparent RGB cleared",
+  "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+  "scalePolicy": "proportional fit within 112x240",
+  "sourceVariance": null,
+  "model": "doubao-seedream-5-0-pro-260628",
+  "watermark": false,
+  "usage": {
+    "input_images": 1,
+    "generated_images": 1,
+    "output_tokens": 12288,
+    "total_tokens": 12288
+  },
+  "correction": null,
+  "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+}

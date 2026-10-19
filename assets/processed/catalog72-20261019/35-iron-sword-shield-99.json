@@ -1,0 +1,53 @@
+{
+  "index": 35,
+  "id": "iron:sword-shield:99",
+  "name": "世界壁垒",
+  "kind": "iron",
+  "path": "sword-shield",
+  "level": 99,
+  "evolutionStage": 33,
+  "family": "sword-shield",
+  "familyLabel": "剑盾",
+  "slug": "35-iron-sword-shield-99",
+  "file": "35-iron-sword-shield-99.png",
+  "width": 128,
+  "height": 256,
+  "sha256": "4a118ec8118ad8088f9ff2c12214c5ec9e796866d166a597816de5b786dc2498",
+  "pixelSha256": "51c0d661da7b3d79af9a09339217531744251bacb49c11052da7a7aae1361cad",
+  "silhouetteSha256": "4c4343e7858e103477c795b8c019e2777a7ffc8649d4e9362841d245e082920d",
+  "source": "assets/incoming/seedream-catalog72-20261019/35-iron-sword-shield-99/image.png",
+  "sourceSha256": "d906c41e09d11993331030fad66662806363a54a874279c49b7a8c2336f94182",
+  "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/35-iron-sword-shield-99/generation.json",
+  "sourceDimensions": {
+    "width": 1536,
+    "height": 2048
+  },
+  "sourceBounds": {
+    "x": 98,
+    "y": 84,
+    "width": 1318,
+    "height": 1858
+  },
+  "contentBounds": {
+    "x": 8,
+    "y": 49,
+    "width": 112,
+    "height": 158
+  },
+  "opaquePixels": 6453,
+  "greenSpill": 0,
+  "alpha": "binary; transparent RGB cleared",
+  "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+  "scalePolicy": "proportional fit within 112x240",
+  "sourceVariance": null,
+  "model": "doubao-seedream-5-0-pro-260628",
+  "watermark": false,
+  "usage": {
+    "input_images": 1,
+    "generated_images": 1,
+    "output_tokens": 12288,
+    "total_tokens": 12288
+  },
+  "correction": null,
+  "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+}

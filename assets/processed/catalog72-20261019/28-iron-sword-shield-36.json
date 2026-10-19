@@ -1,0 +1,63 @@
+{
+  "index": 28,
+  "id": "iron:sword-shield:36",
+  "name": "不落王庭",
+  "kind": "iron",
+  "path": "sword-shield",
+  "level": 36,
+  "evolutionStage": 12,
+  "family": "sword-shield",
+  "familyLabel": "剑盾",
+  "slug": "28-iron-sword-shield-36",
+  "file": "28-iron-sword-shield-36.png",
+  "width": 128,
+  "height": 256,
+  "sha256": "ed61d74dccc094cfa6e20b61266ca19197868386f1d4c08015964d6e072193cd",
+  "pixelSha256": "d45eb69f5afc9e5b73b06ff80750aa5fabc3d563ea16a0c7981d9e55a11a39e1",
+  "silhouetteSha256": "83edf96dc43b35586a4131311faa3495719ade6ba9417548acdc61052feadceb",
+  "source": "assets/incoming/seedream-catalog72-20261019/28-iron-sword-shield-36/image.png",
+  "sourceSha256": "0dc8b5e77092eb4916933a8beedc5b095498e21f9f6bcef6b6fc824ad6ee2a54",
+  "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/28-iron-sword-shield-36/generation.json",
+  "sourceDimensions": {
+    "width": 1536,
+    "height": 2048
+  },
+  "sourceBounds": {
+    "x": 174,
+    "y": 136,
+    "width": 1165,
+    "height": 1757
+  },
+  "contentBounds": {
+    "x": 8,
+    "y": 43,
+    "width": 112,
+    "height": 169
+  },
+  "opaquePixels": 7757,
+  "greenSpill": 0,
+  "alpha": "binary; transparent RGB cleared",
+  "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+  "scalePolicy": "proportional fit within 112x240",
+  "sourceVariance": null,
+  "model": "doubao-seedream-5-0-pro-260628",
+  "watermark": false,
+  "usage": {
+    "input_images": 1,
+    "generated_images": 1,
+    "output_tokens": 12288,
+    "total_tokens": 12288
+  },
+  "correction": {
+    "operation": "rotate only the source sword connected-component RGB and alpha 180 degrees; shield unchanged",
+    "sourceRegion": {
+      "x": 868,
+      "y": 136,
+      "width": 471,
+      "height": 1754
+    },
+    "connectedPixels": 253189,
+    "paidRegenerations": 0
+  },
+  "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+}

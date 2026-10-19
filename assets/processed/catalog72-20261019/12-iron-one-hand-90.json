@@ -1,0 +1,53 @@
+{
+  "index": 12,
+  "id": "iron:one-hand:90",
+  "name": "万象剑",
+  "kind": "iron",
+  "path": "one-hand",
+  "level": 90,
+  "evolutionStage": 30,
+  "family": "one-hand",
+  "familyLabel": "单手剑",
+  "slug": "12-iron-one-hand-90",
+  "file": "12-iron-one-hand-90.png",
+  "width": 128,
+  "height": 256,
+  "sha256": "d85708de55add227ab6634d741c0b373d7e86de0ad6c41f4a34837e54a523fb2",
+  "pixelSha256": "3c160d7689f445f06fdcb296a0e6c40d5d69c9e97003789652be1e1bcc8d87d7",
+  "silhouetteSha256": "8d834a17c0dded4f2922525643272bba5e97096c5d9ad4eb26d468b196844657",
+  "source": "assets/incoming/seedream-catalog72-20261019/12-iron-one-hand-90/image.png",
+  "sourceSha256": "ae8c8e0117b689e976f0eb932800b3006772e807bddf52f2fee82fff0164d153",
+  "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/12-iron-one-hand-90/generation.json",
+  "sourceDimensions": {
+    "width": 1536,
+    "height": 2048
+  },
+  "sourceBounds": {
+    "x": 469,
+    "y": 86,
+    "width": 589,
+    "height": 1882
+  },
+  "contentBounds": {
+    "x": 26,
+    "y": 8,
+    "width": 75,
+    "height": 240
+  },
+  "opaquePixels": 5545,
+  "greenSpill": 0,
+  "alpha": "binary; transparent RGB cleared",
+  "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+  "scalePolicy": "proportional fit within 112x240",
+  "sourceVariance": null,
+  "model": "doubao-seedream-5-0-pro-260628",
+  "watermark": false,
+  "usage": {
+    "input_images": 1,
+    "generated_images": 1,
+    "output_tokens": 12288,
+    "total_tokens": 12288
+  },
+  "correction": null,
+  "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+}

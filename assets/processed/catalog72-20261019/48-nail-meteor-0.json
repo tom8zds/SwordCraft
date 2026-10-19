@@ -1,0 +1,64 @@
+{
+  "index": 48,
+  "id": "nail:meteor:0",
+  "name": "铁钉",
+  "kind": "nail",
+  "path": "meteor",
+  "level": 0,
+  "evolutionStage": 0,
+  "family": "nail",
+  "familyLabel": "铁钉",
+  "slug": "48-nail-meteor-0",
+  "file": "48-nail-meteor-0.png",
+  "width": 128,
+  "height": 256,
+  "sha256": "91a56c76b3e99adac54e0058fc03c8fb6db71a473d10b6b858c4af319a81c9e8",
+  "pixelSha256": "7c9ed578d966a65682aa5e98c540c62df1f61521938708b1798efac7da2d475c",
+  "silhouetteSha256": "a778d9c1746d9262e36d82b2ae8a8b02ca701909ea04081d13c144ebb530f7e2",
+  "source": "assets/incoming/seedream-catalog72-20261019/48-nail-meteor-0/image.png",
+  "sourceSha256": "0b79808724fd6acc460ecaae94a596ead61d49955bff33ee30a242fb20b7e429",
+  "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/48-nail-meteor-0/generation.json",
+  "sourceDimensions": {
+    "width": 1536,
+    "height": 2048
+  },
+  "sourceBounds": {
+    "x": 437,
+    "y": 102,
+    "width": 667,
+    "height": 1234
+  },
+  "contentBounds": {
+    "x": 8,
+    "y": 24,
+    "width": 112,
+    "height": 207
+  },
+  "opaquePixels": 9508,
+  "greenSpill": 0,
+  "alpha": "binary; transparent RGB cleared",
+  "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+  "scalePolicy": "proportional fit within 112x240",
+  "sourceVariance": null,
+  "model": "doubao-seedream-5-0-pro-260628",
+  "watermark": false,
+  "usage": {
+    "input_images": 1,
+    "generated_images": 1,
+    "output_tokens": 12288,
+    "total_tokens": 12288
+  },
+  "correction": {
+    "operation": "crop generated leather grip and rotate metal raster 180 degrees",
+    "metalSourceRectangle": {
+      "x": 437,
+      "y": 102,
+      "width": 667,
+      "height": 1234
+    },
+    "originalRejectedTrait": "leather grip below nail head made the source look like a dagger",
+    "orientation": "nail head up, pointed shank down",
+    "paidRegenerations": 0
+  },
+  "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+}

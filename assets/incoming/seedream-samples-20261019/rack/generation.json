@@ -1,0 +1,32 @@
+{
+  "status": "completed",
+  "startedAt": "2026-10-19T08:13:04.368Z",
+  "endpoint": "https://ark.cn-beijing.volces.com/api/v3/images/generations",
+  "model": "doubao-seedream-5-0-pro-260628",
+  "prompt": "只参考图中的像素密度、材质和色板，生成单个空置武器展示架游戏素材，不重画房间。固定正面对着玩家，不要侧面、转面图或等距视角。深色旧木立柱与背板、三层厚实横向搁板，每层留五个清楚均匀的空剑槽；木纹、接榫、裂缝、磨损边角、铜铆钉、铁包角、稀少灰尘细节可读。左侧受暖炉光，右侧冷紫阴影，材质与参考图一致。高细节手工像素画，统一方形像素簇、硬边阶梯轮廓、有限色板，不是照片、油画或平滑3D。只画一座完整架子，居中，四周留空；所有槽位为空，不能画任何剑、盾牌、道具、人物、文字、标签或UI。背景完全纯绿色#00FF00，无房间、其他家具、地面投影、水印。",
+  "size": "1920x1080",
+  "watermark": false,
+  "mode": "generation",
+  "references": [
+    {
+      "file": "assets/incoming/seedream-samples-20261019/background/image.png",
+      "sha256": "11fd16245030ccf453d735dc9c2f1762ffe3db1c381ff56c712034b0d4cdac89"
+    }
+  ],
+  "created": 1792397620,
+  "usage": {
+    "input_images": 1,
+    "generated_images": 1,
+    "output_tokens": 8100,
+    "total_tokens": 8100
+  },
+  "completedAt": "2026-10-19T08:13:41.245Z",
+  "outputs": [
+    {
+      "file": "image.png",
+      "size": "1920x1080",
+      "sha256": "2487866eead2c1a337135b1c3056020738720221e001832fc56da1b0954f81f1",
+      "bytes": 2641291
+    }
+  ]
+}

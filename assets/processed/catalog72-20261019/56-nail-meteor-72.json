@@ -1,0 +1,53 @@
+{
+  "index": 56,
+  "id": "nail:meteor:72",
+  "name": "碎月重星",
+  "kind": "nail",
+  "path": "meteor",
+  "level": 72,
+  "evolutionStage": 24,
+  "family": "nail",
+  "familyLabel": "铁钉",
+  "slug": "56-nail-meteor-72",
+  "file": "56-nail-meteor-72.png",
+  "width": 128,
+  "height": 256,
+  "sha256": "75918b030ac51a0f00deaa3b8592cfd81e909f94bff1bf53efa519e42d6ddbea",
+  "pixelSha256": "581813011b3435a21f70b5c7fd559a712f64e11cb898604004a8407f9f3f1118",
+  "silhouetteSha256": "10175fafe8ada2586822d3c9165a4cc431844409338b4508459b5b0affb2d32a",
+  "source": "assets/incoming/seedream-catalog72-20261019/56-nail-meteor-72/image.png",
+  "sourceSha256": "298ecb7ee7c772f2ef20e8a592774f74653dee6e6b293b9273387ac0ad055f2a",
+  "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/56-nail-meteor-72/generation.json",
+  "sourceDimensions": {
+    "width": 1536,
+    "height": 2048
+  },
+  "sourceBounds": {
+    "x": 559,
+    "y": 108,
+    "width": 634,
+    "height": 1858
+  },
+  "contentBounds": {
+    "x": 23,
+    "y": 8,
+    "width": 82,
+    "height": 240
+  },
+  "opaquePixels": 6601,
+  "greenSpill": 0,
+  "alpha": "binary; transparent RGB cleared",
+  "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+  "scalePolicy": "proportional fit within 112x240",
+  "sourceVariance": null,
+  "model": "doubao-seedream-5-0-pro-260628",
+  "watermark": false,
+  "usage": {
+    "input_images": 1,
+    "generated_images": 1,
+    "output_tokens": 12288,
+    "total_tokens": 12288
+  },
+  "correction": null,
+  "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+}

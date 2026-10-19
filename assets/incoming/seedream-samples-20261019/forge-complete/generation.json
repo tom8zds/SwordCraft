@@ -1,0 +1,32 @@
+{
+  "status": "completed",
+  "startedAt": "2026-10-19T08:15:11.640Z",
+  "endpoint": "https://ark.cn-beijing.volces.com/api/v3/images/generations",
+  "model": "doubao-seedream-5-0-pro-260628",
+  "prompt": "以参考图火炉为唯一主体重新构图，保持同样高细节像素簇、红褐耐火砖、冷紫暗面和火焰材质。镜头明显后退，把火炉完整缩小到画面高度约70%，上下左右留出至少12%纯绿色空白。必须画全烟囱顶盖、整个烟囱和最底部灰门底座，顶部和底部绝对不能接触画布边缘。正面朝向玩家，居中不倾斜。炉口保留木柴、煤炭和黄橙火焰，火不越出炉口。单个完整可抠图游戏素材，纯绿色#00FF00背景，无房间、地面、第二个火炉、人物、文字、水印。保持1920×1080画布，不是局部特写，不允许裁断烟囱。",
+  "size": "1920x1080",
+  "watermark": false,
+  "mode": "generation",
+  "references": [
+    {
+      "file": "assets/incoming/seedream-samples-20261019/forge/image.png",
+      "sha256": "60c45ccacb34c52096b5771b9ef3ac3dc832cbf19c54517b670dd2bce3b4cdf8"
+    }
+  ],
+  "created": 1792397742,
+  "usage": {
+    "input_images": 1,
+    "generated_images": 1,
+    "output_tokens": 8100,
+    "total_tokens": 8100
+  },
+  "completedAt": "2026-10-19T08:15:43.140Z",
+  "outputs": [
+    {
+      "file": "image.png",
+      "size": "1920x1080",
+      "sha256": "2bf33317fc207a96aaaf9e54dc0bf3d858ab6dc6fab4b9abc13890f606a519e1",
+      "bytes": 3282432
+    }
+  ]
+}

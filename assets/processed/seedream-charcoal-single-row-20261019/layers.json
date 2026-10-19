@@ -1,0 +1,98 @@
+{
+  "model": "doubao-seedream-5-0-pro-260628",
+  "source": "/home/zhangyj/github/SwordCraft/assets/incoming/seedream-charcoal-single-row-20261019/layers",
+  "canvas": {
+    "width": 1920,
+    "height": 1080
+  },
+  "origin": {
+    "x": 0,
+    "y": 0
+  },
+  "status": "candidate-for-visual-review",
+  "layers": [
+    {
+      "file": "background.png",
+      "z_index": 0,
+      "name": "背景",
+      "sourceSize": {
+        "width": 1920,
+        "height": 1080
+      },
+      "rectangle": [
+        0,
+        0,
+        1920,
+        1080
+      ],
+      "canvasSize": {
+        "width": 1920,
+        "height": 1080
+      },
+      "transparentPixels": 0
+    },
+    {
+      "file": "layer-01.png",
+      "z_index": 1,
+      "name": "锻造炭炉及完整烟道",
+      "description": "提取左侧完整锻造炭炉及连通天花板的烟道，包含拱形炉口、红热炭床和下方镂空拱座，不得将其变为壁炉，不包含周围砖墙",
+      "sourceSize": {
+        "width": 588,
+        "height": 1012
+      },
+      "rectangle": [
+        114,
+        41,
+        637,
+        940
+      ],
+      "canvasSize": {
+        "width": 1920,
+        "height": 1080
+      },
+      "transparentPixels": 1804890
+    },
+    {
+      "file": "layer-02.png",
+      "z_index": 2,
+      "name": "工作台与铁砧",
+      "description": "提取中央完整的木质工作台和放置在台面上的铁砧整体，不拆分单独部件，不包含周围砖墙和地面",
+      "sourceSize": {
+        "width": 865,
+        "height": 549
+      },
+      "rectangle": [
+        726,
+        604,
+        1257,
+        941
+      ],
+      "canvasSize": {
+        "width": 1920,
+        "height": 1080
+      },
+      "transparentPixels": 1984904
+    },
+    {
+      "file": "layer-03.png",
+      "z_index": 3,
+      "name": "整行金属挂钩",
+      "description": "提取右侧唯一一行金属挂钩整体，仅包含金属钩与铆钉，不带砖墙、木架或搁板，不拆分单个钩子",
+      "sourceSize": {
+        "width": 1431,
+        "height": 86
+      },
+      "rectangle": [
+        1376,
+        354,
+        1920,
+        387
+      ],
+      "canvasSize": {
+        "width": 1920,
+        "height": 1080
+      },
+      "transparentPixels": 2067630
+    }
+  ]
+}

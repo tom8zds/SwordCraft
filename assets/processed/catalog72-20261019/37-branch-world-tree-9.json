@@ -1,0 +1,53 @@
+{
+  "index": 37,
+  "id": "branch:world-tree:9",
+  "name": "萌芽枝杖",
+  "kind": "branch",
+  "path": "world-tree",
+  "level": 9,
+  "evolutionStage": 3,
+  "family": "branch",
+  "familyLabel": "树枝",
+  "slug": "37-branch-world-tree-9",
+  "file": "37-branch-world-tree-9.png",
+  "width": 128,
+  "height": 256,
+  "sha256": "92f91f85e3fb430b049c62812ff5f99a4f826d24a10a1d2988bba618e8bf37a8",
+  "pixelSha256": "024d4eadefad4d5703189fc11d491eae47551ded691249621a1de6f3a6e3de13",
+  "silhouetteSha256": "5d97fac2ccff56750fb7d53c229e5c2822c603319ac97239054bffc15a985a68",
+  "source": "assets/incoming/seedream-catalog72-20261019/37-branch-world-tree-9/image.png",
+  "sourceSha256": "e4ba1d41ef521c2522c4ae1fe7f68feacecd14ce372b248fcb929e50712356b8",
+  "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/37-branch-world-tree-9/generation.json",
+  "sourceDimensions": {
+    "width": 1536,
+    "height": 2048
+  },
+  "sourceBounds": {
+    "x": 661,
+    "y": 109,
+    "width": 226,
+    "height": 1847
+  },
+  "contentBounds": {
+    "x": 49,
+    "y": 8,
+    "width": 29,
+    "height": 240
+  },
+  "opaquePixels": 2510,
+  "greenSpill": 0,
+  "alpha": "binary; transparent RGB cleared",
+  "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+  "scalePolicy": "proportional fit within 112x240",
+  "sourceVariance": null,
+  "model": "doubao-seedream-5-0-pro-260628",
+  "watermark": false,
+  "usage": {
+    "input_images": 1,
+    "generated_images": 1,
+    "output_tokens": 12288,
+    "total_tokens": 12288
+  },
+  "correction": null,
+  "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+}

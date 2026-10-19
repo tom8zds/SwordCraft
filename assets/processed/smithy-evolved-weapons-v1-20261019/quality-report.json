@@ -1,0 +1,432 @@
+{
+  "pipeline": "scripts/evolved-weapon-assets.mjs",
+  "specification": "assets/incoming/seedream-evolved-weapons-v1-20261019/prompts.json",
+  "chromaKey": {
+    "minimumGreen": 60,
+    "minimumGreenExcess": 25,
+    "minimumGreenRatio": 1.2,
+    "despill": "clamp green to max(red,blue)",
+    "alpha": "binary 0 or 255; transparent RGB zero"
+  },
+  "provenance": {
+    "originals": "assets/incoming/seedream-evolved-weapons-v1-20261019",
+    "prompts": "assets/incoming/seedream-evolved-weapons-v1-20261019/prompts.json",
+    "reference": "assets/incoming/seedream-gameplay-heroes-20261019/sword/image.png",
+    "generationScript": "scripts/generate-evolved-weapons.mjs",
+    "processingScript": "scripts/evolved-weapon-assets.mjs",
+    "processedSources": "assets/processed/smithy-evolved-weapons-v1-20261019",
+    "license": "generated output subject to user Volcengine Ark service/account terms; not claimed CC0 or independently licensed",
+    "rightsReview": "commercial release rights must be confirmed by account holder",
+    "generationPolicy": "Exactly one sequential paid request per route; no automatic paid retries. Never retry an unknown outcome. New unique directories only; existing approved hero and scene untouched.",
+    "paidRequests": 3,
+    "automaticRetries": 0,
+    "cost": "API metadata reports image usage, not monetary billing; currency amount is unknown; consult account billing.",
+    "credentials": "not included; signed download URLs remain local ignored files"
+  },
+  "assets": {
+    "swordOneHand": {
+      "size": {
+        "width": 128,
+        "height": 256
+      },
+      "bounds": {
+        "x": 37,
+        "y": 10,
+        "width": 54,
+        "height": 238
+      },
+      "alpha": {
+        "opaque": 3690,
+        "transparent": 29078,
+        "partial": 0,
+        "dirtyTransparent": 0
+      },
+      "greenSpill": 0,
+      "source": "assets/incoming/seedream-evolved-weapons-v1-20261019/one-hand/image.png",
+      "sourceSha256": "d357d81f930163fe828aa4ade9a23689908f544fc1e62be650ef30bc728d1ef2",
+      "sha256": "0141320fc4b131b2372c4ac3b49faf7271d7e771d430dc9ad63e6e9896c4e1ae",
+      "sourceMetrics": {
+        "size": {
+          "width": 1536,
+          "height": 2048
+        },
+        "bounds": {
+          "x": 557,
+          "y": 82,
+          "width": 427,
+          "height": 1886
+        },
+        "alpha": {
+          "opaque": 234419,
+          "transparent": 2911309,
+          "partial": 0,
+          "dirtyTransparent": 0
+        },
+        "greenSpill": 0
+      },
+      "mapping": [
+        {
+          "source": {
+            "x": 557,
+            "y": 82,
+            "width": 427,
+            "height": 1886
+          },
+          "destination": {
+            "x": 37,
+            "y": 8,
+            "width": 54,
+            "height": 240
+          }
+        }
+      ],
+      "regions": {
+        "blade": {
+          "x": 54,
+          "y": 10,
+          "width": 20,
+          "height": 180
+        },
+        "guard": {
+          "x": 37,
+          "y": 184,
+          "width": 54,
+          "height": 15
+        },
+        "grip": {
+          "x": 57,
+          "y": 198,
+          "width": 14,
+          "height": 41
+        },
+        "pommel": {
+          "x": 55,
+          "y": 236,
+          "width": 18,
+          "height": 14
+        },
+        "segmentation": "Visual approximate occupied regions, not guaranteed disjoint masks; use alpha and preserve material edges."
+      },
+      "bladeAxisX": 64,
+      "aspectRatio": {
+        "source": 0.2264050901378579,
+        "normalized": 0.226890756302521
+      },
+      "paletteNormalization": {
+        "mask": "blue >= red*0.95 && blue > green+3",
+        "metalOutput": "sRGB luma 0.2126R+0.7152G+0.0722B, output (luma,luma,luma+2)",
+        "reason": "Remove slight violet generator cast to match approved neutral silver iron; geometry and brown materials preserved."
+      },
+      "nativeScaleInspection": "Compared base and three routes at 1:1 texture scale on checkerboard and dark backgrounds; silhouettes remain distinct, shield physical materials readable, greatsword long grip distinct. Not in-engine acceptance.",
+      "requestCount": 1,
+      "usage": {
+        "input_images": 1,
+        "generated_images": 1,
+        "output_tokens": 12288,
+        "total_tokens": 12288
+      },
+      "originalInspection": "Opened and visually inspected generated original; complete orthographic weapon, hard stepped edges, silver/dark steel and worn brown leather, no magic glow.",
+      "gameAcceptance": "not performed; integration owner must inspect in the real scene"
+    },
+    "swordGreatsword": {
+      "size": {
+        "width": 128,
+        "height": 256
+      },
+      "bounds": {
+        "x": 20,
+        "y": 9,
+        "width": 87,
+        "height": 239
+      },
+      "alpha": {
+        "opaque": 7243,
+        "transparent": 25525,
+        "partial": 0,
+        "dirtyTransparent": 0
+      },
+      "greenSpill": 0,
+      "source": "assets/incoming/seedream-evolved-weapons-v1-20261019/greatsword/image.png",
+      "sourceSha256": "6e89ab98b735d89466ba5150a02e4c2d9dba6959f21d2666d4a947527b4ffd8c",
+      "sha256": "353a57ea0c9065391b21b4ffd28e84641bb6d18599288db0666b21b7acc1b54d",
+      "sourceMetrics": {
+        "size": {
+          "width": 1536,
+          "height": 2048
+        },
+        "bounds": {
+          "x": 425,
+          "y": 78,
+          "width": 687,
+          "height": 1904
+        },
+        "alpha": {
+          "opaque": 479189,
+          "transparent": 2666539,
+          "partial": 0,
+          "dirtyTransparent": 0
+        },
+        "greenSpill": 0
+      },
+      "mapping": [
+        {
+          "source": {
+            "x": 425,
+            "y": 78,
+            "width": 687,
+            "height": 1382
+          },
+          "destination": {
+            "x": 20,
+            "y": 8,
+            "width": 87,
+            "height": 154
+          }
+        },
+        {
+          "source": {
+            "x": 425,
+            "y": 1460,
+            "width": 687,
+            "height": 80
+          },
+          "destination": {
+            "x": 20,
+            "y": 162,
+            "width": 87,
+            "height": 12
+          }
+        },
+        {
+          "source": {
+            "x": 425,
+            "y": 1540,
+            "width": 687,
+            "height": 330
+          },
+          "destination": {
+            "x": 20,
+            "y": 174,
+            "width": 87,
+            "height": 60
+          }
+        },
+        {
+          "source": {
+            "x": 425,
+            "y": 1870,
+            "width": 687,
+            "height": 112
+          },
+          "destination": {
+            "x": 20,
+            "y": 234,
+            "width": 87,
+            "height": 14
+          }
+        }
+      ],
+      "regions": {
+        "blade": {
+          "x": 42,
+          "y": 8,
+          "width": 44,
+          "height": 154
+        },
+        "guard": {
+          "x": 20,
+          "y": 162,
+          "width": 87,
+          "height": 12
+        },
+        "grip": {
+          "x": 57,
+          "y": 174,
+          "width": 14,
+          "height": 60
+        },
+        "pommel": {
+          "x": 53,
+          "y": 234,
+          "width": 22,
+          "height": 14
+        },
+        "segmentation": "Visual approximate occupied regions; segment strip mappings below are exact. Full-width strips include transparent pixels."
+      },
+      "bladeAxisX": 64,
+      "aspectRatio": {
+        "source": 0.36081932773109243,
+        "normalized": 0.36401673640167365
+      },
+      "paletteNormalization": {
+        "mask": "blue >= red*0.95 && blue > green+3",
+        "metalOutput": "sRGB luma 0.2126R+0.7152G+0.0722B, output (luma,luma,luma+2)",
+        "reason": "Remove slight violet generator cast to match approved neutral silver iron; geometry and brown materials preserved."
+      },
+      "nativeScaleInspection": "Compared base and three routes at 1:1 texture scale on checkerboard and dark backgrounds; silhouettes remain distinct, shield physical materials readable, greatsword long grip distinct. Not in-engine acceptance.",
+      "requestCount": 1,
+      "usage": {
+        "input_images": 1,
+        "generated_images": 1,
+        "output_tokens": 12288,
+        "total_tokens": 12288
+      },
+      "originalInspection": "Opened and visually inspected generated original; complete orthographic weapon, hard stepped edges, silver/dark steel and worn brown leather, no magic glow.",
+      "gameAcceptance": "not performed; integration owner must inspect in the real scene"
+    },
+    "swordShield": {
+      "size": {
+        "width": 128,
+        "height": 256
+      },
+      "bounds": {
+        "x": 8,
+        "y": 9,
+        "width": 112,
+        "height": 239
+      },
+      "alpha": {
+        "opaque": 12130,
+        "transparent": 20638,
+        "partial": 0,
+        "dirtyTransparent": 0
+      },
+      "greenSpill": 0,
+      "source": "assets/incoming/seedream-evolved-weapons-v1-20261019/sword-shield/image.png",
+      "sourceSha256": "28f89d53080d2b52070047b1a7322f484209ad512b3cfd1f6af71ef5b7c4cc7b",
+      "sha256": "5977cb4f52bcf89d10c520af0b82cfb1aef8c71e90d3ea66e0328ee36f022392",
+      "sourceMetrics": {
+        "size": {
+          "width": 1536,
+          "height": 2048
+        },
+        "bounds": {
+          "x": 266,
+          "y": 83,
+          "width": 993,
+          "height": 1885
+        },
+        "alpha": {
+          "opaque": 848410,
+          "transparent": 2297318,
+          "partial": 0,
+          "dirtyTransparent": 0
+        },
+        "greenSpill": 0
+      },
+      "mapping": [
+        {
+          "source": {
+            "x": 266,
+            "y": 83,
+            "width": 304,
+            "height": 1885
+          },
+          "destination": {
+            "x": 8,
+            "y": 8,
+            "width": 39,
+            "height": 240
+          }
+        },
+        {
+          "source": {
+            "x": 570,
+            "y": 83,
+            "width": 689,
+            "height": 1885
+          },
+          "destination": {
+            "x": 47,
+            "y": 8,
+            "width": 73,
+            "height": 240
+          }
+        }
+      ],
+      "regions": {
+        "blade": {
+          "x": 26,
+          "y": 9,
+          "width": 20,
+          "height": 178
+        },
+        "guard": {
+          "x": 8,
+          "y": 185,
+          "width": 53,
+          "height": 13
+        },
+        "grip": {
+          "x": 29,
+          "y": 197,
+          "width": 14,
+          "height": 41
+        },
+        "pommel": {
+          "x": 27,
+          "y": 235,
+          "width": 18,
+          "height": 14
+        },
+        "shield": {
+          "x": 41,
+          "y": 103,
+          "width": 79,
+          "height": 145
+        },
+        "segmentation": "Visual approximate overlapping regions, not independent cutouts. Shield sits behind sword and overlaps blade/guard/grip rectangles; do not translate rectangular shield slices independently."
+      },
+      "bladeAxisX": 35,
+      "aspectRatio": {
+        "source": 0.526790450928382,
+        "normalized": 0.4686192468619247
+      },
+      "paletteNormalization": {
+        "mask": "blue >= red*0.95 && blue > green+3",
+        "metalOutput": "sRGB luma 0.2126R+0.7152G+0.0722B, output (luma,luma,luma+2)",
+        "reason": "Remove slight violet generator cast to match approved neutral silver iron; geometry and brown materials preserved."
+      },
+      "nativeScaleInspection": "Compared base and three routes at 1:1 texture scale on checkerboard and dark backgrounds; silhouettes remain distinct, shield physical materials readable, greatsword long grip distinct. Not in-engine acceptance.",
+      "requestCount": 1,
+      "usage": {
+        "input_images": 1,
+        "generated_images": 1,
+        "output_tokens": 12288,
+        "total_tokens": 12288
+      },
+      "originalInspection": "Opened and visually inspected generated original; complete orthographic weapon, hard stepped edges, silver/dark steel and worn brown leather, no magic glow.",
+      "gameAcceptance": "not performed; integration owner must inspect in the real scene"
+    }
+  },
+  "base": {
+    "source": "public/assets/game/smithy/sword.png",
+    "size": {
+      "width": 128,
+      "height": 256
+    },
+    "bounds": {
+      "x": 35,
+      "y": 9,
+      "width": 58,
+      "height": 239
+    },
+    "alpha": {
+      "opaque": 4133,
+      "transparent": 28635,
+      "partial": 0,
+      "dirtyTransparent": 0
+    },
+    "greenSpill": 37
+  },
+  "previews": [
+    "assets/processed/smithy-evolved-weapons-v1-20261019/family-transparent.png",
+    "assets/processed/smithy-evolved-weapons-v1-20261019/family-preview.png"
+  ],
+  "limitations": [
+    "No in-game acceptance performed.",
+    "Regions are visually approximate; sword-shield parts overlap and cannot be split as independent rectangles.",
+    "Generated short greatsword grip is lengthened via recorded raster strips; shield-side width is condensed to preserve 240px sword height in fixed 128px frame.",
+    "Three family textures only; no unique generated asset is claimed for every high-stage evolution node."
+  ]
+}

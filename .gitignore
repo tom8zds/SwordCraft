@@ -1,0 +1,9 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.token
+.token.*
+.env
+.env.*
+!.env.example
+.download-urls.json

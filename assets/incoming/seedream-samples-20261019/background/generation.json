@@ -1,0 +1,27 @@
+{
+  "status": "completed",
+  "startedAt": "2026-10-19T08:11:44.016Z",
+  "endpoint": "https://ark.cn-beijing.volces.com/api/v3/images/generations",
+  "model": "doubao-seedream-5-0-pro-260628",
+  "prompt": "高细节手工像素画游戏背景，横向16:9中世纪铁匠铺室内固定正面剖面。按640×360原生像素审美绘制，方形像素簇、阶梯轮廓、有限色板、硬边分色；不是插画、照片或平滑3D。旧砖墙逐块表现灰浆、裂纹、煤灰，深木梁、铁挂钩、磨损木地板细节丰富。墙面占上部六成，地板占下部四成。左侧、中部、右上、右下分别留出空操作区域，只画连续墙地材质，绝不画火炉、工作台、铁砧、货架、柜台、剑、锤子或人物。暖棕与冷紫暗部，左下炉外暖光，右上窄窗冷色体积光及稀疏尘粒；中景清楚，景深和Bloom轻微，不模糊像素。无文字、UI、水印、边框。",
+  "size": "1920x1080",
+  "watermark": false,
+  "mode": "generation",
+  "references": [],
+  "created": 1792397547,
+  "usage": {
+    "input_images": 0,
+    "generated_images": 1,
+    "output_tokens": 8100,
+    "total_tokens": 8100
+  },
+  "completedAt": "2026-10-19T08:12:28.066Z",
+  "outputs": [
+    {
+      "file": "image.png",
+      "size": "1920x1080",
+      "sha256": "11fd16245030ccf453d735dc9c2f1762ffe3db1c381ff56c712034b0d4cdac89",
+      "bytes": 3183939
+    }
+  ]
+}

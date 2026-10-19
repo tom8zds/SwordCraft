@@ -1,0 +1,44 @@
+:root {
+  color-scheme: dark;
+  font-family: ui-monospace, 'Noto Sans Mono CJK SC', monospace;
+  color: #e6d9bf;
+  background: #111218;
+  font-synthesis: none;
+}
+* { box-sizing: border-box; }
+body { margin: 0; padding: 22px; }
+main { width: min(1500px, 100%); margin: 0 auto; }
+header { display: flex; align-items: baseline; justify-content: space-between; gap: 18px; margin-bottom: 14px; }
+h1 { margin: 0; font-size: 22px; font-weight: 600; }
+p { margin: 0; color: #9d9ba0; font-size: 13px; line-height: 1.7; }
+.art-frame { position: relative; width: 100%; aspect-ratio: 16 / 9; border: 1px solid #37343c; background: #11121a; }
+#art-stage { position: absolute; inset: 0; }
+#art-stage canvas { display: block; width: 100%; height: 100%; image-rendering: pixelated; touch-action: none; }
+#load-state { position: absolute; inset: 0; display: grid; place-items: center; background: #15151e; color: #b5a78e; }
+.review-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; min-height: 60px; padding: 12px 0; border-bottom: 1px solid #37343c; }
+label { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+input { accent-color: #a68b5b; }
+input[type='range'] { width: 220px; }
+input:focus-visible, a:focus-visible { outline: 2px solid #ceb275; outline-offset: 3px; }
+output { min-width: 95px; color: #cdb990; font-size: 13px; }
+#selection { margin-left: auto; color: #9d9ba0; font-size: 12px; }
+.review-note { margin: 15px 0 10px; }
+nav { display: flex; flex-wrap: wrap; gap: 18px; padding-bottom: 20px; }
+a { color: #ceb275; font-size: 13px; }
+@media (max-width: 850px) {
+  body { padding: 10px; }
+  header { display: block; }
+  header p { margin-top: 6px; }
+  h1 { font-size: 18px; }
+  .review-controls { gap: 10px 15px; }
+  input[type='range'] { width: 135px; }
+  #selection { width: 100%; margin: 0; }
+}
+@media (orientation: landscape) and (max-height: 600px) {
+  body { padding: 6px; }
+  main { max-width: calc((100dvh - 86px) * 16 / 9); }
+  header { margin-bottom: 5px; }
+  header p, .review-note, nav { display: none; }
+  .review-controls { min-height: 40px; padding: 5px 0; font-size: 11px; }
+  #selection { display: none; }
+}

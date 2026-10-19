@@ -1,0 +1,86 @@
+{
+  "version": 2,
+  "status": "visual-review-sample",
+  "canvas": {
+    "width": 1920,
+    "height": 1080
+  },
+  "world": {
+    "width": 4056,
+    "height": 1080,
+    "background": "background-wide.png"
+  },
+  "camera": {
+    "minX": 0,
+    "maxX": 2136,
+    "motion": "entire-world",
+    "hud": "screen-fixed"
+  },
+  "layers": {
+    "background": {
+      "file": "background.png",
+      "rectangle": [
+        0,
+        0,
+        1920,
+        1080
+      ],
+      "name": "背景"
+    },
+    "forge": {
+      "file": "forge.png",
+      "rectangle": [
+        114,
+        41,
+        637,
+        940
+      ],
+      "name": "锻造炭炉及完整烟道"
+    },
+    "workbench": {
+      "file": "workbench.png",
+      "rectangle": [
+        726,
+        604,
+        1257,
+        941
+      ],
+      "name": "工作台与铁砧"
+    },
+    "hooks": {
+      "file": "hooks.png",
+      "rectangle": [
+        1376,
+        354,
+        1920,
+        387
+      ],
+      "name": "整行金属挂钩"
+    }
+  },
+  "wallDisplay": {
+    "hook": {
+      "file": "hook.png",
+      "width": 50,
+      "height": 34,
+      "x": 1376,
+      "y": 354,
+      "spacing": 130
+    },
+    "rows": 1,
+    "sampleCount": 20,
+    "swordArt": "existing-procedural-preview-only"
+  },
+  "extension": {
+    "method": "alternating-mirrored-clean-wall-strip",
+    "source": "background.png",
+    "sourceRectangle": [
+      1376,
+      0,
+      1920,
+      1080
+    ]
+  },
+  "reference": "https://preview.free3d.com/img/2020/07/2202370631066977695/bzv3iy4g.jpg",
+  "provenance": "Seedream 5.0 pro generation and layer decomposition; original inputs retained, watermark disabled."
+}

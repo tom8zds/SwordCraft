@@ -1,0 +1,21 @@
+{
+  "scope": "72 independent weapon appearances, horizontal single-row codex, code-drawn scrollbar",
+  "requiredCount": 72,
+  "sourceCatalog": "assets/incoming/seedream-catalog72-20261019/catalog.json",
+  "runtimeManifest": "public/assets/game/weapons72/manifest.json",
+  "checks": [
+    "72 completed independent image generation records, one per catalog id",
+    "72 different source, pixel and silhouette hashes with 128x256 transparent proportional-fit images",
+    "All six twelve-weapon native contact sheets inspected for actual structural differences",
+    "1024x2304 in-game codex atlas cells match all 72 independent source PNGs exactly",
+    "All 72 codex entries use horizontal full-size images, one entry per row, including locked entries",
+    "Native scrollbars hidden only where a working custom scrollbar is provided",
+    "Scrollbar wheel, content touch, thumb drag, track click, keyboard, cancellation and panel switch exercised",
+    "Ordinary, shield, branch, chain hammer and dagger families exercised in the actual smithy",
+    "Save, RNG, day, economic and discovery behavior preserved"
+  ],
+  "status": "completed; 72 independent source/PNG/atlas and gameplay paths exercised, user explicitly accepted; further complex checks skipped by user request",
+  "build": "npm run build passed",
+  "tests": { "command": "npm test", "files": 8, "passed": 101 },
+  "finalEvidence": "assets/processed/smithy-gameplay-20261019/verification.json"
+}

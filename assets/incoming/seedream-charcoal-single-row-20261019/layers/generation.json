@@ -1,0 +1,102 @@
+{
+  "status": "completed",
+  "startedAt": "2026-10-19T08:34:31.283Z",
+  "endpoint": "https://ark.cn-beijing.volces.com/api/v3/images/generations",
+  "model": "doubao-seedream-5-0-pro-260628",
+  "prompt": "按原坐标仅提取三个独立透明PNG图层：左侧锻造炭炉及连天花板的完整烟道；中央完整工作台和铁砧；右侧唯一一行金属挂钩整体。挂钩层只含金属钩与铆钉，不带砖墙、木架或搁板。底图补全砖顶带砖墙石地基及柔和环境光，移除全部炭炉烟道、桌子铁砧和挂钩，不留残影。保持正面正交投影、比例、全部像素材质与坐标不变。炭炉拱形炉口、红热炭床和下方镂空拱座不得变成壁炉。不要分拆单块砖或每个钩子。",
+  "size": "auto",
+  "watermark": false,
+  "mode": "layer-decomposition",
+  "references": [
+    {
+      "file": "assets/incoming/seedream-charcoal-single-row-20261019/scene/image.png",
+      "sha256": "c18df0dcb675a7dcb2382e240ec9f2bc169473f89d4439396c1aeb90e3389510"
+    }
+  ],
+  "created": 1792398916,
+  "usage": {
+    "input_images": 1,
+    "generated_images": 4,
+    "output_tokens": 20511,
+    "total_tokens": 20511
+  },
+  "completedAt": "2026-10-19T08:35:17.134Z",
+  "outputs": [
+    {
+      "file": "layer-00.png",
+      "size": "1920x1080",
+      "z_index": 0,
+      "sha256": "eb5a87a60f44b9e53b390ae205a3864508e1abedbe983980ffd553b41d1e2337",
+      "bytes": 2383196
+    },
+    {
+      "file": "layer-01.png",
+      "size": "588x1012",
+      "z_index": 1,
+      "bounding_box": {
+        "absolute": [
+          114,
+          41,
+          637,
+          940
+        ],
+        "normalized": [
+          59,
+          38,
+          331,
+          869
+        ]
+      },
+      "name": "锻造炭炉及完整烟道",
+      "description": "提取左侧完整锻造炭炉及连通天花板的烟道，包含拱形炉口、红热炭床和下方镂空拱座，不得将其变为壁炉，不包含周围砖墙",
+      "sha256": "29687af7f5601f12d00fad2b7360ea8396757d52b6888fbb81c9603e0397e659",
+      "bytes": 1850662
+    },
+    {
+      "file": "layer-02.png",
+      "size": "865x549",
+      "z_index": 2,
+      "bounding_box": {
+        "absolute": [
+          726,
+          604,
+          1257,
+          941
+        ],
+        "normalized": [
+          378,
+          559,
+          654,
+          870
+        ]
+      },
+      "name": "工作台与铁砧",
+      "description": "提取中央完整的木质工作台和放置在台面上的铁砧整体，不拆分单独部件，不包含周围砖墙和地面",
+      "sha256": "9bf05531f6013eb093e070310767c75af1d942660395409d7a88ad546ca98e59",
+      "bytes": 1766075
+    },
+    {
+      "file": "layer-03.png",
+      "size": "1431x86",
+      "z_index": 3,
+      "bounding_box": {
+        "absolute": [
+          1376,
+          354,
+          1920,
+          387
+        ],
+        "normalized": [
+          717,
+          328,
+          999,
+          357
+        ]
+      },
+      "name": "整行金属挂钩",
+      "description": "提取右侧唯一一行金属挂钩整体，仅包含金属钩与铆钉，不带砖墙、木架或搁板，不拆分单个钩子",
+      "sha256": "b5f3765a73e9e354adec307ca813dc0ca5c7ebb744a4aaafa6828719e0c9630f",
+      "bytes": 121360
+    }
+  ]
+}

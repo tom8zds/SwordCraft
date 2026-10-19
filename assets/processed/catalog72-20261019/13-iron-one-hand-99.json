@@ -1,0 +1,53 @@
+{
+  "index": 13,
+  "id": "iron:one-hand:99",
+  "name": "永昼神锋",
+  "kind": "iron",
+  "path": "one-hand",
+  "level": 99,
+  "evolutionStage": 33,
+  "family": "one-hand",
+  "familyLabel": "单手剑",
+  "slug": "13-iron-one-hand-99",
+  "file": "13-iron-one-hand-99.png",
+  "width": 128,
+  "height": 256,
+  "sha256": "55c267c8e0744b3251ac4041ef26335e3081a35a56082cd35cfb2f4f6a6a0ea7",
+  "pixelSha256": "9c025be88c47462223c1c0b0cdeb22543aebc29aaa996bcff646b4779b62cf10",
+  "silhouetteSha256": "20054cc0d31f8066b3e90cbc7fa6d8bccc09776b04edeb2a86ea2895a43a80a4",
+  "source": "assets/incoming/seedream-catalog72-20261019/13-iron-one-hand-99/image.png",
+  "sourceSha256": "e09628337fcdc00f158a4f0285cf6f5d5605e659bc3b9e09d27324459ba6a196",
+  "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/13-iron-one-hand-99/generation.json",
+  "sourceDimensions": {
+    "width": 1536,
+    "height": 2048
+  },
+  "sourceBounds": {
+    "x": 507,
+    "y": 84,
+    "width": 522,
+    "height": 1899
+  },
+  "contentBounds": {
+    "x": 31,
+    "y": 8,
+    "width": 66,
+    "height": 240
+  },
+  "opaquePixels": 5679,
+  "greenSpill": 0,
+  "alpha": "binary; transparent RGB cleared",
+  "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+  "scalePolicy": "proportional fit within 112x240",
+  "sourceVariance": null,
+  "model": "doubao-seedream-5-0-pro-260628",
+  "watermark": false,
+  "usage": {
+    "input_images": 1,
+    "generated_images": 1,
+    "output_tokens": 12288,
+    "total_tokens": 12288
+  },
+  "correction": null,
+  "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+}

@@ -1,0 +1,32 @@
+{
+  "status": "completed",
+  "startedAt": "2026-10-19T09:29:03.790Z",
+  "endpoint": "https://ark.cn-beijing.volces.com/api/v3/images/generations",
+  "model": "doubao-seedream-5-0-pro-260628",
+  "prompt": "为横版铁匠铺游戏绘制一把基础铁制长剑，作为生产用可抠图高细节像素武器。参考图仅用于统一硬边像素簇、灰黑铁器、冷灰金属高光、旧棕皮革和左上方光源的美术质感；不要绘制参考图的场景。只画一把完整剑，正面正交，剑身完全竖直，锐利剑尖朝上、柄首朝下，左右基本对称，无透视倾斜。长而直的双刃铁剑占总长约70%，剑尖清楚，左右刃口、中央刃脊和暗色狭长血槽可读，钢铁有精细锻打纹和少量旧划痕，不能是无细节灰色条。横向金属护手、铜铆钉、深棕皮革缠绕握柄、结实多面金属柄首均有细节，保持实用基础剑而非夸张魔法神器。硬边像素簇、阶梯轮廓、克制冷灰色阶与少量暖高光，不使用柔焦、3D写实渲染或平滑矢量。整把剑居中，护手左右和剑尖柄首都离图片边缘至少12%，确保完整无裁切；剑宽约全剑高度的30%。背景必须完全均匀纯绿色 #00FF00，无地面投影无场景无人物无其他物件，不要插画边框、标注、文字、UI、水印、绿色材质或绿色反光。",
+  "size": "1536x2048",
+  "watermark": false,
+  "mode": "generation",
+  "references": [
+    {
+      "file": "public/assets/art-preview/charcoal-single-row/original.png",
+      "sha256": "c18df0dcb675a7dcb2382e240ec9f2bc169473f89d4439396c1aeb90e3389510"
+    }
+  ],
+  "created": 1792402182,
+  "usage": {
+    "input_images": 1,
+    "generated_images": 1,
+    "output_tokens": 12288,
+    "total_tokens": 12288
+  },
+  "completedAt": "2026-10-19T09:29:43.618Z",
+  "outputs": [
+    {
+      "file": "image.png",
+      "size": "1536x2048",
+      "sha256": "020d4c02bfba115d70e9f82c035b78370bfcfc5742063fe2d12a33d98616e628",
+      "bytes": 3975041
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "index": 63,
+  "id": "dagger:assassin:27",
+  "name": "刺客双刃",
+  "kind": "dagger",
+  "path": "assassin",
+  "level": 27,
+  "evolutionStage": 9,
+  "family": "dagger",
+  "familyLabel": "匕首",
+  "slug": "63-dagger-assassin-27",
+  "file": "63-dagger-assassin-27.png",
+  "width": 128,
+  "height": 256,
+  "sha256": "12209ddd42dcae35651b59e51199a534bd8519e1959c8f0e2ffc4b9e6ec81ae0",
+  "pixelSha256": "4dc463c1d109a926d78dfc6488ccf28ab31b945b0f26a6e855e56652556a91eb",
+  "silhouetteSha256": "e7dfc3e4cd9a189113845e9c26c194ad11f88227434cfdbe0ec42f9ac678b356",
+  "source": "assets/incoming/seedream-catalog72-20261019/63-dagger-assassin-27/image.png",
+  "sourceSha256": "c352a3338a274eb50c22506bc430b40348c42fc82567235b9f64ddc46b47f9de",
+  "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/63-dagger-assassin-27/generation.json",
+  "sourceDimensions": {
+    "width": 1536,
+    "height": 2048
+  },
+  "sourceBounds": {
+    "x": 510,
+    "y": 72,
+    "width": 515,
+    "height": 1896
+  },
+  "contentBounds": {
+    "x": 40,
+    "y": 40,
+    "width": 48,
+    "height": 176
+  },
+  "opaquePixels": 3954,
+  "greenSpill": 0,
+  "alpha": "binary; transparent RGB cleared",
+  "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+  "scalePolicy": "short dagger family fitted proportionally within 112x176, centered in 128x256; source blade-to-grip ratio preserved",
+  "sourceVariance": null,
+  "model": "doubao-seedream-5-0-pro-260628",
+  "watermark": false,
+  "usage": {
+    "input_images": 1,
+    "generated_images": 1,
+    "output_tokens": 12288,
+    "total_tokens": 12288
+  },
+  "correction": null,
+  "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+}

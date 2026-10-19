@@ -1,0 +1,27 @@
+{
+  "status": "completed",
+  "startedAt": "2026-10-19T08:19:51.778Z",
+  "endpoint": "https://ark.cn-beijing.volces.com/api/v3/images/generations",
+  "model": "doubao-seedream-5-0-pro-260628",
+  "prompt": "1920×1080横向高细节手工像素铁匠铺，640×360像素簇审美，硬边阶梯轮廓，非绘画或平滑3D。整座建筑为砖墙、砖砌拱顶、灰浆接缝与石板地面，绝无木梁木柱木屋顶木地板。固定正面近正交镜头，无广角，垂直线直立，设施统一比例与地面基线。左侧砖砌火炉落地，长烟道从炉顶连续伸入天花板砖拱，连接处封实、烟道无顶盖，不留空隙。中央旧木工作台与空铁砧，右侧正面三层空展示架；木材仅限家具。火炉为唯一主暖光，随距离衰减，照亮朝炉面，背炉面暗；右上仅微弱冷色漫反射，禁止可见光束、夸张紫光和各处发光边。砖纹、炉火木柴、铁件木纹细节清楚，无人物剑锤、文字、UI、水印。",
+  "size": "1920x1080",
+  "watermark": false,
+  "mode": "generation",
+  "references": [],
+  "created": 1792398036,
+  "usage": {
+    "input_images": 0,
+    "generated_images": 1,
+    "output_tokens": 8100,
+    "total_tokens": 8100
+  },
+  "completedAt": "2026-10-19T08:20:38.081Z",
+  "outputs": [
+    {
+      "file": "image.png",
+      "size": "1920x1080",
+      "sha256": "5243d06fa5267945f51a658177a071fcdeeb9ee2580675200cd55caf14bfabe0",
+      "bytes": 3023089
+    }
+  ]
+}

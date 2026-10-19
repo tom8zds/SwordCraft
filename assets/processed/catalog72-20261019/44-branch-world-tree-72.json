@@ -1,0 +1,53 @@
+{
+  "index": 44,
+  "id": "branch:world-tree:72",
+  "name": "大地脉络",
+  "kind": "branch",
+  "path": "world-tree",
+  "level": 72,
+  "evolutionStage": 24,
+  "family": "branch",
+  "familyLabel": "树枝",
+  "slug": "44-branch-world-tree-72",
+  "file": "44-branch-world-tree-72.png",
+  "width": 128,
+  "height": 256,
+  "sha256": "7fafee10d44c82167ced14e90723ed821847d0f38e2dc4821c6d04f3de30bc6b",
+  "pixelSha256": "e8a0f6fa0a630aca54e61f82c275a4fc94b76962aab8fb2331f6386325021991",
+  "silhouetteSha256": "5ff790feba5f1b41144f70bb0f0af2db0aea26600d625d0e62b49049055deb20",
+  "source": "assets/incoming/seedream-catalog72-20261019/44-branch-world-tree-72/image.png",
+  "sourceSha256": "c7a0e72db4cdad3bbeaf6de896614fc3b1e00c58926afe0178f32a38ba7da1ae",
+  "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/44-branch-world-tree-72/generation.json",
+  "sourceDimensions": {
+    "width": 1536,
+    "height": 2048
+  },
+  "sourceBounds": {
+    "x": 473,
+    "y": 83,
+    "width": 601,
+    "height": 1877
+  },
+  "contentBounds": {
+    "x": 25,
+    "y": 8,
+    "width": 77,
+    "height": 240
+  },
+  "opaquePixels": 10617,
+  "greenSpill": 0,
+  "alpha": "binary; transparent RGB cleared",
+  "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+  "scalePolicy": "proportional fit within 112x240",
+  "sourceVariance": null,
+  "model": "doubao-seedream-5-0-pro-260628",
+  "watermark": false,
+  "usage": {
+    "input_images": 1,
+    "generated_images": 1,
+    "output_tokens": 12288,
+    "total_tokens": 12288
+  },
+  "correction": null,
+  "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+}

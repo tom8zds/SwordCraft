@@ -1,0 +1,32 @@
+{
+  "status": "completed",
+  "startedAt": "2026-10-19T08:13:04.368Z",
+  "endpoint": "https://ark.cn-beijing.volces.com/api/v3/images/generations",
+  "model": "doubao-seedream-5-0-pro-260628",
+  "prompt": "只参考图中的像素密度、材质和色板，生成单套独立锻造工作台与铁砧游戏素材，不重画房间。正面朝玩家，略看见台面，保持固定镜头而非等距视角。厚重旧木台、粗木腿与横撑、金属包角、铆钉、清楚木纹、烧痕、刀痕、磨损边缘；中央大型铁砧有宽阔空锻打面、长砧角、锻造纹路、凹痕、冷钢高光和氧化暗面。空台面预留横放长剑和敲锤位置，不画剑、锤子或人物手臂。高细节手工像素画，统一方形像素簇、阶梯轮廓、有限色板、硬边分色，不是照片、绘画或平滑3D。左暖右冷。整体轮廓完整居中，四周留白；背景完全纯绿色#00FF00，无房间、其他设施、地面投影、文字、UI、水印。",
+  "size": "1920x1080",
+  "watermark": false,
+  "mode": "generation",
+  "references": [
+    {
+      "file": "assets/incoming/seedream-samples-20261019/background/image.png",
+      "sha256": "11fd16245030ccf453d735dc9c2f1762ffe3db1c381ff56c712034b0d4cdac89"
+    }
+  ],
+  "created": 1792397616,
+  "usage": {
+    "input_images": 1,
+    "generated_images": 1,
+    "output_tokens": 8100,
+    "total_tokens": 8100
+  },
+  "completedAt": "2026-10-19T08:13:37.553Z",
+  "outputs": [
+    {
+      "file": "image.png",
+      "size": "1920x1080",
+      "sha256": "0a1f245a7c94ea238f8a34ff888c70693f8025ccd0faec6dc2a47e37ab8c5947",
+      "bytes": 2415595
+    }
+  ]
+}

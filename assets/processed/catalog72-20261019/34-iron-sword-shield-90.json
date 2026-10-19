@@ -1,0 +1,53 @@
+{
+  "index": 34,
+  "id": "iron:sword-shield:90",
+  "name": "永世王庭",
+  "kind": "iron",
+  "path": "sword-shield",
+  "level": 90,
+  "evolutionStage": 30,
+  "family": "sword-shield",
+  "familyLabel": "剑盾",
+  "slug": "34-iron-sword-shield-90",
+  "file": "34-iron-sword-shield-90.png",
+  "width": 128,
+  "height": 256,
+  "sha256": "45bba292cf65380be44e9f0b1ca60884e35be7f399ad6b47db19d6f562098085",
+  "pixelSha256": "264d343cc79712f5c83c83d113de3106769a5448d6ba074a829d7ee25393ec36",
+  "silhouetteSha256": "056b537de381cec8616a8340d5b18c618d29a8ede8dd6276030c51a39e674e03",
+  "source": "assets/incoming/seedream-catalog72-20261019/34-iron-sword-shield-90/image.png",
+  "sourceSha256": "fc4b68e1e9f5dfcc3e3b7e5fb4f7e8f38a596a6c60a8c0c861aaca27fa20fa9a",
+  "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/34-iron-sword-shield-90/generation.json",
+  "sourceDimensions": {
+    "width": 1536,
+    "height": 2048
+  },
+  "sourceBounds": {
+    "x": 219,
+    "y": 150,
+    "width": 1036,
+    "height": 1769
+  },
+  "contentBounds": {
+    "x": 8,
+    "y": 32,
+    "width": 112,
+    "height": 191
+  },
+  "opaquePixels": 8106,
+  "greenSpill": 0,
+  "alpha": "binary; transparent RGB cleared",
+  "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+  "scalePolicy": "proportional fit within 112x240",
+  "sourceVariance": null,
+  "model": "doubao-seedream-5-0-pro-260628",
+  "watermark": false,
+  "usage": {
+    "input_images": 1,
+    "generated_images": 1,
+    "output_tokens": 12288,
+    "total_tokens": 12288
+  },
+  "correction": null,
+  "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+}

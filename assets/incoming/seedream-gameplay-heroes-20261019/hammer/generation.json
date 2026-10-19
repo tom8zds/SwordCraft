@@ -1,0 +1,32 @@
+{
+  "status": "completed",
+  "startedAt": "2026-10-19T09:28:03.281Z",
+  "endpoint": "https://ark.cn-beijing.volces.com/api/v3/images/generations",
+  "model": "doubao-seedream-5-0-pro-260628",
+  "prompt": "为横版铁匠铺游戏绘制一个可直接抠图的高细节像素锻造巨锤。参考图只锁定硬边像素簇、灰黑铸铁、冷灰金属高光与旧棕色皮革木材的质感；不要照抄背景，不要出现铁匠铺。只画一把完整大锤，正面正交，锤头的巨大宽阔侧面完全平行于画面，绝非斜视透视。厚重的长方形钢铁锤头横向展开，占整个物件上部的大部分宽度；锤头两端完整、有铸铁边框、铆钉、锻打刻痕和明暗金属层次。锤头宽侧面中央有一个巨大正圆形的深黑色空凹槽，正圆直径约锤头高度的65%，圆心对准锤头中心；凹槽内均匀暗色、空无一物，只有极薄金属边缘，用于之后叠加游戏动态概率环；禁止槽中数字、指针、花纹、符文和发光。很长的垂直木柄从锤头中央向下，旧棕皮革交错缠绕并有金属柄尾。整体轮廓像大写T，锤头宽度约为全锤高度的75%，锤头高度约全锤高度的35%。光从左上方，局部暖反光，轮廓锐利，真实像素簇而非平滑矢量。单个物件完整居中，锤头、两端、柄尾均离画面边缘至少12%，不能裁切。背景必须是完全均匀的纯绿色 #00FF00，无地面无投影无场景无人物无其他物件，无文字无数字无UI无水印，无绿色材质和绿色反光。",
+  "size": "1536x2048",
+  "watermark": false,
+  "mode": "generation",
+  "references": [
+    {
+      "file": "public/assets/art-preview/charcoal-single-row/original.png",
+      "sha256": "c18df0dcb675a7dcb2382e240ec9f2bc169473f89d4439396c1aeb90e3389510"
+    }
+  ],
+  "created": 1792402134,
+  "usage": {
+    "input_images": 1,
+    "generated_images": 1,
+    "output_tokens": 12288,
+    "total_tokens": 12288
+  },
+  "completedAt": "2026-10-19T09:28:57.055Z",
+  "outputs": [
+    {
+      "file": "image.png",
+      "size": "1536x2048",
+      "sha256": "06c65f64b1754a1345fe4143a057ccf6fbad07dd26377c43fd84f9ebf87b3548",
+      "bytes": 4898186
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "index": 67,
+  "id": "dagger:assassin:63",
+  "name": "虚空短刃",
+  "kind": "dagger",
+  "path": "assassin",
+  "level": 63,
+  "evolutionStage": 21,
+  "family": "dagger",
+  "familyLabel": "匕首",
+  "slug": "67-dagger-assassin-63",
+  "file": "67-dagger-assassin-63.png",
+  "width": 128,
+  "height": 256,
+  "sha256": "92c49860c487f4042836e68bbe4652b00fd7e554a0ff9fbe5b2b58d48f873ebb",
+  "pixelSha256": "d3a1971a219cf379b8e375da1f48e79f06ffd47289d94ded298b742286661045",
+  "silhouetteSha256": "7fd386d7d3b84cdd0b9b7bfcb7b73aa8e870dabfdff053fee2763a2ec541fd6e",
+  "source": "assets/incoming/seedream-catalog72-20261019/67-dagger-assassin-63/image.png",
+  "sourceSha256": "db5713d30ea9e20a12a09b00130b1e9eb4cdb0675ebc8e508e41ae77e72b2448",
+  "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/67-dagger-assassin-63/generation.json",
+  "sourceDimensions": {
+    "width": 1536,
+    "height": 2048
+  },
+  "sourceBounds": {
+    "x": 565,
+    "y": 131,
+    "width": 414,
+    "height": 1796
+  },
+  "contentBounds": {
+    "x": 43,
+    "y": 40,
+    "width": 41,
+    "height": 176
+  },
+  "opaquePixels": 4219,
+  "greenSpill": 0,
+  "alpha": "binary; transparent RGB cleared",
+  "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+  "scalePolicy": "short dagger family fitted proportionally within 112x176, centered in 128x256; source blade-to-grip ratio preserved",
+  "sourceVariance": null,
+  "model": "doubao-seedream-5-0-pro-260628",
+  "watermark": false,
+  "usage": {
+    "input_images": 1,
+    "generated_images": 1,
+    "output_tokens": 12288,
+    "total_tokens": 12288
+  },
+  "correction": null,
+  "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+}

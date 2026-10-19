@@ -1,0 +1,121 @@
+{
+  "generatedAt": "2026-10-19T08:17:25.319Z",
+  "model": "doubao-seedream-5-0-pro-260628",
+  "status": "candidate-for-user-review",
+  "assets": [
+    {
+      "id": "background",
+      "source": "background/image.png",
+      "width": 1920,
+      "height": 1080,
+      "previewWidth": 1920,
+      "previewHeight": 1080,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1920,
+        "height": 1080
+      },
+      "chromaRemovedPixels": 0,
+      "watermark": false,
+      "sha256": "11fd16245030ccf453d735dc9c2f1762ffe3db1c381ff56c712034b0d4cdac89",
+      "prompt": "高细节手工像素画游戏背景，横向16:9中世纪铁匠铺室内固定正面剖面。按640×360原生像素审美绘制，方形像素簇、阶梯轮廓、有限色板、硬边分色；不是插画、照片或平滑3D。旧砖墙逐块表现灰浆、裂纹、煤灰，深木梁、铁挂钩、磨损木地板细节丰富。墙面占上部六成，地板占下部四成。左侧、中部、右上、右下分别留出空操作区域，只画连续墙地材质，绝不画火炉、工作台、铁砧、货架、柜台、剑、锤子或人物。暖棕与冷紫暗部，左下炉外暖光，右上窄窗冷色体积光及稀疏尘粒；中景清楚，景深和Bloom轻微，不模糊像素。无文字、UI、水印、边框。",
+      "usage": {
+        "input_images": 0,
+        "generated_images": 1,
+        "output_tokens": 8100,
+        "total_tokens": 8100
+      }
+    },
+    {
+      "id": "forge",
+      "source": "forge-complete/image.png",
+      "width": 1920,
+      "height": 1080,
+      "previewWidth": 574,
+      "previewHeight": 963,
+      "bounds": {
+        "x": 681,
+        "y": 67,
+        "width": 558,
+        "height": 947
+      },
+      "chromaRemovedPixels": 1697313,
+      "watermark": false,
+      "sha256": "2bf33317fc207a96aaaf9e54dc0bf3d858ab6dc6fab4b9abc13890f606a519e1",
+      "prompt": "以参考图火炉为唯一主体重新构图，保持同样高细节像素簇、红褐耐火砖、冷紫暗面和火焰材质。镜头明显后退，把火炉完整缩小到画面高度约70%，上下左右留出至少12%纯绿色空白。必须画全烟囱顶盖、整个烟囱和最底部灰门底座，顶部和底部绝对不能接触画布边缘。正面朝向玩家，居中不倾斜。炉口保留木柴、煤炭和黄橙火焰，火不越出炉口。单个完整可抠图游戏素材，纯绿色#00FF00背景，无房间、地面、第二个火炉、人物、文字、水印。保持1920×1080画布，不是局部特写，不允许裁断烟囱。",
+      "usage": {
+        "input_images": 1,
+        "generated_images": 1,
+        "output_tokens": 8100,
+        "total_tokens": 8100
+      },
+      "placement": {
+        "x": 68,
+        "y": 175,
+        "width": 474,
+        "height": 795
+      }
+    },
+    {
+      "id": "workbench",
+      "source": "workbench/image.png",
+      "width": 1920,
+      "height": 1080,
+      "previewWidth": 998,
+      "previewHeight": 799,
+      "bounds": {
+        "x": 462,
+        "y": 186,
+        "width": 982,
+        "height": 783
+      },
+      "chromaRemovedPixels": 1575307,
+      "watermark": false,
+      "sha256": "0a1f245a7c94ea238f8a34ff888c70693f8025ccd0faec6dc2a47e37ab8c5947",
+      "prompt": "只参考图中的像素密度、材质和色板，生成单套独立锻造工作台与铁砧游戏素材，不重画房间。正面朝玩家，略看见台面，保持固定镜头而非等距视角。厚重旧木台、粗木腿与横撑、金属包角、铆钉、清楚木纹、烧痕、刀痕、磨损边缘；中央大型铁砧有宽阔空锻打面、长砧角、锻造纹路、凹痕、冷钢高光和氧化暗面。空台面预留横放长剑和敲锤位置，不画剑、锤子或人物手臂。高细节手工像素画，统一方形像素簇、阶梯轮廓、有限色板、硬边分色，不是照片、绘画或平滑3D。左暖右冷。整体轮廓完整居中，四周留白；背景完全纯绿色#00FF00，无房间、其他设施、地面投影、文字、UI、水印。",
+      "usage": {
+        "input_images": 1,
+        "generated_images": 1,
+        "output_tokens": 8100,
+        "total_tokens": 8100
+      },
+      "placement": {
+        "x": 736,
+        "y": 545,
+        "width": 537,
+        "height": 430
+      }
+    },
+    {
+      "id": "rack",
+      "source": "rack/image.png",
+      "width": 1920,
+      "height": 1080,
+      "previewWidth": 1090,
+      "previewHeight": 938,
+      "bounds": {
+        "x": 424,
+        "y": 94,
+        "width": 1074,
+        "height": 922
+      },
+      "chromaRemovedPixels": 1228819,
+      "watermark": false,
+      "sha256": "2487866eead2c1a337135b1c3056020738720221e001832fc56da1b0954f81f1",
+      "prompt": "只参考图中的像素密度、材质和色板，生成单个空置武器展示架游戏素材，不重画房间。固定正面对着玩家，不要侧面、转面图或等距视角。深色旧木立柱与背板、三层厚实横向搁板，每层留五个清楚均匀的空剑槽；木纹、接榫、裂缝、磨损边角、铜铆钉、铁包角、稀少灰尘细节可读。左侧受暖炉光，右侧冷紫阴影，材质与参考图一致。高细节手工像素画，统一方形像素簇、硬边阶梯轮廓、有限色板，不是照片、油画或平滑3D。只画一座完整架子，居中，四周留空；所有槽位为空，不能画任何剑、盾牌、道具、人物、文字、标签或UI。背景完全纯绿色#00FF00，无房间、其他家具、地面投影、水印。",
+      "usage": {
+        "input_images": 1,
+        "generated_images": 1,
+        "output_tokens": 8100,
+        "total_tokens": 8100
+      },
+      "placement": {
+        "x": 1410,
+        "y": 585,
+        "width": 430,
+        "height": 370
+      }
+    }
+  ]
+}

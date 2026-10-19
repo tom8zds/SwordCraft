@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>《铸剑录》艺术方向选项板</title>
+<style>
+:root{color-scheme:dark;font-family:ui-monospace,"SFMono-Regular","Noto Sans Mono CJK SC",monospace;background:#12100e;color:#eadabc}*{box-sizing:border-box}body{margin:0;padding:28px;background:#12100e}header{max-width:1380px;margin:0 auto 24px}h1{margin:0 0 8px;font-size:28px}header p{margin:0;color:#a99779}section{max-width:1380px;margin:0 auto 34px;padding:18px;background:#1d1915;border:1px solid #514230}h2{margin:0 0 14px;font-size:19px;color:#efd18b}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.card{position:relative;min-width:0;background:#29221c;border:2px solid #5c4935}.card.recommended{border-color:#d3aa56}.badge{position:absolute;z-index:2;right:8px;top:8px;padding:3px 7px;color:#21170f;background:#e0b75c;font-size:11px;font-weight:700}.frame{padding:8px;background:#0e0c0b;border-bottom:1px solid #4c3d2d}.frame canvas{display:block;width:100%;aspect-ratio:16/9;image-rendering:pixelated;background:#161210}.copy{padding:10px 12px 12px;min-height:78px}.copy strong{display:block;margin-bottom:5px;color:#f1dec0}.copy span{display:block;color:#b8a589;font-size:12px;line-height:1.45}@media(max-width:950px){.grid{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<header><h1>《铸剑录》细节像素风选项板</h1><p>所有画面均为同一铁匠铺的程序化概念草图，用于比较方向，不是最终素材。</p></header>
+<div id="boards"></div>
+<script>
+const questions=[
+ {id:'q71',title:'Q71 · 视觉母体',recommended:'C',items:[
+  ['A','温暖写实工坊','可信中世纪材料、煤灰、工具与暖炉光',{mood:'warm',detail:2,magic:0,view:'front'}],
+  ['B','暗黑奇幻工坊','尖拱、冷黑石材、血红符文与压迫阴影',{mood:'dark',detail:2,magic:3,view:'front'}],
+  ['C','叙事型奇幻工坊','生活化高密度场景，奇幻焦点分层出现',{mood:'narrative',detail:3,magic:2,view:'three'}],
+  ['D','HD-2D 舞台','像素物件叠加景深、体积光与后期辉光',{mood:'hd2d',detail:2,magic:2,view:'three',soft:true}]
+ ]},
+ {id:'q72',title:'Q72 · 像素密度',recommended:'C',items:[
+  ['A','320×180 原生','粗粒度、轮廓优先，细小材质被舍弃',{density:80,mood:'narrative',detail:1}],
+  ['B','480×270 原生','中等粒度，可表现基本木纹和砖缝',{density:120,mood:'narrative',detail:2}],
+  ['C','640×360 原生','高密度像素簇，细节丰富且仍有像素感',{density:160,mood:'narrative',detail:3}],
+  ['D','1280×720 直绘','极细像素，接近普通位图，像素结构较弱',{density:320,mood:'narrative',detail:4}]
+ ]},
+ {id:'q73',title:'Q73 · 铁匠铺视角',recommended:'B',items:[
+  ['A','正面平视剖面','设施像舞台布景，命中区域最直观',{view:'front',mood:'narrative',detail:3}],
+  ['B','浅三分之四正交','能看见设施顶面与地板深度，仍易拖拽',{view:'three',mood:'narrative',detail:3}],
+  ['C','纯侧视','剪影清楚，但空间与陈列层次较少',{view:'side',mood:'narrative',detail:3}],
+  ['D','等距视角','空间最强，但交互布局和资产量显著增加',{view:'iso',mood:'narrative',detail:3}]
+ ]},
+ {id:'q74',title:'Q74 · 像素风纯粹程度',recommended:'B',items:[
+  ['A','严格纯像素','硬边光影、逐帧火焰、无模糊和柔光',{fx:'strict',mood:'narrative',detail:3}],
+  ['B','主体纯像素＋受控特效','像素主体不变，只给火光和魔法轻微辉光',{fx:'controlled',mood:'narrative',detail:3}],
+  ['C','明显 HD-2D','Bloom、景深、体积光与大量粒子',{fx:'hd',mood:'hd2d',detail:3,soft:true}],
+  ['D','像素轮廓＋平滑内部','外缘像素化，内部材质使用平滑渐变',{fx:'vector',mood:'warm',detail:3,soft:true}]
+ ]},
+ {id:'q75',title:'Q75 · 场景细节密度',recommended:'B',items:[
+  ['A','整洁功能型','只保留玩法设施，负空间很多',{detail:0,mood:'warm'}],
+  ['B','有人生活过的工坊','工具、煤堆、订单、杯子和修补痕迹',{detail:3,mood:'narrative'}],
+  ['C','极繁杂物型','每块空地都有物件、纹理或动画',{detail:7,mood:'narrative'}],
+  ['D','破败遗迹型','断墙、蛛网、废铁、碎砖和旧仪式痕迹',{detail:5,mood:'ruin'}]
+ ]},
+ {id:'q76',title:'Q76 · 人物存在方式',recommended:'B',items:[
+  ['A','完全无人','玩家是无形铁匠，场景只靠设施讲故事',{people:'none',mood:'narrative',detail:3}],
+  ['B','局部人物表现','敲击出现手臂，商人使用半身像或剪影',{people:'partial',mood:'narrative',detail:3}],
+  ['C','完整铁匠角色','角色站在工作台旁执行动作',{people:'smith',mood:'narrative',detail:3}],
+  ['D','多人常驻场景','铁匠、学徒、商人和顾客都可见',{people:'crowd',mood:'narrative',detail:3}]
+ ]},
+ {id:'q77',title:'Q77 · 魔法视觉强度',recommended:'B',items:[
+  ['A','极度克制','只用少量异色像素和短暂符文',{magic:1,mood:'warm',detail:3}],
+  ['B','分层爆发','日常低魔；遗物、高阶剑和登神明显发光',{magic:2,mood:'narrative',detail:3}],
+  ['C','常驻高魔','火炉、地面、武器和设施持续释放魔法',{magic:5,mood:'arcane',detail:3}],
+  ['D','黑暗秘仪','血色符文、阴影、腐蚀和不祥祭台',{magic:4,mood:'ritual',detail:3}]
+ ]},
+ {id:'q78',title:'Q78 · 武器造型演进',recommended:'C',weapon:true,items:[
+  ['A','历史写实','比例可信，只提升钢材、护手与工艺',{evolution:'real'}],
+  ['B','全程夸张奇幻','从第一阶段就有异形巨刃和巨大护手',{evolution:'fantasy'}],
+  ['C','写实逐步走向奇幻','低阶朴素，分支后轮廓和超常材质逐级增强',{evolution:'gradual'}],
+  ['D','品质换色为主','轮廓基本不变，依赖颜色和粒子表达等级',{evolution:'recolor'}]
+ ]}
+];
+const palettes={
+ warm:{sky:'#30251d',wall:'#5a4030',wall2:'#76513a',floor:'#3b281d',wood:'#795034',wood2:'#a36f45',stone:'#77736c',metal:'#c7c4b9',shadow:'#17120f',fire:'#ef6b2d',light:'#ffd064',magic:'#8e73b8'},
+ dark:{sky:'#100e12',wall:'#211b24',wall2:'#3b2731',floor:'#151318',wood:'#43292a',wood2:'#704038',stone:'#45434b',metal:'#aaa8b1',shadow:'#070609',fire:'#c3332e',light:'#f07a42',magic:'#b52f4a'},
+ narrative:{sky:'#29211d',wall:'#4a3529',wall2:'#684a34',floor:'#30231b',wood:'#70472e',wood2:'#a06c42',stone:'#62625e',metal:'#c5c2b6',shadow:'#15110f',fire:'#e86029',light:'#f6c45a',magic:'#9c73c9'},
+ hd2d:{sky:'#1c1b22',wall:'#3e3030',wall2:'#6a4434',floor:'#292021',wood:'#75472f',wood2:'#b26e42',stone:'#67666b',metal:'#d5d4ce',shadow:'#100d10',fire:'#ff7138',light:'#ffe18a',magic:'#b68cff'},
+ ruin:{sky:'#1c1b19',wall:'#403b35',wall2:'#595047',floor:'#27231f',wood:'#4d392b',wood2:'#69513b',stone:'#5d5b55',metal:'#96938a',shadow:'#100f0d',fire:'#ba502c',light:'#e9a753',magic:'#725b80'},
+ arcane:{sky:'#141126',wall:'#282143',wall2:'#433468',floor:'#17132b',wood:'#49325a',wood2:'#704c7b',stone:'#4c4968',metal:'#c5c0dc',shadow:'#080611',fire:'#f35865',light:'#ffc85b',magic:'#8b7cff'},
+ ritual:{sky:'#100c0d',wall:'#281718',wall2:'#4b2020',floor:'#160e0f',wood:'#402020',wood2:'#6f3029',stone:'#46383a',metal:'#aaa0a0',shadow:'#060405',fire:'#b52d2b',light:'#e2653e',magic:'#c02639'}
+};
+function R(ctx,x,y,w,h,c){ctx.fillStyle=c;ctx.fillRect(Math.round(x),Math.round(y),Math.round(w),Math.round(h))}
+function L(ctx,x1,y1,x2,y2,c,w=1){ctx.strokeStyle=c;ctx.lineWidth=w;ctx.beginPath();ctx.moveTo(Math.round(x1),Math.round(y1));ctx.lineTo(Math.round(x2),Math.round(y2));ctx.stroke()}
+function P(ctx,pts,c){ctx.fillStyle=c;ctx.beginPath();ctx.moveTo(pts[0][0],pts[0][1]);for(let i=1;i<pts.length;i++)ctx.lineTo(pts[i][0],pts[i][1]);ctx.closePath();ctx.fill()}
+function seeded(seed){return()=>{seed=(seed*1664525+1013904223)>>>0;return seed/4294967296}}
+function glow(ctx,x,y,r,c,a=.28){const g=ctx.createRadialGradient(x,y,0,x,y,r);g.addColorStop(0,c);g.addColorStop(1,'transparent');ctx.globalAlpha=a;ctx.fillStyle=g;ctx.fillRect(x-r,y-r,r*2,r*2);ctx.globalAlpha=1}
+function sword(ctx,x,y,s=1,kind='plain',color='#c8c4b9',rot=0){ctx.save();ctx.translate(x,y);ctx.rotate(rot);const fantasy=kind==='fantasy'||kind==='high';const len=(fantasy?58:48)*s;ctx.fillStyle='#17110e';ctx.fillRect(-5*s,-len/2-3*s,10*s,len+12*s);ctx.fillStyle=color;P(ctx,[[-2*s,-len/2],[2*s,-len/2],[4*s,len/2-8*s],[0,len/2-3*s],[-4*s,len/2-8*s]],color);R(ctx,-10*s,len/2-8*s,20*s,4*s,fantasy?'#d5a84a':'#a77a39');R(ctx,-3*s,len/2-4*s,6*s,12*s,'#6e422c');if(fantasy){R(ctx,-7*s,-4*s,3*s,17*s,'#8b65cd');R(ctx,4*s,-11*s,3*s,19*s,'#e0bd62')}ctx.restore()}
+function baseScene(ctx,cfg={}){const p=palettes[cfg.mood||'narrative'];const rand=seeded((cfg.detail||0)*719+(cfg.magic||0)*123+13);ctx.imageSmoothingEnabled=false;R(ctx,0,0,320,180,p.sky);R(ctx,0,10,320,100,p.wall);R(ctx,0,110,320,70,p.floor);
+ if(cfg.view==='iso'){drawIso(ctx,p,cfg,rand);return}
+ // masonry and floor
+ const brick=cfg.mood==='dark'||cfg.mood==='ritual'?20:28;for(let y=14;y<108;y+=13){for(let x=((y/13)%2)*-brick/2;x<320;x+=brick){L(ctx,x,y,x+brick-2,y,p.wall2,1);L(ctx,x,y,x,y+11,p.shadow,1)}}
+ for(let y=119;y<180;y+=14)L(ctx,0,y,320,y,p.shadow,1);for(let x=-30;x<350;x+=32)L(ctx,x,110,x-18,180,p.wall2,1);
+ if(cfg.view==='side'){drawSide(ctx,p,cfg,rand);return}
+ const three=cfg.view==='three';
+ // forge
+ R(ctx,18,34,42,77,p.shadow);R(ctx,21,36,36,72,p.stone);R(ctx,13,104,60,58,p.shadow);R(ctx,17,108,52,48,p.stone);R(ctx,24,118,38,30,p.shadow);R(ctx,28,121,30,24,'#120d0b');
+ P(ctx,[[31,146],[37,128],[43,146]],p.fire);P(ctx,[[39,146],[47,121],[54,146]],p.light);P(ctx,[[50,146],[55,132],[61,146]],p.fire);R(ctx,13,156,61,8,p.shadow);R(ctx,17,156,53,5,p.stone);
+ // workbench/anvil
+ if(three){R(ctx,102,126,111,10,p.shadow);P(ctx,[[104,122],[202,122],[213,129],[113,129]],p.wood2);R(ctx,111,132,9,37,p.wood);R(ctx,194,132,9,37,p.wood);R(ctx,116,151,83,5,p.wood2)}
+ P(ctx,[[112,115],[170,115],[179,121],[105,121]],p.metal);P(ctx,[[128,121],[158,121],[155,150],[166,162],[118,162],[130,150]],p.stone);L(ctx,115,116,169,116,'#f0eee5',2);
+ // hammer
+ R(ctx,152,59,24,9,p.shadow);R(ctx,153,60,22,7,p.metal);ctx.save();ctx.translate(170,66);ctx.rotate(-.12);R(ctx,0,0,5,42,p.shadow);R(ctx,1,1,3,40,p.wood2);ctx.restore();
+ // rack
+ R(ctx,229,29,75,95,p.shadow);R(ctx,233,33,67,87,p.wood);R(ctx,236,61,61,4,p.wood2);R(ctx,236,91,61,4,p.wood2);R(ctx,236,119,61,4,p.wood2);sword(ctx,247,51,.55,'plain',p.metal);sword(ctx,266,51,.55,cfg.magic>1?'fantasy':'plain',p.metal);sword(ctx,285,51,.55,'plain',p.metal);
+ // submit
+ R(ctx,237,143,70,23,p.shadow);R(ctx,240,146,64,17,p.wood);R(ctx,289,135,13,10,p.shadow);R(ctx,291,133,9,8,p.light);
+ // altar & book
+ R(ctx,183,149,20,17,p.shadow);R(ctx,187,143,12,17,p.stone);R(ctx,188,137,10,10,p.magic);R(ctx,77,153,23,12,p.shadow);R(ctx,79,151,19,11,p.wood2);
+ if(cfg.soft||cfg.fx==='controlled'||cfg.fx==='hd'||cfg.magic>1){glow(ctx,46,135,cfg.fx==='hd'?80:48,p.fire,cfg.fx==='hd'?.45:.22)}
+ if(cfg.magic){for(let i=0;i<cfg.magic*3;i++){const a=i/(cfg.magic*3)*Math.PI*2;R(ctx,193+Math.cos(a)*((cfg.magic>3)?24:14),142+Math.sin(a)*((cfg.magic>3)?16:9),2,2,p.magic)}if(cfg.magic>2)glow(ctx,193,142,45,p.magic,.3)}
+ drawDetail(ctx,p,cfg,rand);drawPeople(ctx,p,cfg);if(cfg.mood==='dark'||cfg.mood==='ritual'){P(ctx,[[120,8],[200,8],[215,32],[105,32]],p.shadow);for(let i=0;i<5;i++)R(ctx,133+i*14,18,3,9,p.magic)}
+ if(cfg.fx==='strict'){/* intentionally no smooth layer */}else if(cfg.fx==='hd'){ctx.globalAlpha=.16;ctx.fillStyle='#ffd58a';ctx.beginPath();ctx.moveTo(0,70);ctx.lineTo(180,160);ctx.lineTo(80,180);ctx.closePath();ctx.fill();ctx.globalAlpha=1}else if(cfg.fx==='vector'){const g=ctx.createLinearGradient(100,90,190,150);g.addColorStop(0,'#dad7ce');g.addColorStop(1,'#4c4e50');ctx.fillStyle=g;ctx.fillRect(122,119,40,31)}
+}
+function drawDetail(ctx,p,cfg,rand){const n=cfg.detail||0;if(n===0)return;for(let i=0;i<n*5;i++){const x=75+rand()*145,y=24+rand()*78;R(ctx,x,y,2+rand()*7,1,rand()>.5?p.wall2:p.shadow)}for(let i=0;i<n*3;i++){const x=8+rand()*210,y=164+rand()*13;R(ctx,x,y,3+rand()*7,2,rand()>.5?p.wood2:p.shadow)}if(n>=2){R(ctx,83,35,3,32,p.metal);R(ctx,88,37,7,3,p.metal);R(ctx,207,47,14,10,p.wood2);R(ctx,210,50,8,1,p.light);R(ctx,71,133,7,5,'#171311');R(ctx,79,137,5,4,'#171311')}if(n>=3){R(ctx,92,94,18,12,'#d0b98b');L(ctx,94,98,106,98,'#765b3b',1);R(ctx,215,134,6,8,p.wood2);R(ctx,214,132,8,2,p.metal);R(ctx,24,164,8,5,'#111');R(ctx,34,165,6,4,'#111')}if(n>=5){for(let i=0;i<12;i++)R(ctx,65+rand()*155,113+rand()*58,2+rand()*5,1+rand()*3,rand()>.5?p.wood:p.stone);L(ctx,307,24,279,67,'#d8d1c0',1);L(ctx,307,24,312,52,'#d8d1c0',1)}if(p===palettes.ruin){R(ctx,85,10,30,18,p.shadow);R(ctx,93,18,22,17,p.sky);for(let i=0;i<10;i++)R(ctx,18+rand()*290,106+rand()*68,2+rand()*8,2+rand()*4,p.stone)}}
+function drawPeople(ctx,p,cfg){const person=(x,y,scale=1,robe=p.wood2)=>{R(ctx,x-4*scale,y-23*scale,8*scale,8*scale,'#b8865f');R(ctx,x-7*scale,y-15*scale,14*scale,20*scale,robe);R(ctx,x-6*scale,y+5*scale,5*scale,13*scale,p.shadow);R(ctx,x+1*scale,y+5*scale,5*scale,13*scale,p.shadow)};if(cfg.people==='partial'){R(ctx,135,111,20,5,'#b8865f');R(ctx,130,109,8,8,p.wood2);R(ctx,263,126,16,22,p.shadow);R(ctx,268,119,7,8,'#b8865f')}if(cfg.people==='smith')person(188,142,1.1,'#733c2f');if(cfg.people==='crowd'){person(188,142,1,'#733c2f');person(215,148,.8,'#526a55');person(271,139,1,'#4e3d68');person(102,147,.7,'#6a523c')}}
+function drawSide(ctx,p,cfg,rand){R(ctx,15,45,77,95,p.stone);R(ctx,28,74,51,48,p.shadow);P(ctx,[[39,120],[51,84],[64,120]],p.fire);R(ctx,115,114,93,12,p.wood2);R(ctx,125,126,10,34,p.wood);P(ctx,[[130,103],[178,103],[188,112],[122,112]],p.metal);const smith={people:'smith'};drawPeople(ctx,p,smith);R(ctx,242,38,61,112,p.wood);for(let i=0;i<3;i++)sword(ctx,256+i*17,70,.6,'plain',p.metal);drawDetail(ctx,p,cfg,rand)}
+function drawIso(ctx,p,cfg,rand){for(let y=30;y<190;y+=16)for(let x=-40;x<350;x+=32){P(ctx,[[x,y],[x+16,y-8],[x+32,y],[x+16,y+8]],(x/32+y/16)%2?p.floor:p.wall2)}P(ctx,[[22,91],[70,67],[112,88],[63,114]],p.stone);P(ctx,[[22,91],[63,114],[63,155],[22,132]],p.shadow);P(ctx,[[63,114],[112,88],[112,128],[63,155]],p.stone);P(ctx,[[41,99],[65,87],[83,96],[59,109]],p.fire);P(ctx,[[129,111],[174,88],[213,108],[167,133]],p.wood2);P(ctx,[[143,93],[176,77],[199,89],[166,106]],p.metal);P(ctx,[[226,68],[275,43],[308,60],[259,86]],p.wood);for(let i=0;i<3;i++)sword(ctx,248+i*16,58,.45,'plain',p.metal,-.45);drawDetail(ctx,p,cfg,rand)}
+function weaponBoard(ctx,cfg){const p=palettes.narrative;R(ctx,0,0,320,180,'#211a16');for(let i=0;i<4;i++){R(ctx,8+i*78,12,70,156,i%2?'#342820':'#2b211b');const evol=cfg.evolution;let kind='plain',scale=.95,color=p.metal;if(evol==='fantasy')kind='fantasy',scale=1.15+i*.05,color=i%2?p.magic:p.light;if(evol==='gradual'&&i>1)kind='fantasy',scale=1+i*.12,color=i===3?p.light:p.metal;if(evol==='real')scale=.85+i*.06,color=['#938f88','#aaa79e','#c5c2b7','#dedbd0'][i];if(evol==='recolor')color=['#8b8984','#70a07c','#8976bd','#e2ba4e'][i];sword(ctx,43+i*78,83,scale,kind,color,0);R(ctx,16+i*78,151,54,10,'#16110e');for(let j=0;j<=i;j++)R(ctx,22+i*78+j*10,154,6,3,evol==='recolor'?color:p.gold);if((evol==='fantasy'||evol==='gradual'&&i===3)&&i>1)glow(ctx,43+i*78,83,38,color,.25)}}
+function renderScene(canvas,cfg){const density=cfg.density||320;if(density===320){const c=canvas.getContext('2d');baseScene(c,cfg);return}const off=document.createElement('canvas');off.width=density;off.height=Math.round(density*9/16);const o=off.getContext('2d');o.scale(density/320,off.height/180);baseScene(o,cfg);const c=canvas.getContext('2d');c.imageSmoothingEnabled=false;c.drawImage(off,0,0,canvas.width,canvas.height)}
+const boards=document.getElementById('boards');for(const q of questions){const section=document.createElement('section');section.id=q.id;section.innerHTML=`<h2>${q.title}</h2><div class="grid"></div>`;const grid=section.querySelector('.grid');for(const [key,name,desc,cfg] of q.items){const card=document.createElement('article');card.className='card'+(q.recommended===key?' recommended':'');card.innerHTML=`${q.recommended===key?'<span class="badge">推荐</span>':''}<div class="frame"><canvas width="320" height="180"></canvas></div><div class="copy"><strong>${key} · ${name}</strong><span>${desc}</span></div>`;grid.appendChild(card);const canvas=card.querySelector('canvas');if(q.weapon)weaponBoard(canvas.getContext('2d'),cfg);else renderScene(canvas,cfg)}boards.appendChild(section)}
+</script>
+</body>
+</html>

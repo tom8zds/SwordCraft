@@ -1,0 +1,53 @@
+{
+  "index": 58,
+  "id": "nail:meteor:90",
+  "name": "宇宙流星锤",
+  "kind": "nail",
+  "path": "meteor",
+  "level": 90,
+  "evolutionStage": 30,
+  "family": "nail",
+  "familyLabel": "铁钉",
+  "slug": "58-nail-meteor-90",
+  "file": "58-nail-meteor-90.png",
+  "width": 128,
+  "height": 256,
+  "sha256": "73f8b2e83796c6daac8309127b97eeb2dbb5da4e9eed66918d6c5868c800af25",
+  "pixelSha256": "034d032afd024aafcb1446d9d7536cb9c96667f8bef2834b968196ca8d381ba0",
+  "silhouetteSha256": "7b5d370aa03422b3cbfcfefacee792a0a222c1456d9b7d3542955fc1860bf893",
+  "source": "assets/incoming/seedream-catalog72-20261019/58-nail-meteor-90/image.png",
+  "sourceSha256": "dd5f98c0d9e5acb1e8ee07ef1b3b04568f6311c1294220ef276edabf8764f6d6",
+  "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/58-nail-meteor-90/generation.json",
+  "sourceDimensions": {
+    "width": 1536,
+    "height": 2048
+  },
+  "sourceBounds": {
+    "x": 426,
+    "y": 85,
+    "width": 658,
+    "height": 1883
+  },
+  "contentBounds": {
+    "x": 22,
+    "y": 8,
+    "width": 84,
+    "height": 240
+  },
+  "opaquePixels": 8818,
+  "greenSpill": 0,
+  "alpha": "binary; transparent RGB cleared",
+  "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+  "scalePolicy": "proportional fit within 112x240",
+  "sourceVariance": null,
+  "model": "doubao-seedream-5-0-pro-260628",
+  "watermark": false,
+  "usage": {
+    "input_images": 1,
+    "generated_images": 1,
+    "output_tokens": 12288,
+    "total_tokens": 12288
+  },
+  "correction": null,
+  "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+}

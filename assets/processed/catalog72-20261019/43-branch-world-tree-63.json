@@ -1,0 +1,53 @@
+{
+  "index": 43,
+  "id": "branch:world-tree:63",
+  "name": "四季王枝",
+  "kind": "branch",
+  "path": "world-tree",
+  "level": 63,
+  "evolutionStage": 21,
+  "family": "branch",
+  "familyLabel": "树枝",
+  "slug": "43-branch-world-tree-63",
+  "file": "43-branch-world-tree-63.png",
+  "width": 128,
+  "height": 256,
+  "sha256": "ddd256124829241a7d492438b2e6ab4c61d87d1a578ef6b69b5cb8a3b565a723",
+  "pixelSha256": "3f3c08b99a73c5a67603bc914134153dc5e518d2c180e1e19ece026eec9c4eea",
+  "silhouetteSha256": "4b3a56c01b7e3efff39ceadaeda553388488dd1c3abaf9fc5a3bd290dff0d688",
+  "source": "assets/incoming/seedream-catalog72-20261019/43-branch-world-tree-63/image.png",
+  "sourceSha256": "993daa414ec65cd424c0e79e6e3ad94c25a549ac1c601a7c87579d0668f0f0fe",
+  "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/43-branch-world-tree-63/generation.json",
+  "sourceDimensions": {
+    "width": 1536,
+    "height": 2048
+  },
+  "sourceBounds": {
+    "x": 127,
+    "y": 94,
+    "width": 1307,
+    "height": 1856
+  },
+  "contentBounds": {
+    "x": 8,
+    "y": 48,
+    "width": 112,
+    "height": 159
+  },
+  "opaquePixels": 3654,
+  "greenSpill": 0,
+  "alpha": "binary; transparent RGB cleared",
+  "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+  "scalePolicy": "proportional fit within 112x240",
+  "sourceVariance": null,
+  "model": "doubao-seedream-5-0-pro-260628",
+  "watermark": false,
+  "usage": {
+    "input_images": 1,
+    "generated_images": 1,
+    "output_tokens": 12288,
+    "total_tokens": 12288
+  },
+  "correction": null,
+  "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+}

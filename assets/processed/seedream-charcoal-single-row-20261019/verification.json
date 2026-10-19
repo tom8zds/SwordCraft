@@ -1,0 +1,54 @@
+{
+  "status": "whole-world-camera-preview-verified-awaiting-user-art-approval",
+  "entry": "/art-preview.html",
+  "runtime": "PixiJS 8 WebGL",
+  "assets": {
+    "sourceScene": "assets/incoming/seedream-charcoal-single-row-20261019/scene/image.png",
+    "sourceSceneDimensions": [1920, 1080],
+    "decomposedImages": 4,
+    "restoredCanvasDimensions": [1920, 1080],
+    "worldDimensions": [4056, 1080],
+    "coordinateRule": "bounding_box.absolute and ascending z_index",
+    "watermarkRequest": false,
+    "visibleSwordSource": "existing procedural sword art; not final generated weapon assets",
+    "backgroundExtension": "alternating mirrored clean right-hand wall strip; no new image-generation request"
+  },
+  "camera": {
+    "motion": "entire-world",
+    "minimum": 0,
+    "maximum": 2136,
+    "screenFixed": "DOM HUD",
+    "worldChildren": ["background", "forge", "workbench", "single-row-hooks-and-swords"],
+    "localHookScrolling": false
+  },
+  "exercisedChecks": {
+    "productionBuild": "npm run build passed; dist/art-preview.html emitted",
+    "existingTests": "npm test: 2 files, 10 tests passed",
+    "desktopViewport": [1440, 1040],
+    "mobileLandscapeViewport": [844, 390],
+    "canvasCount": 1,
+    "browserRuntimeErrors": 0,
+    "blankSceneDragCameraX": 361,
+    "blankSceneDragWorldX": -361,
+    "wheelCameraX": 604,
+    "wheelWorldX": -604,
+    "touchCameraX": 361,
+    "touchWorldX": -361,
+    "swordDragCameraXBefore": 720,
+    "swordDragCameraXAfter": 720,
+    "swordRestoredToOriginalHook": true,
+    "cameraStart": 0,
+    "cameraEnd": 2136,
+    "keyboardClampsAtBothEnds": true,
+    "mobileHorizontalPageOverflow": false,
+    "hudRectangleBefore": { "x": 22, "y": 853.25, "width": 1396, "height": 60 },
+    "hudRectangleAfter": { "x": 22, "y": 853.25, "width": 1396, "height": 60 }
+  },
+  "limits": [
+    "This is a separate art preview, not a completed migration of the main game.",
+    "Generated art remains a candidate pending user approval.",
+    "Layer decomposition is generative, not pixel-lossless; observed mean RGB channel difference against original is 6.4724/255.",
+    "The extended right-hand wall repeats existing texture instead of introducing unique generated scenery.",
+    "No new animation or image-generation call is implied by this camera correction."
+  ]
+}

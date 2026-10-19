@@ -1,0 +1,33 @@
+{
+  "name": "swordcraft",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "assets:forge:process": "node scripts/process-forge-static.mjs && node scripts/preview-forge-static.mjs",
+    "assets:forge:slice": "node scripts/process-forge-static.mjs",
+    "assets:generate:seedream": "node scripts/generate-seedream.mjs",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^5.1.1",
+    "pixi.js": "^8.22.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.4"
+  },
+  "devDependencies": {
+    "@napi-rs/canvas": "^1.0.11",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "jsdom": "^27.2.0",
+    "vitest": "^4.0.15"
+  }
+}

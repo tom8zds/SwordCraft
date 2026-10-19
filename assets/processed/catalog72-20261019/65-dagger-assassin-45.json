@@ -1,0 +1,53 @@
+{
+  "index": 65,
+  "id": "dagger:assassin:45",
+  "name": "无声死神",
+  "kind": "dagger",
+  "path": "assassin",
+  "level": 45,
+  "evolutionStage": 15,
+  "family": "dagger",
+  "familyLabel": "匕首",
+  "slug": "65-dagger-assassin-45",
+  "file": "65-dagger-assassin-45.png",
+  "width": 128,
+  "height": 256,
+  "sha256": "ef0e84d1fbe419c63b42220dce18177a3f1964601ba1d80029014dce2dded025",
+  "pixelSha256": "2af0b19bd90fe1618faa4eea9aede43ab9fe8356e64950215d7fe10337f68066",
+  "silhouetteSha256": "3f0af4989580c97f76286b55e3316353ffd4da73e9ca9a62e6432a379e76fc90",
+  "source": "assets/incoming/seedream-catalog72-20261019/65-dagger-assassin-45/image.png",
+  "sourceSha256": "c49315474d5f4c9f322c8c231a1bf6a7e9eb75b0fc23e1aac56f78fc1a8324a9",
+  "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/65-dagger-assassin-45/generation.json",
+  "sourceDimensions": {
+    "width": 1536,
+    "height": 2048
+  },
+  "sourceBounds": {
+    "x": 515,
+    "y": 95,
+    "width": 461,
+    "height": 1850
+  },
+  "contentBounds": {
+    "x": 42,
+    "y": 40,
+    "width": 44,
+    "height": 176
+  },
+  "opaquePixels": 2891,
+  "greenSpill": 0,
+  "alpha": "binary; transparent RGB cleared",
+  "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+  "scalePolicy": "short dagger family fitted proportionally within 112x176, centered in 128x256; source blade-to-grip ratio preserved",
+  "sourceVariance": null,
+  "model": "doubao-seedream-5-0-pro-260628",
+  "watermark": false,
+  "usage": {
+    "input_images": 1,
+    "generated_images": 1,
+    "output_tokens": 12288,
+    "total_tokens": 12288
+  },
+  "correction": null,
+  "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+}

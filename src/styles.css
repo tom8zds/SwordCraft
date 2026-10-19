@@ -1,0 +1,228 @@
+:root {
+  font-family: ui-monospace, 'Noto Sans Mono CJK SC', monospace;
+  color: #e4d6bd;
+  background: #101118;
+  font-synthesis: none;
+  --ink: #e4d6bd;
+  --muted: #a99b87;
+  --gold: #d9b46a;
+}
+* { box-sizing: border-box; }
+html, body, #root { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+button:disabled { cursor: not-allowed; opacity: .45; }
+button:focus-visible, [role='button']:focus-visible, input:focus-visible { outline: 2px solid #e2bf78; outline-offset: 3px; }
+.game-shell { width: 100%; height: 100dvh; display: grid; grid-template-rows: 66px minmax(0, 1fr) 34px; background: #101118; user-select: none; }
+.hud { display: flex; align-items: center; gap: 20px; padding: 7px max(16px, env(safe-area-inset-left)); border-bottom: 1px solid #49414a; background: #1b191f; z-index: 20; }
+.day-plaque { display: grid; align-content: center; min-width: 165px; padding: 5px 12px; text-align: left; color: #e4d6bd; background: #332a27; border: 1px solid #806948; border-radius: 2px; }
+.day-plaque span { font-size: 19px; font-weight: 600; }
+.day-plaque small { margin-top: 2px; color: #ba9c65; font-size: 11px; }
+.life-meter { display: flex; align-items: center; gap: 5px; font-size: 23px; color: #42383d; }
+.life-meter .alive { color: #c95d5a; }
+.hud-coins { color: #dec17d; white-space: nowrap; font-size: 17px; }
+.inventory-counter { display: flex; gap: 5px; }
+.inventory-counter button { color: #b9afb0; background: #252129; border: 1px solid #50454b; padding: 5px 8px; }
+.probability-legend { display: flex; gap: 13px; align-items: center; margin: 0 0 0 auto; padding: 0; list-style: none; font-size: 11px; }
+.probability-legend li { display: grid; grid-template-columns: 7px auto; gap: 1px 4px; align-items: center; color: #b9aa95; }
+.probability-legend i { width: 7px; height: 7px; background: var(--result-color); }
+.probability-legend strong { grid-column: 2; color: #d8cdba; font-size: 12px; }
+.smithy { position: relative; overflow: hidden; background: #11121a; }
+.pixi-host { position: absolute; inset: 0; }
+.pixi-canvas { display: block; width: 100%; height: 100%; image-rendering: pixelated; touch-action: none; outline: none; }
+.scene-loading { position: absolute; inset: 0; z-index: 5; display: grid; place-items: center; color: #b8a98c; background: #14141d; }
+.camera-controls { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 10px; padding: 3px 8px; background: #17151c; border: 1px solid #48404a; }
+.camera-controls button { color: #c7b58e; background: none; border: 0; padding: 0 5px; font-size: 25px; }
+.camera-controls input { width: 180px; height: 16px; accent-color: #9e8255; }
+.scene-focus-controls { position: absolute; left: max(12px, env(safe-area-inset-left)); bottom: 10px; display: flex; gap: 5px; }
+.scene-focus-controls button { width: 34px; height: 33px; color: #c8b895; background: #211c23; border: 1px solid #51444b; font-size: 18px; }
+.workbench-details { position: absolute; padding: 11px 13px; color: #cec1a8; background: #211b1e; border: 2px solid #755c44; box-shadow: 3px 3px #0e0d11; pointer-events: none; font-size: 12px; }
+.workbench-title { display: flex; flex-wrap: wrap; gap: 4px 9px; align-items: baseline; justify-content: space-between; border-bottom: 1px solid #4a3b32; padding-bottom: 7px; }
+.workbench-title strong { flex: 1 1 100%; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 15px; color: inherit; }
+.workbench-title b { color: inherit; white-space: nowrap; }
+.workbench-details dl { margin: 7px 0; display: grid; gap: 4px; }
+.workbench-details dl > div { display: flex; justify-content: space-between; gap: 8px; }
+.workbench-details dt { color: #938574; }
+.workbench-details dd { margin: 0; text-align: right; overflow-wrap: anywhere; }
+.blade-status { margin: 6px 0; display: flex; flex-wrap: wrap; gap: 4px 9px; font-size: 10px; color: #c79b72; }
+.blade-status .ascension-status { padding: 3px 6px; color: #241b0e; background: #f0c75e; border: 1px solid #ffe6a0; font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.workbench-charge { display: grid; grid-template-columns: 1fr; gap: 4px; font-size: 10px; white-space: nowrap; }
+.workbench-charge > div { min-width: 0; display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 2px; }
+.workbench-charge i { height: 7px; background: #3b3030; border: 1px solid #5a4737; }
+.workbench-charge i.charged { background: #d2ad57; }
+.scene-a11y { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.scene-a11y:focus-within { left: 12px; right: 12px; bottom: 50px; width: auto; height: auto; max-height: 120px; overflow: hidden; display: flex; flex-wrap: wrap; gap: 5px; padding: 8px; clip-path: none; background: #211a1f; border: 1px solid #806744; z-index: 40; }
+.scene-a11y-scroll { max-height: 104px; min-width: 0; flex: 1 1 100%; }
+.scene-a11y-content { padding: 6px; }
+.scene-a11y-content > .book-scroll-content { display: flex; flex-wrap: wrap; gap: 5px; }
+.scene-a11y button { color: #d7c9ad; background: #392e29; border: 1px solid #755e46; padding: 5px; }
+.status-ledger { display: flex; gap: 10px; align-items: center; justify-content: space-between; padding: 0 14px; border-top: 1px solid #3f3844; background: #1a181f; font-size: 11px; color: #a99983; }
+.status-ledger > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.status-ledger small { margin-left: 18px; font-size: 10px; color: #6f6b75; }
+.weapon-rarity-badge { display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; max-width: 100%; padding: 2px 5px; background: #262229; border: 1px solid currentColor; overflow-wrap: anywhere; }
+.weapon-entry-copy .weapon-rarity small { color: inherit; }
+.scene-a11y button.weapon-rarity { max-width: 100%; overflow-wrap: anywhere; }
+.toast { position: fixed; z-index: 1500; left: 50%; top: 78px; max-width: min(560px, 88vw); padding: 8px 14px; color: #e0d1b6; background: #262029; border: 1px solid #75614d; transform: translateX(-50%); pointer-events: none; font-size: 13px; }
+.toast.good { border-color: #697e55; }
+.toast.bad { border-color: #a65e57; }
+
+.overlay { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 4vh 4vw; background: rgba(10, 8, 6, .79); }
+.icon-button { color: #3a2a1b; background: transparent; border: 0; cursor: pointer; }
+.corner-close { position: absolute; z-index: 3; right: 12px; top: 8px; width: 34px; height: 34px; font-size: 25px; }
+.book-panel { position: relative; width: min(1000px, 92vw); height: min(650px, 88vh); color: #3c2d1c; background: #cbb586; border: 12px solid #563921; box-shadow: 12px 14px 0 rgba(0,0,0,.45), inset 0 0 0 4px #92734c; }
+.book-panel::after { content: ''; position: absolute; top: 60px; bottom: 13px; left: 50%; width: 4px; background: #856b45; box-shadow: 3px 0 #d8c797; pointer-events: none; }
+.book-tabs { height: 58px; display: flex; align-items: end; gap: 3px; padding: 0 34px; border-bottom: 3px solid #775837; }
+.book-tabs button { padding: 8px 13px; color: #5b4328; background: #ae9363; border: 2px solid #775837; border-bottom: 0; cursor: pointer; }
+.book-tabs button.active { color: #2f2115; background: #d6c292; }
+.book-spread { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); height: calc(100% - 58px); }
+.book-scroll { position: relative; min-width: 0; min-height: 0; display: flex; }
+.book-scroll-viewport { min-width: 0; min-height: 0; flex: 1; overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; touch-action: pan-y; scrollbar-width: none; }
+.book-scroll-viewport::-webkit-scrollbar { display: none; }
+.book-scroll-content { min-width: 0; display: flow-root; }
+.book-scroll-rail { position: relative; flex: 0 0 12px; width: 12px; margin: 2px 0 2px 8px; background: #9e8255; border: 1px solid #775837; cursor: pointer; touch-action: none; }
+.book-scroll-rail.is-static { visibility: hidden; pointer-events: none; }
+.book-scroll-thumb { position: absolute; top: var(--book-thumb-top); left: 1px; right: 1px; height: var(--book-thumb-height); background: #6d4b2c; border: 1px solid #d2b779; box-shadow: inset 0 0 0 1px #8f6b3e; cursor: grab; touch-action: none; }
+.book-scroll-thumb:active { cursor: grabbing; }
+.book-scroll-rail:focus-visible { outline: 2px solid #694926; outline-offset: 2px; }
+.book-page { padding: 27px 28px 27px 38px; background-image: repeating-linear-gradient(0deg, transparent 0 27px, rgba(98, 76, 42, .08) 28px); }
+.book-page:focus-visible, .book-scroll-viewport:focus-visible { outline: 2px solid #694926; outline-offset: -5px; }
+.book-page h2 { margin: 0 0 18px; font-size: 24px; font-weight: 700; border-bottom: 2px solid #7d633e; }
+.book-page p, .manual-page li { line-height: 1.8; }
+.ink-muted { color: #776548; font-style: italic; }
+.record-list, .ledger-list { list-style: none; margin: 0; padding: 0; }
+.record-list li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 3px 6px; padding: 7px 0; border-bottom: 1px dashed #907650; }
+.record-list small { grid-column: 1 / -1; color: #786241; }
+.result-destroyed, .result-damaged { color: #8f392e; }.result-success, .result-great { color: #4f6f31; }
+.ledger-list li { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 8px; padding: 5px 0; }
+.ledger-list li > strong { max-width: 100%; overflow-wrap: anywhere; }
+.weapon-codex-page { font-size: 12px; overflow-x: hidden; }
+.weapon-codex-page h2 { margin-bottom: 10px; }
+.weapon-codex-page .codex-summary { margin: 0 0 5px; }
+.codex-summary strong { white-space: nowrap; }
+.weapon-codex-page .codex-note { margin: 0 0 17px; color: #655034; font-size: 12px; line-height: 1.65; }
+.weapon-family { margin-bottom: 22px; }
+.weapon-family h3 { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 8px; margin: 0 0 7px; padding-bottom: 5px; border-bottom: 2px solid #9e8255; font-size: 14px; }
+.weapon-family h3 small { font-size: 11px; font-weight: normal; white-space: nowrap; }
+.weapon-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; margin: 0; padding: 0; list-style: none; }
+.weapon-entry { display: grid; grid-template-columns: minmax(0, 1fr); gap: 4px; min-width: 0; padding: 8px 0 10px; border-bottom: 1px dashed #a58a5e; }
+.weapon-thumbnail { position: relative; display: flex; align-items: center; justify-content: center; width: 100%; height: 128px; overflow: hidden; }
+.weapon-thumbnail-ready { opacity: 1; }
+.weapon-thumbnail-image { position: absolute; left: 50%; top: 50%; background-image: var(--weapon-atlas-image); background-size: var(--weapon-atlas-size); background-repeat: no-repeat; image-rendering: pixelated; transform: translate(-50%, -50%) rotate(90deg); }
+.is-locked .weapon-thumbnail-ready { opacity: .2; }
+.weapon-thumbnail-loading { display: grid; place-items: center; color: #796344; font-size: 10px; text-align: center; }
+.weapon-entry-copy { min-width: 0; display: flex; align-items: baseline; flex-wrap: wrap; gap: 5px 12px; line-height: 1.45; }
+.weapon-entry-copy strong { font-size: 13px; overflow-wrap: anywhere; }
+.weapon-entry-copy small { color: #665034; font-size: 11px; }
+.weapon-unlock-status { font-size: 11px; color: #665034; }
+.is-unlocked .weapon-unlock-status { color: #3e5829; font-weight: bold; }
+.book-relic { display: grid; grid-template-columns: 45px 1fr; gap: 8px; padding: 8px 0; border-bottom: 1px dashed #92764b; }
+.book-relic > span { font-size: 30px; }.book-relic p { margin: 3px 0; font-size: 12px; }
+
+.shop-panel, .calendar-panel { position: relative; color: var(--ink); background: #2d241d; border: 6px solid #76563a; box-shadow: 10px 12px 0 rgba(0,0,0,.45); }
+.shop-panel { width: min(1000px, 92vw); max-height: 88vh; overflow: hidden; padding: 24px; display: flex; flex-direction: column; }
+.shop-scroll { min-height: 0; max-height: calc(88vh - 60px); }
+.shop-content { padding: 4px 8px 10px 4px; }
+.shop-panel .book-scroll-rail { background: #4a3826; border-color: #775837; }
+.shop-panel .book-scroll-rail:focus-visible { outline-color: #e2bf78; }
+.shop-panel .book-scroll-viewport:focus-visible { outline-color: #e2bf78; }
+.shop-panel .corner-close, .calendar-panel .corner-close { color: var(--ink); }
+.shop-panel header { display: flex; align-items: center; gap: 18px; margin-bottom: 22px; padding-bottom: 15px; border-bottom: 2px solid #6c5137; }
+.shop-panel h2 { margin: 0; font-size: 25px; font-weight: 700; }.shop-panel header p { margin: 3px 0; color: var(--muted); }
+.shop-panel header strong { margin-left: auto; color: var(--gold); }
+.merchant-face, .relic-orb { display: grid; place-items: center; width: 62px; height: 62px; font-size: 38px; background: #59432e; border: 4px solid #17110d; }
+.wares-grid, .relic-offers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.wares-grid article, .relic-offers article { position: relative; min-height: 190px; padding: 16px; background: #211a15; border: 2px solid #59432f; }
+.wares-grid article.sold-out { opacity: .45; }
+.wares-grid article[draggable='true'] { cursor: grab; }
+.wares-grid article.on-checkout { border-color: #d2ad5c; opacity: .55; }
+.ware-price { color: #d9bd77; font-size: 12px; }
+.merchant-checkout { display: flex; justify-content: center; align-items: center; gap: 16px; width: 180px; margin: 18px auto 0; padding: 10px; background: #1b1612; border: 3px solid #80603d; }
+.merchant-checkout.awaiting-drop { border-color: #e4c364; background: #332718; }
+.merchant-checkout .checkout-item { display: grid; place-items: center; width: 54px; height: 45px; color: #d9bd77; font-size: 30px; background: transparent; border: 0; border-bottom: 3px solid #77573a; cursor: pointer; }
+.merchant-checkout > button:last-child { width: 48px; height: 44px; color: #e5ba55; font-size: 25px; background: #65482f; border: 2px solid #95704b; cursor: pointer; }
+.merchant-checkout button:disabled { color: #645b50; border-color: #4c4034; cursor: not-allowed; }
+.ware-glyph, .relic-glyph { display: block; color: #d9bd77; font-size: 39px; }
+.wares-grid h3, .relic-offers h3 { margin: 4px 0; }.wares-grid p, .relic-offers p { min-height: 42px; color: #b5a386; font-size: 12px; }
+.refresh-wheel { min-height: 36px; color: #ead9b6; background: #65482f; border: 2px solid #95704b; cursor: pointer; }
+.refresh-wheel:disabled { color: #6f6556; background: #302820; border-color: #4c4034; cursor: not-allowed; }
+.relic-layout { display: grid; grid-template-columns: 1fr 220px; gap: 18px; }
+.relic-offers { grid-template-columns: repeat(3, 1fr); }
+.relic-offers article { cursor: pointer; }
+.relic-offers article.chosen { border-color: #c9a761; box-shadow: inset 0 0 0 2px #60492d; }
+.sword-cost { color: #d8b75d; font-size: 22px; letter-spacing: 4px; }
+.sacrifice-tray { padding: 15px; background: #1b1612; border: 2px solid #58422f; }
+.sacrifice-slots { min-height: 78px; display: flex; align-items: center; justify-content: center; gap: 5px; padding: 8px; border: 2px dashed #614c38; }
+.sacrifice-slots.awaiting-drop { border-color: #d7b65f; background: #302518; }
+.sacrifice-slots button, .relic-bell { color: #e1c46d; background: #4a3826; border: 2px solid #896944; cursor: pointer; }
+.sacrifice-slots button { display: grid; width: 42px; height: 50px; place-items: center; }
+.empty-slot { color: #4b3d31; font-size: 34px; }
+.relic-bell { width: 100%; height: 38px; margin-bottom: 10px; font-size: 22px; }
+.relic-bell:disabled { color: #5d554a; border-color: #43392f; cursor: not-allowed; }
+.sacrifice-scroll { max-height: 180px; }
+.sacrifice-list > .book-scroll-content { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 5px; padding: 4px; }
+.shop-panel .sacrifice-list.rarity-sword-list > .book-scroll-content { grid-template-columns: minmax(0, 1fr); }
+.shop-panel .sacrifice-sword small { min-width: 0; overflow-wrap: anywhere; font-size: 11px; line-height: 1.45; }
+.shop-panel .sacrifice-list > .book-scroll-content > .sacrifice-sword { display: flex; align-items: center; justify-content: flex-start; gap: 8px; text-align: left; }
+.shop-panel .sacrifice-slots > .sacrifice-sword { display: flex; align-items: center; gap: 8px; width: 100%; min-width: 0; height: auto; min-height: 44px; padding: 5px; text-align: left; }
+.refresh-wheel { width: 100%; margin-top: 16px; font-size: 20px; }.refresh-wheel span { font-size: 12px; }
+
+.calendar-panel { width: min(780px, 88vw); padding: 30px; }
+.calendar-panel h2 { font-size: 26px; font-weight: 700; }
+.calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 7px; }
+.calendar-grid article { position: relative; min-height: 90px; display: grid; place-items: center; padding: 9px; background: #1b1713; border: 2px solid #4f4133; }
+.calendar-grid article strong { font-size: 23px; }.calendar-grid article span { color: #bba682; font-size: 10px; }.calendar-grid article i { position: absolute; right: 5px; top: 3px; color: #d7a74d; font-style: normal; }
+.calendar-grid .met { border-color: #628251; }.calendar-grid .met::after { content: '✓'; color: #83aa6d; }.calendar-grid .missed { border-color: #84463a; }.calendar-grid .missed::after { content: '×'; color: #bd5e50; }.calendar-grid .current { border-color: #d1a451; box-shadow: inset 0 0 0 2px #6b4e27; }
+
+.game-over-overlay { z-index: 200; }
+.game-over-panel { min-width: 450px; padding: 42px; text-align: center; color: #b7aa98; background: #181614; border: 6px solid #48413a; }
+.cold-forge { font-size: 60px; color: #4f4943; }.game-over-panel h1 { font-size: 33px; font-weight: 700; }.game-over-panel button { padding: 10px 24px; color: #e6d8be; background: #674833; border: 3px solid #947052; cursor: pointer; }
+.portrait-guard { display: none; }
+
+@media (max-width: 1100px) {
+  .hud { gap: 11px; padding-inline: 8px; }
+  .probability-legend { gap: 6px; font-size: 10px; }
+  .day-plaque { min-width: 142px; }
+}
+@media (max-width: 900px) {
+  .book-page { padding-inline: 20px; }
+  .weapon-thumbnail { height: 116px; }
+  .weapon-thumbnail-image { transform: translate(-50%, -50%) rotate(90deg) scale(.9); }
+}
+@media (orientation: landscape) and (max-height: 550px) {
+  .game-shell { grid-template-rows: 45px minmax(0, 1fr) 24px; }
+  .hud { gap: 9px; padding-block: 2px; }
+  .day-plaque { min-width: 126px; padding-block: 2px; }
+  .day-plaque span { font-size: 14px; }
+  .day-plaque small { font-size: 9px; }
+  .life-meter { font-size: 17px; gap: 2px; }
+  .hud-coins { font-size: 13px; }
+  .inventory-counter button { font-size: 11px; padding: 3px 4px; }
+  .probability-legend { gap: 5px; font-size: 8px; }
+  .probability-legend strong { font-size: 9px; }
+  .status-ledger { font-size: 9px; }
+  .status-ledger small { display: none; }
+  .workbench-details { padding: 6px; font-size: 9px; }
+  .workbench-title strong { font-size: 11px; }
+  .blade-status { font-size: 8px; gap: 2px 4px; }
+  .camera-controls { bottom: 4px; gap: 5px; padding: 0 4px; }
+  .camera-controls input { width: 120px; }
+  .camera-controls button { font-size: 20px; }
+  .scene-focus-controls { bottom: 4px; }
+  .scene-focus-controls button { width: 29px; height: 27px; font-size: 14px; }
+  .toast { top: 52px; font-size: 11px; }
+  .book-panel { height: 95vh; border-width: 6px; }
+  .book-page { padding: 15px 20px; font-size: 11px; }
+  .book-page h2 { font-size: 18px; }
+  .book-tabs { height: 45px; }
+  .book-tabs button { font-size: 12px; padding: 5px 10px; }
+  .book-spread { height: calc(100% - 45px); }
+}
+@media (orientation: portrait) {
+  .portrait-guard { position: fixed; inset: 0; z-index: 5000; display: grid; place-content: center; justify-items: center; padding: 30px; color: var(--ink); text-align: center; background: #17131a; }
+  .portrait-guard span { font-size: 68px; }
+  .portrait-guard strong { font-size: 25px; }
+  .portrait-guard p { color: #9b8e82; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; }
+}

@@ -1,0 +1,634 @@
+{
+  "group": "special-1",
+  "count": 12,
+  "contactSheets": [
+    "assets/processed/catalog72-20261019/special-1-contact-1.png"
+  ],
+  "assets": [
+    {
+      "index": 36,
+      "id": "branch:world-tree:0",
+      "name": "树枝",
+      "kind": "branch",
+      "path": "world-tree",
+      "level": 0,
+      "evolutionStage": 0,
+      "family": "branch",
+      "familyLabel": "树枝",
+      "slug": "36-branch-world-tree-0",
+      "design": "真实粗糙铁褐木树枝，不是剑：单根弯曲主枝带三处断面年轮、两根短侧芽和纵向树皮裂纹；下端是自然削断木茬握持端，枝冠稀疏，青蓝小叶，木纹清楚。",
+      "prompt": "为同一款中世纪铁匠铺游戏绘制一件全新独立武器生产素材，参考图只锁定像素画材质与照明，不照抄其形状。高细节硬边像素簇、阶梯轮廓、可信铁钢锻打纹、清楚刃口高光和暗部层次，旧棕皮革与真实部件连接。固定正面正交投影，无透视倾斜，武器主轴竖直，尖端或头部朝上、握持末端朝下，左上方中性主光。轮廓、刃形、护手、柄首和实物结构必须清楚，能在小图辨认，不能只换颜色，不能绘制一个大色块。高阶可有克制的异质金属、宝石、雕刻、实物环和复合部件，但不要泛光云雾遮盖结构。只能画描述的这一件完整武器或组装武器套装，整件居中，剑尖、柄尾与两侧结构距离四边至少12%，不能裁切。背景必须完全均匀的纯绿色#00FF00用于抠图，没有地面、阴影、场景、人物、手臂、展架、文字、数字、标签、边框、UI或水印。武器任何部分不得使用绿色或绿色反光；植物使用青蓝叶、金叶、赤叶或枯棕木，生命光纹用青金色。禁止圆滑矢量插画、塑料3D渲染或摄影，不得输出多格图集或多件候选。\n作品名称：树枝。独立造型要求：真实粗糙铁褐木树枝，不是剑：单根弯曲主枝带三处断面年轮、两根短侧芽和纵向树皮裂纹；下端是自然削断木茬握持端，枝冠稀疏，青蓝小叶，木纹清楚。",
+      "file": "36-branch-world-tree-0.png",
+      "width": 128,
+      "height": 256,
+      "sha256": "3733d0eb6337da18be7c82b4cc0f8a8eb1be0657ef19dbd22410abac40ed8c05",
+      "pixelSha256": "5a8a5ed150a219c93268a2a904d8c43aee22cdc53a43e63119ee0b79a4f76141",
+      "silhouetteSha256": "efe8e0e6517397ed31c461e4614ad5028f3c4c07979502310c56b712cea190a4",
+      "source": "assets/incoming/seedream-catalog72-20261019/36-branch-world-tree-0/image.png",
+      "sourceSha256": "c8218f667f0bc593afc35673fe3c420fcbc38b3503731f827c0df6fb4cd6e9ba",
+      "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/36-branch-world-tree-0/generation.json",
+      "sourceDimensions": {
+        "width": 1536,
+        "height": 2048
+      },
+      "sourceBounds": {
+        "x": 597,
+        "y": 83,
+        "width": 420,
+        "height": 1880
+      },
+      "contentBounds": {
+        "x": 37,
+        "y": 8,
+        "width": 54,
+        "height": 240
+      },
+      "opaquePixels": 3588,
+      "greenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false,
+      "usage": {
+        "input_images": 1,
+        "generated_images": 1,
+        "output_tokens": 12288,
+        "total_tokens": 12288
+      },
+      "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+    },
+    {
+      "index": 37,
+      "id": "branch:world-tree:9",
+      "name": "萌芽枝杖",
+      "kind": "branch",
+      "path": "world-tree",
+      "level": 9,
+      "evolutionStage": 3,
+      "family": "branch",
+      "familyLabel": "树枝",
+      "slug": "37-branch-world-tree-9",
+      "design": "萌芽枝杖是天然分叉幼枝：细长主干上有三个鼓起芽苞、左右不对称嫩枝冠和一圈藤皮握环；断面可见浅金年轮，叶片用青蓝与赤褐，不是绿剑或金属剑。",
+      "prompt": "为同一款中世纪铁匠铺游戏绘制一件全新独立武器生产素材，参考图只锁定像素画材质与照明，不照抄其形状。高细节硬边像素簇、阶梯轮廓、可信铁钢锻打纹、清楚刃口高光和暗部层次，旧棕皮革与真实部件连接。固定正面正交投影，无透视倾斜，武器主轴竖直，尖端或头部朝上、握持末端朝下，左上方中性主光。轮廓、刃形、护手、柄首和实物结构必须清楚，能在小图辨认，不能只换颜色，不能绘制一个大色块。高阶可有克制的异质金属、宝石、雕刻、实物环和复合部件，但不要泛光云雾遮盖结构。只能画描述的这一件完整武器或组装武器套装，整件居中，剑尖、柄尾与两侧结构距离四边至少12%，不能裁切。背景必须完全均匀的纯绿色#00FF00用于抠图，没有地面、阴影、场景、人物、手臂、展架、文字、数字、标签、边框、UI或水印。武器任何部分不得使用绿色或绿色反光；植物使用青蓝叶、金叶、赤叶或枯棕木，生命光纹用青金色。禁止圆滑矢量插画、塑料3D渲染或摄影，不得输出多格图集或多件候选。\n作品名称：萌芽枝杖。独立造型要求：萌芽枝杖是天然分叉幼枝：细长主干上有三个鼓起芽苞、左右不对称嫩枝冠和一圈藤皮握环；断面可见浅金年轮，叶片用青蓝与赤褐，不是绿剑或金属剑。",
+      "file": "37-branch-world-tree-9.png",
+      "width": 128,
+      "height": 256,
+      "sha256": "92f91f85e3fb430b049c62812ff5f99a4f826d24a10a1d2988bba618e8bf37a8",
+      "pixelSha256": "024d4eadefad4d5703189fc11d491eae47551ded691249621a1de6f3a6e3de13",
+      "silhouetteSha256": "5d97fac2ccff56750fb7d53c229e5c2822c603319ac97239054bffc15a985a68",
+      "source": "assets/incoming/seedream-catalog72-20261019/37-branch-world-tree-9/image.png",
+      "sourceSha256": "e4ba1d41ef521c2522c4ae1fe7f68feacecd14ce372b248fcb929e50712356b8",
+      "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/37-branch-world-tree-9/generation.json",
+      "sourceDimensions": {
+        "width": 1536,
+        "height": 2048
+      },
+      "sourceBounds": {
+        "x": 661,
+        "y": 109,
+        "width": 226,
+        "height": 1847
+      },
+      "contentBounds": {
+        "x": 49,
+        "y": 8,
+        "width": 29,
+        "height": 240
+      },
+      "opaquePixels": 2510,
+      "greenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false,
+      "usage": {
+        "input_images": 1,
+        "generated_images": 1,
+        "output_tokens": 12288,
+        "total_tokens": 12288
+      },
+      "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+    },
+    {
+      "index": 38,
+      "id": "branch:world-tree:18",
+      "name": "古木剑",
+      "kind": "branch",
+      "path": "world-tree",
+      "level": 18,
+      "evolutionStage": 6,
+      "family": "branch",
+      "familyLabel": "树枝",
+      "slug": "38-branch-world-tree-18",
+      "design": "古木剑仍是木制古枝实体：宽厚弯曲树干形成钝木刃轮廓，表面有深色千年年轮、树瘤和纵裂；顶部保留两根枯枝冠，下端为根瘤握柄与木环，禁止金属剑刃。",
+      "prompt": "为同一款中世纪铁匠铺游戏绘制一件全新独立武器生产素材，参考图只锁定像素画材质与照明，不照抄其形状。高细节硬边像素簇、阶梯轮廓、可信铁钢锻打纹、清楚刃口高光和暗部层次，旧棕皮革与真实部件连接。固定正面正交投影，无透视倾斜，武器主轴竖直，尖端或头部朝上、握持末端朝下，左上方中性主光。轮廓、刃形、护手、柄首和实物结构必须清楚，能在小图辨认，不能只换颜色，不能绘制一个大色块。高阶可有克制的异质金属、宝石、雕刻、实物环和复合部件，但不要泛光云雾遮盖结构。只能画描述的这一件完整武器或组装武器套装，整件居中，剑尖、柄尾与两侧结构距离四边至少12%，不能裁切。背景必须完全均匀的纯绿色#00FF00用于抠图，没有地面、阴影、场景、人物、手臂、展架、文字、数字、标签、边框、UI或水印。武器任何部分不得使用绿色或绿色反光；植物使用青蓝叶、金叶、赤叶或枯棕木，生命光纹用青金色。禁止圆滑矢量插画、塑料3D渲染或摄影，不得输出多格图集或多件候选。\n作品名称：古木剑。独立造型要求：古木剑仍是木制古枝实体：宽厚弯曲树干形成钝木刃轮廓，表面有深色千年年轮、树瘤和纵裂；顶部保留两根枯枝冠，下端为根瘤握柄与木环，禁止金属剑刃。",
+      "file": "38-branch-world-tree-18.png",
+      "width": 128,
+      "height": 256,
+      "sha256": "50111f17fc2ae54dc578be05a267311384a33c600bea46496c4fffa8333b6c21",
+      "pixelSha256": "db54811eb52d7da803a486e9c093b22e5d9b9b9ab3bb7983280836ddf6858588",
+      "silhouetteSha256": "4aec9444ed9512f9d8f79e5fcafcc4dd483abc69907c4d5c05283b43a6961a49",
+      "source": "assets/incoming/seedream-catalog72-20261019/38-branch-world-tree-18/image.png",
+      "sourceSha256": "f665b09b40df83aa33bdfe25b20010c25e39d4102514271396ce5392b56d2877",
+      "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/38-branch-world-tree-18/generation.json",
+      "sourceDimensions": {
+        "width": 1536,
+        "height": 2048
+      },
+      "sourceBounds": {
+        "x": 555,
+        "y": 113,
+        "width": 421,
+        "height": 1826
+      },
+      "contentBounds": {
+        "x": 36,
+        "y": 8,
+        "width": 55,
+        "height": 240
+      },
+      "opaquePixels": 7421,
+      "greenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false,
+      "usage": {
+        "input_images": 1,
+        "generated_images": 1,
+        "output_tokens": 12288,
+        "total_tokens": 12288
+      },
+      "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+    },
+    {
+      "index": 39,
+      "id": "branch:world-tree:27",
+      "name": "生命之枝",
+      "kind": "branch",
+      "path": "world-tree",
+      "level": 27,
+      "evolutionStage": 9,
+      "family": "branch",
+      "familyLabel": "树枝",
+      "slug": "39-branch-world-tree-27",
+      "design": "生命之枝是活木长枝：三股不对称枝杈从粗主干伸出，木纹内有青金色生命脉络但不遮盖纹理；枝端各有细小赤褐叶簇，根须缠成下端护握环，断面年轮可见。",
+      "prompt": "为同一款中世纪铁匠铺游戏绘制一件全新独立武器生产素材，参考图只锁定像素画材质与照明，不照抄其形状。高细节硬边像素簇、阶梯轮廓、可信铁钢锻打纹、清楚刃口高光和暗部层次，旧棕皮革与真实部件连接。固定正面正交投影，无透视倾斜，武器主轴竖直，尖端或头部朝上、握持末端朝下，左上方中性主光。轮廓、刃形、护手、柄首和实物结构必须清楚，能在小图辨认，不能只换颜色，不能绘制一个大色块。高阶可有克制的异质金属、宝石、雕刻、实物环和复合部件，但不要泛光云雾遮盖结构。只能画描述的这一件完整武器或组装武器套装，整件居中，剑尖、柄尾与两侧结构距离四边至少12%，不能裁切。背景必须完全均匀的纯绿色#00FF00用于抠图，没有地面、阴影、场景、人物、手臂、展架、文字、数字、标签、边框、UI或水印。武器任何部分不得使用绿色或绿色反光；植物使用青蓝叶、金叶、赤叶或枯棕木，生命光纹用青金色。禁止圆滑矢量插画、塑料3D渲染或摄影，不得输出多格图集或多件候选。\n作品名称：生命之枝。独立造型要求：生命之枝是活木长枝：三股不对称枝杈从粗主干伸出，木纹内有青金色生命脉络但不遮盖纹理；枝端各有细小赤褐叶簇，根须缠成下端护握环，断面年轮可见。",
+      "file": "39-branch-world-tree-27.png",
+      "width": 128,
+      "height": 256,
+      "sha256": "494bb3c62f4679d4a306ac4587095be95f912b0d1747d9788f31025ba38708b0",
+      "pixelSha256": "e44fcfa5329065da3eba8642e6363e26f5714e9572ec95424a9be9428b63ca6f",
+      "silhouetteSha256": "cd2f5b86b28caa77a5ce03f2c21013dc24a8ec470c799dffee629b0f0cd50da2",
+      "source": "assets/incoming/seedream-catalog72-20261019/39-branch-world-tree-27/image.png",
+      "sourceSha256": "832d21d6581fcab01d01a1616338a2e0ac56c8b884941a09b093a39bc9bd321c",
+      "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/39-branch-world-tree-27/generation.json",
+      "sourceDimensions": {
+        "width": 1536,
+        "height": 2048
+      },
+      "sourceBounds": {
+        "x": 532,
+        "y": 111,
+        "width": 476,
+        "height": 1845
+      },
+      "contentBounds": {
+        "x": 33,
+        "y": 8,
+        "width": 62,
+        "height": 240
+      },
+      "opaquePixels": 4487,
+      "greenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false,
+      "usage": {
+        "input_images": 1,
+        "generated_images": 1,
+        "output_tokens": 12288,
+        "total_tokens": 12288
+      },
+      "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+    },
+    {
+      "index": 40,
+      "id": "branch:world-tree:36",
+      "name": "生命之树",
+      "kind": "branch",
+      "path": "world-tree",
+      "level": 36,
+      "evolutionStage": 12,
+      "family": "branch",
+      "familyLabel": "树枝",
+      "slug": "40-branch-world-tree-36",
+      "design": "生命之树是一件小型实体树杖：粗树干中段分出左右高低不同的枝冠，冠部由青蓝和金色叶片组成；底部三条根脚盘成天然握座，树皮层、孔洞、同心年轮和树瘤各自清晰。",
+      "prompt": "为同一款中世纪铁匠铺游戏绘制一件全新独立武器生产素材，参考图只锁定像素画材质与照明，不照抄其形状。高细节硬边像素簇、阶梯轮廓、可信铁钢锻打纹、清楚刃口高光和暗部层次，旧棕皮革与真实部件连接。固定正面正交投影，无透视倾斜，武器主轴竖直，尖端或头部朝上、握持末端朝下，左上方中性主光。轮廓、刃形、护手、柄首和实物结构必须清楚，能在小图辨认，不能只换颜色，不能绘制一个大色块。高阶可有克制的异质金属、宝石、雕刻、实物环和复合部件，但不要泛光云雾遮盖结构。只能画描述的这一件完整武器或组装武器套装，整件居中，剑尖、柄尾与两侧结构距离四边至少12%，不能裁切。背景必须完全均匀的纯绿色#00FF00用于抠图，没有地面、阴影、场景、人物、手臂、展架、文字、数字、标签、边框、UI或水印。武器任何部分不得使用绿色或绿色反光；植物使用青蓝叶、金叶、赤叶或枯棕木，生命光纹用青金色。禁止圆滑矢量插画、塑料3D渲染或摄影，不得输出多格图集或多件候选。\n作品名称：生命之树。独立造型要求：生命之树是一件小型实体树杖：粗树干中段分出左右高低不同的枝冠，冠部由青蓝和金色叶片组成；底部三条根脚盘成天然握座，树皮层、孔洞、同心年轮和树瘤各自清晰。",
+      "file": "40-branch-world-tree-36.png",
+      "width": 128,
+      "height": 256,
+      "sha256": "1a474fb2f03e2ae1664cdbbb3b46d13cc95d53a52fc890507503cd1f6afe0bfc",
+      "pixelSha256": "95e3543edfc4be1025d018fa7c7c52a6cbb3df6b7fc0a441dbb91c5da9c46d3d",
+      "silhouetteSha256": "28771b5cf931c8a0eaaa1072df8d180369635aad5643f4b3bdbfd93c8714d835",
+      "source": "assets/incoming/seedream-catalog72-20261019/40-branch-world-tree-36/image.png",
+      "sourceSha256": "60402b50f5fea1afc90a0e2ccb9e8bb11218e34498f654eb66a6ebb1cd4ed7ba",
+      "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/40-branch-world-tree-36/generation.json",
+      "sourceDimensions": {
+        "width": 1536,
+        "height": 2048
+      },
+      "sourceBounds": {
+        "x": 401,
+        "y": 101,
+        "width": 734,
+        "height": 1871
+      },
+      "contentBounds": {
+        "x": 17,
+        "y": 8,
+        "width": 94,
+        "height": 240
+      },
+      "opaquePixels": 8513,
+      "greenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false,
+      "usage": {
+        "input_images": 1,
+        "generated_images": 1,
+        "output_tokens": 12288,
+        "total_tokens": 12288
+      },
+      "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+    },
+    {
+      "index": 41,
+      "id": "branch:world-tree:45",
+      "name": "世界根须",
+      "kind": "branch",
+      "path": "world-tree",
+      "level": 45,
+      "evolutionStage": 15,
+      "family": "branch",
+      "familyLabel": "树枝",
+      "slug": "41-branch-world-tree-45",
+      "design": "世界根须突出根系而非剑：中央老树根柱向上分成偏斜双枝，向下展开五条有粗细差异的根须并形成环状握柄；深褐根纹、截面年轮、青金树液线和少量枯赤叶清晰。",
+      "prompt": "为同一款中世纪铁匠铺游戏绘制一件全新独立武器生产素材，参考图只锁定像素画材质与照明，不照抄其形状。高细节硬边像素簇、阶梯轮廓、可信铁钢锻打纹、清楚刃口高光和暗部层次，旧棕皮革与真实部件连接。固定正面正交投影，无透视倾斜，武器主轴竖直，尖端或头部朝上、握持末端朝下，左上方中性主光。轮廓、刃形、护手、柄首和实物结构必须清楚，能在小图辨认，不能只换颜色，不能绘制一个大色块。高阶可有克制的异质金属、宝石、雕刻、实物环和复合部件，但不要泛光云雾遮盖结构。只能画描述的这一件完整武器或组装武器套装，整件居中，剑尖、柄尾与两侧结构距离四边至少12%，不能裁切。背景必须完全均匀的纯绿色#00FF00用于抠图，没有地面、阴影、场景、人物、手臂、展架、文字、数字、标签、边框、UI或水印。武器任何部分不得使用绿色或绿色反光；植物使用青蓝叶、金叶、赤叶或枯棕木，生命光纹用青金色。禁止圆滑矢量插画、塑料3D渲染或摄影，不得输出多格图集或多件候选。\n作品名称：世界根须。独立造型要求：世界根须突出根系而非剑：中央老树根柱向上分成偏斜双枝，向下展开五条有粗细差异的根须并形成环状握柄；深褐根纹、截面年轮、青金树液线和少量枯赤叶清晰。",
+      "file": "41-branch-world-tree-45.png",
+      "width": 128,
+      "height": 256,
+      "sha256": "5a92df5d142d046f6f8a83c7908993755e2e3681f5683c5d4409717720938e65",
+      "pixelSha256": "93b1430d6ef355f9c0a06f3967b74905e1342777e9cc7ea4157f437f4b2bd715",
+      "silhouetteSha256": "7737e4ca4b8d1dc6faa2444af791414e0570fecac5efdf39c43a13020f3da574",
+      "source": "assets/incoming/seedream-catalog72-20261019/41-branch-world-tree-45/image.png",
+      "sourceSha256": "72e9c694f70051ff84102dbd984b268c7f0be6d25accaff4d48b5bb17225aa84",
+      "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/41-branch-world-tree-45/generation.json",
+      "sourceDimensions": {
+        "width": 1536,
+        "height": 2048
+      },
+      "sourceBounds": {
+        "x": 262,
+        "y": 137,
+        "width": 978,
+        "height": 1775
+      },
+      "contentBounds": {
+        "x": 8,
+        "y": 26,
+        "width": 112,
+        "height": 203
+      },
+      "opaquePixels": 9012,
+      "greenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false,
+      "usage": {
+        "input_images": 1,
+        "generated_images": 1,
+        "output_tokens": 12288,
+        "total_tokens": 12288
+      },
+      "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+    },
+    {
+      "index": 42,
+      "id": "branch:world-tree:54",
+      "name": "森罗神木",
+      "kind": "branch",
+      "path": "world-tree",
+      "level": 54,
+      "evolutionStage": 18,
+      "family": "branch",
+      "familyLabel": "树枝",
+      "slug": "42-branch-world-tree-54",
+      "design": "森罗神木是多层森林实体木柱：扭转主干上有四种粗细不同的侧枝，枝冠呈阶梯层次并嵌着青蓝、金、赤褐非绿叶簇；底端根板与木环互锁，树皮鳞片和深年轮不可被光遮。",
+      "prompt": "为同一款中世纪铁匠铺游戏绘制一件全新独立武器生产素材，参考图只锁定像素画材质与照明，不照抄其形状。高细节硬边像素簇、阶梯轮廓、可信铁钢锻打纹、清楚刃口高光和暗部层次，旧棕皮革与真实部件连接。固定正面正交投影，无透视倾斜，武器主轴竖直，尖端或头部朝上、握持末端朝下，左上方中性主光。轮廓、刃形、护手、柄首和实物结构必须清楚，能在小图辨认，不能只换颜色，不能绘制一个大色块。高阶可有克制的异质金属、宝石、雕刻、实物环和复合部件，但不要泛光云雾遮盖结构。只能画描述的这一件完整武器或组装武器套装，整件居中，剑尖、柄尾与两侧结构距离四边至少12%，不能裁切。背景必须完全均匀的纯绿色#00FF00用于抠图，没有地面、阴影、场景、人物、手臂、展架、文字、数字、标签、边框、UI或水印。武器任何部分不得使用绿色或绿色反光；植物使用青蓝叶、金叶、赤叶或枯棕木，生命光纹用青金色。禁止圆滑矢量插画、塑料3D渲染或摄影，不得输出多格图集或多件候选。\n作品名称：森罗神木。独立造型要求：森罗神木是多层森林实体木柱：扭转主干上有四种粗细不同的侧枝，枝冠呈阶梯层次并嵌着青蓝、金、赤褐非绿叶簇；底端根板与木环互锁，树皮鳞片和深年轮不可被光遮。",
+      "file": "42-branch-world-tree-54.png",
+      "width": 128,
+      "height": 256,
+      "sha256": "75f386bedeacef1d7f1fb2ffccf2a1de2ea053ea76894aa7f1685fa24162279d",
+      "pixelSha256": "f39b69effa7ffc45cfd53da82a0101a56683ffa2ae40734634f966a02fd32400",
+      "silhouetteSha256": "cf60d39483a497882afb2ad210395413966e34be43c50d6bacf9212a0444ce1c",
+      "source": "assets/incoming/seedream-catalog72-20261019/42-branch-world-tree-54/image.png",
+      "sourceSha256": "522241e4b2bf2aef928d1238e7f9a890fa31de3c6f61f2967457e17e449d617e",
+      "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/42-branch-world-tree-54/generation.json",
+      "sourceDimensions": {
+        "width": 1536,
+        "height": 2048
+      },
+      "sourceBounds": {
+        "x": 394,
+        "y": 96,
+        "width": 751,
+        "height": 1863
+      },
+      "contentBounds": {
+        "x": 15,
+        "y": 8,
+        "width": 97,
+        "height": 240
+      },
+      "opaquePixels": 7617,
+      "greenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false,
+      "usage": {
+        "input_images": 1,
+        "generated_images": 1,
+        "output_tokens": 12288,
+        "total_tokens": 12288
+      },
+      "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+    },
+    {
+      "index": 43,
+      "id": "branch:world-tree:63",
+      "name": "四季王枝",
+      "kind": "branch",
+      "path": "world-tree",
+      "level": 63,
+      "evolutionStage": 21,
+      "family": "branch",
+      "familyLabel": "树枝",
+      "slug": "43-branch-world-tree-63",
+      "design": "四季王枝必须展示四季组织差异：一根弯曲老枝分四个不对称枝冠区，分别是金色芽、青蓝叶、赤褐枫叶、枯棕空枝；主干有四圈不同纹理年轮和四条根须护握，绝非绿色剑。",
+      "prompt": "为同一款中世纪铁匠铺游戏绘制一件全新独立武器生产素材，参考图只锁定像素画材质与照明，不照抄其形状。高细节硬边像素簇、阶梯轮廓、可信铁钢锻打纹、清楚刃口高光和暗部层次，旧棕皮革与真实部件连接。固定正面正交投影，无透视倾斜，武器主轴竖直，尖端或头部朝上、握持末端朝下，左上方中性主光。轮廓、刃形、护手、柄首和实物结构必须清楚，能在小图辨认，不能只换颜色，不能绘制一个大色块。高阶可有克制的异质金属、宝石、雕刻、实物环和复合部件，但不要泛光云雾遮盖结构。只能画描述的这一件完整武器或组装武器套装，整件居中，剑尖、柄尾与两侧结构距离四边至少12%，不能裁切。背景必须完全均匀的纯绿色#00FF00用于抠图，没有地面、阴影、场景、人物、手臂、展架、文字、数字、标签、边框、UI或水印。武器任何部分不得使用绿色或绿色反光；植物使用青蓝叶、金叶、赤叶或枯棕木，生命光纹用青金色。禁止圆滑矢量插画、塑料3D渲染或摄影，不得输出多格图集或多件候选。\n作品名称：四季王枝。独立造型要求：四季王枝必须展示四季组织差异：一根弯曲老枝分四个不对称枝冠区，分别是金色芽、青蓝叶、赤褐枫叶、枯棕空枝；主干有四圈不同纹理年轮和四条根须护握，绝非绿色剑。",
+      "file": "43-branch-world-tree-63.png",
+      "width": 128,
+      "height": 256,
+      "sha256": "ddd256124829241a7d492438b2e6ab4c61d87d1a578ef6b69b5cb8a3b565a723",
+      "pixelSha256": "3f3c08b99a73c5a67603bc914134153dc5e518d2c180e1e19ece026eec9c4eea",
+      "silhouetteSha256": "4b3a56c01b7e3efff39ceadaeda553388488dd1c3abaf9fc5a3bd290dff0d688",
+      "source": "assets/incoming/seedream-catalog72-20261019/43-branch-world-tree-63/image.png",
+      "sourceSha256": "993daa414ec65cd424c0e79e6e3ad94c25a549ac1c601a7c87579d0668f0f0fe",
+      "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/43-branch-world-tree-63/generation.json",
+      "sourceDimensions": {
+        "width": 1536,
+        "height": 2048
+      },
+      "sourceBounds": {
+        "x": 127,
+        "y": 94,
+        "width": 1307,
+        "height": 1856
+      },
+      "contentBounds": {
+        "x": 8,
+        "y": 48,
+        "width": 112,
+        "height": 159
+      },
+      "opaquePixels": 3654,
+      "greenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false,
+      "usage": {
+        "input_images": 1,
+        "generated_images": 1,
+        "output_tokens": 12288,
+        "total_tokens": 12288
+      },
+      "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+    },
+    {
+      "index": 44,
+      "id": "branch:world-tree:72",
+      "name": "大地脉络",
+      "kind": "branch",
+      "path": "world-tree",
+      "level": 72,
+      "evolutionStage": 24,
+      "family": "branch",
+      "familyLabel": "树枝",
+      "slug": "44-branch-world-tree-72",
+      "design": "大地脉络是沉重地脉木根：粗短主根纵向贯穿，左右伸出岩土状木根和天然环扣，表面裂缝中有克制青金地脉线；顶部是低矮分叉冠，褐色年轮、根毛与树瘤立体分明。",
+      "prompt": "为同一款中世纪铁匠铺游戏绘制一件全新独立武器生产素材，参考图只锁定像素画材质与照明，不照抄其形状。高细节硬边像素簇、阶梯轮廓、可信铁钢锻打纹、清楚刃口高光和暗部层次，旧棕皮革与真实部件连接。固定正面正交投影，无透视倾斜，武器主轴竖直，尖端或头部朝上、握持末端朝下，左上方中性主光。轮廓、刃形、护手、柄首和实物结构必须清楚，能在小图辨认，不能只换颜色，不能绘制一个大色块。高阶可有克制的异质金属、宝石、雕刻、实物环和复合部件，但不要泛光云雾遮盖结构。只能画描述的这一件完整武器或组装武器套装，整件居中，剑尖、柄尾与两侧结构距离四边至少12%，不能裁切。背景必须完全均匀的纯绿色#00FF00用于抠图，没有地面、阴影、场景、人物、手臂、展架、文字、数字、标签、边框、UI或水印。武器任何部分不得使用绿色或绿色反光；植物使用青蓝叶、金叶、赤叶或枯棕木，生命光纹用青金色。禁止圆滑矢量插画、塑料3D渲染或摄影，不得输出多格图集或多件候选。\n作品名称：大地脉络。独立造型要求：大地脉络是沉重地脉木根：粗短主根纵向贯穿，左右伸出岩土状木根和天然环扣，表面裂缝中有克制青金地脉线；顶部是低矮分叉冠，褐色年轮、根毛与树瘤立体分明。",
+      "file": "44-branch-world-tree-72.png",
+      "width": 128,
+      "height": 256,
+      "sha256": "7fafee10d44c82167ced14e90723ed821847d0f38e2dc4821c6d04f3de30bc6b",
+      "pixelSha256": "e8a0f6fa0a630aca54e61f82c275a4fc94b76962aab8fb2331f6386325021991",
+      "silhouetteSha256": "5ff790feba5f1b41144f70bb0f0af2db0aea26600d625d0e62b49049055deb20",
+      "source": "assets/incoming/seedream-catalog72-20261019/44-branch-world-tree-72/image.png",
+      "sourceSha256": "c7a0e72db4cdad3bbeaf6de896614fc3b1e00c58926afe0178f32a38ba7da1ae",
+      "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/44-branch-world-tree-72/generation.json",
+      "sourceDimensions": {
+        "width": 1536,
+        "height": 2048
+      },
+      "sourceBounds": {
+        "x": 473,
+        "y": 83,
+        "width": 601,
+        "height": 1877
+      },
+      "contentBounds": {
+        "x": 25,
+        "y": 8,
+        "width": 77,
+        "height": 240
+      },
+      "opaquePixels": 10617,
+      "greenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false,
+      "usage": {
+        "input_images": 1,
+        "generated_images": 1,
+        "output_tokens": 12288,
+        "total_tokens": 12288
+      },
+      "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+    },
+    {
+      "index": 45,
+      "id": "branch:world-tree:81",
+      "name": "万灵祖木",
+      "kind": "branch",
+      "path": "world-tree",
+      "level": 81,
+      "evolutionStage": 27,
+      "family": "branch",
+      "familyLabel": "树枝",
+      "slug": "45-branch-world-tree-81",
+      "design": "万灵祖木是古老巨木枝柱：主干上盘绕三圈不同粗细的根藤，顶部形成不对称多层枝冠，枝端悬着青蓝、金、赤褐三类小叶；树皮孔洞、树瘤、同心年轮和根须组织清楚，光线不能吞没结构。",
+      "prompt": "为同一款中世纪铁匠铺游戏绘制一件全新独立武器生产素材，参考图只锁定像素画材质与照明，不照抄其形状。高细节硬边像素簇、阶梯轮廓、可信铁钢锻打纹、清楚刃口高光和暗部层次，旧棕皮革与真实部件连接。固定正面正交投影，无透视倾斜，武器主轴竖直，尖端或头部朝上、握持末端朝下，左上方中性主光。轮廓、刃形、护手、柄首和实物结构必须清楚，能在小图辨认，不能只换颜色，不能绘制一个大色块。高阶可有克制的异质金属、宝石、雕刻、实物环和复合部件，但不要泛光云雾遮盖结构。只能画描述的这一件完整武器或组装武器套装，整件居中，剑尖、柄尾与两侧结构距离四边至少12%，不能裁切。背景必须完全均匀的纯绿色#00FF00用于抠图，没有地面、阴影、场景、人物、手臂、展架、文字、数字、标签、边框、UI或水印。武器任何部分不得使用绿色或绿色反光；植物使用青蓝叶、金叶、赤叶或枯棕木，生命光纹用青金色。禁止圆滑矢量插画、塑料3D渲染或摄影，不得输出多格图集或多件候选。\n作品名称：万灵祖木。独立造型要求：万灵祖木是古老巨木枝柱：主干上盘绕三圈不同粗细的根藤，顶部形成不对称多层枝冠，枝端悬着青蓝、金、赤褐三类小叶；树皮孔洞、树瘤、同心年轮和根须组织清楚，光线不能吞没结构。",
+      "file": "45-branch-world-tree-81.png",
+      "width": 128,
+      "height": 256,
+      "sha256": "dabb4339ab6b9ec5b72c6e477998c2195998c855a6a9a6944fb2b8cc0e6faa95",
+      "pixelSha256": "7edd86cf88f30288a64c9c134c0ec3557e46fa036aaf2b21bc2224ea64ffd287",
+      "silhouetteSha256": "a618e8ec94fced8013faf2834b439bf9b3aa5d36c8f84c11c61e988b412a7cf5",
+      "source": "assets/incoming/seedream-catalog72-20261019/45-branch-world-tree-81/image.png",
+      "sourceSha256": "5cb1f00c1040a6dc406cffb589f638e81d839d27b922bb929615e48f6eec8394",
+      "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/45-branch-world-tree-81/generation.json",
+      "sourceDimensions": {
+        "width": 1536,
+        "height": 2048
+      },
+      "sourceBounds": {
+        "x": 337,
+        "y": 73,
+        "width": 905,
+        "height": 1902
+      },
+      "contentBounds": {
+        "x": 8,
+        "y": 10,
+        "width": 112,
+        "height": 235
+      },
+      "opaquePixels": 7387,
+      "greenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false,
+      "usage": {
+        "input_images": 1,
+        "generated_images": 1,
+        "output_tokens": 12288,
+        "total_tokens": 12288
+      },
+      "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+    },
+    {
+      "index": 46,
+      "id": "branch:world-tree:90",
+      "name": "永生世界树",
+      "kind": "branch",
+      "path": "world-tree",
+      "level": 90,
+      "evolutionStage": 30,
+      "family": "branch",
+      "familyLabel": "树枝",
+      "slug": "46-branch-world-tree-90",
+      "design": "永生世界树是一件完整微型世界树实体：中央宽树干由可见多层年轮组成，上端展开对称但高低错落的巨冠，下端六条根须围成厚根环；青金生命纹嵌在木纹沟槽，叶片用青蓝金色，严禁绿。",
+      "prompt": "为同一款中世纪铁匠铺游戏绘制一件全新独立武器生产素材，参考图只锁定像素画材质与照明，不照抄其形状。高细节硬边像素簇、阶梯轮廓、可信铁钢锻打纹、清楚刃口高光和暗部层次，旧棕皮革与真实部件连接。固定正面正交投影，无透视倾斜，武器主轴竖直，尖端或头部朝上、握持末端朝下，左上方中性主光。轮廓、刃形、护手、柄首和实物结构必须清楚，能在小图辨认，不能只换颜色，不能绘制一个大色块。高阶可有克制的异质金属、宝石、雕刻、实物环和复合部件，但不要泛光云雾遮盖结构。只能画描述的这一件完整武器或组装武器套装，整件居中，剑尖、柄尾与两侧结构距离四边至少12%，不能裁切。背景必须完全均匀的纯绿色#00FF00用于抠图，没有地面、阴影、场景、人物、手臂、展架、文字、数字、标签、边框、UI或水印。武器任何部分不得使用绿色或绿色反光；植物使用青蓝叶、金叶、赤叶或枯棕木，生命光纹用青金色。禁止圆滑矢量插画、塑料3D渲染或摄影，不得输出多格图集或多件候选。\n作品名称：永生世界树。独立造型要求：永生世界树是一件完整微型世界树实体：中央宽树干由可见多层年轮组成，上端展开对称但高低错落的巨冠，下端六条根须围成厚根环；青金生命纹嵌在木纹沟槽，叶片用青蓝金色，严禁绿。",
+      "file": "46-branch-world-tree-90.png",
+      "width": 128,
+      "height": 256,
+      "sha256": "42c9510ba755aca62f12752655b44e5b0706afe36e976eae353bb363e9be9b19",
+      "pixelSha256": "e60c17d4023ad27ff3286f31a59b0bdb34300d0e7beaf02d83e27cb12747de04",
+      "silhouetteSha256": "b5ca00999e0b294193fa88622b5fc4b1c412a537e90419f53ca5adbf5f0e1ee1",
+      "source": "assets/incoming/seedream-catalog72-20261019/46-branch-world-tree-90/image.png",
+      "sourceSha256": "2cd57529f58313a0ab6b00cfa078c004650371f7e07d292748bf1e87bda299b6",
+      "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/46-branch-world-tree-90/generation.json",
+      "sourceDimensions": {
+        "width": 1536,
+        "height": 2048
+      },
+      "sourceBounds": {
+        "x": 149,
+        "y": 99,
+        "width": 1232,
+        "height": 1866
+      },
+      "contentBounds": {
+        "x": 8,
+        "y": 43,
+        "width": 112,
+        "height": 170
+      },
+      "opaquePixels": 8318,
+      "greenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false,
+      "usage": {
+        "input_images": 1,
+        "generated_images": 1,
+        "output_tokens": 12288,
+        "total_tokens": 12288
+      },
+      "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+    },
+    {
+      "index": 47,
+      "id": "branch:world-tree:99",
+      "name": "星海神木",
+      "kind": "branch",
+      "path": "world-tree",
+      "level": 99,
+      "evolutionStage": 33,
+      "family": "branch",
+      "familyLabel": "树枝",
+      "slug": "47-branch-world-tree-99",
+      "design": "星海神木是星海尺度的木质神树：银褐主干内有同心年轮与深裂木纹，顶部三层不对称枝冠结出青蓝星叶和金色微星果，底部根须盘成双重环；少量星点光只沿木纹，不能遮挡真实木组织。",
+      "prompt": "为同一款中世纪铁匠铺游戏绘制一件全新独立武器生产素材，参考图只锁定像素画材质与照明，不照抄其形状。高细节硬边像素簇、阶梯轮廓、可信铁钢锻打纹、清楚刃口高光和暗部层次，旧棕皮革与真实部件连接。固定正面正交投影，无透视倾斜，武器主轴竖直，尖端或头部朝上、握持末端朝下，左上方中性主光。轮廓、刃形、护手、柄首和实物结构必须清楚，能在小图辨认，不能只换颜色，不能绘制一个大色块。高阶可有克制的异质金属、宝石、雕刻、实物环和复合部件，但不要泛光云雾遮盖结构。只能画描述的这一件完整武器或组装武器套装，整件居中，剑尖、柄尾与两侧结构距离四边至少12%，不能裁切。背景必须完全均匀的纯绿色#00FF00用于抠图，没有地面、阴影、场景、人物、手臂、展架、文字、数字、标签、边框、UI或水印。武器任何部分不得使用绿色或绿色反光；植物使用青蓝叶、金叶、赤叶或枯棕木，生命光纹用青金色。禁止圆滑矢量插画、塑料3D渲染或摄影，不得输出多格图集或多件候选。\n作品名称：星海神木。独立造型要求：星海神木是星海尺度的木质神树：银褐主干内有同心年轮与深裂木纹，顶部三层不对称枝冠结出青蓝星叶和金色微星果，底部根须盘成双重环；少量星点光只沿木纹，不能遮挡真实木组织。",
+      "file": "47-branch-world-tree-99.png",
+      "width": 128,
+      "height": 256,
+      "sha256": "3fd0fddae5885f9fc8c832cde1aba34a8e3ac000b934a15c783b12feebc3062c",
+      "pixelSha256": "e920e3ac6f1bf7b554e5f67a1dc7bb815123346fab79f212e8484a052621bf95",
+      "silhouetteSha256": "7cba6afe10e19f245b4eba8e7b396b472c56037238763cd80691f39cda06ea5a",
+      "source": "assets/incoming/seedream-catalog72-20261019/47-branch-world-tree-99/image.png",
+      "sourceSha256": "661af7c2e9219964d77a6adccb1864467341dc5eae669a4455d92fc4fccc7f51",
+      "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/47-branch-world-tree-99/generation.json",
+      "sourceDimensions": {
+        "width": 1536,
+        "height": 2048
+      },
+      "sourceBounds": {
+        "x": 290,
+        "y": 88,
+        "width": 968,
+        "height": 1875
+      },
+      "contentBounds": {
+        "x": 8,
+        "y": 19,
+        "width": 112,
+        "height": 217
+      },
+      "opaquePixels": 9034,
+      "greenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false,
+      "usage": {
+        "input_images": 1,
+        "generated_images": 1,
+        "output_tokens": 12288,
+        "total_tokens": 12288
+      },
+      "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+    }
+  ],
+  "visualAcceptance": "pending contact-sheet inspection by production owner"
+}

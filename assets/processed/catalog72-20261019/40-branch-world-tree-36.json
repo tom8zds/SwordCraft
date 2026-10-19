@@ -1,0 +1,53 @@
+{
+  "index": 40,
+  "id": "branch:world-tree:36",
+  "name": "生命之树",
+  "kind": "branch",
+  "path": "world-tree",
+  "level": 36,
+  "evolutionStage": 12,
+  "family": "branch",
+  "familyLabel": "树枝",
+  "slug": "40-branch-world-tree-36",
+  "file": "40-branch-world-tree-36.png",
+  "width": 128,
+  "height": 256,
+  "sha256": "1a474fb2f03e2ae1664cdbbb3b46d13cc95d53a52fc890507503cd1f6afe0bfc",
+  "pixelSha256": "95e3543edfc4be1025d018fa7c7c52a6cbb3df6b7fc0a441dbb91c5da9c46d3d",
+  "silhouetteSha256": "28771b5cf931c8a0eaaa1072df8d180369635aad5643f4b3bdbfd93c8714d835",
+  "source": "assets/incoming/seedream-catalog72-20261019/40-branch-world-tree-36/image.png",
+  "sourceSha256": "60402b50f5fea1afc90a0e2ccb9e8bb11218e34498f654eb66a6ebb1cd4ed7ba",
+  "sourceMetadata": "assets/incoming/seedream-catalog72-20261019/40-branch-world-tree-36/generation.json",
+  "sourceDimensions": {
+    "width": 1536,
+    "height": 2048
+  },
+  "sourceBounds": {
+    "x": 401,
+    "y": 101,
+    "width": 734,
+    "height": 1871
+  },
+  "contentBounds": {
+    "x": 17,
+    "y": 8,
+    "width": 94,
+    "height": 240
+  },
+  "opaquePixels": 8513,
+  "greenSpill": 0,
+  "alpha": "binary; transparent RGB cleared",
+  "sampling": "nearest; proportional fit; no geometry replacement or aspect stretching",
+  "scalePolicy": "proportional fit within 112x240",
+  "sourceVariance": null,
+  "model": "doubao-seedream-5-0-pro-260628",
+  "watermark": false,
+  "usage": {
+    "input_images": 1,
+    "generated_images": 1,
+    "output_tokens": 12288,
+    "total_tokens": 12288
+  },
+  "correction": null,
+  "visualAcceptance": "pending human/model contact-sheet and in-game inspection"
+}

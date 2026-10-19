@@ -1,0 +1,20 @@
+{
+  "version": 5,
+  "canvas": { "width": 2048, "height": 1152 },
+  "mode": "static-paired-assets",
+  "chromaKey": "#00FF00",
+  "files": {
+    "withFire": "forge-with-fire.png",
+    "withoutFire": "forge-without-fire.png"
+  },
+  "layers": [
+    { "name": "forge-with-fire", "file": "forge-with-fire.png", "z": 10 },
+    { "name": "forge-without-fire", "file": "forge-without-fire.png", "z": 10 }
+  ],
+  "extraction": {
+    "mode": "center-object",
+    "background": "green-or-transparent",
+    "sameAnchorForBoth": true
+  },
+  "animation": { "enabled": false }
+}
