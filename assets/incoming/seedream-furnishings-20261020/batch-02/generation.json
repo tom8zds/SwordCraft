@@ -1,0 +1,32 @@
+{
+  "status": "completed",
+  "startedAt": "2026-10-19T16:24:17.994Z",
+  "endpoint": "https://ark.cn-beijing.volces.com/api/v3/images/generations",
+  "model": "doubao-seedream-5-0-pro-260628",
+  "prompt": "为《铸剑录》制作真实模型生成的生产素材接触表，必须严格绘制三件互相独立的物件，左中右各一件，每件完整位于自己的800x1080竖直格内；三格之间没有分隔线、没有标签、没有文字、没有数字、没有UI。固定正面正交投影，硬边高细节像素画，灰铁、深棕木、旧皮革、羊皮纸材质，左上方光照，透明抠图用完全均匀纯绿色#00FF00背景。任何物件不得使用绿色材质或绿色反光；每件主体距离本格四边至少12%，不得触边、不得跨格、不得重叠。禁止摄影、圆滑矢量、塑料3D、场景陈列、人物、手、地面、阴影、展架、水印。三件必须是三个不同真实结构，不可只换颜色或重复模板。\n本批次固定三件物件，必须按左、中、右顺序分别对应：\n左格：star-coal，一块黑色星火煤，裂纹中有克制的橙红热芯和少量金色星点，矿石真实不规则轮廓。\n中格：echo-hammer，一把回声锤，厚重锻造锤头、双侧锻打面、木柄缠带和小金属回声环，结构完整。\n右格：scarlet-apron，一件悬空正面展示的猩红皮革铁匠围裙，厚皮、肩带、铜扣和边缘缝线，不能出现人体。\n输出一张2400x1080图像，三格均为独立真实物件。",
+  "size": "2400x1080",
+  "watermark": false,
+  "mode": "generation",
+  "references": [
+    {
+      "file": "assets/incoming/seedream-gameplay-heroes-20261019/sword/image.png",
+      "sha256": "020d4c02bfba115d70e9f82c035b78370bfcfc5742063fe2d12a33d98616e628"
+    }
+  ],
+  "created": 1792427101,
+  "usage": {
+    "input_images": 1,
+    "generated_images": 1,
+    "output_tokens": 10125,
+    "total_tokens": 10125
+  },
+  "completedAt": "2026-10-19T16:25:02.357Z",
+  "outputs": [
+    {
+      "file": "image.png",
+      "size": "2400x1080",
+      "sha256": "8d9f1d8ef1ea67c8c1f97e5b4591be94acc14b4a24b1a6dd5f40cb4eabd534c5",
+      "bytes": 4277458
+    }
+  ]
+}

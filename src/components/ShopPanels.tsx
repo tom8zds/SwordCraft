@@ -1,16 +1,36 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import type { KeyboardEvent, PointerEvent as ReactPointerEvent } from 'react'
+import type { CSSProperties, KeyboardEvent, PointerEvent as ReactPointerEvent } from 'react'
 import { createPortal } from 'react-dom'
 import { formatCoins, RELIC_BY_ID, swordName } from '../game/content'
+import { furnishingUrl } from '../game/furnishingAssets'
+import { WEAPON_CATALOG } from '../game/weaponCatalog'
+import { WEAPON_ASSET_BASE } from '../pixi/contracts'
 import { weaponRarity } from '../game/rarity'
 import type { GameState, MerchantItem, RelicId } from '../game/types'
 import { BookScroll } from './BookScroll'
 import './shop-panels.css'
+import './furnishing-panels.css'
+
+const WEAPON_IMAGES_BY_NAME: Readonly<Record<string, string>> = Object.fromEntries(WEAPON_CATALOG.map((entry, index) => [entry.name, `${WEAPON_ASSET_BASE}${String(index).padStart(2, '0')}-${entry.id.replaceAll(':', '-')}.png`]))
+// 文件名与既有 72 件武器目录的稳定顺序、ID 一致，不额外生成商店武器。
+const BASE_WEAPON_IMAGES = Object.fromEntries(WEAPON_CATALOG.flatMap((entry, index) => entry.level === 0
+  ? [[entry.kind, `${WEAPON_ASSET_BASE}${String(index).padStart(2, '0')}-${entry.id.replaceAll(':', '-')}.png`]]
+  : [])) as Record<'iron' | 'branch' | 'nail' | 'dagger', string>
+
+function merchantImage(item: MerchantItem): string {
+  return item.type === 'dragon-scale' || item.type === 'hourglass'
+    ? furnishingUrl(item.type) : BASE_WEAPON_IMAGES[item.type]
+}
+
+function ShopImage({ src, weapon = false }: { src: string; weapon?: boolean }) {
+  return <span className={`shop-item-image${weapon ? ' is-weapon' : ''}`} aria-hidden="true"><img src={src} alt="" draggable={false} /></span>
+}
 
 type DragOrigin = 'wares' | 'checkout' | 'swords' | 'slots'
 interface ShopDragItem {
   id: string
-  glyph: string
+  imageUrl: string
+  weapon?: boolean
   label: string
   origin: DragOrigin
 }
@@ -113,7 +133,7 @@ function selectWithKey(event: KeyboardEvent<HTMLElement>, select: () => void) {
 function DragPreview({ drag }: { drag: ShopDrag | null }) {
   return drag ? createPortal(
     <div className="shop-drag-preview" style={{ left: drag.x, top: drag.y }} aria-hidden="true">
-      <span>{drag.glyph}</span><small>{drag.label}</small>
+      <ShopImage src={drag.imageUrl} weapon={drag.weapon} /><small>{drag.label}</small>
     </div>, document.body,
   ) : null
 }
@@ -148,10 +168,10 @@ export function MerchantPanel({ state, onBuy, onClose }: MerchantPanelProps) {
 
   return (
     <div className="overlay" role="presentation" onPointerDown={(event) => event.target === event.currentTarget && onClose()}>
-      <section className="shop-panel merchant-panel" role="dialog" aria-modal="true" aria-label="旅行商人" onDragStart={(event) => event.preventDefault()}>
+      <section className="shop-panel merchant-panel furnishing-panel" style={{ '--furnishing-panel-image': `url("${furnishingUrl('merchant-panel')}")` } as CSSProperties} role="dialog" aria-modal="true" aria-label="旅行商人" onDragStart={(event) => event.preventDefault()}>
         <button className="corner-close icon-button" onClick={onClose} aria-label="离开商人">×</button>
         <BookScroll className="shop-scroll" viewportClassName="shop-content" ariaLabel="旅行商人货架与结算">
-        <header><span className="merchant-face" aria-hidden="true">☻</span><div><h2>旅行商人</h2><p id="merchant-help">货物拖上结算垫，敲铃成交；成交前可取回。也可 Tab 选中货物，Enter / 空格放上垫子。</p></div><strong className="coin-readout">◆ {formatCoins(state.coins)}</strong></header>
+        <header><img className="merchant-face shop-header-image" src={furnishingUrl('merchant-entrance')} alt="" /><div><h2>旅行商人</h2><p id="merchant-help">货物拖上结算垫，敲铃成交；成交前可取回。也可 Tab 选中货物，Enter / 空格放上垫子。</p></div><strong className="coin-readout">◆ {formatCoins(state.coins)}</strong></header>
         <div className="wares-grid" ref={wares}>
           {state.merchantItems.map((item) => {
             const price = merchantPrice(state, item)
@@ -163,13 +183,13 @@ export function MerchantPanel({ state, onBuy, onClose }: MerchantPanelProps) {
                 className={`pointer-ware ${item.stock <= 0 ? 'sold-out' : ''} ${pendingItem?.id === item.id ? 'on-checkout' : ''}`}
                 role="button" tabIndex={0} aria-pressed={pendingItem?.id === item.id} aria-disabled={!enabled}
                 aria-describedby="merchant-help"
-                {...drag.bind({ id: item.id, glyph: item.glyph, label: item.name, origin: 'wares' }, enabled)}
+                {...drag.bind({ id: item.id, imageUrl: merchantImage(item), weapon: item.type in BASE_WEAPON_IMAGES, label: item.name, origin: 'wares' }, enabled)}
                 onClick={() => !drag.suppressClick.current && stage()}
                 onKeyDown={(event) => selectWithKey(event, stage)}
                 aria-label={`${item.name}，价格 ${formatCoins(price)} 金币，库存 ${item.stock}${!enabled && item.stock > 0 ? '，金币不足或商人尚未到访' : ''}`}
                 title={enabled ? '拖上结算垫，或按 Enter / 空格选择' : '售罄、金币不足或商人尚未到访'}
               >
-                <span className="ware-glyph">{item.glyph}</span>
+                <ShopImage src={merchantImage(item)} weapon={item.type in BASE_WEAPON_IMAGES} />
                 <h3>{item.name}</h3><p>{item.description}</p>
                 <strong className="ware-price">{item.stock <= 0 ? '售罄' : `◆ ${formatCoins(price)}`}</strong>
                 {price !== item.price && <small className="ware-discount">双响铃 · 八折</small>}
@@ -181,16 +201,16 @@ export function MerchantPanel({ state, onBuy, onClose }: MerchantPanelProps) {
         <div ref={checkout} className={`merchant-checkout ${drag.preview?.origin === 'wares' ? 'awaiting-drop' : ''}`} aria-label="商人结算垫">
           <button
             className="checkout-item pointer-ware" disabled={!pendingItem}
-            {...drag.bind({ id: pendingItem?.id ?? '', glyph: pendingItem?.glyph ?? '□', label: pendingItem?.name ?? '', origin: 'checkout' }, !!pendingItem)}
+            {...drag.bind({ id: pendingItem?.id ?? '', imageUrl: pendingItem ? merchantImage(pendingItem) : '', weapon: !!pendingItem && pendingItem.type in BASE_WEAPON_IMAGES, label: pendingItem?.name ?? '', origin: 'checkout' }, !!pendingItem)}
             onClick={(event) => (event.detail === 0 || !drag.suppressClick.current) && setPendingItemId(null)}
             aria-label={pendingItem ? `把 ${pendingItem.name} 放回货架` : '空结算垫'} title="点击取回，或拖回货架"
-          >{pendingItem?.glyph ?? '□'}</button>
+          >{pendingItem ? <ShopImage src={merchantImage(pendingItem)} weapon={pendingItem.type in BASE_WEAPON_IMAGES} /> : <small>待选货物</small>}</button>
           <button disabled={!pendingItem} onClick={() => {
             if (!pendingItem || !available(pendingItem)) return
             onBuy(pendingItem.id)
             setPendingItemId(null)
             drag.cancel()
-          }} aria-label={pendingItem ? `敲商人铃，支付 ${formatCoins(merchantPrice(state, pendingItem))} 金币购买 ${pendingItem.name}` : '敲商人铃完成交易'} title="敲铃成交">♩</button>
+          }} aria-label={pendingItem ? `敲商人铃，支付 ${formatCoins(merchantPrice(state, pendingItem))} 金币购买 ${pendingItem.name}` : '敲商人铃完成交易'} title="敲铃成交"><img className="shop-bell-image" src={furnishingUrl('offering-bell')} alt="" /></button>
         </div>
         </BookScroll>
         <DragPreview drag={drag.preview} />
@@ -274,10 +294,10 @@ export function RelicPanel({ state, sacrifices, onToggleSacrifice, onBuy, onRefr
 
   return (
     <div className="overlay" role="presentation" onPointerDown={(event) => event.target === event.currentTarget && !confirming && onClose()}>
-      <section className="shop-panel relic-panel" role="dialog" aria-modal="true" aria-label="遗物祭台" onDragStart={(event) => event.preventDefault()}>
+      <section className="shop-panel relic-panel furnishing-panel" style={{ '--furnishing-panel-image': `url("${furnishingUrl('relic-panel')}")` } as CSSProperties} role="dialog" aria-modal="true" aria-label="遗物祭台" onDragStart={(event) => event.preventDefault()}>
         <button className="corner-close icon-button" onClick={onClose} disabled={confirming} aria-label="离开遗物祭台">×</button>
         <BookScroll className="shop-scroll" viewportClassName="shop-content" ariaLabel="遗物祭台与兑换">
-        <header><span className="relic-orb" aria-hidden="true">◉</span><div><h2>遗物祭台</h2><p id="relic-help">选择遗物，把普通铁剑拖进祭槽，敲小钟兑换；成交前可取回。Tab 后 Enter / 空格也可选择。</p></div><strong aria-label={`已持有 ${state.relics.length} 件遗物，上限十件`}>{state.relics.length} / 10</strong></header>
+        <header><img className="relic-orb shop-header-image" src={furnishingUrl('relic-altar')} alt="" /><div><h2>遗物祭台</h2><p id="relic-help">选择遗物，把普通铁剑拖进祭槽，敲小钟兑换；成交前可取回。Tab 后 Enter / 空格也可选择。</p></div><strong aria-label={`已持有 ${state.relics.length} 件遗物，上限十件`}>{state.relics.length} / 10</strong></header>
         {atLimit && <p className="shop-notice" role="status">遗物架已满，十件珍宝已全部安放。</p>}
         <div className="relic-layout">
           <div className="relic-offers">
@@ -290,32 +310,35 @@ export function RelicPanel({ state, sacrifices, onToggleSacrifice, onBuy, onRefr
                   role="button" tabIndex={0} aria-pressed={chosenRelic?.id === id} aria-disabled={disabled} aria-describedby="relic-help"
                   onClick={choose} onKeyDown={(event) => selectWithKey(event, choose)}
                   aria-label={`${relic.name}，需要 ${relic.cost} 把普通铁剑${state.relics.includes(id) ? '，已拥有' : ''}`}>
-                  <span className="relic-glyph">{relic.glyph}</span><h3>{relic.name}</h3><p>{relic.description}</p>
-                  <div className="sword-cost" aria-label={`需要 ${relic.cost} 把普通铁剑`}>{'†'.repeat(relic.cost)}</div>
+                  <ShopImage src={furnishingUrl(relic.id)} /><h3>{relic.name}</h3><p>{relic.description}</p>
+                  <div className="sword-cost" aria-label={`需要 ${relic.cost} 把普通铁剑`}><ShopImage src={BASE_WEAPON_IMAGES.iron} weapon /><strong>× {relic.cost}</strong><small>普通铁剑</small></div>
                 </article>
               )
             })}
           </div>
           <aside className="sacrifice-tray">
+            {chosenRelic && <div className="chosen-relic-preview"><ShopImage src={furnishingUrl(chosenRelic.id)} /><span>{chosenRelic.name}<br />祭品 {chosenRelic.cost} 把普通铁剑</span></div>}
             <div ref={slots} className={`sacrifice-slots ${drag.preview?.origin === 'swords' ? 'awaiting-drop' : ''}`} aria-label="祭剑槽">
-              {validSwordIds.length === 0 && <span className="empty-slot">†</span>}
+              {validSwordIds.length === 0 && <span className="empty-slot"><ShopImage src={BASE_WEAPON_IMAGES.iron} weapon /><small>将普通铁剑放入祭槽</small></span>}
               {validSwordIds.map((id) => {
                 const sword = ironSwords.find((candidate) => candidate.id === id)!
                 const rarity = weaponRarity(sword.level)
+                const imageUrl = WEAPON_IMAGES_BY_NAME[swordName(sword)]
                 return <button key={id} className="pointer-ware sacrifice-sword" disabled={confirming}
-                  {...drag.bind({ id, glyph: '†', label: `${swordName(sword)} · Lv.${sword.level} · ${rarity.name}`, origin: 'slots' }, !confirming)}
-                  onClick={(event) => (event.detail === 0 || !drag.suppressClick.current) && retrieve(id)} aria-label={`从祭剑槽取回等级 ${sword.level} 铁剑，${swordName(sword)}，${rarity.name}`} title="点击取回，或拖回藏剑区">†<small className="weapon-rarity" style={{ color: rarity.cssColor }}>{swordName(sword)} · Lv.{sword.level} · {rarity.name}</small></button>
+                  {...drag.bind({ id, imageUrl, weapon: true, label: `${swordName(sword)} · Lv.${sword.level} · ${rarity.name}`, origin: 'slots' }, !confirming)}
+                  onClick={(event) => (event.detail === 0 || !drag.suppressClick.current) && retrieve(id)} aria-label={`从祭剑槽取回等级 ${sword.level} 铁剑，${swordName(sword)}，${rarity.name}`} title="点击取回，或拖回藏剑区"><ShopImage src={imageUrl} weapon /><small className="weapon-rarity" style={{ color: rarity.cssColor }}>{swordName(sword)} · Lv.{sword.level} · {rarity.name}</small></button>
               })}
             </div>
             <p role="status">{chosenRelic ? `${chosenRelic.name} · ${validSwordIds.length} / ${chosenRelic.cost} 把` : atLimit ? '已达十件上限' : '先选一件遗物'}</p>
-            <button className="relic-bell" disabled={!canConfirm} onClick={ringBell} aria-label={chosenRelic ? `敲祭台小钟，献祭 ${chosenRelic.cost} 把普通铁剑换取 ${chosenRelic.name}` : '敲祭台小钟完成兑换'} title="敲铃兑换">♩</button>
+            <button className="relic-bell" disabled={!canConfirm} onClick={ringBell} aria-label={chosenRelic ? `敲祭台小钟，献祭 ${chosenRelic.cost} 把普通铁剑换取 ${chosenRelic.name}` : '敲祭台小钟完成兑换'} title="敲铃兑换"><img className="shop-bell-image" src={furnishingUrl('offering-bell')} alt="" /></button>
             <BookScroll className="sacrifice-scroll" viewportClassName="sacrifice-list rarity-sword-list" ref={swordList} ariaLabel="可献祭的普通铁剑">
               {ironSwords.filter((sword) => !validSwordIds.includes(sword.id)).map((sword) => {
                 const rarity = weaponRarity(sword.level)
+                const imageUrl = WEAPON_IMAGES_BY_NAME[swordName(sword)]
                 return <button key={sword.id} className="pointer-ware sacrifice-sword" disabled={atLimit || confirming}
-                  {...drag.bind({ id: sword.id, glyph: '†', label: `${swordName(sword)} · Lv.${sword.level} · ${rarity.name}`, origin: 'swords' }, !atLimit && !confirming)}
+                  {...drag.bind({ id: sword.id, imageUrl, weapon: true, label: `${swordName(sword)} · Lv.${sword.level} · ${rarity.name}`, origin: 'swords' }, !atLimit && !confirming)}
                   onClick={(event) => (event.detail === 0 || !drag.suppressClick.current) && stage(sword.id)}
-                  aria-label={`将等级 ${sword.level} 普通铁剑放入祭槽，${swordName(sword)}，${rarity.name}`} title="拖入祭槽，或按 Enter / 空格选择">† <small className="weapon-rarity" style={{ color: rarity.cssColor }}>{swordName(sword)} · Lv.{sword.level} · {rarity.name}</small></button>
+                  aria-label={`将等级 ${sword.level} 普通铁剑放入祭槽，${swordName(sword)}，${rarity.name}`} title="拖入祭槽，或按 Enter / 空格选择"><ShopImage src={imageUrl} weapon /><small className="weapon-rarity" style={{ color: rarity.cssColor }}>{swordName(sword)} · Lv.{sword.level} · {rarity.name}</small></button>
               })}
               {ironSwords.length === 0 && <small className="shop-empty">没有可献祭的普通铁剑。</small>}
             </BookScroll>

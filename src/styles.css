@@ -21,12 +21,6 @@ button:focus-visible, [role='button']:focus-visible, input:focus-visible { outli
 .life-meter { display: flex; align-items: center; gap: 5px; font-size: 23px; color: #42383d; }
 .life-meter .alive { color: #c95d5a; }
 .hud-coins { color: #dec17d; white-space: nowrap; font-size: 17px; }
-.inventory-counter { display: flex; gap: 5px; }
-.inventory-counter button { color: #b9afb0; background: #252129; border: 1px solid #50454b; padding: 5px 8px; }
-.probability-legend { display: flex; gap: 13px; align-items: center; margin: 0 0 0 auto; padding: 0; list-style: none; font-size: 11px; }
-.probability-legend li { display: grid; grid-template-columns: 7px auto; gap: 1px 4px; align-items: center; color: #b9aa95; }
-.probability-legend i { width: 7px; height: 7px; background: var(--result-color); }
-.probability-legend strong { grid-column: 2; color: #d8cdba; font-size: 12px; }
 .smithy { position: relative; overflow: hidden; background: #11121a; }
 .pixi-host { position: absolute; inset: 0; }
 .pixi-canvas { display: block; width: 100%; height: 100%; image-rendering: pixelated; touch-action: none; outline: none; }
@@ -118,14 +112,14 @@ button:focus-visible, [role='button']:focus-visible, input:focus-visible { outli
 .book-relic { display: grid; grid-template-columns: 45px 1fr; gap: 8px; padding: 8px 0; border-bottom: 1px dashed #92764b; }
 .book-relic > span { font-size: 30px; }.book-relic p { margin: 3px 0; font-size: 12px; }
 
-.shop-panel, .calendar-panel { position: relative; color: var(--ink); background: #2d241d; border: 6px solid #76563a; box-shadow: 10px 12px 0 rgba(0,0,0,.45); }
+.shop-panel { position: relative; color: var(--ink); background: #2d241d; border: 6px solid #76563a; box-shadow: 10px 12px 0 rgba(0,0,0,.45); }
 .shop-panel { width: min(1000px, 92vw); max-height: 88vh; overflow: hidden; padding: 24px; display: flex; flex-direction: column; }
 .shop-scroll { min-height: 0; max-height: calc(88vh - 60px); }
 .shop-content { padding: 4px 8px 10px 4px; }
 .shop-panel .book-scroll-rail { background: #4a3826; border-color: #775837; }
 .shop-panel .book-scroll-rail:focus-visible { outline-color: #e2bf78; }
 .shop-panel .book-scroll-viewport:focus-visible { outline-color: #e2bf78; }
-.shop-panel .corner-close, .calendar-panel .corner-close { color: var(--ink); }
+.shop-panel .corner-close { color: var(--ink); }
 .shop-panel header { display: flex; align-items: center; gap: 18px; margin-bottom: 22px; padding-bottom: 15px; border-bottom: 2px solid #6c5137; }
 .shop-panel h2 { margin: 0; font-size: 25px; font-weight: 700; }.shop-panel header p { margin: 3px 0; color: var(--muted); }
 .shop-panel header strong { margin-left: auto; color: var(--gold); }
@@ -166,12 +160,6 @@ button:focus-visible, [role='button']:focus-visible, input:focus-visible { outli
 .shop-panel .sacrifice-slots > .sacrifice-sword { display: flex; align-items: center; gap: 8px; width: 100%; min-width: 0; height: auto; min-height: 44px; padding: 5px; text-align: left; }
 .refresh-wheel { width: 100%; margin-top: 16px; font-size: 20px; }.refresh-wheel span { font-size: 12px; }
 
-.calendar-panel { width: min(780px, 88vw); padding: 30px; }
-.calendar-panel h2 { font-size: 26px; font-weight: 700; }
-.calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 7px; }
-.calendar-grid article { position: relative; min-height: 90px; display: grid; place-items: center; padding: 9px; background: #1b1713; border: 2px solid #4f4133; }
-.calendar-grid article strong { font-size: 23px; }.calendar-grid article span { color: #bba682; font-size: 10px; }.calendar-grid article i { position: absolute; right: 5px; top: 3px; color: #d7a74d; font-style: normal; }
-.calendar-grid .met { border-color: #628251; }.calendar-grid .met::after { content: '✓'; color: #83aa6d; }.calendar-grid .missed { border-color: #84463a; }.calendar-grid .missed::after { content: '×'; color: #bd5e50; }.calendar-grid .current { border-color: #d1a451; box-shadow: inset 0 0 0 2px #6b4e27; }
 
 .game-over-overlay { z-index: 200; }
 .game-over-panel { min-width: 450px; padding: 42px; text-align: center; color: #b7aa98; background: #181614; border: 6px solid #48413a; }
@@ -180,7 +168,6 @@ button:focus-visible, [role='button']:focus-visible, input:focus-visible { outli
 
 @media (max-width: 1100px) {
   .hud { gap: 11px; padding-inline: 8px; }
-  .probability-legend { gap: 6px; font-size: 10px; }
   .day-plaque { min-width: 142px; }
 }
 @media (max-width: 900px) {
@@ -196,9 +183,6 @@ button:focus-visible, [role='button']:focus-visible, input:focus-visible { outli
   .day-plaque small { font-size: 9px; }
   .life-meter { font-size: 17px; gap: 2px; }
   .hud-coins { font-size: 13px; }
-  .inventory-counter button { font-size: 11px; padding: 3px 4px; }
-  .probability-legend { gap: 5px; font-size: 8px; }
-  .probability-legend strong { font-size: 9px; }
   .status-ledger { font-size: 9px; }
   .status-ledger small { display: none; }
   .workbench-details { padding: 6px; font-size: 9px; }

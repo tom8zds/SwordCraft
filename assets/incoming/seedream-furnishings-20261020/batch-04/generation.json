@@ -1,0 +1,32 @@
+{
+  "status": "completed",
+  "startedAt": "2026-10-19T16:33:48.548Z",
+  "endpoint": "https://ark.cn-beijing.volces.com/api/v3/images/generations",
+  "model": "doubao-seedream-5-0-pro-260628",
+  "prompt": "为《铸剑录》制作真实模型生成的生产素材接触表，必须严格绘制三件互相独立的物件，左中右各一件，每件完整位于自己的800x1080竖直格内；三格之间没有分隔线、没有标签、没有文字、没有数字、没有UI。固定正面正交投影，硬边高细节像素画，灰铁、深棕木、旧皮革、羊皮纸材质，左上方光照，透明抠图用完全均匀纯绿色#00FF00背景。任何物件不得使用绿色材质或绿色反光；每件主体距离本格四边至少12%，不得触边、不得跨格、不得重叠。禁止摄影、圆滑矢量、塑料3D、场景陈列、人物、手、地面、阴影、展架、水印。三件必须是三个不同真实结构，不可只换颜色或重复模板。\n本批次固定三件物件，必须按左、中、右顺序分别对应：\n左格：phoenix-ash，一只盛放凤凰余烬的黑灰小陶钵，内部赤金余烬和极少火星，不出现凤凰或文字。\n中格：moon-water，一只月井水玻璃小瓶，厚玻璃瓶身、银灰瓶塞、清澈浅蓝液体与月形高光，不用紫色。\n右格：old-ledger，一本旧账本，厚棕色皮封、金属护角、米黄纸页边，封面无文字无数字。\n输出一张2400x1080图像，三格均为独立真实物件。",
+  "size": "2400x1080",
+  "watermark": false,
+  "mode": "generation",
+  "references": [
+    {
+      "file": "assets/incoming/seedream-gameplay-heroes-20261019/sword/image.png",
+      "sha256": "020d4c02bfba115d70e9f82c035b78370bfcfc5742063fe2d12a33d98616e628"
+    }
+  ],
+  "created": 1792427670,
+  "usage": {
+    "input_images": 1,
+    "generated_images": 1,
+    "output_tokens": 10125,
+    "total_tokens": 10125
+  },
+  "completedAt": "2026-10-19T16:34:31.066Z",
+  "outputs": [
+    {
+      "file": "image.png",
+      "size": "2400x1080",
+      "sha256": "52cfed8b612300904a2d5c28da7ca8fccf9ec4322f1c2ae41b7a4be75570533c",
+      "bytes": 4123475
+    }
+  ]
+}

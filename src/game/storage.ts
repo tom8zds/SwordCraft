@@ -1,5 +1,6 @@
 import { IRON_PATHS, swordName } from './content'
 import { createInitialState } from './engine'
+import { buildCalendarEntries } from './divineCalendar'
 import type { GameState, Sword } from './types'
 import { randomIndex } from './rng'
 
@@ -87,7 +88,7 @@ function deserialize(value: unknown): GameState {
     coins: parseUnsignedInteger(raw.coins),
     relicRefreshCost: 750n,
     merchantItems: raw.merchantItems.map((item) => ({ ...item, price: parseUnsignedInteger(item.price) })),
-    calendar: raw.calendar.map((entry) => ({ ...entry, target: parseUnsignedInteger(entry.target) })),
+    calendar: buildCalendarEntries(serialized.day, raw.calendar.map((entry) => ({ ...entry, target: parseUnsignedInteger(entry.target) }))),
   }
 }
 

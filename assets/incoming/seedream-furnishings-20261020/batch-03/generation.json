@@ -1,0 +1,32 @@
+{
+  "status": "completed",
+  "startedAt": "2026-10-19T16:32:15.847Z",
+  "endpoint": "https://ark.cn-beijing.volces.com/api/v3/images/generations",
+  "model": "doubao-seedream-5-0-pro-260628",
+  "prompt": "为《铸剑录》制作真实模型生成的生产素材接触表，必须严格绘制三件互相独立的物件，左中右各一件，每件完整位于自己的800x1080竖直格内；三格之间没有分隔线、没有标签、没有文字、没有数字、没有UI。固定正面正交投影，硬边高细节像素画，灰铁、深棕木、旧皮革、羊皮纸材质，左上方光照，透明抠图用完全均匀纯绿色#00FF00背景。任何物件不得使用绿色材质或绿色反光；每件主体距离本格四边至少12%，不得触边、不得跨格、不得重叠。禁止摄影、圆滑矢量、塑料3D、场景陈列、人物、手、地面、阴影、展架、水印。三件必须是三个不同真实结构，不可只换颜色或重复模板。\n本批次固定三件物件，必须按左、中、右顺序分别对应：\n左格：guardian-mark，一枚守炉印护符，灰铁圆牌、厚边、炉火盾形浮雕和皮绳环，不要文字符号。\n中格：patient-bell，一只耐心小铜铃，真实钟体、拱形提环、木柄和短绳，像可敲响的工坊铃。\n右格：gilded-chisel，一把鎏金凿，灰铁凿刃、深棕木柄、局部金色金属套环，金色克制而非整件金色。\n输出一张2400x1080图像，三格均为独立真实物件。",
+  "size": "2400x1080",
+  "watermark": false,
+  "mode": "generation",
+  "references": [
+    {
+      "file": "assets/incoming/seedream-gameplay-heroes-20261019/sword/image.png",
+      "sha256": "020d4c02bfba115d70e9f82c035b78370bfcfc5742063fe2d12a33d98616e628"
+    }
+  ],
+  "created": 1792427588,
+  "usage": {
+    "input_images": 1,
+    "generated_images": 1,
+    "output_tokens": 10125,
+    "total_tokens": 10125
+  },
+  "completedAt": "2026-10-19T16:33:09.654Z",
+  "outputs": [
+    {
+      "file": "image.png",
+      "size": "2400x1080",
+      "sha256": "371b058ca4656da313d499a589399e956a0898dac23d5cff1e4b23df6f4ecb4e",
+      "bytes": 4073363
+    }
+  ]
+}

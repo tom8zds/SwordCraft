@@ -7,6 +7,7 @@ import {
   swordName,
   swordValue,
 } from './content'
+import { buildCalendarEntries } from './divineCalendar'
 import { nextRandom, randomIndex } from './rng'
 import type {
   EffectiveOdds,
@@ -63,18 +64,6 @@ function shuffledRelicOffers(state: number, owned: RelicId[], count = 3): { offe
   return { offers, state: rngState }
 }
 
-function calendarWindow(day: number, history: GameState['calendar'] = []): GameState['calendar'] {
-  const statusByDay: Record<number, GameState['calendar'][number]['status']> = {}
-  for (const entry of history) statusByDay[entry.day] = entry.status
-  const start = Math.max(1, day - 3)
-  const entries: GameState['calendar'] = []
-  for (let current = start; current <= day + 3; current += 1) {
-    const status = current === day ? 'current' : current < day ? statusByDay[current] ?? 'missed' : 'future'
-    entries.push({ day: current, target: dailyTarget(current), status, merchant: current % 4 === 0 })
-  }
-  return entries
-}
-
 export function createInitialState(seed = 0x5f3759df): GameState {
   const swords = [createSword('iron', 1, 1), createSword('iron', 1, 2), createSword('iron', 1, 3)]
   const offers = shuffledRelicOffers(seed, [])
@@ -92,7 +81,7 @@ export function createInitialState(seed = 0x5f3759df): GameState {
     relicOffers: offers.offers,
     relicRefreshCost: RELIC_REFRESH_COST,
     merchantItems: merchantInventory(),
-    calendar: calendarWindow(1),
+    calendar: buildCalendarEntries(1),
     records: [],
     discoveredNames: ['普通铁剑'],
     rngState: offers.state,
@@ -413,11 +402,14 @@ export function ringSubmissionBell(state: GameState, now: number): Transition {
   if (!met && (state.pendingLowSubmitUntil === null || state.pendingLowSubmitUntil <= now)) {
     return {
       state: { ...state, pendingLowSubmitUntil: now + 3000 },
-      events: [{ type: 'message', message: sword ? '铃声沉闷，剑价不足。三秒内再敲一次，将扣 1 点生命并进入下一天。' : '提交台没有剑。三秒内再敲一次，将扣 1 点生命、无金币收入并进入下一天。', tone: 'bad' }],
+      events: [{ type: 'message', message: sword ? '铃声沉闷，剑价不足。三秒内再敲一次，将扣 1 点生命并进入下一天。' : '上供台没有剑。三秒内再敲一次，将扣 1 点生命、无金币收入并进入下一天。', tone: 'bad' }],
     }
   }
 
-  const history = state.calendar.map((entry) => entry.day === state.day ? { ...entry, status: met ? 'met' as const : 'missed' as const } : entry)
+  const history = [
+    ...state.calendar.filter((entry) => entry.day !== state.day),
+    { day: state.day, target, status: met ? 'met' as const : 'missed' as const, merchant: state.day % 4 === 0 },
+  ]
   const nextDay = state.day + 1
   let health = met ? state.health : state.health - 1
   let coins = state.coins + value
@@ -439,7 +431,7 @@ export function ringSubmissionBell(state: GameState, now: number): Transition {
     swords: remaining,
     selectedSwordId: null,
     merchantItems: nextDay % 4 === 0 ? merchantInventory() : state.merchantItems,
-    calendar: calendarWindow(nextDay, history),
+    calendar: buildCalendarEntries(nextDay, history),
     nextSwordSerial: nextSerial,
     lastHammer: null,
     pendingLowSubmitUntil: null,

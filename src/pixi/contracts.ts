@@ -2,10 +2,12 @@ import type { Texture } from 'pixi.js'
 import type { Sword, SwordLocation } from '../game/types'
 
 export type ConsumableKind = 'dragon-scale' | 'hourglass'
-export type SceneFocus = 'forge' | 'anvil' | 'rack' | 'submission'
+export type SceneBookPage = 'bestiary' | 'relics' | 'manual'
+export type SceneFocus = 'cabinet' | 'forge' | 'anvil' | 'rack' | 'submission'
 
 export interface SceneCamera {
   x: number
+  minX: number
   maxX: number
 }
 
@@ -14,7 +16,7 @@ export interface SmithySceneCallbacks {
   onSwordSelect: (swordId: string) => void
   onHammer: () => void
   onBell: () => void
-  onBook: () => void
+  onBook: (page: SceneBookPage) => void
   onRelic: () => void
   onMerchant: () => void
   onItemDrop: (type: ConsumableKind) => void
@@ -55,6 +57,7 @@ export interface HammerArtwork {
 
 export const SCENE_WIDTH = 1920
 export const SCENE_HEIGHT = 1080
+export const MIN_WORLD_X = -420
 export const HOOK_X = 1376
 export const HOOK_Y = 354
 export const HOOK_SPACING = 130

@@ -58,10 +58,6 @@
   user-select: none;
 }
 
-.shop-drag-preview > span {
-  font-size: 35px;
-}
-
 .shop-drag-preview small {
   text-align: center;
   font-size: 11px;
@@ -140,5 +136,203 @@
 
   .shop-panel .sacrifice-list > .book-scroll-content {
     grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+/* 交易外壳由真实素材提供，交互与读数仍由原 DOM 承担。 */
+.shop-panel.furnishing-panel {
+  padding: 76px 52px 40px;
+}
+
+.shop-panel.furnishing-panel .shop-scroll {
+  max-height: calc(88vh - 116px);
+}
+
+.shop-panel.furnishing-panel .shop-content {
+  padding: 4px 8px 10px 4px;
+}
+
+.relic-panel.furnishing-panel {
+  color: #3c2d1c;
+}
+
+.relic-panel.furnishing-panel header p {
+  color: #665036;
+}
+
+.relic-panel.furnishing-panel header strong {
+  color: #65461e;
+}
+
+.relic-panel.furnishing-panel .relic-offers,
+.relic-panel.furnishing-panel .sacrifice-tray {
+  color: var(--ink);
+}
+
+.shop-panel .shop-header-image {
+  flex: 0 0 62px;
+  width: 62px;
+  height: 76px;
+  object-fit: contain;
+  background: none;
+  border: 0;
+  image-rendering: pixelated;
+}
+
+.shop-item-image {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 76px;
+  height: 76px;
+  vertical-align: middle;
+  pointer-events: none;
+}
+
+.shop-item-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.shop-item-image.is-weapon {
+  width: 112px;
+  height: 64px;
+}
+
+.shop-item-image.is-weapon img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 48px;
+  height: 96px;
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.shop-panel .merchant-checkout {
+  width: min(100%, 270px);
+  min-height: 86px;
+}
+
+.shop-panel .merchant-checkout .checkout-item {
+  display: grid;
+  place-items: center;
+  width: 146px;
+  height: 84px;
+  padding: 4px;
+}
+
+.shop-panel .checkout-item > small {
+  font-size: 12px;
+}
+
+.shop-panel .shop-bell-image {
+  display: block;
+  width: 32px;
+  height: 36px;
+  margin: auto;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.shop-panel .merchant-checkout > button:last-child {
+  width: 54px;
+  height: 54px;
+}
+
+.shop-panel .relic-bell {
+  height: 48px;
+}
+
+.shop-panel .sword-cost {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 8px;
+  letter-spacing: 0;
+}
+
+.shop-panel .sword-cost > .shop-item-image,
+.shop-panel .sacrifice-sword > .shop-item-image,
+.shop-panel .empty-slot > .shop-item-image {
+  width: 50px;
+  height: 30px;
+}
+
+.shop-panel .sword-cost > .shop-item-image img,
+.shop-panel .sacrifice-sword > .shop-item-image img,
+.shop-panel .empty-slot > .shop-item-image img {
+  width: 22px;
+  height: 44px;
+}
+
+.shop-panel .sword-cost > strong {
+  font-size: 17px;
+}
+
+.shop-panel .sword-cost > small {
+  font-size: 11px;
+  color: #d8c49e;
+}
+
+.shop-panel .empty-slot {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  color: #b5a386;
+  font-size: 11px;
+  text-align: center;
+}
+
+.shop-panel .empty-slot > .shop-item-image {
+  opacity: .3;
+}
+
+.shop-panel .chosen-relic-preview {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  color: #ead5a6;
+  font-size: 12px;
+}
+
+.shop-panel .chosen-relic-preview .shop-item-image {
+  width: 52px;
+  height: 52px;
+}
+
+.shop-drag-preview .shop-item-image {
+  width: 68px;
+  height: 68px;
+}
+
+.shop-drag-preview .shop-item-image.is-weapon {
+  width: 112px;
+  height: 56px;
+}
+
+.shop-drag-preview small {
+  color: #fff0c9;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 700px), (max-height: 550px) {
+  .shop-panel.furnishing-panel {
+    padding: 42px 40px 22px;
+  }
+
+  .shop-panel.furnishing-panel .shop-scroll {
+    max-height: calc(88vh - 64px);
+  }
+
+  .shop-panel .wares-grid article,
+  .shop-panel .relic-offers article {
+    padding: 10px;
   }
 }

@@ -1,11 +1,13 @@
 import type { CSSProperties } from 'react'
-import { formatCoins, RELIC_BY_ID, swordName, swordValue } from '../game/content'
+import { formatCoins, swordName, swordValue } from '../game/content'
+import { furnishingUrl } from '../game/furnishingAssets'
 import { weaponRarity } from '../game/rarity'
 import type { GameState, HammerResult } from '../game/types'
 import { WEAPON_CATALOG } from '../game/weaponCatalog'
 import type { WeaponAtlas } from '../pixi/contracts'
 import { BookScroll } from './BookScroll'
-
+import { RelicCodex } from './RelicCodex'
+import './furnishing-panels.css'
 export type BookPage = 'records' | 'bestiary' | 'manual' | 'relics'
 
 const RESULT_LABEL: Record<HammerResult, string> = {
@@ -86,7 +88,7 @@ function WeaponCodex({ state, weaponAtlas }: Pick<BookPanelProps, 'state' | 'wea
 export function BookPanel({ state, page, weaponAtlas, onPageChange, onClose }: BookPanelProps) {
   return (
     <div className="overlay" role="presentation" onPointerDown={(event) => event.target === event.currentTarget && onClose()}>
-      <section className="book-panel" role="dialog" aria-modal="true" aria-label="铁匠手记">
+      <section className={`book-panel furnishing-panel${page === 'relics' ? ' is-relic-codex' : ''}`} style={{ '--furnishing-panel-image': `url("${furnishingUrl('codex-panel')}")` } as CSSProperties} role="dialog" aria-modal="true" aria-label="铁匠手记">
         <button className="corner-close icon-button" onClick={onClose} aria-label="合上书本">×</button>
         <nav className="book-tabs" aria-label="书本页签">
           <button className={page === 'records' ? 'active' : ''} onClick={() => onPageChange('records')}>锻造记录</button>
@@ -128,33 +130,19 @@ export function BookPanel({ state, page, weaponAtlas, onPageChange, onClose }: B
             </>
           )}
           {page === 'bestiary' && <WeaponCodex state={state} weaponAtlas={weaponAtlas} />}
-          {page === 'relics' && (
-            <>
-              <BookScroll className="book-page" ariaLabel="持有遗物">
-                <h2>持有遗物</h2>
-                {state.relics.length === 0 ? <p className="ink-muted">祭台尚未回应。</p> : state.relics.map((id) => (
-                  <article className="book-relic" key={id}><span>{RELIC_BY_ID[id].glyph}</span><div><strong>{RELIC_BY_ID[id].name}</strong><p>{RELIC_BY_ID[id].description}</p></div></article>
-                ))}
-              </BookScroll>
-              <BookScroll className="book-page" ariaLabel="祭台规则">
-                <h2>祭台规则</h2>
-                <p>遗物以普通铁剑为祭品。每件遗物只会出现一次，一局最多持有十件。</p>
-                <p>命运轮盘每次固定消耗 750 金币刷新。</p>
-                <p>概率遗物修改权重，再统一归一化。某种结果的权重可以降到零；0级剑不会被遗物增加破坏概率。</p>
-              </BookScroll>
-            </>
-          )}
+          {page === 'relics' && <RelicCodex state={state} />}
           {page === 'manual' && (
             <>
               <BookScroll className="book-page manual-page" ariaLabel="铁匠铺操作手册">
                 <h2>铁匠铺操作</h2>
                 <ol>
                   <li><b>拖进炭炉</b>：每把新剑只需加热一次，之后永久有效。</li>
-                  <li><b>拖上工作台</b>：点击或按住大锤头敲打，最快每秒两锤；锤头概率圆环与顶部图例反映当前等级、遗物和补偿后的下一锤概率。</li>
+                  <li><b>拖上工作台</b>：点击或按住大锤头敲打，最快每秒两锤；锤头概率圆环反映当前等级、遗物和补偿后的下一锤概率。</li>
                   <li><b>挂回墙钩</b>：墙面只有单排挂钩，保存暂时不用的剑；藏剑增加时向右浏览更多挂钩。</li>
-                  <li><b>敲响提交铃</b>：交付台上的剑。价值不足或台上无剑时，三秒内再敲一次确认扣1血过日；空交不消耗别处的剑、不加交付金币。</li>
+                  <li><b>敲响上供铃</b>：交付上供台上的剑。价值不足或台上无剑时，三秒内再敲一次确认扣1血过日；空交不消耗别处的剑、不加上供金币。</li>
                 </ol>
-                <p>拖动空白处可让整间铁匠铺横向移动，顶部状态栏保持固定。取下远端剑后，将指针停在屏幕左边缘可带剑回到工作区。拖拽取消或落在无效处，物件回到原位；炭炉、工作台和提交台各容纳一把剑。</p>
+                <p>拖动空白处可让整间铁匠铺横向移动，顶部状态栏保持固定。取下远端剑后，将指针停在屏幕左边缘可带剑回到工作区。拖拽取消或落在无效处，物件回到原位；炭炉、工作台和上供台各容纳一把剑。</p>
+                <p>柜子第四层分别放着武器图鉴、遗物图鉴和操作手册，点击对应书本可直接翻到该页。</p>
               </BookScroll>
               <BookScroll className="book-page manual-page" ariaLabel="锤击与生存手册">
                 <h2>锤击与生存</h2>
@@ -162,9 +150,9 @@ export function BookPanel({ state, page, weaponAtlas, onPageChange, onClose }: B
                 <p>同一把剑每次维持或损伤后获得1层锻造补偿，最多5层；每层使破坏权重减0.5、损伤减2（最低0），实际减少量全部转给成功。成功或大成功后清零；被阻挡的破坏不改变层数。先算等级与遗物，再算补偿，最后应用大成功强化并统一归一化；损伤后按降低的等级计算下一锤。</p>
                 <p>补偿不跨剑共享，存放、移动和换日保留；沙漏恢复锤前层数，但不回退随机序列。</p>
                 <p>维持、成功和大成功积累登神充能。满 10 点后获得约 5 秒无敌，只阻挡破坏。</p>
-                <p>把工作台左侧物品架上的龙鳞拖上工作台，可为剑装备保护；沙漏拖上工作台可撤销最近一锤。也可用 Tab 聚焦顶部道具，再按 Enter 使用。</p>
-                <p>每次交付或空交后进入下一天并获得三把铁剑，日历记录是否达标，商人与里程碑照常推进。空交按价值0未达标处理，即使别处有剑也可主动空交。未使用的剑永不自动消失，生命归零则本局结束。</p>
-                <p><b>键盘后备</b>：Tab 聚焦藏剑，Enter 选中；F 移到炭炉，A 移到工作台，R 挂回墙钩，T 移到提交台；空格敲锤，左右方向键浏览房间。Tab 聚焦提交铃后 Enter 确认；Escape 关闭面板。</p>
+                <p>把柜子第三层的龙鳞拖上工作台，可为剑装备保护；沙漏拖上工作台可撤销最近一锤。也可用 Tab 聚焦键盘后备用品，再按 Enter 使用。</p>
+                <p>每次上供或空交后进入下一天并获得三把铁剑，日历记录是否达标，商人与里程碑照常推进。空交按价值0未达标处理，即使别处有剑也可主动空交。未使用的剑永不自动消失，生命归零则本局结束。</p>
+                <p><b>键盘后备</b>：Tab 聚焦藏剑，Enter 选中；F 移到炭炉，A 移到工作台，R 挂回墙钩，T 移到上供台；空格敲锤，左右方向键浏览房间。Tab 聚焦上供铃后 Enter 确认；Escape 关闭面板。</p>
                 <p>商店与祭台中，Tab 聚焦物件后 Enter / 空格可选择或取回，再聚焦小钟确认。鸣铃前不扣金币或祭品，拖拽取消与窗口失焦也不会成交。</p>
               </BookScroll>
             </>

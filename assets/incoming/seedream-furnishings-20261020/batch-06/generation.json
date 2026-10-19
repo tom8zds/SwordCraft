@@ -1,0 +1,32 @@
+{
+  "status": "completed",
+  "startedAt": "2026-10-19T16:34:59.934Z",
+  "endpoint": "https://ark.cn-beijing.volces.com/api/v3/images/generations",
+  "model": "doubao-seedream-5-0-pro-260628",
+  "prompt": "为《铸剑录》制作真实模型生成的生产素材接触表，必须严格绘制三件互相独立的物件，左中右各一件，每件完整位于自己的800x1080竖直格内；三格之间没有分隔线、没有标签、没有文字、没有数字、没有UI。固定正面正交投影，硬边高细节像素画，灰铁、深棕木、旧皮革、羊皮纸材质，左上方光照，透明抠图用完全均匀纯绿色#00FF00背景。任何物件不得使用绿色材质或绿色反光；每件主体距离本格四边至少12%，不得触边、不得跨格、不得重叠。禁止摄影、圆滑矢量、塑料3D、场景陈列、人物、手、地面、阴影、展架、水印。三件必须是三个不同真实结构，不可只换颜色或重复模板。\n本批次固定三件物件，必须按左、中、右顺序分别对应：\n左格：dragon-scale，一枚独立龙鳞，青蓝灰铁鳞片、清晰层叠脊线和金属边，非绿色、无龙身。\n中格：hourglass，一只真实沙漏，木质棕框、透明玻璃双球、浅金细沙正在下落，结构清楚。\n右格：weapon-book，一本武器图鉴，展开厚棕皮封面与两页羊皮纸，页面留空供界面叠字，页边金属扣，不要文字。\n输出一张2400x1080图像，三格均为独立真实物件。",
+  "size": "2400x1080",
+  "watermark": false,
+  "mode": "generation",
+  "references": [
+    {
+      "file": "assets/incoming/seedream-gameplay-heroes-20261019/sword/image.png",
+      "sha256": "020d4c02bfba115d70e9f82c035b78370bfcfc5742063fe2d12a33d98616e628"
+    }
+  ],
+  "created": 1792427735,
+  "usage": {
+    "input_images": 1,
+    "generated_images": 1,
+    "output_tokens": 10125,
+    "total_tokens": 10125
+  },
+  "completedAt": "2026-10-19T16:35:36.084Z",
+  "outputs": [
+    {
+      "file": "image.png",
+      "size": "2400x1080",
+      "sha256": "8b446bfba7c2e868fd7e98a2dbb971ad31812c26ab7214270eab206c72a9c0f5",
+      "bytes": 4048915
+    }
+  ]
+}

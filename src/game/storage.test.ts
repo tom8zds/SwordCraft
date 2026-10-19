@@ -1,9 +1,10 @@
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { armDragonScale, createInitialState, effectiveOdds, hammerSword, moveSword, useHourglass } from './engine'
 import { loadGame, saveGame } from './storage'
-import { IRON_PATHS, swordName } from './content'
+import { dailyTarget, IRON_PATHS, swordName } from './content'
 import { nextRandom, randomIndex } from './rng'
 import { WEAPON_CATALOG } from './weaponCatalog'
+import { buildCalendarEntries, divineDate, monthCalendar } from './divineCalendar'
 
 class MemoryStorage implements Storage {
   readonly #values = new Map<string, string>()
@@ -240,6 +241,58 @@ describe('本地存档', () => {
     expect(loaded.state.rngState).toBe(source.rngState)
     expect(loaded.state.swords).toEqual(source.swords)
     expect(loaded.state.lastHammer).toEqual(source.lastHammer)
+  })
+
+  it('超过整月的已知达标历史完整往返，版本、金币和RNG不重置', () => {
+    const history = Array.from({ length: 35 }, (_, index) => ({
+      day: index + 1,
+      target: dailyTarget(index + 1),
+      status: index % 2 === 0 ? 'met' as const : 'missed' as const,
+      merchant: (index + 1) % 4 === 0,
+    }))
+    const source = { ...createInitialState(96), day: 36, coins: 12345678901234567890n, calendar: buildCalendarEntries(36, history) }
+    expect(saveGame(source)).toBe(true)
+    const loaded = loadGame()
+    expect(loaded.recovered).toBe(true)
+    expect(loaded.state.calendar).toEqual(source.calendar)
+    expect(loaded.state.calendar.filter((entry) => entry.day < 36)).toEqual(history)
+    expect(loaded.state).toMatchObject({ version: 1, day: 36, coins: source.coins, rngState: source.rngState })
+    expect(divineDate(loaded.state.day)).toEqual({ year: 26, month: 4, day: 9 })
+    expect(saveGame(loaded.state)).toBe(true)
+    expect(loadGame().state.calendar).toEqual(source.calendar)
+  })
+
+  it('旧档空历史仅补当前和近期未来，未知过去不伪造未达标且保留熄炉状态', () => {
+    const source = { ...createInitialState(97), day: 40, health: 0, gameOver: true, coins: 739n, calendar: [] }
+    expect(saveGame(source)).toBe(true)
+    const loaded = loadGame()
+    expect(loaded.recovered).toBe(true)
+    expect(loaded.state).toMatchObject({ version: 1, day: 40, health: 0, gameOver: true, coins: 739n, rngState: source.rngState })
+    expect(loaded.state.calendar.map((entry) => entry.day)).toEqual([40, 41, 42, 43])
+    expect(loaded.state.calendar[0].status).toBe('current')
+    const march = monthCalendar(loaded.state, 26, 3)
+    expect(march.find((cell) => cell.gameDay === 1)?.status).toBe('unknown')
+    expect(march.find((cell) => cell.inMonth && cell.date.day === 4)?.status).toBe('ineligible')
+  })
+
+  it('旧滚动窗口尚存的结果继续保留，缺失日期仍未知', () => {
+    const source = createInitialState(98)
+    source.day = 35
+    source.calendar = [
+      { day: 32, target: dailyTarget(32), status: 'met', merchant: true },
+      { day: 33, target: dailyTarget(33), status: 'missed', merchant: false },
+      { day: 34, target: dailyTarget(34), status: 'met', merchant: false },
+    ]
+    expect(saveGame(source)).toBe(true)
+    const loaded = loadGame().state
+    expect(loaded.calendar.slice(0, 3)).toEqual(source.calendar)
+    const april = monthCalendar(loaded, 26, 4)
+    expect(april.find((cell) => cell.gameDay === 31)?.status).toBe('unknown')
+    expect(april.find((cell) => cell.gameDay === 32)?.status).toBe('met')
+    expect(april.find((cell) => cell.gameDay === 33)?.status).toBe('missed')
+    expect(april.find((cell) => cell.gameDay === 35)?.status).toBe('current')
+    expect(saveGame(loaded)).toBe(true)
+    expect(loadGame().state.calendar).toEqual(loaded.calendar)
   })
 
   it('损坏存档不会阻止新游戏', () => {

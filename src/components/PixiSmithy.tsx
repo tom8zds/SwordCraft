@@ -2,9 +2,10 @@ import { useEffect, useRef, useState } from 'react'
 import { Application, Assets, Texture } from 'pixi.js'
 import type { GameState } from '../game/types'
 import { SmithyScene } from '../pixi/SmithyScene'
-import { SCENE_HEIGHT, SCENE_WIDTH, type HammerArtwork, type SceneCamera, type SmithySceneCallbacks, type SmithyTextures, type WeaponAtlas } from '../pixi/contracts'
+import { MIN_WORLD_X, SCENE_HEIGHT, SCENE_WIDTH, type HammerArtwork, type SceneCamera, type SmithySceneCallbacks, type SmithyTextures, type WeaponAtlas } from '../pixi/contracts'
 import { WorkbenchDetails } from './WorkbenchDetails'
 import { createWeaponAtlas, loadWeaponTextures } from '../pixi/weaponAtlas'
+import { loadFurnishingTextures } from '../pixi/furnishingAssets'
 
 interface PixiSmithyProps extends SmithySceneCallbacks {
   state: GameState
@@ -26,7 +27,7 @@ export function PixiSmithy(props: PixiSmithyProps) {
   const propsRef = useRef(props)
   const [error, setError] = useState<string | null>(null)
   const [ready, setReady] = useState(false)
-  const [camera, setCamera] = useState<SceneCamera>({ x: 0, maxX: 0 })
+  const [camera, setCamera] = useState<SceneCamera>({ x: MIN_WORLD_X, minX: MIN_WORLD_X, maxX: 0 })
   const [size, setSize] = useState({ width: 1920, height: 1080 })
   propsRef.current = props
 
@@ -43,13 +44,14 @@ export function PixiSmithy(props: PixiSmithyProps) {
     setError(null)
     void (async () => {
       try {
-        const [manifest, weapons] = await Promise.all([
+        const [manifest, weapons, furnishings] = await Promise.all([
           (async () => {
             const result = await fetch('/assets/game/smithy/manifest.json', { signal: lifecycle.signal })
             if (!result.ok) throw new Error('无法加载铁匠铺素材清单。')
             return await result.json() as RuntimeManifest
           })(),
           loadWeaponTextures(lifecycle.signal),
+          loadFurnishingTextures(lifecycle.signal),
         ])
         if (disposed) return
         const urls = SCENE_TEXTURE_KEYS.map((key) => {
@@ -68,18 +70,19 @@ export function PixiSmithy(props: PixiSmithyProps) {
         app.canvas.tabIndex = 0
         host.appendChild(app.canvas)
         const artwork: HammerArtwork = { ring: { ...manifest.hammerRing.center, radius: manifest.hammerRing.radius }, pivot: { x: manifest.assets.hammer.pivot.x * textures.hammer.width, y: manifest.assets.hammer.pivot.y * textures.hammer.height } }
-        scene = new SmithyScene(textures, weapons, artwork, {
+        scene = new SmithyScene(textures, weapons, furnishings, artwork, {
           onSwordDrop: (id, location) => propsRef.current.onSwordDrop(id, location),
           onSwordSelect: (id) => propsRef.current.onSwordSelect(id),
           onHammer: () => propsRef.current.onHammer(),
           onBell: () => propsRef.current.onBell(),
-          onBook: () => propsRef.current.onBook(),
+          onBook: (page) => propsRef.current.onBook(page),
           onRelic: () => propsRef.current.onRelic(),
           onMerchant: () => propsRef.current.onMerchant(),
           onItemDrop: (type) => propsRef.current.onItemDrop(type),
           onDisarmScale: (id) => propsRef.current.onDisarmScale(id),
           onCameraChange: (next) => {
             host.dataset.cameraX = String(next.x)
+            host.dataset.cameraMin = String(next.minX)
             host.dataset.cameraMax = String(next.maxX)
             setCamera(next)
             propsRef.current.onCameraChange(next)
@@ -166,11 +169,12 @@ export function PixiSmithy(props: PixiSmithyProps) {
       {!ready && <div className="scene-loading" role="status">{error ?? '炉火点燃中…'}</div>}
       {ready && anvilSword && panelX > -260 && panelX < size.width && <WorkbenchDetails sword={anvilSword} style={{ left: panelX, top: panelY, width: Math.min(280, 330 * scale) }} />}
       {ready && <div className="camera-controls" aria-label="房间镜头">
-        <button onClick={() => sceneRef.current?.moveCamera(camera.x - 500)} aria-label="向左浏览铁匠铺" disabled={!props.enabled || camera.x === 0}>‹</button>
-        <input type="range" min="0" max={camera.maxX} step="1" value={camera.x} aria-label="房间镜头位置" disabled={!props.enabled} onChange={(event) => sceneRef.current?.moveCamera(Number(event.target.value))} />
+        <button onClick={() => sceneRef.current?.moveCamera(camera.x - 500)} aria-label="向左浏览铁匠铺" disabled={!props.enabled || camera.x <= camera.minX}>‹</button>
+        <input type="range" min={camera.minX} max={camera.maxX} step="1" value={camera.x} aria-label="房间镜头位置" disabled={!props.enabled} onChange={(event) => sceneRef.current?.moveCamera(Number(event.target.value))} />
         <button onClick={() => sceneRef.current?.moveCamera(camera.x + 500)} aria-label="向右浏览铁匠铺" disabled={!props.enabled || camera.x >= camera.maxX}>›</button>
       </div>}
       <div className="scene-focus-controls">
+        <button aria-label="查看四层物品柜" title="物品柜" onClick={() => sceneRef.current?.focus('cabinet')} disabled={!props.enabled}>▦</button>
         <button aria-label="查看炭炉" title="炭炉" onClick={() => sceneRef.current?.focus('forge')} disabled={!props.enabled}>♨</button>
         <button aria-label="查看工作台" title="工作台" onClick={() => sceneRef.current?.focus('anvil')} disabled={!props.enabled}>⚒</button>
         <button aria-label="查看挂剑墙" title="挂剑墙" onClick={() => sceneRef.current?.focus('rack')} disabled={!props.enabled}>†</button>

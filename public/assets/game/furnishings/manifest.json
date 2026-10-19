@@ -1,0 +1,1537 @@
+{
+  "version": 1,
+  "assets": {
+    "lucky-tongs": {
+      "file": "lucky-tongs.png",
+      "width": 160,
+      "height": 160,
+      "sha256": "d6477532ba7f50bc339fc190a9726f08ca39586317873315fb4f3606382c9edd",
+      "source": "assets/incoming/seedream-furnishings-20261020/batch-01/image.png",
+      "sourceSha256": "9af2e0ede801e36f0122a0ef69495d82f0a627ccac6a5f52bf38ec339f1f020f",
+      "sourceCrop": {
+        "x": 98,
+        "y": 78,
+        "width": 712,
+        "height": 921
+      },
+      "sourceBounds": {
+        "x": 98,
+        "y": 78,
+        "width": 712,
+        "height": 921
+      },
+      "contentBounds": {
+        "x": 33,
+        "y": 19,
+        "width": 94,
+        "height": 122
+      },
+      "nineSlice": null,
+      "sourceComponents": [
+        {
+          "x": 98,
+          "y": 78,
+          "width": 712,
+          "height": 921,
+          "pixels": 131642
+        }
+      ],
+      "opaquePixels": 2302,
+      "outputGreenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no aspect stretching",
+      "visualInspection": "native source inspected batch-01: three independent objects grouped by connected components",
+      "correction": null,
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false
+    },
+    "soft-anvil": {
+      "file": "soft-anvil.png",
+      "width": 160,
+      "height": 160,
+      "sha256": "4e2073c248f3d45e9fac6b3efd626623bcfeea8b0b359370188fccc62dfc61e2",
+      "source": "assets/incoming/seedream-furnishings-20261020/batch-01/image.png",
+      "sourceSha256": "9af2e0ede801e36f0122a0ef69495d82f0a627ccac6a5f52bf38ec339f1f020f",
+      "sourceCrop": {
+        "x": 754,
+        "y": 273,
+        "width": 807,
+        "height": 651
+      },
+      "sourceBounds": {
+        "x": 754,
+        "y": 273,
+        "width": 807,
+        "height": 651
+      },
+      "contentBounds": {
+        "x": 19,
+        "y": 31,
+        "width": 122,
+        "height": 98
+      },
+      "nineSlice": null,
+      "sourceComponents": [
+        {
+          "x": 754,
+          "y": 273,
+          "width": 807,
+          "height": 651,
+          "pixels": 266304
+        }
+      ],
+      "opaquePixels": 6046,
+      "outputGreenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no aspect stretching",
+      "visualInspection": "native source inspected batch-01: three independent objects grouped by connected components",
+      "correction": null,
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false
+    },
+    "tempered-gloves": {
+      "file": "tempered-gloves.png",
+      "width": 160,
+      "height": 160,
+      "sha256": "a129a4bb0b67e54ca32a7e33f24045961794c21b1ce5d921cafb27793b635ab6",
+      "source": "assets/incoming/seedream-furnishings-20261020/batch-01/image.png",
+      "sourceSha256": "9af2e0ede801e36f0122a0ef69495d82f0a627ccac6a5f52bf38ec339f1f020f",
+      "sourceCrop": {
+        "x": 1666,
+        "y": 253,
+        "width": 633,
+        "height": 621
+      },
+      "sourceBounds": {
+        "x": 1666,
+        "y": 253,
+        "width": 633,
+        "height": 621
+      },
+      "contentBounds": {
+        "x": 19,
+        "y": 20,
+        "width": 122,
+        "height": 120
+      },
+      "nineSlice": null,
+      "sourceComponents": [
+        {
+          "x": 1666,
+          "y": 253,
+          "width": 324,
+          "height": 536,
+          "pixels": 128374
+        },
+        {
+          "x": 1980,
+          "y": 294,
+          "width": 319,
+          "height": 580,
+          "pixels": 138952
+        }
+      ],
+      "opaquePixels": 9952,
+      "outputGreenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no aspect stretching",
+      "visualInspection": "native source inspected batch-01: three independent objects grouped by connected components",
+      "correction": null,
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false
+    },
+    "star-coal": {
+      "file": "star-coal.png",
+      "width": 160,
+      "height": 160,
+      "sha256": "38a890de4120611ac3f8b3d1f260043ef26b4256c307cb8369b4c51a81e28ab7",
+      "source": "assets/incoming/seedream-furnishings-20261020/batch-02/image.png",
+      "sourceSha256": "8d9f1d8ef1ea67c8c1f97e5b4591be94acc14b4a24b1a6dd5f40cb4eabd534c5",
+      "sourceCrop": {
+        "x": 110,
+        "y": 0,
+        "width": 690,
+        "height": 1080
+      },
+      "sourceBounds": {
+        "x": 110,
+        "y": 0,
+        "width": 690,
+        "height": 1080
+      },
+      "contentBounds": {
+        "x": 41,
+        "y": 19,
+        "width": 78,
+        "height": 122
+      },
+      "nineSlice": null,
+      "sourceComponents": [
+        {
+          "x": 794,
+          "y": 0,
+          "width": 6,
+          "height": 1080,
+          "pixels": 5654
+        },
+        {
+          "x": 110,
+          "y": 241,
+          "width": 582,
+          "height": 636,
+          "pixels": 265202
+        }
+      ],
+      "opaquePixels": 3517,
+      "outputGreenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no aspect stretching",
+      "visualInspection": "native source inspected batch-02: three independent objects grouped by connected components",
+      "correction": null,
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false
+    },
+    "echo-hammer": {
+      "file": "echo-hammer.png",
+      "width": 160,
+      "height": 160,
+      "sha256": "613d1a5438260f8f4b225e551208ecb24e9ef533fd1e0cd318bbfd847016100a",
+      "source": "assets/incoming/seedream-furnishings-20261020/batch-02/image.png",
+      "sourceSha256": "8d9f1d8ef1ea67c8c1f97e5b4591be94acc14b4a24b1a6dd5f40cb4eabd534c5",
+      "sourceCrop": {
+        "x": 1002,
+        "y": 127,
+        "width": 504,
+        "height": 841
+      },
+      "sourceBounds": {
+        "x": 1002,
+        "y": 127,
+        "width": 504,
+        "height": 841
+      },
+      "contentBounds": {
+        "x": 43,
+        "y": 19,
+        "width": 73,
+        "height": 122
+      },
+      "nineSlice": null,
+      "sourceComponents": [
+        {
+          "x": 1002,
+          "y": 127,
+          "width": 504,
+          "height": 841,
+          "pixels": 152552
+        }
+      ],
+      "opaquePixels": 3212,
+      "outputGreenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no aspect stretching",
+      "visualInspection": "native source inspected batch-02: three independent objects grouped by connected components",
+      "correction": null,
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false
+    },
+    "scarlet-apron": {
+      "file": "scarlet-apron.png",
+      "width": 160,
+      "height": 160,
+      "sha256": "2c2cf62d3965aaac598986182e2b31f9cedebedc9c399bbc6ea67a1bb8fdd3ac",
+      "source": "assets/incoming/seedream-furnishings-20261020/batch-02/image.png",
+      "sourceSha256": "8d9f1d8ef1ea67c8c1f97e5b4591be94acc14b4a24b1a6dd5f40cb4eabd534c5",
+      "sourceCrop": {
+        "x": 1600,
+        "y": 0,
+        "width": 626,
+        "height": 1080
+      },
+      "sourceBounds": {
+        "x": 1600,
+        "y": 0,
+        "width": 626,
+        "height": 1080
+      },
+      "contentBounds": {
+        "x": 44,
+        "y": 19,
+        "width": 71,
+        "height": 122
+      },
+      "nineSlice": null,
+      "sourceComponents": [
+        {
+          "x": 1600,
+          "y": 0,
+          "width": 6,
+          "height": 1080,
+          "pixels": 5024
+        },
+        {
+          "x": 1789,
+          "y": 101,
+          "width": 437,
+          "height": 888,
+          "pixels": 278557
+        }
+      ],
+      "opaquePixels": 3688,
+      "outputGreenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no aspect stretching",
+      "visualInspection": "native source inspected batch-02: three independent objects grouped by connected components",
+      "correction": null,
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false
+    },
+    "guardian-mark": {
+      "file": "guardian-mark.png",
+      "width": 160,
+      "height": 160,
+      "sha256": "6e292fbf0b7ca10757c267e084bdf485668c1559be47fbc2ebf77cc203ecaf60",
+      "source": "assets/incoming/seedream-furnishings-20261020/batch-03/image.png",
+      "sourceSha256": "371b058ca4656da313d499a589399e956a0898dac23d5cff1e4b23df6f4ecb4e",
+      "sourceCrop": {
+        "x": 149,
+        "y": 0,
+        "width": 653,
+        "height": 1080
+      },
+      "sourceBounds": {
+        "x": 149,
+        "y": 0,
+        "width": 653,
+        "height": 1080
+      },
+      "contentBounds": {
+        "x": 43,
+        "y": 19,
+        "width": 74,
+        "height": 122
+      },
+      "nineSlice": null,
+      "sourceComponents": [
+        {
+          "x": 796,
+          "y": 0,
+          "width": 6,
+          "height": 1080,
+          "pixels": 5813
+        },
+        {
+          "x": 149,
+          "y": 184,
+          "width": 498,
+          "height": 666,
+          "pixels": 207255
+        }
+      ],
+      "opaquePixels": 2771,
+      "outputGreenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no aspect stretching",
+      "visualInspection": "native source inspected batch-03: three independent objects grouped by connected components",
+      "correction": null,
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false
+    },
+    "patient-bell": {
+      "file": "patient-bell.png",
+      "width": 160,
+      "height": 160,
+      "sha256": "d78e216305d4e5498e07a35ff5fb9b0ffc54091dd32ca36f0b3bc35acba6973b",
+      "source": "assets/incoming/seedream-furnishings-20261020/batch-03/image.png",
+      "sourceSha256": "371b058ca4656da313d499a589399e956a0898dac23d5cff1e4b23df6f4ecb4e",
+      "sourceCrop": {
+        "x": 1022,
+        "y": 0,
+        "width": 581,
+        "height": 1080
+      },
+      "sourceBounds": {
+        "x": 1022,
+        "y": 0,
+        "width": 581,
+        "height": 1080
+      },
+      "contentBounds": {
+        "x": 47,
+        "y": 19,
+        "width": 66,
+        "height": 122
+      },
+      "nineSlice": null,
+      "sourceComponents": [
+        {
+          "x": 1597,
+          "y": 0,
+          "width": 6,
+          "height": 1080,
+          "pixels": 6032
+        },
+        {
+          "x": 1022,
+          "y": 178,
+          "width": 359,
+          "height": 738,
+          "pixels": 105927
+        }
+      ],
+      "opaquePixels": 1476,
+      "outputGreenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no aspect stretching",
+      "visualInspection": "native source inspected batch-03: three independent objects grouped by connected components",
+      "correction": null,
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false
+    },
+    "gilded-chisel": {
+      "file": "gilded-chisel.png",
+      "width": 160,
+      "height": 160,
+      "sha256": "923abdeea317af2e65ca759987d8845227a11f65c2cfcae4ed37d19e1aafea1d",
+      "source": "assets/incoming/seedream-furnishings-20261020/batch-03/image.png",
+      "sourceSha256": "371b058ca4656da313d499a589399e956a0898dac23d5cff1e4b23df6f4ecb4e",
+      "sourceCrop": {
+        "x": 1748,
+        "y": 278,
+        "width": 527,
+        "height": 615
+      },
+      "sourceBounds": {
+        "x": 1748,
+        "y": 278,
+        "width": 527,
+        "height": 615
+      },
+      "contentBounds": {
+        "x": 27,
+        "y": 19,
+        "width": 105,
+        "height": 122
+      },
+      "nineSlice": null,
+      "sourceComponents": [
+        {
+          "x": 1748,
+          "y": 278,
+          "width": 527,
+          "height": 615,
+          "pixels": 112926
+        }
+      ],
+      "opaquePixels": 4465,
+      "outputGreenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no aspect stretching",
+      "visualInspection": "native source inspected batch-03: three independent objects grouped by connected components",
+      "correction": null,
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false
+    },
+    "phoenix-ash": {
+      "file": "phoenix-ash.png",
+      "width": 160,
+      "height": 160,
+      "sha256": "e866688f8bf776d72acc4cfbd3754c97b138cb1dae56439d7e03494bcaf0421f",
+      "source": "assets/incoming/seedream-furnishings-20261020/batch-04/image.png",
+      "sourceSha256": "52cfed8b612300904a2d5c28da7ca8fccf9ec4322f1c2ae41b7a4be75570533c",
+      "sourceCrop": {
+        "x": 227,
+        "y": 395,
+        "width": 459,
+        "height": 469
+      },
+      "sourceBounds": {
+        "x": 227,
+        "y": 395,
+        "width": 459,
+        "height": 469
+      },
+      "contentBounds": {
+        "x": 20,
+        "y": 19,
+        "width": 119,
+        "height": 122
+      },
+      "nineSlice": null,
+      "sourceComponents": [
+        {
+          "x": 459,
+          "y": 395,
+          "width": 5,
+          "height": 6,
+          "pixels": 30
+        },
+        {
+          "x": 489,
+          "y": 421,
+          "width": 5,
+          "height": 7,
+          "pixels": 27
+        },
+        {
+          "x": 227,
+          "y": 432,
+          "width": 459,
+          "height": 432,
+          "pixels": 166249
+        }
+      ],
+      "opaquePixels": 11203,
+      "outputGreenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no aspect stretching",
+      "visualInspection": "native source inspected batch-04: three independent objects grouped by connected components",
+      "correction": null,
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false
+    },
+    "moon-water": {
+      "file": "moon-water.png",
+      "width": 160,
+      "height": 160,
+      "sha256": "91dc91f8c323bca4d6f9758bbd26094743cd8c83c6b68bcfeae44a89deb569a9",
+      "source": "assets/incoming/seedream-furnishings-20261020/batch-04/image.png",
+      "sourceSha256": "52cfed8b612300904a2d5c28da7ca8fccf9ec4322f1c2ae41b7a4be75570533c",
+      "sourceCrop": {
+        "x": 1035,
+        "y": 296,
+        "width": 269,
+        "height": 567
+      },
+      "sourceBounds": {
+        "x": 1035,
+        "y": 296,
+        "width": 269,
+        "height": 567
+      },
+      "contentBounds": {
+        "x": 51,
+        "y": 19,
+        "width": 58,
+        "height": 122
+      },
+      "nineSlice": null,
+      "sourceComponents": [
+        {
+          "x": 1035,
+          "y": 296,
+          "width": 269,
+          "height": 567,
+          "pixels": 120623
+        },
+        {
+          "x": 1258,
+          "y": 522,
+          "width": 6,
+          "height": 7,
+          "pixels": 29
+        }
+      ],
+      "opaquePixels": 5587,
+      "outputGreenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no aspect stretching",
+      "visualInspection": "native source inspected batch-04: three independent objects grouped by connected components",
+      "correction": null,
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false
+    },
+    "old-ledger": {
+      "file": "old-ledger.png",
+      "width": 160,
+      "height": 160,
+      "sha256": "88a73e4cebf7e9eb28dff4229dd0a937d2ef19f592b9e7d7720363a2f3f14b37",
+      "source": "assets/incoming/seedream-furnishings-20261020/batch-04/image.png",
+      "sourceSha256": "52cfed8b612300904a2d5c28da7ca8fccf9ec4322f1c2ae41b7a4be75570533c",
+      "sourceCrop": {
+        "x": 1580,
+        "y": 199,
+        "width": 660,
+        "height": 685
+      },
+      "sourceBounds": {
+        "x": 1580,
+        "y": 199,
+        "width": 660,
+        "height": 685
+      },
+      "contentBounds": {
+        "x": 21,
+        "y": 19,
+        "width": 118,
+        "height": 122
+      },
+      "nineSlice": null,
+      "sourceComponents": [
+        {
+          "x": 1580,
+          "y": 199,
+          "width": 660,
+          "height": 685,
+          "pixels": 320227
+        }
+      ],
+      "opaquePixels": 10194,
+      "outputGreenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no aspect stretching",
+      "visualInspection": "native source inspected batch-04: three independent objects grouped by connected components",
+      "correction": null,
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false
+    },
+    "double-bell": {
+      "file": "double-bell.png",
+      "width": 160,
+      "height": 160,
+      "sha256": "51fda21a613f8833a21dd9b118c837fe08e9212743f8a1696125a04186b44896",
+      "source": "assets/incoming/seedream-furnishings-20261020/batch-05/image.png",
+      "sourceSha256": "2d05cbea411b4f3b8139dcc9549e739bad5fa869df45ce0b79f50eaa0a643ec2",
+      "sourceCrop": {
+        "x": 109,
+        "y": 366,
+        "width": 627,
+        "height": 400
+      },
+      "sourceBounds": {
+        "x": 109,
+        "y": 366,
+        "width": 627,
+        "height": 400
+      },
+      "contentBounds": {
+        "x": 19,
+        "y": 41,
+        "width": 122,
+        "height": 78
+      },
+      "nineSlice": null,
+      "sourceComponents": [
+        {
+          "x": 109,
+          "y": 366,
+          "width": 627,
+          "height": 400,
+          "pixels": 138433
+        }
+      ],
+      "opaquePixels": 5237,
+      "outputGreenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no aspect stretching",
+      "visualInspection": "native source inspected batch-05: three independent objects grouped by connected components",
+      "correction": null,
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false
+    },
+    "iron-will": {
+      "file": "iron-will.png",
+      "width": 160,
+      "height": 160,
+      "sha256": "5f0866c41ce11cdc4d6782ff9b9aeb451ea440d60a785c23b1b1458f879e9243",
+      "source": "assets/incoming/seedream-furnishings-20261020/batch-05/image.png",
+      "sourceSha256": "2d05cbea411b4f3b8139dcc9549e739bad5fa869df45ce0b79f50eaa0a643ec2",
+      "sourceCrop": {
+        "x": 942,
+        "y": 95,
+        "width": 525,
+        "height": 864
+      },
+      "sourceBounds": {
+        "x": 942,
+        "y": 95,
+        "width": 525,
+        "height": 864
+      },
+      "contentBounds": {
+        "x": 43,
+        "y": 19,
+        "width": 74,
+        "height": 122
+      },
+      "nineSlice": null,
+      "sourceComponents": [
+        {
+          "x": 942,
+          "y": 95,
+          "width": 525,
+          "height": 864,
+          "pixels": 208633
+        }
+      ],
+      "opaquePixels": 4157,
+      "outputGreenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no aspect stretching",
+      "visualInspection": "native source inspected batch-05: three independent objects grouped by connected components",
+      "correction": null,
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false
+    },
+    "fate-thread": {
+      "file": "fate-thread.png",
+      "width": 160,
+      "height": 160,
+      "sha256": "47b32552db831e89f289ad894f79c5bc74962add8d3fb11c9a67a3d5c2e9ecf4",
+      "source": "assets/incoming/seedream-furnishings-20261020/batch-05/image.png",
+      "sourceSha256": "2d05cbea411b4f3b8139dcc9549e739bad5fa869df45ce0b79f50eaa0a643ec2",
+      "sourceCrop": {
+        "x": 1742,
+        "y": 349,
+        "width": 527,
+        "height": 425
+      },
+      "sourceBounds": {
+        "x": 1742,
+        "y": 349,
+        "width": 527,
+        "height": 425
+      },
+      "contentBounds": {
+        "x": 19,
+        "y": 31,
+        "width": 122,
+        "height": 98
+      },
+      "nineSlice": null,
+      "sourceComponents": [
+        {
+          "x": 1742,
+          "y": 349,
+          "width": 527,
+          "height": 425,
+          "pixels": 155084
+        }
+      ],
+      "opaquePixels": 8283,
+      "outputGreenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no aspect stretching",
+      "visualInspection": "native source inspected batch-05: three independent objects grouped by connected components",
+      "correction": null,
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false
+    },
+    "dragon-scale": {
+      "file": "dragon-scale.png",
+      "width": 160,
+      "height": 160,
+      "sha256": "6472806b39e4a4a1985a8861d27d8d54e1936a99131847c74c5be3514e0567d5",
+      "source": "assets/incoming/seedream-furnishings-20261020/batch-06/image.png",
+      "sourceSha256": "8b446bfba7c2e868fd7e98a2dbb971ad31812c26ab7214270eab206c72a9c0f5",
+      "sourceCrop": {
+        "x": 228,
+        "y": 313,
+        "width": 402,
+        "height": 466
+      },
+      "sourceBounds": {
+        "x": 228,
+        "y": 313,
+        "width": 402,
+        "height": 466
+      },
+      "contentBounds": {
+        "x": 27,
+        "y": 19,
+        "width": 105,
+        "height": 122
+      },
+      "nineSlice": null,
+      "sourceComponents": [
+        {
+          "x": 228,
+          "y": 313,
+          "width": 402,
+          "height": 466,
+          "pixels": 113400
+        }
+      ],
+      "opaquePixels": 7736,
+      "outputGreenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no aspect stretching",
+      "visualInspection": "native source inspected batch-06: three independent objects grouped by connected components",
+      "correction": null,
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false
+    },
+    "hourglass": {
+      "file": "hourglass.png",
+      "width": 160,
+      "height": 160,
+      "sha256": "013229e5063c8fa55c9c5f85878bae323bfe40c2102c4d2335c84eb1b405e8a3",
+      "source": "assets/incoming/seedream-furnishings-20261020/batch-06/image.png",
+      "sourceSha256": "8b446bfba7c2e868fd7e98a2dbb971ad31812c26ab7214270eab206c72a9c0f5",
+      "sourceCrop": {
+        "x": 1042,
+        "y": 260,
+        "width": 334,
+        "height": 588
+      },
+      "sourceBounds": {
+        "x": 1042,
+        "y": 260,
+        "width": 334,
+        "height": 588
+      },
+      "contentBounds": {
+        "x": 45,
+        "y": 19,
+        "width": 69,
+        "height": 122
+      },
+      "nineSlice": null,
+      "sourceComponents": [
+        {
+          "x": 1042,
+          "y": 260,
+          "width": 334,
+          "height": 588,
+          "pixels": 117326
+        },
+        {
+          "x": 1134,
+          "y": 363,
+          "width": 40,
+          "height": 37,
+          "pixels": 994
+        },
+        {
+          "x": 1304,
+          "y": 400,
+          "width": 5,
+          "height": 7,
+          "pixels": 24
+        },
+        {
+          "x": 1302,
+          "y": 408,
+          "width": 7,
+          "height": 6,
+          "pixels": 20
+        }
+      ],
+      "opaquePixels": 5068,
+      "outputGreenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no aspect stretching",
+      "visualInspection": "native source inspected batch-06: three independent objects grouped by connected components",
+      "correction": null,
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false
+    },
+    "weapon-book": {
+      "file": "weapon-book.png",
+      "width": 160,
+      "height": 160,
+      "sha256": "cdb2b66e22ff1ac5bab1e2b28ef8790956debcedb68a5a8ce8b468d149761e9b",
+      "source": "assets/incoming/seedream-furnishings-20261020/batch-06/image.png",
+      "sourceSha256": "8b446bfba7c2e868fd7e98a2dbb971ad31812c26ab7214270eab206c72a9c0f5",
+      "sourceCrop": {
+        "x": 1703,
+        "y": 313,
+        "width": 594,
+        "height": 443
+      },
+      "sourceBounds": {
+        "x": 1703,
+        "y": 313,
+        "width": 594,
+        "height": 443
+      },
+      "contentBounds": {
+        "x": 19,
+        "y": 34,
+        "width": 122,
+        "height": 91
+      },
+      "nineSlice": null,
+      "sourceComponents": [
+        {
+          "x": 1703,
+          "y": 313,
+          "width": 594,
+          "height": 443,
+          "pixels": 230670
+        }
+      ],
+      "opaquePixels": 9743,
+      "outputGreenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no aspect stretching",
+      "visualInspection": "native source inspected batch-06: three independent objects grouped by connected components",
+      "correction": null,
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false
+    },
+    "relic-book": {
+      "file": "relic-book.png",
+      "width": 160,
+      "height": 160,
+      "sha256": "ffbf1d68601beb5148e49464e90bbdf2006fb536f8d0e8ce6bc218d6c40d1fc9",
+      "source": "assets/incoming/seedream-furnishings-20261020/batch-07/image.png",
+      "sourceSha256": "9598e4a4970846d864b43a0ea59677fb51ecd97bb2f82d375dabab7c0fe5f739",
+      "sourceCrop": {
+        "x": 94,
+        "y": 295,
+        "width": 681,
+        "height": 483
+      },
+      "sourceBounds": {
+        "x": 94,
+        "y": 295,
+        "width": 681,
+        "height": 483
+      },
+      "contentBounds": {
+        "x": 19,
+        "y": 36,
+        "width": 122,
+        "height": 87
+      },
+      "nineSlice": null,
+      "sourceComponents": [
+        {
+          "x": 94,
+          "y": 295,
+          "width": 681,
+          "height": 483,
+          "pixels": 302805
+        }
+      ],
+      "opaquePixels": 9783,
+      "outputGreenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no aspect stretching",
+      "visualInspection": "native source inspected batch-07: three independent objects grouped by connected components",
+      "correction": null,
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false
+    },
+    "manual-book": {
+      "file": "manual-book.png",
+      "width": 160,
+      "height": 160,
+      "sha256": "a537d9ee99a140bc2acc1757b4b23172633f68d603fdecc3ab533ba074c630d3",
+      "source": "assets/incoming/seedream-furnishings-20261020/batch-07/image.png",
+      "sourceSha256": "9598e4a4970846d864b43a0ea59677fb51ecd97bb2f82d375dabab7c0fe5f739",
+      "sourceCrop": {
+        "x": 889,
+        "y": 283,
+        "width": 762,
+        "height": 502
+      },
+      "sourceBounds": {
+        "x": 889,
+        "y": 283,
+        "width": 762,
+        "height": 502
+      },
+      "contentBounds": {
+        "x": 19,
+        "y": 40,
+        "width": 122,
+        "height": 80
+      },
+      "nineSlice": null,
+      "sourceComponents": [
+        {
+          "x": 889,
+          "y": 283,
+          "width": 762,
+          "height": 502,
+          "pixels": 315246
+        }
+      ],
+      "opaquePixels": 8041,
+      "outputGreenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no aspect stretching",
+      "visualInspection": "native source inspected batch-07: three independent objects grouped by connected components",
+      "correction": null,
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false
+    },
+    "relic-altar": {
+      "file": "relic-altar.png",
+      "width": 160,
+      "height": 160,
+      "sha256": "88a5f0b3a1f29454fb20dfd55c5b0eb2866c7950def77693ea01a08fad58edf2",
+      "source": "assets/incoming/seedream-furnishings-20261020/batch-07/image.png",
+      "sourceSha256": "9598e4a4970846d864b43a0ea59677fb51ecd97bb2f82d375dabab7c0fe5f739",
+      "sourceCrop": {
+        "x": 1750,
+        "y": 300,
+        "width": 542,
+        "height": 520
+      },
+      "sourceBounds": {
+        "x": 1750,
+        "y": 300,
+        "width": 542,
+        "height": 520
+      },
+      "contentBounds": {
+        "x": 19,
+        "y": 21,
+        "width": 122,
+        "height": 117
+      },
+      "nineSlice": null,
+      "sourceComponents": [
+        {
+          "x": 1750,
+          "y": 300,
+          "width": 542,
+          "height": 520,
+          "pixels": 185730
+        }
+      ],
+      "opaquePixels": 9409,
+      "outputGreenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no aspect stretching",
+      "visualInspection": "native source inspected batch-07: three independent objects grouped by connected components",
+      "correction": null,
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false
+    },
+    "cabinet": {
+      "file": "cabinet.png",
+      "width": 384,
+      "height": 640,
+      "sha256": "9dd8ba6457c8a44edebbc19948d8ddcf6570c17e68b2e692fcd07c9b5e3c0715",
+      "source": "assets/incoming/seedream-furnishings-20261020/batch-08/image.png",
+      "sourceSha256": "d2b271e4c03a0d8cb41db16d8ac6eae15fff015803c9ccc1c8fe8054f356f426",
+      "sourceCrop": {
+        "x": 132,
+        "y": 127,
+        "width": 575,
+        "height": 851
+      },
+      "sourceBounds": {
+        "x": 132,
+        "y": 127,
+        "width": 575,
+        "height": 851
+      },
+      "contentBounds": {
+        "x": 46,
+        "y": 104,
+        "width": 292,
+        "height": 432
+      },
+      "nineSlice": null,
+      "sourceComponents": [
+        {
+          "x": 132,
+          "y": 127,
+          "width": 575,
+          "height": 851,
+          "pixels": 465801
+        }
+      ],
+      "opaquePixels": 119976,
+      "outputGreenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no aspect stretching",
+      "visualInspection": "native source inspected batch-08: three independent objects grouped by connected components",
+      "correction": null,
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false
+    },
+    "offering-table": {
+      "file": "offering-table.png",
+      "width": 384,
+      "height": 300,
+      "sha256": "d25b5408d14fb82ffa398665cef99f2106043853b50b2ad2e2cf0bf29df9ed0e",
+      "source": "assets/incoming/seedream-furnishings-20261020/batch-08/image.png",
+      "sourceSha256": "d2b271e4c03a0d8cb41db16d8ac6eae15fff015803c9ccc1c8fe8054f356f426",
+      "sourceCrop": {
+        "x": 941,
+        "y": 550,
+        "width": 520,
+        "height": 428
+      },
+      "sourceBounds": {
+        "x": 941,
+        "y": 550,
+        "width": 520,
+        "height": 428
+      },
+      "contentBounds": {
+        "x": 53,
+        "y": 36,
+        "width": 277,
+        "height": 228
+      },
+      "nineSlice": null,
+      "sourceComponents": [
+        {
+          "x": 941,
+          "y": 550,
+          "width": 520,
+          "height": 428,
+          "pixels": 121943
+        }
+      ],
+      "opaquePixels": 34584,
+      "outputGreenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no aspect stretching",
+      "visualInspection": "native source inspected batch-08: three independent objects grouped by connected components",
+      "correction": null,
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false
+    },
+    "merchant-entrance": {
+      "file": "merchant-entrance.png",
+      "width": 256,
+      "height": 384,
+      "sha256": "2484145b35b96b6805b1eb1afa9a5784151896c793f0b5786797ba7230b7c173",
+      "source": "assets/incoming/seedream-furnishings-20261020/batch-08/image.png",
+      "sourceSha256": "d2b271e4c03a0d8cb41db16d8ac6eae15fff015803c9ccc1c8fe8054f356f426",
+      "sourceCrop": {
+        "x": 1684,
+        "y": 100,
+        "width": 599,
+        "height": 877
+      },
+      "sourceBounds": {
+        "x": 1684,
+        "y": 100,
+        "width": 599,
+        "height": 877
+      },
+      "contentBounds": {
+        "x": 30,
+        "y": 48,
+        "width": 196,
+        "height": 287
+      },
+      "nineSlice": null,
+      "sourceComponents": [
+        {
+          "x": 1684,
+          "y": 100,
+          "width": 599,
+          "height": 877,
+          "pixels": 205749
+        }
+      ],
+      "opaquePixels": 22003,
+      "outputGreenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no aspect stretching",
+      "visualInspection": "native source inspected batch-08: three independent objects grouped by connected components",
+      "correction": null,
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false
+    },
+    "offering-bell": {
+      "file": "offering-bell.png",
+      "width": 96,
+      "height": 112,
+      "sha256": "7c20d1418a236fb534d888ff5f8ea962410a3ee8dee8b28359beee597c3e1014",
+      "source": "assets/incoming/seedream-furnishings-20261020/batch-09/image.png",
+      "sourceSha256": "56f7508864bbcaaa93cedd11fbd023a332ffbb01c611904c21d10b4467cd40fb",
+      "sourceCrop": {
+        "x": 100,
+        "y": 71,
+        "width": 631,
+        "height": 853
+      },
+      "sourceBounds": {
+        "x": 100,
+        "y": 71,
+        "width": 631,
+        "height": 853
+      },
+      "contentBounds": {
+        "x": 16,
+        "y": 13,
+        "width": 64,
+        "height": 86
+      },
+      "nineSlice": null,
+      "sourceComponents": [
+        {
+          "x": 100,
+          "y": 71,
+          "width": 631,
+          "height": 853,
+          "pixels": 235819
+        }
+      ],
+      "opaquePixels": 2419,
+      "outputGreenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no aspect stretching",
+      "visualInspection": "native source inspected batch-09: three independent objects grouped by connected components",
+      "correction": null,
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false
+    },
+    "offering-sign": {
+      "file": "offering-sign.png",
+      "width": 256,
+      "height": 128,
+      "sha256": "f1ed6e81f8aab35ac5738ca3e5432ec83708935bbe39edb9ded720bd9fe3fb92",
+      "source": "assets/incoming/seedream-furnishings-20261020/batch-09/image.png",
+      "sourceSha256": "56f7508864bbcaaa93cedd11fbd023a332ffbb01c611904c21d10b4467cd40fb",
+      "sourceCrop": {
+        "x": 920,
+        "y": 225,
+        "width": 559,
+        "height": 658
+      },
+      "sourceBounds": {
+        "x": 920,
+        "y": 225,
+        "width": 559,
+        "height": 658
+      },
+      "contentBounds": {
+        "x": 86,
+        "y": 15,
+        "width": 83,
+        "height": 98
+      },
+      "nineSlice": null,
+      "sourceComponents": [
+        {
+          "x": 920,
+          "y": 225,
+          "width": 559,
+          "height": 658,
+          "pixels": 329328
+        }
+      ],
+      "opaquePixels": 7306,
+      "outputGreenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; proportional fit; no aspect stretching",
+      "visualInspection": "native source inspected batch-09: three independent objects grouped by connected components",
+      "correction": null,
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false
+    },
+    "codex-panel": {
+      "file": "codex-panel.png",
+      "width": 1024,
+      "height": 700,
+      "sha256": "a774dd800f53ea18a5e0d843a4b4ff61d9e85ebc6389858cff59098e9e51004f",
+      "source": "assets/incoming/seedream-furnishings-20261020/batch-09/image.png",
+      "sourceSha256": "56f7508864bbcaaa93cedd11fbd023a332ffbb01c611904c21d10b4467cd40fb",
+      "sourceCrop": {
+        "x": 1668,
+        "y": 227,
+        "width": 676,
+        "height": 628
+      },
+      "sourceBounds": {
+        "x": 1668,
+        "y": 227,
+        "width": 676,
+        "height": 628
+      },
+      "contentBounds": {
+        "x": 2,
+        "y": 2,
+        "width": 1020,
+        "height": 696
+      },
+      "nineSlice": {
+        "source": [
+          128,
+          124,
+          128,
+          120
+        ],
+        "target": [
+          64,
+          62,
+          64,
+          60
+        ]
+      },
+      "sourceComponents": [
+        {
+          "x": 1668,
+          "y": 227,
+          "width": 676,
+          "height": 628,
+          "pixels": 400676
+        }
+      ],
+      "opaquePixels": 694691,
+      "outputGreenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; nine-slice frame-preserving fit to 2px edge",
+      "visualInspection": "native source inspected batch-09: three independent objects grouped by connected components",
+      "correction": null,
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false
+    },
+    "merchant-panel": {
+      "file": "merchant-panel.png",
+      "width": 1024,
+      "height": 700,
+      "sha256": "5baa90b133783d944eac0ca0de0955aa510e574663e60cbeb99e68068748fed8",
+      "source": "assets/incoming/seedream-furnishings-20261020/batch-10/image.png",
+      "sourceSha256": "6f695e59fa9afad0095f60461fbd75578be93f5640f955ad667d1f195451bba1",
+      "sourceCrop": {
+        "x": 76,
+        "y": 74,
+        "width": 681,
+        "height": 935
+      },
+      "sourceBounds": {
+        "x": 76,
+        "y": 74,
+        "width": 681,
+        "height": 935
+      },
+      "contentBounds": {
+        "x": 2,
+        "y": 2,
+        "width": 1020,
+        "height": 696
+      },
+      "nineSlice": {
+        "source": [
+          72,
+          150,
+          72,
+          56
+        ],
+        "target": [
+          32,
+          68,
+          32,
+          25
+        ]
+      },
+      "sourceComponents": [
+        {
+          "x": 76,
+          "y": 74,
+          "width": 681,
+          "height": 935,
+          "pixels": 623225
+        }
+      ],
+      "opaquePixels": 705390,
+      "outputGreenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; nine-slice frame-preserving fit to 2px edge",
+      "visualInspection": "native source inspected batch-10: three independent objects grouped by connected components",
+      "correction": {
+        "operation": "mirror-tiled clean source material removes baked glyphs/grid; frame retained",
+        "featherPixels": 8,
+        "patches": [
+          {
+            "sourceRect": {
+              "x": 130,
+              "y": 150,
+              "width": 50,
+              "height": 58
+            },
+            "targetRect": {
+              "x": 190,
+              "y": 124,
+              "width": 510,
+              "height": 88
+            }
+          }
+        ]
+      },
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false
+    },
+    "relic-panel": {
+      "file": "relic-panel.png",
+      "width": 1024,
+      "height": 700,
+      "sha256": "999f452c5e49baa63c4b339f8b307bf52e23e69394620e712daca9f79ca5e833",
+      "source": "assets/incoming/seedream-furnishings-20261020/batch-10/image.png",
+      "sourceSha256": "6f695e59fa9afad0095f60461fbd75578be93f5640f955ad667d1f195451bba1",
+      "sourceCrop": {
+        "x": 852,
+        "y": 77,
+        "width": 696,
+        "height": 935
+      },
+      "sourceBounds": {
+        "x": 852,
+        "y": 77,
+        "width": 696,
+        "height": 935
+      },
+      "contentBounds": {
+        "x": 2,
+        "y": 2,
+        "width": 1020,
+        "height": 696
+      },
+      "nineSlice": {
+        "source": [
+          72,
+          140,
+          72,
+          65
+        ],
+        "target": [
+          32,
+          63,
+          32,
+          29
+        ]
+      },
+      "sourceComponents": [
+        {
+          "x": 852,
+          "y": 77,
+          "width": 696,
+          "height": 935,
+          "pixels": 617497
+        }
+      ],
+      "opaquePixels": 694083,
+      "outputGreenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; nine-slice frame-preserving fit to 2px edge",
+      "visualInspection": "native source inspected batch-10: three independent objects grouped by connected components",
+      "correction": {
+        "operation": "mirror-tiled clean source material removes baked glyphs/grid; frame retained",
+        "featherPixels": 8,
+        "patches": [
+          {
+            "sourceRect": {
+              "x": 911,
+              "y": 141,
+              "width": 55,
+              "height": 58
+            },
+            "targetRect": {
+              "x": 990,
+              "y": 123,
+              "width": 450,
+              "height": 90
+            }
+          }
+        ]
+      },
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false
+    },
+    "calendar-panel": {
+      "file": "calendar-panel.png",
+      "width": 1024,
+      "height": 700,
+      "sha256": "0d1e307027e661a5ac2b0ba8f5075a57bb9ce3cbd13c9b3b226b45f28c6c6390",
+      "source": "assets/incoming/seedream-furnishings-20261020/batch-10/image.png",
+      "sourceSha256": "6f695e59fa9afad0095f60461fbd75578be93f5640f955ad667d1f195451bba1",
+      "sourceCrop": {
+        "x": 1651,
+        "y": 85,
+        "width": 673,
+        "height": 921
+      },
+      "sourceBounds": {
+        "x": 1651,
+        "y": 85,
+        "width": 673,
+        "height": 921
+      },
+      "contentBounds": {
+        "x": 2,
+        "y": 2,
+        "width": 1020,
+        "height": 696
+      },
+      "nineSlice": {
+        "source": [
+          56,
+          60,
+          56,
+          60
+        ],
+        "target": [
+          32,
+          36,
+          32,
+          36
+        ]
+      },
+      "sourceComponents": [
+        {
+          "x": 1651,
+          "y": 85,
+          "width": 673,
+          "height": 921,
+          "pixels": 599927
+        }
+      ],
+      "opaquePixels": 697713,
+      "outputGreenSpill": 0,
+      "alpha": "binary; transparent RGB cleared",
+      "sampling": "nearest; nine-slice frame-preserving fit to 2px edge",
+      "visualInspection": "native source inspected batch-10: three independent objects grouped by connected components",
+      "correction": {
+        "operation": "mirror-tiled clean source material removes baked glyphs/grid; frame retained",
+        "featherPixels": 8,
+        "patches": [
+          {
+            "sourceRect": {
+              "x": 1750,
+              "y": 278,
+              "width": 40,
+              "height": 37
+            },
+            "targetRect": {
+              "x": 1880,
+              "y": 141,
+              "width": 300,
+              "height": 101
+            }
+          },
+          {
+            "sourceRect": {
+              "x": 1750,
+              "y": 278,
+              "width": 40,
+              "height": 37
+            },
+            "targetRect": {
+              "x": 1724,
+              "y": 247,
+              "width": 560,
+              "height": 671
+            }
+          }
+        ]
+      },
+      "model": "doubao-seedream-5-0-pro-260628",
+      "watermark": false
+    }
+  },
+  "provenance": {
+    "tool": "Volcengine Ark Seedream",
+    "model": "doubao-seedream-5-0-pro-260628",
+    "requests": 10,
+    "generatedImages": 10,
+    "sourceSize": "2400x1080",
+    "pixelsPerRequest": 2592000,
+    "policy": "one request per three-object sheet; no automatic paid retry; source URLs and credentials excluded",
+    "promptSpec": "assets/incoming/seedream-furnishings-20261020/prompts.json",
+    "processor": "scripts/process-furnishing-assets.mjs",
+    "rights": "generated output subject to account agreement; commercial release rights must be confirmed by account holder"
+  }
+}
