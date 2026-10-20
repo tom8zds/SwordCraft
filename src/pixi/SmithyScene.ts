@@ -86,6 +86,7 @@ export class SmithyScene {
   private readonly swordFeedback = new Map<string, SwordFeedbackState>()
   private readonly targetOutline = new Graphics()
   private readonly hammer = new Container({ label: 'forging-hammer' })
+  private readonly hammerInput = new Container({ label: 'forging-hammer-input' })
   private readonly probabilityRing = new Graphics()
   private readonly ringCore = new Text({ text: '✦', style: { fontFamily: 'monospace', fontSize: 18, fill: 0xd9bc78 } })
   private readonly objects: SceneObjects
@@ -176,10 +177,18 @@ export class SmithyScene {
     this.hammer.eventMode = 'static'
     this.hammer.cursor = 'pointer'
     this.hammer.hitArea = new Polygon([16, 0, 304, 0, 304, 180, 207, 180, 207, 402, 123, 402, 123, 180, 16, 180])
+    // 静止锤头保留同一点击区；视觉移开时连点不会误变成拖动场景。
+    this.hammerInput.pivot.copyFrom(this.hammer.pivot)
+    this.hammerInput.position.copyFrom(this.hammer.position)
+    this.hammerInput.scale.copyFrom(this.hammer.scale)
+    this.hammerInput.rotation = this.hammer.rotation
+    this.hammerInput.hitArea = new Rectangle(16, 0, 288, 180)
+    this.hammerInput.eventMode = 'static'
+    this.hammerInput.cursor = 'pointer'
     this.hammer.addChild(new Sprite(textures.hammer), this.probabilityRing, this.ringCore)
     this.ringCore.anchor.set(0.5)
     this.ringCore.position.set(hammerMetadata.ring.x, hammerMetadata.ring.y)
-    this.world.addChild(this.hammer)
+    this.world.addChild(this.hammer, this.hammerInput)
     this.scaleItem.position.set(880, 840)
     this.hourglassItem.position.set(1065, 840)
     this.equippedScale.position.set(1050, 663)
@@ -192,12 +201,14 @@ export class SmithyScene {
     this.objects.bell.on('pointerdown', (event: FederatedPointerEvent) => { event.stopPropagation(); if (this.enabled && !this.gesture && event.button === 0) this.callbacks.onBell() })
     this.objects.relic.on('pointerdown', (event: FederatedPointerEvent) => { event.stopPropagation(); if (this.enabled && !this.gesture && event.button === 0) this.callbacks.onRelic() })
     this.objects.merchant.on('pointerdown', (event: FederatedPointerEvent) => { event.stopPropagation(); if (this.enabled && !this.gesture && event.button === 0) this.callbacks.onMerchant() })
-    this.hammer.on('pointerdown', (event: FederatedPointerEvent) => {
+    const startHammer = (event: FederatedPointerEvent) => {
       event.stopPropagation()
       if (!this.enabled || this.gesture || event.button !== 0) return
       this.gesture = { kind: 'hammer', pointerId: event.pointerId, nextAt: Date.now() + 500 }
       this.callbacks.onHammer()
-    })
+    }
+    this.hammer.on('pointerdown', startHammer)
+    this.hammerInput.on('pointerdown', startHammer)
     this.scaleItem.on('pointerdown', (event: FederatedPointerEvent) => this.startItem(event, 'dragon-scale'))
     this.hourglassItem.on('pointerdown', (event: FederatedPointerEvent) => this.startItem(event, 'hourglass'))
     this.equippedScale.on('pointerdown', (event: FederatedPointerEvent) => {
@@ -284,7 +295,7 @@ export class SmithyScene {
     }
     if (old?.swords !== state.swords || old?.selectedSwordId !== state.selectedSwordId) this.syncSwordViews()
     this.updateSwordFeedback(state)
-    if (state.gameOver) this.cancelGesture()
+    if (state.gameOver) { this.cancelGesture(); this.resetHammerMotion() }
   }
 
   setEnabled(enabled: boolean): void {
@@ -292,6 +303,7 @@ export class SmithyScene {
     this.root.eventMode = enabled ? 'static' : 'none'
     if (!enabled) {
       this.cancelGesture()
+      this.resetHammerMotion()
       this.objectTooltip.visible = false
     }
   }
@@ -343,7 +355,8 @@ export class SmithyScene {
         else held.root.position.set(point.x, point.y)
       }
     }
-    this.applyHammerPose(this.hammerMotion.advance(Math.min(ticker.deltaMS, 50), this.hammerContact))
+    // 锤击不是物理积分；长帧须追上真实时间，不能每帧只补50ms而越积越慢。
+    this.applyHammerPose(this.hammerMotion.advance(ticker.elapsedMS, this.hammerContact))
     for (const [id, effect] of this.swordFeedback) {
       const view = this.swordViews.get(id)
       if (view) {
@@ -369,7 +382,6 @@ export class SmithyScene {
   }
 
   cancelGesture(): void {
-    this.resetHammerMotion()
     if (!this.gesture) return
     if (this.gesture.kind === 'sword') {
       const view = this.swordViews.get(this.gesture.id)
@@ -400,11 +412,8 @@ export class SmithyScene {
         return
       }
     }
-    // 松开锤柄仅停止连击输入，已结算的挥打仍完整回到原位。
-    if (gesture.kind === 'hammer' && !cancelled) {
-      this.gesture = null
-      this.root.cursor = 'grab'
-    } else this.cancelGesture()
+    // 松手只结束当前输入，无论点中锤头、空白或剑，都不重置已结算的动作。
+    this.cancelGesture()
     if (!cancelled && gesture.kind === 'sword') {
       if (gesture.moved && location) this.callbacks.onSwordDrop(gesture.id, location)
       else if (!gesture.moved) this.callbacks.onSwordSelect(gesture.id)
@@ -414,6 +423,7 @@ export class SmithyScene {
   dispose(): void {
     this.disposed = true
     this.cancelGesture()
+    this.resetHammerMotion()
     for (const view of this.swordViews.values()) view.root.destroy({ children: true })
     this.weaponFeedback.dispose()
     this.objects.signTexture.destroy(false)

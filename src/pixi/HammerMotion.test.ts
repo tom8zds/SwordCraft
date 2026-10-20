@@ -32,6 +32,23 @@ describe('连续锤击呈现', () => {
     }
   })
 
+  it('蓄力接下挥、抽回接复位时速度连续，不产生额外停顿', () => {
+    const delta = 0.1
+    for (const boundary of [140, 380]) {
+      const before = sampleHammerPose(boundary - delta, pose())
+      const at = sampleHammerPose(boundary, pose())
+      const after = sampleHammerPose(boundary + delta, pose())
+      const left = { x: (at.x - before.x) / delta, y: (at.y - before.y) / delta }
+      const right = { x: (after.x - at.x) / delta, y: (after.y - at.y) / delta }
+      expect(Math.hypot(left.x, left.y)).toBeGreaterThan(0.2)
+      expect(Math.hypot(right.x, right.y)).toBeGreaterThan(0.2)
+      expect(Math.hypot(left.x - right.x, left.y - right.y)).toBeLessThan(0.03)
+      const leftTurn = (at.rotation - before.rotation) / delta
+      const rightTurn = (after.rotation - at.rotation) / delta
+      expect(Math.abs(leftTurn - rightTurn)).toBeLessThan(0.0001)
+    }
+  })
+
   it('新记录仅排队，不重置进行中的姿势；火花只在每次接触时触发一次', () => {
     const motion = new HammerMotion<string>()
     const contacts: string[] = []
