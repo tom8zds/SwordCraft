@@ -4,20 +4,25 @@ import { MerchantPanel, RelicPanel } from './components/ShopPanels'
 import { PixiSmithy } from './components/PixiSmithy'
 import { BookScroll } from './components/BookScroll'
 import { CalendarPanel } from './components/CalendarPanel'
+import { MobileGamePanel } from './components/MobileGamePanel'
+import { useCompactLayout } from './components/useCompactLayout'
 import { formatCoins, swordName, swordValue } from './game/content'
 import { armDragonScale, buyMerchantItem, buyRelic, disarmDragonScale, hammerSword, moveSword, refreshRelicOffers, restartGame, ringSubmissionBell, useHourglass } from './game/engine'
 import { formatDivineDate } from './game/divineCalendar'
-import { weaponRarity } from './game/rarity'
+import { compactWeaponValue, weaponRarity } from './game/rarity'
 import { loadGame, saveGame } from './game/storage'
 import type { GameEvent, GameState, RelicId, SwordLocation, Transition } from './game/types'
 import { MIN_WORLD_X, type ConsumableKind, type WeaponAtlas } from './pixi/contracts'
 import './styles.css'
 import './components/hud-calendar.css'
+import './components/mobile-game.css'
+import './components/mobile-panels.css'
 
 const RESULT_COPY = { destroyed: '破坏', damaged: '损伤', steady: '维持', success: '成功', great: '大成功' }
 type Panel = 'book' | 'merchant' | 'relic' | 'calendar' | null
 
 function App() {
+  const compact = useCompactLayout()
   const loaded = useMemo(() => loadGame(), [])
   const [game, setGame] = useState<GameState>(loaded.state)
   const gameRef = useRef(game)
@@ -128,15 +133,15 @@ function App() {
   const selectedRarity = selectedSword ? weaponRarity(selectedSword.level) : null
 
   return (
-    <main className="game-shell" data-day={game.day} data-health={game.health}>
+    <main className={`game-shell${compact ? ' is-compact' : ''}`} data-day={game.day} data-health={game.health}>
       <header className="hud">
-        <div className="life-meter" aria-label={`生命 ${game.health} / ${game.maxHealth}`}>{Array.from({ length: game.maxHealth }, (_, index) => <span key={index} className={index < game.health ? 'alive' : ''}>♥</span>)}</div>
-        <button className="day-plaque" onClick={() => setPanel('calendar')} aria-label="打开日历"><span>{formatDivineDate(game.day)}</span><small>第 {game.day} 日</small></button>
-        <div className="hud-right"><div className="hud-coins" title="金币">◆ {formatCoins(game.coins)}</div><div className="hud-weapons" title="拥有的武器总数">⚔ {game.swords.length}</div></div>
+        <div className="life-meter" aria-label={`生命 ${game.health} / ${game.maxHealth}`}>{compact ? <><span className="alive" aria-hidden="true">♥</span><span className="life-count">{game.health}/{game.maxHealth}</span></> : Array.from({ length: game.maxHealth }, (_, index) => <span key={index} className={index < game.health ? 'alive' : ''}>♥</span>)}</div>
+        <button className="day-plaque" onClick={() => setPanel('calendar')} aria-label={`${formatDivineDate(game.day)}，第 ${game.day} 日，打开日历`}><span>{formatDivineDate(game.day)}</span><small>第 {game.day} 日</small></button>
+        <div className="hud-right"><div className="hud-coins" title={`金币 ${formatCoins(game.coins)}`} aria-label={`金币 ${formatCoins(game.coins)}`}>◆ {compact ? compactWeaponValue(game.coins) : formatCoins(game.coins)}</div><div className="hud-weapons" title="拥有的武器总数" aria-label={`拥有 ${game.swords.length} 把武器`}>⚔ {game.swords.length}</div></div>
       </header>
       <section className="smithy" aria-label="铁匠铺">
-        <PixiSmithy state={game} enabled={sceneEnabled} onWeaponAtlas={setWeaponAtlas} onSwordDrop={dropSword} onSwordSelect={selectSword} onHammer={strike} onBell={ringBell} onBook={(page) => { setBookPage(page); setPanel('book') }} onRelic={() => setPanel('relic')} onMerchant={openMerchant} onItemDrop={useSceneItem} onDisarmScale={(id) => apply(disarmDragonScale(gameRef.current, id))} onCameraChange={(next) => setCameraX(next.x)} />
-        <div className="scene-a11y" aria-label="键盘场景操作" inert={!sceneEnabled}>
+        <PixiSmithy state={game} compact={compact} enabled={sceneEnabled} onWeaponAtlas={setWeaponAtlas} onSwordDrop={dropSword} onSwordSelect={selectSword} onHammer={strike} onBell={ringBell} onBook={(page) => { setBookPage(page); setPanel('book') }} onRelic={() => setPanel('relic')} onMerchant={openMerchant} onItemDrop={useSceneItem} onDisarmScale={(id) => apply(disarmDragonScale(gameRef.current, id))} onCameraChange={(next) => setCameraX(next.x)} />
+        {!compact && <div className="scene-a11y" aria-label="键盘场景操作" inert={!sceneEnabled}>
           <BookScroll ariaLabel="键盘场景操作列表" className="scene-a11y-scroll" viewportClassName="scene-a11y-content">
           {game.swords.map((sword) => {
             const rarity = weaponRarity(sword.level)
@@ -145,16 +150,15 @@ function App() {
           <button onClick={strike}>锤打工作台上的剑</button><button onClick={ringBell}>敲响上供铃</button><button onClick={() => { setBookPage('records'); setPanel('book') }}>打开铁匠手记</button><button onClick={() => { setBookPage('relics'); setPanel('book') }}>打开遗物图鉴</button><button onClick={openMerchant}>查看旅行商人</button>
           <button onClick={() => useSceneItem('dragon-scale')}>使用龙鳞，库存 {game.dragonScales}</button><button onClick={() => useSceneItem('hourglass')}>使用沙漏，库存 {game.hourglasses}</button><button onClick={() => setPanel('relic')}>打开遗物祭台</button>
           </BookScroll>
-        </div>
+        </div>}
       </section>
-      <footer className="status-ledger"><span className="weapon-rarity" style={{ color: selectedRarity?.cssColor }}>{selectedSword ? `${swordName(selectedSword)} · Lv.${selectedSword.level} · ${selectedRarity!.name} · ◆ ${formatCoins(swordValue(selectedSword))}` : '铸剑录'}</span><span>{saveFailed ? '本地存档不可写，请勿关闭页面' : `${game.swords.length} 把藏剑 · ${game.relics.length} 件遗物`}<small>房间 {cameraX}</small></span></footer>
+      {compact ? <MobileGamePanel state={game} sword={selectedSword} enabled={sceneEnabled} saveFailed={saveFailed} onSelect={selectSword} onMove={dropSword} onHammer={strike} onBell={ringBell} onItem={useSceneItem} onDisarmScale={(id) => apply(disarmDragonScale(gameRef.current, id))} onBook={(page) => { setBookPage(page); setPanel('book') }} onRelic={() => setPanel('relic')} onMerchant={openMerchant} /> : <footer className="status-ledger"><span className="weapon-rarity" style={{ color: selectedRarity?.cssColor }}>{selectedSword ? `${swordName(selectedSword)} · Lv.${selectedSword.level} · ${selectedRarity!.name} · ◆ ${formatCoins(swordValue(selectedSword))}` : '铸剑录'}</span><span>{saveFailed ? '本地存档不可写，请勿关闭页面' : `${game.swords.length} 把藏剑 · ${game.relics.length} 件遗物`}<small>房间 {cameraX}</small></span></footer>}
       {toast && <div key={toast.id} className={`toast ${toast.tone}`} role="status">{toast.message}</div>}
       {panel === 'book' && <BookPanel state={game} page={bookPage} weaponAtlas={weaponAtlas} onPageChange={setBookPage} onClose={() => setPanel(null)} />}
       {panel === 'merchant' && <MerchantPanel state={game} onBuy={(id) => apply(buyMerchantItem(gameRef.current, id))} onClose={() => setPanel(null)} />}
       {panel === 'relic' && <RelicPanel state={game} sacrifices={sacrifices} onToggleSacrifice={(swordId) => setSacrifices((current) => current.includes(swordId) ? current.filter((id) => id !== swordId) : [...current, swordId])} onBuy={sacrificeForRelic} onRefresh={() => apply(refreshRelicOffers(gameRef.current))} onClose={() => setPanel(null)} />}
       {panel === 'calendar' && <CalendarPanel state={game} onClose={() => setPanel(null)} />}
       {game.gameOver && <div className="overlay game-over-overlay"><section className="game-over-panel" role="dialog" aria-modal="true" aria-label="游戏结束"><div className="cold-forge">♨</div><h1>炉火熄灭</h1><p>坚持到第 {game.day - 1} 日，留下 {game.discoveredNames.length} 种剑形。</p><button onClick={() => { lastHammerAt.current = 0; apply(restartGame(gameRef.current)); setPanel(null) }}>重新点火</button></section></div>}
-      <div className="portrait-guard"><span>↻</span><strong>请将设备横过来</strong><p>铁匠铺需要一张宽阔的工作台。</p></div>
     </main>
   )
 }

@@ -2,14 +2,17 @@ import { useEffect, useRef, useState } from 'react'
 import { Application, Assets, Texture } from 'pixi.js'
 import type { GameState } from '../game/types'
 import { SmithyScene } from '../pixi/SmithyScene'
-import { MIN_WORLD_X, SCENE_HEIGHT, SCENE_WIDTH, type HammerArtwork, type SceneCamera, type SmithySceneCallbacks, type SmithyTextures, type WeaponAtlas } from '../pixi/contracts'
+import { MIN_WORLD_X, type HammerArtwork, type SceneCamera, type SceneFocus, type SmithySceneCallbacks, type SmithyTextures, type WeaponAtlas } from '../pixi/contracts'
 import { WorkbenchDetails } from './WorkbenchDetails'
 import { createWeaponAtlas, loadWeaponTextures } from '../pixi/weaponAtlas'
 import { loadFurnishingTextures } from '../pixi/furnishingAssets'
+import { sceneViewport } from '../pixi/sceneViewport'
+import './pixi-layout.css'
 
 interface PixiSmithyProps extends SmithySceneCallbacks {
   state: GameState
   enabled: boolean
+  compact: boolean
   onWeaponAtlas: (atlas: WeaponAtlas) => void
 }
 
@@ -20,6 +23,10 @@ interface RuntimeManifest {
 }
 
 const SCENE_TEXTURE_KEYS = ['background', 'forge', 'workbench', 'hook', 'wallExtension', 'hammer'] as const satisfies readonly (keyof SmithyTextures)[]
+const STATIONS = [
+  { id: 'cabinet', name: '物品柜' }, { id: 'forge', name: '炭炉' }, { id: 'anvil', name: '工作台' },
+  { id: 'rack', name: '挂剑墙' }, { id: 'submission', name: '上供台' }, { id: 'merchant', name: '商人' },
+] as const satisfies readonly { id: SceneFocus; name: string }[]
 
 export function PixiSmithy(props: PixiSmithyProps) {
   const hostRef = useRef<HTMLDivElement>(null)
@@ -29,6 +36,7 @@ export function PixiSmithy(props: PixiSmithyProps) {
   const [ready, setReady] = useState(false)
   const [camera, setCamera] = useState<SceneCamera>({ x: MIN_WORLD_X, minX: MIN_WORLD_X, maxX: 0 })
   const [size, setSize] = useState({ width: 1920, height: 1080 })
+  const [station, setStation] = useState<SceneFocus>('anvil')
   propsRef.current = props
 
   useEffect(() => {
@@ -96,7 +104,7 @@ export function PixiSmithy(props: PixiSmithyProps) {
         const resize = () => {
           if (disposed || !scene) return
           app.renderer.resize(host.clientWidth, host.clientHeight)
-          scene.setScale(app.screen.width, app.screen.height)
+          scene.setScale(app.screen.width, app.screen.height, propsRef.current.compact)
           setSize({ width: app.screen.width, height: app.screen.height })
         }
         resize()
@@ -162,27 +170,41 @@ export function PixiSmithy(props: PixiSmithyProps) {
 
   useEffect(() => { sceneRef.current?.update(props.state) }, [props.state])
   useEffect(() => { sceneRef.current?.setEnabled(props.enabled) }, [props.enabled])
+  useEffect(() => { sceneRef.current?.setScale(size.width, size.height, props.compact) }, [props.compact, size.width, size.height])
+  const selectedSword = props.state.swords.find((sword) => sword.id === props.state.selectedSwordId)
+  useEffect(() => {
+    if (!props.compact || !ready || !selectedSword) return
+    sceneRef.current?.focus(selectedSword.location)
+    setStation(selectedSword.location)
+  }, [props.compact, ready, selectedSword?.id, selectedSword?.location])
   const anvilSword = props.state.swords.find((sword) => sword.location === 'anvil')
-  const scale = Math.min(size.width / SCENE_WIDTH, size.height / SCENE_HEIGHT)
-  const panelX = (size.width - SCENE_WIDTH * scale) / 2 + (size.height < 550 ? 470 - camera.x : 660 - camera.x) * scale
-  const panelY = (size.height - SCENE_HEIGHT * scale) / 2 + 175 * scale
+  const viewport = sceneViewport(size.width, size.height, props.compact)
+  const scale = viewport.scale
+  const panelX = viewport.x + (660 - camera.x) * scale
+  const panelY = viewport.y + 175 * scale
   const panelWidth = Math.min(280, Math.max(170, 330 * scale))
 
   return (
-    <div ref={hostRef} className="pixi-host" data-camera-motion="entire-world">
+    <div className={`pixi-layout${props.compact ? ' is-compact-scene' : ''}`}>
+    <div ref={hostRef} className="pixi-host" data-camera-motion="entire-world" data-compact={props.compact}>
       {!ready && <div className="scene-loading" role="status">{error ?? '炉火点燃中…'}</div>}
-      {ready && anvilSword && panelX > -panelWidth && panelX < size.width && <WorkbenchDetails sword={anvilSword} style={{ left: panelX, top: panelY, width: panelWidth, transform: panelX + panelWidth > size.width ? 'translateX(-100%)' : undefined }} />}
-      {ready && <div className="camera-controls" aria-label="房间镜头">
+      {!props.compact && ready && anvilSword && panelX > -panelWidth && panelX < size.width && <WorkbenchDetails sword={anvilSword} style={{ left: panelX, top: panelY, width: panelWidth, transform: panelX + panelWidth > size.width ? 'translateX(-100%)' : undefined }} />}
+      {!props.compact && ready && <div className="camera-controls" aria-label="房间镜头">
         <button onClick={() => sceneRef.current?.moveCamera(camera.x - 500)} aria-label="向左浏览铁匠铺" disabled={!props.enabled || camera.x <= camera.minX}>‹</button>
         <input type="range" min={camera.minX} max={camera.maxX} step="1" value={camera.x} aria-label="房间镜头位置" disabled={!props.enabled} onChange={(event) => sceneRef.current?.moveCamera(Number(event.target.value))} />
         <button onClick={() => sceneRef.current?.moveCamera(camera.x + 500)} aria-label="向右浏览铁匠铺" disabled={!props.enabled || camera.x >= camera.maxX}>›</button>
       </div>}
-      <div className="scene-focus-controls">
+      {!props.compact && <div className="scene-focus-controls">
         <button aria-label="查看四层物品柜" title="物品柜" onClick={() => sceneRef.current?.focus('cabinet')} disabled={!props.enabled}>▦</button>
         <button aria-label="查看炭炉" title="炭炉" onClick={() => sceneRef.current?.focus('forge')} disabled={!props.enabled}>♨</button>
         <button aria-label="查看工作台" title="工作台" onClick={() => sceneRef.current?.focus('anvil')} disabled={!props.enabled}>⚒</button>
         <button aria-label="查看挂剑墙" title="挂剑墙" onClick={() => sceneRef.current?.focus('rack')} disabled={!props.enabled}>†</button>
-      </div>
+      </div>}
+    </div>
+    {props.compact && <nav className="compact-station-nav" aria-label="工位导航">
+      {STATIONS.map(({ id, name }) => <button key={id} disabled={!props.enabled || !ready} aria-pressed={station === id}
+        onClick={() => { sceneRef.current?.focus(id); setStation(id) }}>{name}</button>)}
+    </nav>}
     </div>
   )
 }

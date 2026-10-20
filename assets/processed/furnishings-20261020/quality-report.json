@@ -1635,6 +1635,38 @@
       "watermark": false
     }
   },
+  "materialSamples": {
+    "book-paper": {
+      "file": "book-paper.png",
+      "width": 256,
+      "height": 256,
+      "source": "public/assets/game/furnishings/codex-panel.png",
+      "sourceSha256": "a774dd800f53ea18a5e0d843a4b4ff61d9e85ebc6389858cff59098e9e51004f",
+      "crop": {
+        "x": 150,
+        "y": 180,
+        "width": 256,
+        "height": 256
+      },
+      "sha256": "c9564d0751d4a6b1fd06e00c49a88847faae6cbde565a48f6242c254b9337702",
+      "generationRequests": 0
+    },
+    "merchant-cloth": {
+      "file": "merchant-cloth.png",
+      "width": 256,
+      "height": 256,
+      "source": "public/assets/game/furnishings/merchant-panel.png",
+      "sourceSha256": "5baa90b133783d944eac0ca0de0955aa510e574663e60cbeb99e68068748fed8",
+      "crop": {
+        "x": 260,
+        "y": 220,
+        "width": 256,
+        "height": 256
+      },
+      "sha256": "4d96fb172be54347d52cbcb156a6695173d6e56d6c32ffcbbe92324350ec1254",
+      "generationRequests": 0
+    }
+  },
   "checks": {
     "allSources2400x1080": true,
     "allOutputPixelsWithinBudget": true,

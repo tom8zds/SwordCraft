@@ -17,6 +17,7 @@
 .book-panel.furnishing-panel::after {
   content: none;
 }
+.book-mobile-pages { display: none; }
 
 .book-panel.furnishing-panel .book-tabs {
   height: 54px;
@@ -124,45 +125,3 @@
   }
 }
 
-@media (max-width: 700px), (max-height: 550px) {
-  .book-panel.furnishing-panel {
-    padding: 42px 64px 40px;
-  }
-
-  .book-panel.furnishing-panel .book-tabs {
-    height: 42px;
-    gap: 3px;
-  }
-
-  .book-panel.furnishing-panel .book-tabs button {
-    min-height: 30px;
-    padding: 5px 7px;
-    font-size: 11px;
-  }
-
-  .book-panel.furnishing-panel .book-spread {
-    height: calc(100% - 42px);
-  }
-
-  .book-panel.furnishing-panel .book-page {
-    padding: 12px 10px;
-  }
-
-  .book-panel.furnishing-panel .corner-close,
-  .shop-panel.furnishing-panel .corner-close {
-    top: 10px;
-    right: 10px;
-  }
-}
-
-@media (max-width: 600px) {
-  .relic-codex-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
-  }
-
-  .relic-codex-image {
-    width: 64px;
-    height: 64px;
-  }
-}

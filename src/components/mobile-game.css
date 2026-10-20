@@ -1,0 +1,131 @@
+@media (max-width: 700px), (max-height: 550px) {
+  .game-shell.is-compact {
+    min-width: 0;
+    height: 100dvh;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto clamp(300px, 48dvh, 440px) minmax(0, 1fr);
+    overflow: hidden;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    font-size: 14px;
+  }
+
+  .is-compact .hud {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: auto auto;
+    gap: 6px 12px;
+    padding: 6px 12px 8px;
+    min-width: 0;
+    min-height: 100px;
+  }
+
+  .is-compact .day-plaque {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    justify-self: stretch;
+    min-width: 0;
+    min-height: 44px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2px 12px;
+    padding: 4px 8px;
+    text-align: center;
+  }
+
+  .is-compact .day-plaque span { font-size: 16px; line-height: 1.5; white-space: normal; overflow-wrap: anywhere; }
+  .is-compact .day-plaque small { margin: 0; font-size: 14px; line-height: 1.5; white-space: nowrap; }
+  .is-compact .life-meter { grid-column: 1; grid-row: 2; gap: 6px; min-width: 0; font-size: 18px; }
+  .is-compact .life-count { color: var(--ink); font-size: 16px; font-variant-numeric: tabular-nums; }
+  .is-compact .hud-right { grid-column: 2; grid-row: 2; gap: 12px; min-width: 0; }
+  .is-compact .hud-coins, .is-compact .hud-weapons { font-size: 16px; line-height: 1.5; }
+  .is-compact .hud-coins { min-width: 0; max-width: min(45vw, 220px); overflow: hidden; text-overflow: ellipsis; }
+  .is-compact .smithy { min-width: 0; min-height: 0; }
+
+  .is-compact .mobile-game-panel {
+    min-width: 0;
+    min-height: 0;
+    display: flex;
+    border-top: 1px solid #755c44;
+    background: #211b1e;
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .mobile-game-scroll { flex: 1; min-height: 0; padding: 8px 6px 8px 12px; }
+  .mobile-game-scroll .book-scroll-rail { margin-left: 6px; flex-basis: 12px; }
+  .mobile-game-viewport > .book-scroll-content { padding: 0 2px 4px; }
+  .mobile-game-panel button, .mobile-game-panel select, .mobile-game-panel summary {
+    min-width: 0;
+    min-height: 44px;
+    color: var(--ink);
+    background: #392e29;
+    border: 1px solid #806948;
+    border-radius: 2px;
+    padding: 8px;
+    font: inherit;
+    font-size: 14px;
+    line-height: 1.45;
+    touch-action: manipulation;
+  }
+
+  .mobile-game-panel button:disabled { opacity: .55; }
+  .mobile-game-panel button:focus-visible, .mobile-game-panel select:focus-visible, .mobile-game-panel summary:focus-visible { outline: 2px solid #e2bf78; outline-offset: -3px; }
+  .mobile-sword-picker { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 8px; margin-bottom: 8px; }
+  .mobile-sword-picker label { font-size: 14px; }
+  .mobile-sword-picker select { width: 100%; font-size: 16px; }
+  .mobile-selection-hint { margin: 8px 0 12px; font-size: 14px; line-height: 1.6; }
+
+  .mobile-game-panel .workbench-details-compact {
+    position: static;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
+    box-shadow: none;
+    pointer-events: auto;
+    font-size: 14px;
+  }
+
+  .workbench-details-compact .workbench-title { padding-bottom: 4px; gap: 2px 8px; }
+  .workbench-details-compact .workbench-title strong { flex: 1 1 auto; font-size: 18px; white-space: normal; overflow: visible; text-overflow: clip; overflow-wrap: anywhere; }
+  .workbench-details-compact .workbench-title b, .workbench-details-compact .workbench-title > span { font-size: 14px; }
+  .workbench-details-compact .workbench-description { margin: 6px 0; font-size: 14px; line-height: 1.5; }
+  .workbench-details-compact dl { margin: 6px 0; gap: 3px; font-size: 14px; }
+  .workbench-details-compact dt { color: #b9a78e; }
+  .workbench-details-compact .blade-status { margin: 6px 0; gap: 4px 8px; font-size: 14px; }
+  .workbench-details-compact .blade-status .ascension-status { font-size: 14px; padding: 1px 4px; }
+  .workbench-details-compact .workbench-charge { grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 8px; font-size: 14px; }
+  .workbench-details-compact .workbench-charge i { height: 10px; }
+
+  .mobile-sword-actions, .mobile-item-actions, .mobile-library-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; margin-top: 10px; }
+  .mobile-sword-actions button { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0 6px; }
+  .mobile-sword-actions button span { font-size: 14px; }
+  .mobile-offering-readout { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 4px 10px; margin-top: 10px; font-size: 14px; color: #e7c78d; }
+  .mobile-submit-bell { display: block; width: 100%; margin-top: 10px; font-weight: 700; }
+  .mobile-action-note { margin: 6px 0; color: #c4b498; font-size: 14px; line-height: 1.5; }
+  .mobile-extra-actions { margin-top: 8px; }
+  .mobile-extra-actions summary { display: list-item; padding-left: 12px; cursor: pointer; }
+  .mobile-item-actions { margin-top: 6px; }
+  .mobile-library-nav { padding-top: 10px; border-top: 1px solid #584538; }
+  .mobile-save-warning { margin: 10px 0 0; color: #edb4a0; font-size: 14px; }
+  .is-compact .toast { top: auto; bottom: calc(env(safe-area-inset-bottom) + 12px); max-width: calc(100vw - 24px); font-size: 14px; line-height: 1.5; }
+  .is-compact .game-over-panel { min-width: 0; width: min(420px, 100%); max-height: 100%; overflow-y: auto; padding: 24px 16px; font-size: 16px; }
+  .is-compact .game-over-panel button { min-height: 44px; font-size: 16px; }
+}
+
+@media (max-width: 700px) and (orientation: portrait) and (max-height: 680px) {
+  .game-shell.is-compact { grid-template-rows: auto 300px minmax(0, 1fr); }
+}
+
+@media (orientation: landscape) and (max-height: 550px) {
+  .game-shell.is-compact { grid-template-columns: minmax(0, 1fr) minmax(300px, 36%); grid-template-rows: auto minmax(0, 1fr); }
+  .is-compact .hud { grid-column: 1 / -1; min-height: 64px; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); grid-template-rows: auto; gap: 8px; padding: 6px 12px; }
+  .is-compact .day-plaque { grid-column: 2; grid-row: 1; flex-direction: column; gap: 0; }
+  .is-compact .life-meter { grid-column: 1; grid-row: 1; }
+  .is-compact .hud-right { grid-column: 3; grid-row: 1; }
+  .is-compact .smithy { grid-column: 1; grid-row: 2; }
+  .is-compact .mobile-game-panel { grid-column: 2; grid-row: 2; border-top: 0; border-left: 1px solid #755c44; }
+}

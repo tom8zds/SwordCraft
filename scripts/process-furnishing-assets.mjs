@@ -147,6 +147,21 @@ for (const batch of spec.batches) {
     }
   }
 }
+// 手机竖向单页复用真实内页材质，边框独立九宫格，避免横向双页装饰压到正文。
+const materialSamples = {}
+for (const [id, panel, crop] of [
+  ['book-paper', 'codex-panel', { x: 150, y: 180, width: 256, height: 256 }],
+  ['merchant-cloth', 'merchant-panel', { x: 260, y: 220, width: 256, height: 256 }],
+]) {
+  const source = `${PUBLIC}/${panel}.png`, bytes = await readFile(source), image = await loadImage(bytes)
+  const sample = createCanvas(crop.width, crop.height), ctx = sample.getContext('2d')
+  ctx.imageSmoothingEnabled = false
+  ctx.drawImage(image, crop.x, crop.y, crop.width, crop.height, 0, 0, crop.width, crop.height)
+  const output = sample.toBuffer('image/png'), file = `${id}.png`
+  await writeFile(`${PUBLIC}/${file}`, output)
+  await writeFile(`${PROCESSED}/${file}`, output)
+  materialSamples[id] = { file, width: crop.width, height: crop.height, source, sourceSha256: hash(bytes), crop, sha256: hash(output), generationRequests: 0 }
+}
 const provenance = {
   tool: 'Volcengine Ark Seedream', model: 'doubao-seedream-5-0-pro-260628', requests: spec.batches.length,
   generatedImages: spec.batches.length, sourceSize: '2400x1080', pixelsPerRequest: 2592000,
@@ -154,6 +169,6 @@ const provenance = {
   promptSpec: 'assets/incoming/seedream-furnishings-20261020/prompts.json',
   processor: 'scripts/process-furnishing-assets.mjs', rights: 'generated output subject to account agreement; commercial release rights must be confirmed by account holder',
 }
-await writeFile(`${PUBLIC}/manifest.json`, `${JSON.stringify({ version: 1, assets, provenance }, null, 2)}\n`)
-await writeFile(`${PROCESSED}/quality-report.json`, `${JSON.stringify({ version: 1, count: Object.keys(assets).length, batches: spec.batches.map((batch) => ({ batch: batch.batch, items: batch.items, sourceSha256: sourceBytes.get(batch.batch), pixels: 2592000, requestCount: 1 })), assets, checks: { allSources2400x1080: true, allOutputPixelsWithinBudget: true, exactThreeColumnCrops: false, connectedComponentMaskGrouping: true, uniqueSourcePerBatch: sourceBytes.size === spec.batches.length, noSignedUrlsOrCredentials: true } }, null, 2)}\n`)
+await writeFile(`${PUBLIC}/manifest.json`, `${JSON.stringify({ version: 1, assets, materialSamples, provenance }, null, 2)}\n`)
+await writeFile(`${PROCESSED}/quality-report.json`, `${JSON.stringify({ version: 1, count: Object.keys(assets).length, batches: spec.batches.map((batch) => ({ batch: batch.batch, items: batch.items, sourceSha256: sourceBytes.get(batch.batch), pixels: 2592000, requestCount: 1 })), assets, materialSamples, checks: { allSources2400x1080: true, allOutputPixelsWithinBudget: true, exactThreeColumnCrops: false, connectedComponentMaskGrouping: true, uniqueSourcePerBatch: sourceBytes.size === spec.batches.length, noSignedUrlsOrCredentials: true } }, null, 2)}\n`)
 console.log(JSON.stringify({ count: Object.keys(assets).length, requests: spec.batches.length, manifest: `${PUBLIC}/manifest.json`, qualityReport: `${PROCESSED}/quality-report.json` }, null, 2))

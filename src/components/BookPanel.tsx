@@ -1,4 +1,4 @@
-import type { CSSProperties } from 'react'
+import { useState, type CSSProperties } from 'react'
 import { formatCoins, swordName, swordValue } from '../game/content'
 import { furnishingUrl } from '../game/furnishingAssets'
 import { weaponRarity } from '../game/rarity'
@@ -87,17 +87,26 @@ function WeaponCodex({ state, weaponAtlas }: Pick<BookPanelProps, 'state' | 'wea
 }
 
 export function BookPanel({ state, page, weaponAtlas, onPageChange, onClose }: BookPanelProps) {
+  const [mobilePage, setMobilePage] = useState(0)
+  const pageLabels = page === 'bestiary' ? ['普通剑形', '特殊剑形'] : page === 'records' ? ['最近锻打', '铺中藏剑'] : ['铁匠铺操作', '锤击与生存']
+  const changePage = (next: BookPage) => {
+    setMobilePage(0)
+    onPageChange(next)
+  }
   return (
     <div className="overlay" role="presentation" onPointerDown={(event) => event.target === event.currentTarget && onClose()}>
       <section className={`book-panel furnishing-panel${page === 'relics' ? ' is-relic-codex' : ''}`} style={{ '--furnishing-panel-image': `url("${furnishingUrl('codex-panel')}")` } as CSSProperties} role="dialog" aria-modal="true" aria-label="铁匠手记">
         <button className="corner-close icon-button" onClick={onClose} aria-label="合上书本">×</button>
         <nav className="book-tabs" aria-label="书本页签">
-          <button className={page === 'records' ? 'active' : ''} onClick={() => onPageChange('records')}>锻造记录</button>
-          <button className={page === 'bestiary' ? 'active' : ''} onClick={() => onPageChange('bestiary')}>武器图鉴</button>
-          <button className={page === 'relics' ? 'active' : ''} onClick={() => onPageChange('relics')}>遗物图鉴</button>
-          <button className={page === 'manual' ? 'active' : ''} onClick={() => onPageChange('manual')}>操作手册</button>
+          <button className={page === 'records' ? 'active' : ''} onClick={() => changePage('records')}>锻造记录</button>
+          <button className={page === 'bestiary' ? 'active' : ''} onClick={() => changePage('bestiary')}>武器图鉴</button>
+          <button className={page === 'relics' ? 'active' : ''} onClick={() => changePage('relics')}>遗物图鉴</button>
+          <button className={page === 'manual' ? 'active' : ''} onClick={() => changePage('manual')}>操作手册</button>
         </nav>
-        <div className="book-spread">
+        {page !== 'relics' && <nav className="book-mobile-pages" aria-label="单页阅读切换">
+          {pageLabels.map((label, index) => <button key={label} aria-pressed={mobilePage === index} onClick={() => setMobilePage(index)}>{label}</button>)}
+        </nav>}
+        <div className="book-spread" data-mobile-page={mobilePage}>
           {page === 'records' && (
             <>
               <BookScroll className="book-page" ariaLabel="最近锻打记录">
@@ -143,6 +152,7 @@ export function BookPanel({ state, page, weaponAtlas, onPageChange, onClose }: B
                   <li><b>敲响上供铃</b>：交付上供台上的剑。价值不足或台上无剑时，三秒内再敲一次确认扣1血过日；空交不消耗别处的剑、不加上供金币。</li>
                 </ol>
                 <p>拖动空白处可让整间铁匠铺横向移动，顶部状态栏保持固定。取下远端剑后，将指针停在屏幕左边缘可带剑回到工作区。拖拽取消或落在无效处，物件回到原位；炭炉、工作台和上供台各容纳一把剑。</p>
+                <p>手机支持竖屏直接游玩：底部工位导航切换近景，点选剑后可用详情里的“移往”按钮完成搬运；详情和操作区可独立上下滚动。手机书本用“单页阅读切换”浏览两页内容，所有锻造与交易规则和桌面相同。</p>
                 <p>柜子第四层分别放着武器图鉴、遗物图鉴和操作手册，点击对应书本可直接翻到该页。旅行商人的入口在柜子左侧，每四日到访一次；向左拖动房间即可找到。</p>
               </BookScroll>
               <BookScroll className="book-page manual-page" ariaLabel="锤击与生存手册">
@@ -155,7 +165,7 @@ export function BookPanel({ state, page, weaponAtlas, onPageChange, onClose }: B
                 <p>把工作台下方的龙鳞拖上工作台，可为剑装备保护；沙漏拖上工作台可撤销最近一锤。也可用 Tab 聚焦键盘后备用品，再按 Enter 使用。</p>
                 <p>每次上供或空交后进入下一天并获得三把铁剑，日历记录是否达标，商人与里程碑照常推进。空交按价值0未达标处理，即使别处有剑也可主动空交。未使用的剑永不自动消失，生命归零则本局结束。</p>
                 <p><b>键盘后备</b>：Tab 聚焦藏剑，Enter 选中；F 移到炭炉，A 移到工作台，R 挂回墙钩，T 移到上供台；空格敲锤，左右方向键浏览房间。Tab 聚焦上供铃后 Enter 确认；Escape 关闭面板。</p>
-                <p>商店与祭台中，Tab 聚焦物件后 Enter / 空格可选择或取回，再聚焦小钟确认。鸣铃前不扣金币或祭品，拖拽取消与窗口失焦也不会成交。</p>
+                <p>商店与祭台中，点击物件或 Tab 聚焦后 Enter / 空格可选择或取回，再敲小钟确认。触屏可上下滑动货架，也可按住货物图像拖到结算垫或祭槽；鸣铃前不扣金币或祭品，拖拽取消与窗口失焦也不会成交。</p>
                 <p>商人每次到访时，普通铁剑、龙鳞和沙漏各独立补货3～5件，可连续购买直到售罄；特殊基础剑每种1件。打开商店或读取存档不会重新补货。</p>
               </BookScroll>
             </>

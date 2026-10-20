@@ -1,0 +1,236 @@
+/* 小屏与矮横屏共用断点；只重排内容，不整体缩小桌面面板。 */
+@media (max-width: 700px), (max-height: 550px) {
+  .overlay:has(> .book-panel),
+  .overlay:has(> .shop-panel),
+  .overlay.calendar-overlay {
+    padding: max(6px, env(safe-area-inset-top)) max(6px, env(safe-area-inset-right)) max(6px, env(safe-area-inset-bottom)) max(6px, env(safe-area-inset-left));
+  }
+
+  .book-panel.furnishing-panel,
+  .shop-panel.furnishing-panel,
+  .overlay .calendar-panel {
+    width: 100%;
+    max-width: 900px;
+    height: min(820px, calc(100dvh - max(6px, env(safe-area-inset-top)) - max(6px, env(safe-area-inset-bottom))));
+    max-height: calc(100dvh - max(6px, env(safe-area-inset-top)) - max(6px, env(safe-area-inset-bottom)));
+    min-width: 0;
+    min-height: 0;
+    box-shadow: none;
+    font-size: 14px;
+  }
+
+  /* 裁取真实纸页作底，用九宫格保留生成素材的边框与四角。 */
+  .book-panel.furnishing-panel {
+    display: flex;
+    flex-direction: column;
+    padding: 38px 8px 10px;
+    border: 10px solid transparent;
+    border-image: var(--furnishing-panel-image) 72 72 60 72 / 10px stretch;
+    background-color: #dfbf88;
+    background-image: url('/assets/game/furnishings/book-paper.png');
+    background-size: 256px 256px;
+    background-repeat: repeat;
+    background-origin: padding-box;
+  }
+
+  .book-panel.furnishing-panel .corner-close,
+  .shop-panel.furnishing-panel .corner-close,
+  .overlay .calendar-panel .corner-close {
+    top: 0;
+    right: 0;
+    width: 44px;
+    height: 44px;
+    color: #f5dfb6;
+    background: #392c22;
+    border: 1px solid #a18256;
+    text-shadow: none;
+  }
+
+  .book-panel.furnishing-panel .book-tabs {
+    flex: 0 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    height: auto;
+    gap: 4px;
+    padding: 0;
+    margin-bottom: 6px;
+  }
+
+  .book-panel.furnishing-panel .book-tabs button,
+  .book-panel .book-mobile-pages button {
+    min-width: 0;
+    min-height: 44px;
+    padding: 6px 3px;
+    font: inherit;
+    font-size: 14px;
+    line-height: 1.4;
+    cursor: pointer;
+  }
+
+  .book-panel .book-mobile-pages {
+    flex: 0 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+
+  .book-panel .book-mobile-pages button {
+    color: #4a321c;
+    background: #d4b780;
+    border: 1px solid #80613c;
+  }
+
+  .book-panel .book-mobile-pages button[aria-pressed='true'] {
+    color: #2f2115;
+    background: #f4dfad;
+    border: 2px solid #4f341e;
+    font-weight: bold;
+  }
+
+  .book-panel.furnishing-panel .book-spread {
+    flex: 1;
+    min-height: 0;
+    height: auto;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr);
+  }
+
+  .book-panel .book-spread[data-mobile-page='0'] > .book-page:nth-child(2),
+  .book-panel .book-spread[data-mobile-page='1'] > .book-page:first-child:not(.relic-codex-page) {
+    display: none;
+  }
+
+  .book-panel.furnishing-panel .book-page { padding: 8px 0 8px 4px; }
+  .book-panel .book-page,
+  .book-panel .weapon-codex-page { font-size: 14px; }
+  .book-panel .book-page h2 { margin-bottom: 12px; font-size: 20px; }
+  .book-panel .book-page h3 { font-size: 18px; }
+  .book-panel .book-page p,
+  .book-panel .book-page li,
+  .book-panel .weapon-codex-page .codex-note,
+  .book-panel .weapon-codex-page .weapon-description,
+  .book-panel .relic-codex-copy p,
+  .book-panel .relic-codex-rules p { font-size: 14px; line-height: 1.75; }
+  .book-panel .weapon-entry-copy strong,
+  .book-panel .relic-codex-copy strong { font-size: 16px; }
+  .book-panel .book-page small,
+  .book-panel .weapon-unlock-status { font-size: 14px; }
+  .book-panel .weapon-thumbnail { height: 128px; }
+  .book-panel .weapon-thumbnail-image { transform: translate(-50%, -50%) rotate(90deg); }
+  .book-panel .manual-page ol { padding-left: 24px; }
+  .book-panel .record-list li { grid-template-columns: minmax(0, 1fr); }
+  .book-panel .relic-codex-grid { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .book-panel .relic-codex-entry { display: grid; grid-template-columns: 68px minmax(0, 1fr); align-items: start; gap: 10px; padding: 10px; }
+  .book-panel .relic-codex-image { width: 68px; height: 76px; margin: 0; }
+
+  .book-panel .book-scroll-rail,
+  .shop-panel .book-scroll-rail,
+  .calendar-panel .book-scroll-rail { flex-basis: 20px; width: 20px; margin-left: 6px; }
+  .book-panel .book-scroll-thumb,
+  .shop-panel .book-scroll-thumb,
+  .calendar-panel .book-scroll-thumb { min-height: 32px; }
+  .book-panel button:focus-visible { outline: 3px solid #694926; outline-offset: 1px; }
+
+  .shop-panel.furnishing-panel {
+    padding: 46px 6px 6px;
+    border: 10px solid transparent;
+    border-image: var(--furnishing-panel-image) 72 32 32 32 / 10px stretch;
+    background-image: url('/assets/game/furnishings/merchant-cloth.png');
+    background-size: 256px 256px;
+    background-repeat: repeat;
+    overflow: hidden;
+  }
+
+  .relic-panel.furnishing-panel { background-image: url('/assets/game/furnishings/book-paper.png'); }
+
+  .shop-panel.furnishing-panel .shop-scroll { flex: 1 1 0; min-height: 0; max-height: none; }
+  .shop-panel.furnishing-panel .shop-content { padding: 4px 0 10px; }
+  .shop-panel header { flex-wrap: wrap; gap: 8px; margin-bottom: 12px; padding: 0 0 12px; }
+  .shop-panel header > div { flex: 1; min-width: 170px; }
+  .shop-panel h2 { font-size: 20px; }
+  .shop-panel header p,
+  .shop-panel .wares-grid p,
+  .shop-panel .relic-offers p { font-size: 14px; line-height: 1.65; }
+  .shop-panel header strong { margin-left: 0; max-width: 100%; overflow-wrap: anywhere; font-size: 14px; }
+  .shop-panel .shop-header-image { flex-basis: 44px; width: 44px; height: 58px; }
+  .shop-panel .wares-grid,
+  .shop-panel .relic-offers { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .shop-panel .wares-grid article,
+  .shop-panel .relic-offers article { min-width: 0; min-height: 0; padding: 12px; color: var(--ink); }
+  .shop-panel .wares-grid h3,
+  .shop-panel .relic-offers h3 { font-size: 18px; }
+  .shop-panel .ware-price,
+  .shop-panel small,
+  .shop-panel.furnishing-panel .sacrifice-sword small,
+  .shop-panel .sacrifice-list > .book-scroll-content > .sacrifice-sword small,
+  .shop-panel .sword-cost > small,
+  .shop-panel .refresh-wheel span,
+  .shop-panel .chosen-relic-preview { font-size: 14px; line-height: 1.5; }
+  .shop-panel button { min-height: 44px; }
+  .shop-panel .pointer-ware { touch-action: pan-y; cursor: pointer; }
+  .shop-panel .pointer-ware .shop-item-image { touch-action: none; cursor: grab; }
+  .shop-panel .relic-layout { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .shop-panel .sacrifice-tray { min-width: 0; padding: 10px; }
+  .shop-panel .sacrifice-scroll { height: 230px; max-height: 230px; }
+  .shop-panel .sacrifice-slots { min-height: 70px; }
+  .shop-panel .sacrifice-sword { min-width: 0; }
+  .shop-panel .sacrifice-sword > .shop-item-image { flex-shrink: 0; }
+  .shop-panel .refresh-wheel { margin-top: 10px; }
+
+  /* 与货架滚动区分离，任何滚动位置均可见选择、余额与确认铃。 */
+  .shop-panel .shop-settlement { gap: 8px; margin-top: 6px; padding-top: 8px; }
+  .shop-panel .settlement-status,
+  .shop-panel .settlement-status span,
+  .shop-panel .settlement-bell-label { font-size: 14px; line-height: 1.5; }
+  .shop-panel .merchant-settlement { flex-wrap: wrap; }
+  .shop-panel .merchant-settlement .settlement-status { flex-basis: 100%; }
+  .shop-panel .merchant-settlement .merchant-checkout { width: 100%; min-height: 64px; padding: 4px; gap: 10px; }
+  .shop-panel .merchant-settlement .checkout-item { flex: 1; width: auto; height: 60px; }
+  .shop-panel .merchant-settlement .merchant-checkout > button:last-child { flex: 0 0 100px; width: 100px; height: 60px; font-size: 14px; }
+  .shop-panel .merchant-settlement .checkout-item .shop-item-image { height: 52px; }
+  .shop-panel .relic-settlement .settlement-status { color: #3c2d1c; }
+  .shop-panel .relic-settlement .relic-bell { flex-basis: 100px; height: 68px; }
+  .shop-panel .shop-bell-image { width: 26px; height: 30px; }
+
+  .overlay .calendar-panel {
+    padding: 44px 12px 14px;
+    border: 8px solid transparent;
+    border-image: url('/assets/game/furnishings/calendar-panel.png') 36 32 36 32 / 8px stretch;
+    background: url('/assets/game/furnishings/book-paper.png') repeat;
+    background-size: 256px 256px;
+  }
+  .calendar-panel .calendar-backdrop { display: none; }
+  .calendar-panel .calendar-scroll { flex: 1; min-height: 0; }
+  .calendar-panel .book-scroll-rail { flex-basis: 18px; width: 18px; margin-left: 4px; }
+  .calendar-panel .calendar-header { grid-template-columns: 44px minmax(0, 1fr) 44px; gap: 4px; padding: 0; }
+  .calendar-panel .calendar-header h2 { font-size: 18px; }
+  .calendar-panel .calendar-header button { height: 44px; font-size: 26px; }
+  .calendar-panel .calendar-today { flex-wrap: wrap; gap: 6px; margin: 6px 0 10px; font-size: 14px; }
+  .calendar-panel .calendar-today button { min-height: 44px; padding: 6px 10px; font-size: 14px; }
+  .calendar-panel .calendar-weekdays { font-size: 14px; }
+  .calendar-panel .calendar-weekdays,
+  .calendar-panel .calendar-grid { gap: 2px; }
+  .calendar-panel .calendar-grid { flex: 0 0 auto; grid-template-rows: repeat(6, minmax(62px, auto)); }
+  .calendar-panel .calendar-cell { min-height: 62px; padding: 5px 0; gap: 2px; border-width: 1px; background: #302820; }
+  .calendar-panel .calendar-cell strong { font-size: 18px; line-height: 1.3; }
+  .calendar-panel .calendar-cell .calendar-cell-target { display: none; }
+  .calendar-panel .calendar-cell .calendar-cell-status { display: block; font-size: 14px; line-height: 1.3; }
+  .calendar-panel .calendar-cell i { top: 0; right: 1px; font-size: 12px; line-height: 1; }
+  .calendar-panel .calendar-cell.outside-month { opacity: .65; }
+  .calendar-panel .calendar-cell.ineligible { color: #b6a58e; }
+  .calendar-panel .calendar-day-details { font-size: 14px; line-height: 1.6; }
+  .calendar-panel .calendar-legend { margin-top: 10px; gap: 6px 12px; font-size: 14px; line-height: 1.5; }
+}
+
+@media (max-width: 450px) {
+  .book-panel.furnishing-panel .book-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .shop-panel .wares-grid,
+  .shop-panel .relic-offers { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-height: 550px) {
+  .shop-panel .merchant-settlement { flex-wrap: nowrap; }
+  .shop-panel .merchant-settlement .settlement-status { flex-basis: 0; }
+  .shop-panel .merchant-settlement .merchant-checkout { flex: 0 0 240px; }
+}

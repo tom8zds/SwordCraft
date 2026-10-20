@@ -166,7 +166,6 @@ button:focus-visible, [role='button']:focus-visible, input:focus-visible { outli
 .game-over-overlay { z-index: 200; }
 .game-over-panel { min-width: 450px; padding: 42px; text-align: center; color: #b7aa98; background: #181614; border: 6px solid #48413a; }
 .cold-forge { font-size: 60px; color: #4f4943; }.game-over-panel h1 { font-size: 33px; font-weight: 700; }.game-over-panel button { padding: 10px 24px; color: #e6d8be; background: #674833; border: 3px solid #947052; cursor: pointer; }
-.portrait-guard { display: none; }
 
 @media (max-width: 1100px) {
   .hud { gap: 11px; padding-inline: 8px; }
@@ -176,39 +175,6 @@ button:focus-visible, [role='button']:focus-visible, input:focus-visible { outli
   .book-page { padding-inline: 20px; }
   .weapon-thumbnail { height: 116px; }
   .weapon-thumbnail-image { transform: translate(-50%, -50%) rotate(90deg) scale(.9); }
-}
-@media (orientation: landscape) and (max-height: 550px) {
-  .game-shell { grid-template-rows: 45px minmax(0, 1fr) 24px; }
-  .hud { gap: 9px; padding-block: 2px; }
-  .day-plaque { min-width: 126px; padding-block: 2px; }
-  .day-plaque span { font-size: 14px; }
-  .day-plaque small { font-size: 9px; }
-  .life-meter { font-size: 17px; gap: 2px; }
-  .hud-coins { font-size: 13px; }
-  .status-ledger { font-size: 9px; }
-  .status-ledger small { display: none; }
-  .workbench-details { padding: 6px; font-size: 9px; }
-  .workbench-title strong { font-size: 11px; }
-  .workbench-description { margin: 5px 0; font-size: 9px; line-height: 1.45; }
-  .blade-status { font-size: 8px; gap: 2px 4px; }
-  .camera-controls { bottom: 4px; gap: 5px; padding: 0 4px; }
-  .camera-controls input { width: 120px; }
-  .camera-controls button { font-size: 20px; }
-  .scene-focus-controls { bottom: 4px; }
-  .scene-focus-controls button { width: 29px; height: 27px; font-size: 14px; }
-  .toast { top: 52px; font-size: 11px; }
-  .book-panel { height: 95vh; border-width: 6px; }
-  .book-page { padding: 15px 20px; font-size: 11px; }
-  .book-page h2 { font-size: 18px; }
-  .book-tabs { height: 45px; }
-  .book-tabs button { font-size: 12px; padding: 5px 10px; }
-  .book-spread { height: calc(100% - 45px); }
-}
-@media (orientation: portrait) {
-  .portrait-guard { position: fixed; inset: 0; z-index: 5000; display: grid; place-content: center; justify-items: center; padding: 30px; color: var(--ink); text-align: center; background: #17131a; }
-  .portrait-guard span { font-size: 68px; }
-  .portrait-guard strong { font-size: 25px; }
-  .portrait-guard p { color: #9b8e82; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; }

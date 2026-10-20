@@ -10,6 +10,7 @@ import { HOOK_SPACING, HOOK_X, HOOK_Y, MIN_WORLD_WIDTH, MIN_WORLD_X, SCENE_HEIGH
 import type { FurnishingTextures } from './furnishingAssets'
 import { ASCENSION_GOLD, WeaponFeedback, type WeaponAura } from './WeaponFeedback'
 import { HammerMotion, type HammerPose } from './HammerMotion'
+import { sceneViewport, type SceneViewport } from './sceneViewport'
 
 interface SwordView {
   root: Container
@@ -73,6 +74,9 @@ const RESULT_COLORS = { destroyed: 0xe84d5b, damaged: 0xf08a45, steady: 0x45b8d8
 export class SmithyScene {
   readonly root = new Container({ label: 'smithy-frame' })
   readonly world = new Container({ label: 'smithy-world' })
+  private readonly frameMask = new Graphics()
+  private viewport: SceneViewport = sceneViewport(SCENE_WIDTH, SCENE_HEIGHT, false)
+  private focusedStation: SceneFocus | null = null
   private readonly callbacks: SmithySceneCallbacks
   private readonly textures: SmithyTextures
   private readonly weapons: WeaponTextures
@@ -137,9 +141,9 @@ export class SmithyScene {
     this.root.eventMode = 'static'
     this.root.hitArea = new Rectangle(0, 0, SCENE_WIDTH, SCENE_HEIGHT)
     this.root.cursor = 'grab'
-    const mask = new Graphics().rect(0, 0, SCENE_WIDTH, SCENE_HEIGHT).fill(0xffffff)
-    this.root.addChild(this.world, mask)
-    this.world.mask = mask
+    this.frameMask.rect(0, 0, SCENE_WIDTH, SCENE_HEIGHT).fill(0xffffff)
+    this.root.addChild(this.world, this.frameMask)
+    this.world.mask = this.frameMask
     this.world.addChild(new Sprite({ texture: textures.background, label: 'brick-room-background' }), this.backdrop)
     this.objects.cabinet.position.set(-207.5, 680)
     this.objects.cabinet.scale.set(1.25)
@@ -308,24 +312,41 @@ export class SmithyScene {
     }
   }
 
-  setScale(width: number, height: number): void {
+  setScale(width: number, height: number, compact = false): void {
     this.cancelGesture()
-    const scale = Math.min(width / SCENE_WIDTH, height / SCENE_HEIGHT)
+    const old = this.viewport
+    this.viewport = sceneViewport(width, height, compact)
+    const { scale, x, y, worldWidth, worldHeight, worldTop } = this.viewport
     this.root.scale.set(scale)
-    this.root.position.set(Math.round((width - SCENE_WIDTH * scale) / 2), Math.round((height - SCENE_HEIGHT * scale) / 2))
+    this.root.position.set(Math.round(x), Math.round(y))
+    this.root.hitArea = new Rectangle(0, worldTop, worldWidth, worldHeight)
+    this.frameMask.clear().rect(0, worldTop, worldWidth, worldHeight).fill(0xffffff)
+    this.scaleCount.style.fontSize = this.hourglassCount.style.fontSize = compact ? 14 / scale : 17
+    this.submissionValue.style.fontSize = compact ? 14 / scale : 19
+    this.submissionValue.style.lineHeight = compact ? 18 / scale : 28
+    if (!old.compact && compact) this.focus('anvil')
+    else if (this.focusedStation) this.focus(this.focusedStation)
+    else this.moveCamera(this.cameraX + (old.worldWidth - worldWidth) / 2)
+    for (const view of this.swordViews.values()) this.updateSwordLabel(view)
   }
 
   moveCamera(next: number): void {
     if (this.disposed) return
-    this.cameraX = Math.max(MIN_WORLD_X, Math.min(this.worldWidth - SCENE_WIDTH, Math.round(next)))
+    this.cameraX = Math.max(MIN_WORLD_X, Math.min(this.worldWidth - this.viewport.worldWidth, Math.round(next)))
     this.world.x = -this.cameraX
-    this.callbacks.onCameraChange({ x: this.cameraX, minX: MIN_WORLD_X, maxX: this.worldWidth - SCENE_WIDTH })
+    this.callbacks.onCameraChange({ x: this.cameraX, minX: MIN_WORLD_X, maxX: Math.max(MIN_WORLD_X, this.worldWidth - this.viewport.worldWidth) })
     this.syncSwordViews()
   }
 
   focus(location: SceneFocus): void {
     this.cancelGesture()
-    this.moveCamera(location === 'cabinet' ? MIN_WORLD_X : location === 'rack' ? HOOK_X - 350 : location === 'submission' ? 500 : 0)
+    this.focusedStation = location
+    if (this.viewport.compact) {
+      const selected = this.state?.swords.find((sword) => sword.id === this.state?.selectedSwordId)
+      const rackIndex = location === 'rack' && selected?.location === 'rack' ? this.state!.swords.filter((sword) => sword.location === 'rack').findIndex((sword) => sword.id === selected.id) : -1
+      const center = { cabinet: -205, merchant: -575, forge: 395, anvil: 1060, rack: HOOK_X + (rackIndex >= 0 ? rackIndex * HOOK_SPACING + 25 : 175), submission: 1640 }[location]
+      this.moveCamera(center - this.viewport.worldWidth / 2)
+    } else this.moveCamera(location === 'cabinet' || location === 'merchant' ? MIN_WORLD_X : location === 'rack' ? HOOK_X - 350 : location === 'submission' ? 500 : 0)
   }
 
   wheel(delta: number, clientX: number, clientY: number, canvas: HTMLCanvasElement): boolean {
@@ -347,7 +368,8 @@ export class SmithyScene {
     if (this.enabled && this.gesture && (this.gesture.kind === 'item' || this.gesture.kind === 'sword' && this.gesture.moved)) {
       const held = this.gesture
       const framePoint = this.root.toLocal({ x: held.pointerX, y: held.pointerY })
-      const edge = framePoint.x < 85 ? -1 : framePoint.x > SCENE_WIDTH - 85 ? 1 : 0
+      const edgeWidth = Math.min(85, this.viewport.worldWidth * 0.12)
+      const edge = framePoint.x < edgeWidth ? -1 : framePoint.x > this.viewport.worldWidth - edgeWidth ? 1 : 0
       if (edge !== 0) {
         this.moveCamera(this.cameraX + edge * 980 * delta)
         const point = this.world.toLocal({ x: held.pointerX, y: held.pointerY })
@@ -509,7 +531,7 @@ export class SmithyScene {
   private syncSwordViews(): void {
     if (!this.state) return
     const first = Math.max(0, Math.floor((this.cameraX - HOOK_X) / HOOK_SPACING) - 1)
-    const last = Math.max(0, Math.ceil((this.cameraX + SCENE_WIDTH - HOOK_X) / HOOK_SPACING) + 1)
+    const last = Math.max(0, Math.ceil((this.cameraX + this.viewport.worldWidth - HOOK_X) / HOOK_SPACING) + 1)
     if (first !== this.lastVisibleFirst || last !== this.lastVisibleLast) {
       this.lastVisibleFirst = first
       this.lastVisibleLast = last
@@ -609,6 +631,7 @@ export class SmithyScene {
       view.baseScale = pose.scale * visualScale
       view.label.position.set(0, Math.max(50, view.bounds.width * view.baseScale * 1.2 / 2 + 12))
     }
+    view.label.visible = !this.viewport.compact || view.sword.location === 'rack'
     this.applySwordVisual(view, this.swordFeedback.get(view.sword.id), Date.now())
     const { bounds } = view
     const cos = Math.cos(view.baseRotation)
@@ -629,13 +652,19 @@ export class SmithyScene {
 
   private updateSwordLabel(view: SwordView): void {
     const rarity = weaponRarity(view.sword.level)
+    const fontSize = this.viewport.compact ? 14 / this.viewport.scale : 14
+    const width = this.viewport.compact ? HOOK_SPACING - 24 : 112.8
     const text = `${swordName(view.sword)}\nLv.${view.sword.level} · ${rarity.name}\n◆ ${compactWeaponValue(swordValue(view.sword))}`
-    if (text === view.labelKey) return
-    view.labelKey = text
+    const key = `${fontSize}:${width}:${text}`
+    if (key === view.labelKey) return
+    view.labelKey = key
     view.labelText.text = text
+    view.labelText.style.fontSize = fontSize
+    view.labelText.style.lineHeight = fontSize * 1.35
+    view.labelText.style.wordWrapWidth = width - 12
     view.labelText.style.fill = rarity.color
     const height = Math.max(65, view.labelText.height + 10)
-    view.labelBacking.clear().roundRect(-56.4, 0, 112.8, height, 4).fill({ color: 0x17141c, alpha: 0.94 }).stroke({ color: rarity.color, width: 1.2, alpha: 0.8 })
+    view.labelBacking.clear().roundRect(-width / 2, 0, width, height, 4).fill({ color: 0x17141c, alpha: 0.94 }).stroke({ color: rarity.color, width: 1.2, alpha: 0.8 })
   }
 
   private applySwordVisual(view: SwordView, effect: SwordFeedbackState | undefined, now: number): void {
@@ -705,6 +734,7 @@ export class SmithyScene {
     if (!this.enabled || !this.gesture || this.gesture.pointerId !== event.pointerId) return
     const gesture = this.gesture
     if (gesture.kind === 'camera') {
+      this.focusedStation = null
       this.moveCamera(gesture.cameraX + gesture.startX - this.root.toLocal(event.global).x)
       return
     }

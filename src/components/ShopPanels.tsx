@@ -82,6 +82,8 @@ function useShopDrag(onDrop: (item: ShopDragItem, x: number, y: number) => void)
     onPointerDown: (event: ReactPointerEvent<HTMLElement>) => {
       if (!enabled || !event.isPrimary || event.button !== 0 || active.current) return
       suppressClick.current = false
+      // 触屏只从实像开始拖拽，文字区域仍可自然上下滑动货架。
+      if (event.pointerType === 'touch' && !(event.target as HTMLElement).closest('.shop-item-image')) return
       event.currentTarget.focus({ preventScroll: true })
       event.currentTarget.setPointerCapture(event.pointerId)
       active.current = {
@@ -171,7 +173,7 @@ export function MerchantPanel({ state, onBuy, onClose }: MerchantPanelProps) {
       <section className="shop-panel merchant-panel furnishing-panel" style={{ '--furnishing-panel-image': `url("${furnishingUrl('merchant-panel')}")` } as CSSProperties} role="dialog" aria-modal="true" aria-label="旅行商人" onDragStart={(event) => event.preventDefault()}>
         <button className="corner-close icon-button" onClick={onClose} aria-label="离开商人">×</button>
         <BookScroll className="shop-scroll" viewportClassName="shop-content" ariaLabel="旅行商人货架与结算">
-        <header><img className="merchant-face shop-header-image" src={furnishingUrl('merchant-entrance')} alt="" /><div><h2>旅行商人</h2><p id="merchant-help">货物拖上结算垫，敲铃逐件成交，有库存可再次购买；成交前可取回。也可 Tab 选中货物，Enter / 空格放上垫子。普通铁剑、龙鳞和沙漏每次到访补货3～5件。</p></div><strong className="coin-readout">◆ {formatCoins(state.coins)}</strong></header>
+        <header><img className="merchant-face shop-header-image" src={furnishingUrl('merchant-entrance')} alt="" /><div><h2>旅行商人</h2><p id="merchant-help">点击货物，或将实像拖上结算垫，再敲铃逐件成交；可再次购买至售罄。文字区域可上下滑动，Enter / 空格也可选择。普通铁剑、龙鳞和沙漏每次到访补货3～5件。</p></div><strong className="coin-readout">◆ {formatCoins(state.coins)}</strong></header>
         <div className="wares-grid" ref={wares}>
           {state.merchantItems.map((item) => {
             const price = merchantPrice(state, item)
@@ -198,6 +200,9 @@ export function MerchantPanel({ state, onBuy, onClose }: MerchantPanelProps) {
             )
           })}
         </div>
+        </BookScroll>
+        <footer className="shop-settlement merchant-settlement" aria-label="商人结算">
+        <p className="settlement-status" role="status">{pendingItem ? `${pendingItem.name} · ◆ ${formatCoins(merchantPrice(state, pendingItem))} · 库存 ${pendingItem.stock}` : '选择货物后敲铃成交'}<span>持有 ◆ {formatCoins(state.coins)}</span></p>
         <div ref={checkout} className={`merchant-checkout ${drag.preview?.origin === 'wares' ? 'awaiting-drop' : ''}`} aria-label="商人结算垫">
           <button
             className="checkout-item pointer-ware" disabled={!pendingItem}
@@ -210,9 +215,9 @@ export function MerchantPanel({ state, onBuy, onClose }: MerchantPanelProps) {
             onBuy(pendingItem.id)
             setPendingItemId(null)
             drag.cancel()
-          }} aria-label={pendingItem ? `敲商人铃，支付 ${formatCoins(merchantPrice(state, pendingItem))} 金币购买 ${pendingItem.name}` : '敲商人铃完成交易'} title="敲铃成交"><img className="shop-bell-image" src={furnishingUrl('offering-bell')} alt="" /></button>
+          }} aria-label={pendingItem ? `敲商人铃，支付 ${formatCoins(merchantPrice(state, pendingItem))} 金币购买 ${pendingItem.name}` : '敲商人铃完成交易'} title="敲铃成交"><img className="shop-bell-image" src={furnishingUrl('offering-bell')} alt="" /><span className="settlement-bell-label">鸣铃购买</span></button>
         </div>
-        </BookScroll>
+        </footer>
         <DragPreview drag={drag.preview} />
       </section>
     </div>
@@ -297,7 +302,7 @@ export function RelicPanel({ state, sacrifices, onToggleSacrifice, onBuy, onRefr
       <section className="shop-panel relic-panel furnishing-panel" style={{ '--furnishing-panel-image': `url("${furnishingUrl('relic-panel')}")` } as CSSProperties} role="dialog" aria-modal="true" aria-label="遗物祭台" onDragStart={(event) => event.preventDefault()}>
         <button className="corner-close icon-button" onClick={onClose} disabled={confirming} aria-label="离开遗物祭台">×</button>
         <BookScroll className="shop-scroll" viewportClassName="shop-content" ariaLabel="遗物祭台与兑换">
-        <header><img className="relic-orb shop-header-image" src={furnishingUrl('relic-altar')} alt="" /><div><h2>遗物祭台</h2><p id="relic-help">选择遗物，把普通铁剑拖进祭槽，敲小钟兑换；成交前可取回。Tab 后 Enter / 空格也可选择。</p></div><strong aria-label={`已持有 ${state.relics.length} 件遗物，上限十件`}>{state.relics.length} / 10</strong></header>
+        <header><img className="relic-orb shop-header-image" src={furnishingUrl('relic-altar')} alt="" /><div><h2>遗物祭台</h2><p id="relic-help">点击选择遗物与普通铁剑，或将剑的实像拖进祭槽，敲小钟兑换；成交前可取回。文字区域可上下滑动，Enter / 空格也可选择。</p></div><strong aria-label={`已持有 ${state.relics.length} 件遗物，上限十件`}>{state.relics.length} / 10</strong></header>
         {atLimit && <p className="shop-notice" role="status">遗物架已满，十件珍宝已全部安放。</p>}
         <div className="relic-layout">
           <div className="relic-offers">
@@ -329,8 +334,6 @@ export function RelicPanel({ state, sacrifices, onToggleSacrifice, onBuy, onRefr
                   onClick={(event) => (event.detail === 0 || !drag.suppressClick.current) && retrieve(id)} aria-label={`从祭剑槽取回等级 ${sword.level} 铁剑，${swordName(sword)}，${rarity.name}`} title="点击取回，或拖回藏剑区"><ShopImage src={imageUrl} weapon /><small className="weapon-rarity" style={{ color: rarity.cssColor }}>{swordName(sword)} · Lv.{sword.level} · {rarity.name}</small></button>
               })}
             </div>
-            <p role="status">{chosenRelic ? `${chosenRelic.name} · ${validSwordIds.length} / ${chosenRelic.cost} 把` : atLimit ? '已达十件上限' : '先选一件遗物'}</p>
-            <button className="relic-bell" disabled={!canConfirm} onClick={ringBell} aria-label={chosenRelic ? `敲祭台小钟，献祭 ${chosenRelic.cost} 把普通铁剑换取 ${chosenRelic.name}` : '敲祭台小钟完成兑换'} title="敲铃兑换"><img className="shop-bell-image" src={furnishingUrl('offering-bell')} alt="" /></button>
             <BookScroll className="sacrifice-scroll" viewportClassName="sacrifice-list rarity-sword-list" ref={swordList} ariaLabel="可献祭的普通铁剑">
               {ironSwords.filter((sword) => !validSwordIds.includes(sword.id)).map((sword) => {
                 const rarity = weaponRarity(sword.level)
@@ -353,6 +356,10 @@ export function RelicPanel({ state, sacrifices, onToggleSacrifice, onBuy, onRefr
           </aside>
         </div>
         </BookScroll>
+        <footer className="shop-settlement relic-settlement" aria-label="遗物兑换结算">
+          <p className="settlement-status" role="status">{chosenRelic ? `${chosenRelic.name} · 祭品 ${validSwordIds.length} / ${chosenRelic.cost} 把` : atLimit ? '已达十件上限' : '先选一件遗物'}<span>鸣铃前不会消耗祭品</span></p>
+          <button className="relic-bell" disabled={!canConfirm} onClick={ringBell} aria-label={chosenRelic ? `敲祭台小钟，献祭 ${chosenRelic.cost} 把普通铁剑换取 ${chosenRelic.name}` : '敲祭台小钟完成兑换'} title="敲铃兑换"><img className="shop-bell-image" src={furnishingUrl('offering-bell')} alt="" /><span className="settlement-bell-label">鸣铃兑换</span></button>
+        </footer>
         <DragPreview drag={drag.preview} />
       </section>
     </div>

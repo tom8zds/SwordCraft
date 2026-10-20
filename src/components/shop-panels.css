@@ -100,44 +100,6 @@
   border: 1px solid #80603d;
 }
 
-@media (max-width: 700px) {
-  .shop-panel {
-    padding: 16px;
-  }
-
-  .shop-panel header {
-    flex-wrap: wrap;
-    gap: 10px;
-    padding-right: 18px;
-  }
-
-  .shop-panel header > div {
-    flex: 1;
-    min-width: 160px;
-  }
-
-  .shop-panel .wares-grid,
-  .shop-panel .relic-offers {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
-  }
-
-  .shop-panel .wares-grid article,
-  .shop-panel .relic-offers article {
-    min-width: 0;
-    min-height: 170px;
-    padding: 11px;
-  }
-
-  .shop-panel .relic-layout {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 12px;
-  }
-
-  .shop-panel .sacrifice-list > .book-scroll-content {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-  }
-}
 
 /* 交易外壳由真实素材提供，交互与读数仍由原 DOM 承担。 */
 .shop-panel.furnishing-panel {
@@ -187,7 +149,7 @@
   width: 76px;
   height: 76px;
   vertical-align: middle;
-  pointer-events: none;
+  pointer-events: auto;
 }
 
 .shop-item-image img {
@@ -322,17 +284,13 @@
   overflow-wrap: anywhere;
 }
 
-@media (max-width: 700px), (max-height: 550px) {
-  .shop-panel.furnishing-panel {
-    padding: 42px 40px 22px;
-  }
 
-  .shop-panel.furnishing-panel .shop-scroll {
-    max-height: calc(88vh - 64px);
-  }
-
-  .shop-panel .wares-grid article,
-  .shop-panel .relic-offers article {
-    padding: 10px;
-  }
-}
+.shop-panel .shop-scroll { flex: 1 1 auto; }
+.shop-settlement { flex: 0 0 auto; display: flex; align-items: center; gap: 12px; margin-top: 12px; padding-top: 10px; border-top: 2px solid #80603d; }
+.settlement-status { flex: 1; min-width: 0; margin: 0; color: #ead5a6; font-size: 14px; line-height: 1.5; overflow-wrap: anywhere; }
+.settlement-status span { display: block; font-size: 12px; }
+.shop-panel .merchant-settlement .merchant-checkout { flex: 0 0 auto; margin: 0; }
+.shop-panel .relic-settlement .relic-bell { flex: 0 0 104px; width: 104px; height: 68px; margin: 0; }
+.settlement-bell-label { display: block; font-size: 12px; white-space: nowrap; }
+.shop-panel .merchant-settlement .merchant-checkout > button:last-child { width: 82px; height: 64px; }
+.relic-panel .settlement-status { color: #3c2d1c; }

@@ -3,7 +3,7 @@ import type { Sword, SwordLocation } from '../game/types'
 
 export type ConsumableKind = 'dragon-scale' | 'hourglass'
 export type SceneBookPage = 'bestiary' | 'relics' | 'manual'
-export type SceneFocus = 'cabinet' | 'forge' | 'anvil' | 'rack' | 'submission'
+export type SceneFocus = 'cabinet' | 'forge' | 'anvil' | 'rack' | 'submission' | 'merchant'
 
 export interface SceneCamera {
   x: number
