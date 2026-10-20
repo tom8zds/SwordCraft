@@ -43,12 +43,26 @@ export const PATH_LABELS: Record<SwordPath, string> = {
   assassin: '刺客武器',
 }
 
+export const INFINITY_FORM = { level: 100, evolutionStage: 34, name: '无尽之剑' } as const
+
+export function swordMaxLevel(sword: Pick<Sword, 'kind' | 'path'>): number {
+  return sword.kind === 'iron' && sword.path === 'one-hand' ? INFINITY_FORM.level : 99
+}
+
+export function swordEvolutionStage(sword: Pick<Sword, 'kind' | 'path' | 'level'> & Partial<Pick<Sword, 'evolutionStage'>>): number {
+  const levelStage = sword.kind === 'iron' && sword.path === 'one-hand' && sword.level >= INFINITY_FORM.level
+    ? INFINITY_FORM.evolutionStage
+    : Math.floor(sword.level / 3)
+  return Math.max(levelStage, sword.evolutionStage ?? 0)
+}
+
 export function swordName(sword: Pick<Sword, 'kind' | 'level' | 'path'> & Partial<Pick<Sword, 'evolutionStage'>>): string {
-  const stage = Math.max(Math.floor(sword.level / 3), sword.evolutionStage ?? 0)
+  const stage = swordEvolutionStage(sword)
   if (sword.kind !== 'iron') {
     const names = SPECIAL_NAMES[sword.kind]
     return names[Math.min(Math.floor(stage / 3), names.length - 1)]
   }
+  if (sword.path === 'one-hand' && stage >= INFINITY_FORM.evolutionStage) return INFINITY_FORM.name
   if (!sword.path || stage < 3) {
     return IRON_NAMES.base[Math.min(stage, IRON_NAMES.base.length - 1)]
   }

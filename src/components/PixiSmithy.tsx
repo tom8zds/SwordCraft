@@ -40,6 +40,7 @@ export function PixiSmithy(props: PixiSmithyProps) {
     let initialized = false
     let observer: ResizeObserver | null = null
     let scene: SmithyScene | null = null
+    let atlasUrl: string | null = null
     setReady(false)
     setError(null)
     void (async () => {
@@ -139,7 +140,8 @@ export function PixiSmithy(props: PixiSmithyProps) {
           }
         }, { signal: lifecycle.signal })
         const atlas = await createWeaponAtlas(app.renderer, weapons)
-        if (disposed) return
+        if (disposed) { URL.revokeObjectURL(atlas.url); return }
+        atlasUrl = atlas.url
         propsRef.current.onWeaponAtlas(atlas)
         host.dataset.ready = 'true'
         setReady(true)
@@ -151,6 +153,7 @@ export function PixiSmithy(props: PixiSmithyProps) {
       disposed = true
       lifecycle.abort()
       observer?.disconnect()
+      if (atlasUrl) URL.revokeObjectURL(atlasUrl)
       scene?.dispose()
       if (sceneRef.current === scene) sceneRef.current = null
       if (initialized) app.destroy({ removeView: true }, { children: true })
@@ -161,13 +164,14 @@ export function PixiSmithy(props: PixiSmithyProps) {
   useEffect(() => { sceneRef.current?.setEnabled(props.enabled) }, [props.enabled])
   const anvilSword = props.state.swords.find((sword) => sword.location === 'anvil')
   const scale = Math.min(size.width / SCENE_WIDTH, size.height / SCENE_HEIGHT)
-  const panelX = (size.width - SCENE_WIDTH * scale) / 2 + (660 - camera.x) * scale
+  const panelX = (size.width - SCENE_WIDTH * scale) / 2 + (size.height < 550 ? 470 - camera.x : 660 - camera.x) * scale
   const panelY = (size.height - SCENE_HEIGHT * scale) / 2 + 175 * scale
+  const panelWidth = Math.min(280, Math.max(170, 330 * scale))
 
   return (
     <div ref={hostRef} className="pixi-host" data-camera-motion="entire-world">
       {!ready && <div className="scene-loading" role="status">{error ?? '炉火点燃中…'}</div>}
-      {ready && anvilSword && panelX > -260 && panelX < size.width && <WorkbenchDetails sword={anvilSword} style={{ left: panelX, top: panelY, width: Math.min(280, 330 * scale) }} />}
+      {ready && anvilSword && panelX > -panelWidth && panelX < size.width && <WorkbenchDetails sword={anvilSword} style={{ left: panelX, top: panelY, width: panelWidth, transform: panelX + panelWidth > size.width ? 'translateX(-100%)' : undefined }} />}
       {ready && <div className="camera-controls" aria-label="房间镜头">
         <button onClick={() => sceneRef.current?.moveCamera(camera.x - 500)} aria-label="向左浏览铁匠铺" disabled={!props.enabled || camera.x <= camera.minX}>‹</button>
         <input type="range" min={camera.minX} max={camera.maxX} step="1" value={camera.x} aria-label="房间镜头位置" disabled={!props.enabled} onChange={(event) => sceneRef.current?.moveCamera(Number(event.target.value))} />

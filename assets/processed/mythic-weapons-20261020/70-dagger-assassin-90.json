@@ -1,0 +1,85 @@
+{
+  "index": 70,
+  "id": "dagger:assassin:90",
+  "name": "绝命双星",
+  "kind": "dagger",
+  "path": "assassin",
+  "level": 90,
+  "evolutionStage": 30,
+  "family": "dagger",
+  "familyLabel": "匕首",
+  "slug": "70-dagger-assassin-90",
+  "batch": "batch-14",
+  "design": "绝命双星：双星核刃、交叉外刃、金蓝法阵护手与黑色镂空结构。",
+  "file": "70-dagger-assassin-90.png",
+  "width": 128,
+  "height": 256,
+  "sha256": "67c9ed6141552e20487a3fbc7f410015e186440cd233ee8d09d70d5199fddf70",
+  "pixelSha256": "022cd6a9f1f84fdd8ea41da0c8468ef159d9d0fe949e0284c8b2610194f8dad3",
+  "silhouetteSha256": "8c0fab3eb8a43a9fed2fde8adf9410d2b03d99a304ce1319ea5c6328c07b9d89",
+  "source": "assets/incoming/seedream-mythic-weapons-20261020/batch-14/image.png",
+  "sourceSha256": "f89849c10081151070f34a52fedf69e1520cce5910b31da630ba526ad319cab3",
+  "sourceMetadata": "assets/incoming/seedream-mythic-weapons-20261020/batch-14/generation.json",
+  "sourceDimensions": {
+    "width": 2400,
+    "height": 1080
+  },
+  "sourceCrop": {
+    "x": 1804,
+    "y": 75,
+    "width": 530,
+    "height": 957
+  },
+  "sourceOpaquePixels": 159395,
+  "slotIndex": 2,
+  "slotBounds": {
+    "x": 1600,
+    "y": 0,
+    "width": 800,
+    "height": 1080
+  },
+  "acceptedSlot": true,
+  "sourceComponents": [
+    {
+      "x": 1804,
+      "y": 75,
+      "width": 530,
+      "height": 957,
+      "pixels": 159367
+    },
+    {
+      "x": 1968,
+      "y": 622,
+      "width": 4,
+      "height": 11,
+      "pixels": 28
+    }
+  ],
+  "contentBounds": {
+    "x": 15,
+    "y": 40,
+    "width": 97,
+    "height": 176
+  },
+  "opaquePixels": 5378,
+  "greenSpill": 0,
+  "alpha": "binary; transparent RGB cleared",
+  "sampling": "nearest; proportional fit; no aspect stretching",
+  "provenance": {
+    "model": "doubao-seedream-5-0-pro-260628",
+    "references": [
+      {
+        "file": "assets/incoming/seedream-gameplay-heroes-20261019/sword/image.png",
+        "sha256": "020d4c02bfba115d70e9f82c035b78370bfcfc5742063fe2d12a33d98616e628"
+      }
+    ],
+    "requestBatch": "batch-14",
+    "rights": "生成素材受用户Volcengine Ark账户协议约束；仅参考既有铁剑像素材质，商业发布授权需账户持有人确认。"
+  },
+  "correction": null,
+  "actualObjectCount": 3,
+  "actualObjectIndex": 2,
+  "rejectedGeneratedObjects": [],
+  "compositeSourceParts": null,
+  "visualAcceptance": "pending native contact-sheet and in-game inspection"
+}

@@ -95,7 +95,7 @@ for (const [slot, width, height, padding] of [['hammer', 320, 400, 12], ['sword'
   }
 }
 
-// 武器完整目录由 prepare-catalog72.mjs 重建；旧路线素材只保留历史，不再进入主场景纹理槽。
+// 当前武器完整目录由 process-mythic-weapons.mjs 重建；旧路线素材仅保留历史来源。
 
 const manifest = {
   version: 1,

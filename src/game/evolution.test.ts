@@ -84,4 +84,57 @@ describe('自动随机进化', () => {
     expect(anvilSword(branch)).toMatchObject({ kind: 'branch', level: 9, path: 'world-tree' })
     expect(branch.rngState).toBe(nextRandom(11264).state)
   })
+
+  it.each([
+    [99, 11264, 'success'],
+    [98, 15360, 'great'],
+    [99, 15360, 'great'],
+  ] as const)('单手铁剑从%i级以随机种子%i跨到100，仅进化一次且不额外抽随机数', (level, rngState, result) => {
+    const initial = readySword(level)
+    const state = { ...initial, rngState, swords: initial.swords.map((sword) => sword.location === 'anvil' ? { ...sword, path: 'one-hand' as const } : sword) }
+    const transition = hammerSword(state, 1000)
+    const sword = anvilSword(transition.state)
+    expect(sword).toMatchObject({ level: 100, evolutionStage: 34, path: 'one-hand' })
+    expect(swordName(sword)).toBe('无尽之剑')
+    expect(transition.events.filter((event) => event.type === 'evolution')).toEqual([{ type: 'evolution', swordId: sword.id, name: '无尽之剑' }])
+    expect(transition.state.records.at(-1)).toMatchObject({ result, afterLevel: 100, swordName: '无尽之剑' })
+    expect(transition.state.discoveredNames).toContain('无尽之剑')
+    expect(transition.state.rngState).toBe(nextRandom(rngState).state)
+    const capped = hammerSword({ ...transition.state, rngState: 15360 }, 2000)
+    expect(anvilSword(capped.state)).toMatchObject({ level: 100, evolutionStage: 34 })
+    expect(capped.events.filter((event) => event.type === 'evolution')).toEqual([])
+    expect(capped.state.rngState).toBe(nextRandom(15360).state)
+  })
+
+  it.each([
+    ['iron', 'greatsword'], ['iron', 'sword-shield'],
+    ['branch', 'world-tree'], ['nail', 'meteor'], ['dagger', 'assassin'],
+  ] as const)('%s的%s路线成功、大成功及额外成长都不会超过99', (kind, path) => {
+    const initial = readySword(99, kind)
+    const state = { ...initial, swords: initial.swords.map((sword) => sword.location === 'anvil' ? { ...sword, path, steadyChain: 2 } : sword) }
+    for (const rngState of [11264, 15360, 5000]) {
+      const transition = hammerSword({ ...state, rngState }, 1000)
+      expect(anvilSword(transition.state)).toMatchObject({ level: 99, evolutionStage: 33, path })
+      expect(swordName(anvilSword(transition.state))).not.toBe('无尽之剑')
+      expect(transition.state.rngState).toBe(nextRandom(rngState).state)
+    }
+  })
+
+  it('首次达到100后沙漏恢复永昼神锋，普通损伤至99和更低仍永久保留无尽形态', () => {
+    const initial = readySword(99)
+    const state = { ...initial, rngState: 11264, hourglasses: 1, swords: initial.swords.map((sword) => sword.location === 'anvil' ? { ...sword, path: 'one-hand' as const } : sword) }
+    expect(swordName(anvilSword(state))).toBe('永昼神锋')
+    const infinity = hammerSword(state, 1000).state
+    const rewound = useHourglass(infinity).state
+    expect(anvilSword(rewound)).toEqual(anvilSword(state))
+    expect(swordName(anvilSword(rewound))).toBe('永昼神锋')
+    expect(rewound.rngState).toBe(infinity.rngState)
+    expect(rewound.discoveredNames).toContain('无尽之剑')
+    const damaged = hammerSword({ ...infinity, rngState: 640 }, 2000).state
+    expect(anvilSword(damaged)).toMatchObject({ level: 99, evolutionStage: 34 })
+    const further = hammerSword({ ...damaged, rngState: 640 }, 3000).state
+    expect(anvilSword(further)).toMatchObject({ level: 98, evolutionStage: 34 })
+    expect(swordName(anvilSword(further))).toBe('无尽之剑')
+    expect(anvilSword(useHourglass(further).state)).toEqual(anvilSword(damaged))
+  })
 })

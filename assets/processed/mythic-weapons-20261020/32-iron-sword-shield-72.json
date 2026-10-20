@@ -1,0 +1,78 @@
+{
+  "index": 32,
+  "id": "iron:sword-shield:72",
+  "name": "万民守护",
+  "kind": "iron",
+  "path": "sword-shield",
+  "level": 72,
+  "evolutionStage": 24,
+  "family": "sword-shield",
+  "familyLabel": "剑盾",
+  "slug": "32-iron-sword-shield-72",
+  "batch": "batch-07",
+  "design": "万民守护：超厚城门巨盾与更长骑士枪前后重叠，中央青金法阵和铆钉。",
+  "file": "32-iron-sword-shield-72.png",
+  "width": 128,
+  "height": 256,
+  "sha256": "1f4e3b446ab34f9a3796bd13b8f3c07d120e38a7ca77007046db9ffb1d38c5b9",
+  "pixelSha256": "3b6da0ef69a2e0d1978b1d37770ac3abe40aebc81418537e4052c117d46edde7",
+  "silhouetteSha256": "5f639edde08f550765d883c64b38bf437a4d41fc21822d7918af22d217fc70b2",
+  "source": "assets/incoming/seedream-mythic-weapons-20261020/batch-07/image.png",
+  "sourceSha256": "8bc8f14beb4575a931440afb15d2d0d86427c3bb0efcec23fac3514a4d67629b",
+  "sourceMetadata": "assets/incoming/seedream-mythic-weapons-20261020/batch-07/generation.json",
+  "sourceDimensions": {
+    "width": 2400,
+    "height": 1080
+  },
+  "sourceCrop": {
+    "x": 975,
+    "y": 25,
+    "width": 457,
+    "height": 1025
+  },
+  "sourceOpaquePixels": 287280,
+  "slotIndex": 1,
+  "slotBounds": {
+    "x": 800,
+    "y": 0,
+    "width": 800,
+    "height": 1080
+  },
+  "acceptedSlot": true,
+  "sourceComponents": [
+    {
+      "x": 975,
+      "y": 25,
+      "width": 457,
+      "height": 1025,
+      "pixels": 287280
+    }
+  ],
+  "contentBounds": {
+    "x": 10,
+    "y": 8,
+    "width": 107,
+    "height": 240
+  },
+  "opaquePixels": 15745,
+  "greenSpill": 0,
+  "alpha": "binary; transparent RGB cleared",
+  "sampling": "nearest; proportional fit; no aspect stretching",
+  "provenance": {
+    "model": "doubao-seedream-5-0-pro-260628",
+    "references": [
+      {
+        "file": "assets/incoming/seedream-gameplay-heroes-20261019/sword/image.png",
+        "sha256": "020d4c02bfba115d70e9f82c035b78370bfcfc5742063fe2d12a33d98616e628"
+      }
+    ],
+    "requestBatch": "batch-07",
+    "rights": "生成素材受用户Volcengine Ark账户协议约束；仅参考既有铁剑像素材质，商业发布授权需账户持有人确认。"
+  },
+  "correction": null,
+  "actualObjectCount": 3,
+  "actualObjectIndex": 1,
+  "rejectedGeneratedObjects": [],
+  "compositeSourceParts": null,
+  "visualAcceptance": "pending native contact-sheet and in-game inspection"
+}

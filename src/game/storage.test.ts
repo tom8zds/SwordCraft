@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
-import { armDragonScale, createInitialState, effectiveOdds, hammerSword, moveSword, useHourglass } from './engine'
+import { armDragonScale, buyMerchantItem, createInitialState, effectiveOdds, hammerSword, moveSword, ringSubmissionBell, useHourglass } from './engine'
 import { loadGame, saveGame } from './storage'
 import { dailyTarget, IRON_PATHS, swordName } from './content'
 import { nextRandom, randomIndex } from './rng'
@@ -293,6 +293,65 @@ describe('本地存档', () => {
     expect(april.find((cell) => cell.gameDay === 35)?.status).toBe('current')
     expect(saveGame(loaded)).toBe(true)
     expect(loadGame().state.calendar).toEqual(loaded.calendar)
+  })
+
+  it('无尽形态与锤前永昼快照按v1往返，读档不抽命运且沙漏恢复首次100之前', () => {
+    const source = createInitialState(96)
+    source.hourglasses = 1
+    source.rngState = 11264
+    source.swords[0] = { ...source.swords[0], path: 'one-hand', level: 99, evolutionStage: 33, heated: true, location: 'anvil' }
+    const infinity = hammerSword(source, 1000).state
+    expect(saveGame(infinity)).toBe(true)
+    const loaded = loadGame()
+    expect(loaded.recovered).toBe(true)
+    expect(loaded.state.version).toBe(1)
+    expect(loaded.state.swords[0]).toMatchObject({ level: 100, evolutionStage: 34 })
+    expect(loaded.state.lastHammer?.sword).toMatchObject({ level: 99, evolutionStage: 33 })
+    expect(loaded.state.rngState).toBe(nextRandom(11264).state)
+    const rewound = useHourglass(loaded.state).state
+    expect(swordName(rewound.swords.find((sword) => sword.location === 'anvil')!)).toBe('永昼神锋')
+    expect(rewound.discoveredNames).toContain('无尽之剑')
+    const damaged = hammerSword({ ...loaded.state, rngState: 640 }, 2000).state
+    expect(saveGame(damaged)).toBe(true)
+    const lowered = loadGame().state
+    expect(lowered.swords[0]).toMatchObject({ level: 99, evolutionStage: 34 })
+    expect(swordName(lowered.swords[0])).toBe('无尽之剑')
+    expect(lowered.rngState).toBe(damaged.rngState)
+    expect(useHourglass(lowered).state.swords.find((sword) => sword.location === 'anvil')).toMatchObject({ level: 100, evolutionStage: 34 })
+  })
+
+  it('旧v1的33阶永昼及降级外形不会误补成无尽，也不会解锁未达形态', () => {
+    const source = createInitialState(97)
+    source.swords[0] = { ...source.swords[0], path: 'one-hand', level: 99, evolutionStage: 33 }
+    source.swords[1] = { ...source.swords[1], path: 'one-hand', level: 4, evolutionStage: 33 }
+    source.discoveredNames = ['永昼神锋']
+    expect(saveGame(source)).toBe(true)
+    const loaded = loadGame().state
+    expect(loaded.swords.slice(0, 2).map(swordName)).toEqual(['永昼神锋', '永昼神锋'])
+    expect(loaded.swords.slice(0, 2).map((sword) => sword.evolutionStage)).toEqual([33, 33])
+    expect(loaded.discoveredNames).not.toContain('无尽之剑')
+    expect(loaded.rngState).toBe(source.rngState)
+  })
+
+  it('到访库存与购买余量往返不重抽，旧v1单件库存保持原样直到下次到访', () => {
+    const source = { ...createInitialState(98), day: 3, coins: 100_000n }
+    const arrived = ringSubmissionBell(ringSubmissionBell(source, 1000).state, 2000).state
+    const iron = arrived.merchantItems.find((item) => item.type === 'iron')!
+    const bought = buyMerchantItem(arrived, iron.id).state
+    expect(saveGame(bought)).toBe(true)
+    const loaded = loadGame().state
+    expect(loaded.merchantItems).toEqual(bought.merchantItems)
+    expect(loaded.rngState).toBe(bought.rngState)
+    expect(saveGame(loaded)).toBe(true)
+    expect(loadGame().state.merchantItems).toEqual(loaded.merchantItems)
+    const legacy = { ...loaded, merchantItems: loaded.merchantItems.map((item) => ({ ...item, stock: 1 })) }
+    expect(saveGame(legacy)).toBe(true)
+    const oldLoaded = loadGame().state
+    expect(oldLoaded.merchantItems.every((item) => item.stock === 1)).toBe(true)
+    expect(oldLoaded.rngState).toBe(legacy.rngState)
+    const finalPiece = buyMerchantItem(oldLoaded, iron.id).state
+    expect(finalPiece.merchantItems.find((item) => item.id === iron.id)?.stock).toBe(0)
+    expect(buyMerchantItem(finalPiece, iron.id).state).toBe(finalPiece)
   })
 
   it('损坏存档不会阻止新游戏', () => {

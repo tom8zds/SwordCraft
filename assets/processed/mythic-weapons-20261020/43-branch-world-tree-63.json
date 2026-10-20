@@ -1,0 +1,155 @@
+{
+  "index": 43,
+  "id": "branch:world-tree:63",
+  "name": "四季王枝",
+  "kind": "branch",
+  "path": "world-tree",
+  "level": 63,
+  "evolutionStage": 21,
+  "family": "branch",
+  "familyLabel": "树枝",
+  "slug": "43-branch-world-tree-63",
+  "batch": "batch-09",
+  "design": "四季王枝：粗实树干剑身、四季色叶冠、环绕星体和根网底座，蓝金红叶。",
+  "file": "43-branch-world-tree-63.png",
+  "width": 128,
+  "height": 256,
+  "sha256": "0b997a82422de057becba26d306f02d84d22e48bd366fc64d5f5b5c5716889c3",
+  "pixelSha256": "f27faf758423ce54f718d4313d8c2fa034ee845d1255f079c076c7bddc72a63b",
+  "silhouetteSha256": "f41d40524a72de274c82a919e4ad4e4275de9ea563e37a7020dc80c96840719e",
+  "source": "assets/incoming/seedream-mythic-weapons-20261020/batch-09/image.png",
+  "sourceSha256": "2b06e2d1668f45f6d11f045faab2aa9bc9714b3cd69588cc73b5cdbca7c5ddec",
+  "sourceMetadata": "assets/incoming/seedream-mythic-weapons-20261020/batch-09/generation.json",
+  "sourceDimensions": {
+    "width": 2400,
+    "height": 1080
+  },
+  "sourceCrop": {
+    "x": 149,
+    "y": 83,
+    "width": 547,
+    "height": 935
+  },
+  "sourceOpaquePixels": 205975,
+  "slotIndex": 0,
+  "slotBounds": {
+    "x": 0,
+    "y": 0,
+    "width": 800,
+    "height": 1080
+  },
+  "acceptedSlot": true,
+  "sourceComponents": [
+    {
+      "x": 149,
+      "y": 83,
+      "width": 547,
+      "height": 935,
+      "pixels": 204774
+    },
+    {
+      "x": 555,
+      "y": 230,
+      "width": 4,
+      "height": 6,
+      "pixels": 14
+    },
+    {
+      "x": 302,
+      "y": 399,
+      "width": 22,
+      "height": 24,
+      "pixels": 307
+    },
+    {
+      "x": 526,
+      "y": 402,
+      "width": 18,
+      "height": 20,
+      "pixels": 261
+    },
+    {
+      "x": 280,
+      "y": 507,
+      "width": 6,
+      "height": 7,
+      "pixels": 28
+    },
+    {
+      "x": 294,
+      "y": 564,
+      "width": 6,
+      "height": 7,
+      "pixels": 30
+    },
+    {
+      "x": 523,
+      "y": 569,
+      "width": 17,
+      "height": 22,
+      "pixels": 137
+    },
+    {
+      "x": 307,
+      "y": 572,
+      "width": 17,
+      "height": 20,
+      "pixels": 132
+    },
+    {
+      "x": 542,
+      "y": 618,
+      "width": 13,
+      "height": 14,
+      "pixels": 142
+    },
+    {
+      "x": 281,
+      "y": 619,
+      "width": 12,
+      "height": 13,
+      "pixels": 110
+    },
+    {
+      "x": 543,
+      "y": 654,
+      "width": 5,
+      "height": 7,
+      "pixels": 28
+    },
+    {
+      "x": 309,
+      "y": 656,
+      "width": 4,
+      "height": 4,
+      "pixels": 12
+    }
+  ],
+  "contentBounds": {
+    "x": 8,
+    "y": 32,
+    "width": 112,
+    "height": 191
+  },
+  "opaquePixels": 8625,
+  "greenSpill": 0,
+  "alpha": "binary; transparent RGB cleared",
+  "sampling": "nearest; proportional fit; no aspect stretching",
+  "provenance": {
+    "model": "doubao-seedream-5-0-pro-260628",
+    "references": [
+      {
+        "file": "assets/incoming/seedream-gameplay-heroes-20261019/sword/image.png",
+        "sha256": "020d4c02bfba115d70e9f82c035b78370bfcfc5742063fe2d12a33d98616e628"
+      }
+    ],
+    "requestBatch": "batch-09",
+    "rights": "生成素材受用户Volcengine Ark账户协议约束；仅参考既有铁剑像素材质，商业发布授权需账户持有人确认。"
+  },
+  "correction": null,
+  "actualObjectCount": 3,
+  "actualObjectIndex": 0,
+  "rejectedGeneratedObjects": [],
+  "compositeSourceParts": null,
+  "visualAcceptance": "pending native contact-sheet and in-game inspection"
+}

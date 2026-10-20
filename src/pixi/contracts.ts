@@ -34,14 +34,19 @@ export interface SmithyTextures {
 }
 
 export type SwordArtwork = Pick<Sword, 'kind' | 'path' | 'level' | 'evolutionStage' | 'heated' | 'dragonScaleArmed'>
-export type WeaponTextures = Readonly<Record<string, Texture>>
+export interface WeaponTexture {
+  texture: Texture
+  contentBounds: { x: number; y: number; width: number; height: number }
+}
+
+export type WeaponTextures = Readonly<Record<string, WeaponTexture>>
 
 export interface WeaponManifest {
   version: 1
-  weapons: Record<string, { file: string; width: number; height: number }>
+  weapons: Record<string, { file: string; width: number; height: number; contentBounds: WeaponTexture['contentBounds'] }>
 }
 
-export const WEAPON_ASSET_BASE = '/assets/game/weapons72/'
+export const WEAPON_ASSET_BASE = '/assets/game/weapons/'
 
 export interface WeaponAtlas {
   url: string
@@ -57,8 +62,8 @@ export interface HammerArtwork {
 
 export const SCENE_WIDTH = 1920
 export const SCENE_HEIGHT = 1080
-export const MIN_WORLD_X = -420
+export const MIN_WORLD_X = -720
 export const HOOK_X = 1376
 export const HOOK_Y = 354
-export const HOOK_SPACING = 130
+export const HOOK_SPACING = 300
 export const MIN_WORLD_WIDTH = 4056

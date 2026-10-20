@@ -1,0 +1,36 @@
+{
+  "status": "completed",
+  "startedAt": "2026-10-20T01:32:31.252Z",
+  "endpoint": "https://ark.cn-beijing.volces.com/api/v3/images/generations",
+  "model": "doubao-seedream-5-0-pro-260628",
+  "prompt": "为《铸剑录》制作HD-2D硬边高细节像素生产接触表；左中右三格各一件独立完整武器，每格800x1080，三格不跨界不重叠。正面正交投影，武器主轴竖直，构造层进、刃口和材质清楚，不能只换颜色；绿幕为均匀纯绿色#00FF00，武器不得使用绿色或绿反光，使用青蓝、蓝、金、赤金。禁止摄影、圆滑矢量、塑料3D、场景、人物、手、地面、阴影、文字、数字、logo、标签、边框、UI、水印；主体距所在格四边至少12%，悬浮件贴近所属主体，避免邻格bleed。\n本批次严格按左、中、右顺序：左格72-iron-one-hand-100，无尽之剑：遵循用户指定参考，黑银厚边长刃、金色中脊、四个渐小圆孔、镂空环形护手、黑色菱形缠柄与圆形柄首；正面竖直，无logo文字。；中格35-iron-sword-shield-99，世界壁垒：剑盾紧凑前后相叠，竖直长枪刺刃从巨大窄长门板塔盾侧上伸，盾有城门层板、青金宝石法阵和铆钉，不横向并排。；右格24-iron-greatsword-99，终焉之剑：宽重巨刃，钛铁装甲脊、碎陆裂纹、赤金熔线、厚十字护手和重柄，明显比单手剑宽，正面竖直。。输出2400x1080，最后一件批次只绘制一个主体并留其余空间纯绿。",
+  "size": "2400x1080",
+  "watermark": false,
+  "mode": "generation",
+  "references": [
+    {
+      "file": "assets/incoming/seedream-gameplay-heroes-20261019/sword/image.png",
+      "sha256": "020d4c02bfba115d70e9f82c035b78370bfcfc5742063fe2d12a33d98616e628"
+    },
+    {
+      "file": "assets/incoming/seedream-mythic-weapons-20261020/references/infinity-blade-user-reference.jpg",
+      "sha256": "93cb85a22bbb309842644f92bcf7be2f78716c565b42999c0d4c333f5bd47011"
+    }
+  ],
+  "created": 1792460009,
+  "usage": {
+    "input_images": 2,
+    "generated_images": 1,
+    "output_tokens": 10125,
+    "total_tokens": 10125
+  },
+  "completedAt": "2026-10-20T01:33:29.638Z",
+  "outputs": [
+    {
+      "file": "image.png",
+      "size": "2400x1080",
+      "sha256": "167e3623bd8ea256f3a435dd4451980e33430670179996a52df5e3c7c869e020",
+      "bytes": 2098597
+    }
+  ]
+}

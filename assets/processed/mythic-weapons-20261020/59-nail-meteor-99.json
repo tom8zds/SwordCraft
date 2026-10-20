@@ -1,0 +1,187 @@
+{
+  "index": 59,
+  "id": "nail:meteor:99",
+  "name": "终极星核",
+  "kind": "nail",
+  "path": "meteor",
+  "level": 99,
+  "evolutionStage": 33,
+  "family": "nail",
+  "familyLabel": "铁钉",
+  "slug": "59-nail-meteor-99",
+  "batch": "batch-12",
+  "design": "终极星核：最大多棱星核锤头、粗链、多层蓝金天体环与碎陨装甲。",
+  "file": "59-nail-meteor-99.png",
+  "width": 128,
+  "height": 256,
+  "sha256": "a3d817378fa62bf59e03d9a5336a1efa8f48777e2efae19e3905a47ca609f193",
+  "pixelSha256": "ca59595e8804c7ec98d6d5f7780bc2d4763be3c397230e58180a9b3e17466919",
+  "silhouetteSha256": "e52e0870cc194fac94358455dc30c88d313611824ab849cfc946c66b4aa02d21",
+  "source": "assets/incoming/seedream-mythic-weapons-20261020/batch-12/image.png",
+  "sourceSha256": "18f3b1bbb98ce1eb7566096c3ef00e5c901025450f25c95cb846053ea83c3c2a",
+  "sourceMetadata": "assets/incoming/seedream-mythic-weapons-20261020/batch-12/generation.json",
+  "sourceDimensions": {
+    "width": 2400,
+    "height": 1080
+  },
+  "sourceCrop": {
+    "x": 1633,
+    "y": 102,
+    "width": 676,
+    "height": 889
+  },
+  "sourceOpaquePixels": 203503,
+  "slotIndex": 2,
+  "slotBounds": {
+    "x": 1600,
+    "y": 0,
+    "width": 800,
+    "height": 1080
+  },
+  "acceptedSlot": true,
+  "sourceComponents": [
+    {
+      "x": 1633,
+      "y": 102,
+      "width": 676,
+      "height": 889,
+      "pixels": 201570
+    },
+    {
+      "x": 1990,
+      "y": 150,
+      "width": 24,
+      "height": 34,
+      "pixels": 546
+    },
+    {
+      "x": 1892,
+      "y": 155,
+      "width": 34,
+      "height": 40,
+      "pixels": 374
+    },
+    {
+      "x": 1852,
+      "y": 205,
+      "width": 12,
+      "height": 14,
+      "pixels": 107
+    },
+    {
+      "x": 2228,
+      "y": 266,
+      "width": 8,
+      "height": 10,
+      "pixels": 53
+    },
+    {
+      "x": 1741,
+      "y": 364,
+      "width": 9,
+      "height": 9,
+      "pixels": 64
+    },
+    {
+      "x": 2267,
+      "y": 406,
+      "width": 5,
+      "height": 5,
+      "pixels": 15
+    },
+    {
+      "x": 2243,
+      "y": 407,
+      "width": 26,
+      "height": 35,
+      "pixels": 219
+    },
+    {
+      "x": 1787,
+      "y": 511,
+      "width": 8,
+      "height": 9,
+      "pixels": 55
+    },
+    {
+      "x": 1827,
+      "y": 514,
+      "width": 9,
+      "height": 11,
+      "pixels": 73
+    },
+    {
+      "x": 2114,
+      "y": 573,
+      "width": 5,
+      "height": 4,
+      "pixels": 13
+    },
+    {
+      "x": 2136,
+      "y": 582,
+      "width": 12,
+      "height": 11,
+      "pixels": 101
+    },
+    {
+      "x": 2085,
+      "y": 592,
+      "width": 28,
+      "height": 31,
+      "pixels": 245
+    },
+    {
+      "x": 1984,
+      "y": 623,
+      "width": 10,
+      "height": 9,
+      "pixels": 68
+    }
+  ],
+  "contentBounds": {
+    "x": 8,
+    "y": 33,
+    "width": 112,
+    "height": 190
+  },
+  "opaquePixels": 7030,
+  "greenSpill": 0,
+  "alpha": "binary; transparent RGB cleared",
+  "sampling": "nearest; proportional fit; no aspect stretching",
+  "provenance": {
+    "model": "doubao-seedream-5-0-pro-260628",
+    "references": [
+      {
+        "file": "assets/incoming/seedream-gameplay-heroes-20261019/sword/image.png",
+        "sha256": "020d4c02bfba115d70e9f82c035b78370bfcfc5742063fe2d12a33d98616e628"
+      }
+    ],
+    "requestBatch": "batch-12",
+    "rights": "生成素材受用户Volcengine Ark账户协议约束；仅参考既有铁剑像素材质，商业发布授权需账户持有人确认。"
+  },
+  "correction": {
+    "reason": "本批三件完整武器主轴约向右倾30度，统一归为竖直挂钩武器",
+    "operation": "rotate whole isolated RGB/alpha raster -30 degrees using nearest sampling; retain all slot components; trim transparent bounds",
+    "sourceAngleDegrees": 30,
+    "rotationDegrees": -30,
+    "inputBounds": {
+      "x": 1633,
+      "y": 102,
+      "width": 676,
+      "height": 889
+    },
+    "rotatedBounds": {
+      "x": 215,
+      "y": 78,
+      "width": 603,
+      "height": 1023
+    },
+    "paidRegenerations": 0
+  },
+  "actualObjectCount": 3,
+  "actualObjectIndex": 2,
+  "rejectedGeneratedObjects": [],
+  "compositeSourceParts": null,
+  "visualAcceptance": "pending native contact-sheet and in-game inspection"
+}

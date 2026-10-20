@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { KIND_ECONOMY, PATH_LABELS, formatCoins, swordName, swordValue } from '../game/content'
 import { weaponRarity } from '../game/rarity'
 import type { Sword } from '../game/types'
+import { getWeaponCatalogEntry } from '../game/weaponCatalog'
 
 interface WorkbenchDetailsProps {
   sword: Sword
@@ -21,6 +22,7 @@ export function WorkbenchDetails({ sword, style }: WorkbenchDetailsProps) {
   return (
     <aside className="workbench-details" style={style} aria-label="工作台剑详情">
       <div className="workbench-title weapon-rarity" style={{ color: rarity.cssColor }}><strong>{swordName(sword)}</strong><b>Lv.{sword.level}</b><span>{rarity.name}</span></div>
+      <p className="workbench-description">{getWeaponCatalogEntry(sword).description}</p>
       <dl>
         <div><dt>价值</dt><dd>◆ {formatCoins(swordValue(sword))}</dd></div>
         <div><dt>类型</dt><dd>{sword.path && sword.evolutionStage >= 3 ? PATH_LABELS[sword.path] : KIND_ECONOMY[sword.kind].label}</dd></div>

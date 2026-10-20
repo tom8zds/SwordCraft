@@ -4,6 +4,8 @@ import {
   RELICS,
   dailyTarget,
   merchantInventory,
+  swordEvolutionStage,
+  swordMaxLevel,
   swordName,
   swordValue,
 } from './content'
@@ -97,7 +99,7 @@ export function createInitialState(seed = 0x5f3759df): GameState {
 
 export function effectiveOdds(state: GameState, sword?: Sword): EffectiveOdds {
   const odds: EffectiveOdds = { ...BASE_ODDS }
-  const level = Math.max(0, Math.min(99, sword?.level ?? 0))
+  const level = Math.max(0, sword?.level ?? 0)
   odds.destroyed = Math.min(4, level * 0.25)
   odds.damaged = Math.min(12, BASE_ODDS.damaged + level * 0.25)
   odds.success = 100 - odds.destroyed - odds.damaged - odds.steady - odds.great
@@ -180,7 +182,7 @@ export function moveSword(state: GameState, swordId: string, location: SwordLoca
 }
 
 function evolveSword(sword: Sword, rngState: number): { sword: Sword; rngState: number; event?: GameEvent } {
-  const stage = Math.floor(sword.level / 3)
+  const stage = swordEvolutionStage(sword)
   if (stage <= sword.evolutionStage) return { sword, rngState }
 
   let nextSword = { ...sword, evolutionStage: stage }
@@ -231,8 +233,9 @@ export function hammerSword(state: GameState, now: number): Transition {
     if (sword.level === 0 && state.relics.includes('iron-will')) result = 'steady'
     else sword.level = Math.max(0, sword.level - 1)
   }
-  if (result === 'success') sword.level = Math.min(99, sword.level + 1)
-  if (result === 'great') sword.level = Math.min(99, sword.level + 2)
+  const maximumLevel = swordMaxLevel(sword)
+  if (result === 'success') sword.level = Math.min(maximumLevel, sword.level + 1)
+  if (result === 'great') sword.level = Math.min(maximumLevel, sword.level + 2)
 
   const sameStreak = original.streakResult === result ? original.streakCount + 1 : 1
   sword.steadyChain = result === 'steady' ? original.steadyChain + 1 : 0
@@ -242,10 +245,10 @@ export function hammerSword(state: GameState, now: number): Transition {
 
   // 特殊基础剑从第三次进化起体现各自的成长节奏。
   if (sword.evolutionStage >= 3 && sword.kind === 'branch' && sword.steadyChain > 0 && sword.steadyChain % 3 === 0) {
-    sword.level = Math.min(99, sword.level + 1)
+    sword.level = Math.min(maximumLevel, sword.level + 1)
   }
   if (sword.evolutionStage >= 3 && sword.kind === 'nail' && result === 'great') {
-    sword.level = Math.min(99, sword.level + 1)
+    sword.level = Math.min(maximumLevel, sword.level + 1)
   }
 
   let chargeGain = result === 'great' ? 2 : result === 'steady' || result === 'success' ? 1 : 0
@@ -430,7 +433,6 @@ export function ringSubmissionBell(state: GameState, now: number): Transition {
     coins,
     swords: remaining,
     selectedSwordId: null,
-    merchantItems: nextDay % 4 === 0 ? merchantInventory() : state.merchantItems,
     calendar: buildCalendarEntries(nextDay, history),
     nextSwordSerial: nextSerial,
     lastHammer: null,
@@ -439,6 +441,16 @@ export function ringSubmissionBell(state: GameState, now: number): Transition {
   }
   const events: GameEvent[] = [{ type: 'message', message: met ? `成交。${value.toString()} 金币落入钱箱。` : sword ? '交付未达标，扣除 1 点生命。' : '今日空手交付，扣除 1 点生命，没有金币收入。', tone: met ? 'good' : 'bad' }]
   if (!gameOver) {
+    if (nextDay % 4 === 0) {
+      let rngState = nextState.rngState
+      const merchantItems = merchantInventory().map((item) => {
+        if (item.type !== 'iron' && item.type !== 'dragon-scale' && item.type !== 'hourglass') return item
+        const picked = randomIndex(rngState, 3)
+        rngState = picked.state
+        return { ...item, stock: picked.index + 3 }
+      })
+      nextState = { ...nextState, merchantItems, rngState }
+    }
     const milestone = milestoneReward(nextState, nextDay)
     nextState = milestone.state
     events.push(...milestone.events, { type: 'day-advanced', day: nextDay })

@@ -8,11 +8,11 @@ describe('武器等级品质', () => {
     [6, 8, '稀有', '#63a9ed'],
     [9, 26, '史诗', '#b78be8'],
     [27, 53, '传说', '#f0c75e'],
-    [54, 99, '神话', '#ef6f68'],
+    [54, 100, '神话', '#ef6f68'],
   ] as const)('%i至%i级显示%s品质和同一颜色', (first, last, name, cssColor) => {
     for (const level of [first, last]) expect(weaponRarity(level)).toMatchObject({ name, cssColor })
     if (first > 0) expect(weaponRarity(first - 1).name).not.toBe(name)
-    if (last < 99) expect(weaponRarity(last + 1).name).not.toBe(name)
+    if (last < 100) expect(weaponRarity(last + 1).name).not.toBe(name)
   })
 
   it('损伤跌过品质边界立即切回低档，不影响独立武器永久外形', () => {

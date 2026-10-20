@@ -1,0 +1,246 @@
+{
+  "index": 9,
+  "id": "iron:one-hand:63",
+  "name": "时光之刃",
+  "kind": "iron",
+  "path": "one-hand",
+  "level": 63,
+  "evolutionStage": 21,
+  "family": "one-hand",
+  "familyLabel": "单手剑",
+  "slug": "09-iron-one-hand-63",
+  "batch": "batch-02",
+  "design": "时光之刃：银蓝时环嵌入刃脊，分层刻度环与金色护手翼，主轴竖直。",
+  "file": "09-iron-one-hand-63.png",
+  "width": 128,
+  "height": 256,
+  "sha256": "4e043a8be726c2b1e634467ea7befa37c471553fdff214daf15ece92897aec11",
+  "pixelSha256": "ddb399c976553d83790f97de2f01ea9d4b578803e3b86de6ce5582b4a8f31f42",
+  "silhouetteSha256": "95f7ea6f9a1f4abfa3a5a6d8e999028c6f753688f532ffe09b112932764099f1",
+  "source": "assets/incoming/seedream-mythic-weapons-20261020/batch-02/image.png",
+  "sourceSha256": "f6906318dfd7f255d689cd9d829fcf051add46386a045fd279346705da5be7f4",
+  "sourceMetadata": "assets/incoming/seedream-mythic-weapons-20261020/batch-02/generation.json",
+  "sourceDimensions": {
+    "width": 2400,
+    "height": 1080
+  },
+  "sourceCrop": {
+    "x": 1695,
+    "y": 43,
+    "width": 604,
+    "height": 999
+  },
+  "sourceOpaquePixels": 164314,
+  "slotIndex": 2,
+  "slotBounds": {
+    "x": 1600,
+    "y": 0,
+    "width": 800,
+    "height": 1080
+  },
+  "acceptedSlot": true,
+  "sourceComponents": [
+    {
+      "x": 1733,
+      "y": 43,
+      "width": 517,
+      "height": 999,
+      "pixels": 149282
+    },
+    {
+      "x": 1785,
+      "y": 309,
+      "width": 5,
+      "height": 5,
+      "pixels": 19
+    },
+    {
+      "x": 2107,
+      "y": 323,
+      "width": 6,
+      "height": 7,
+      "pixels": 31
+    },
+    {
+      "x": 1695,
+      "y": 346,
+      "width": 222,
+      "height": 271,
+      "pixels": 12729
+    },
+    {
+      "x": 1828,
+      "y": 361,
+      "width": 10,
+      "height": 10,
+      "pixels": 75
+    },
+    {
+      "x": 2074,
+      "y": 389,
+      "width": 7,
+      "height": 4,
+      "pixels": 16
+    },
+    {
+      "x": 2083,
+      "y": 391,
+      "width": 13,
+      "height": 5,
+      "pixels": 40
+    },
+    {
+      "x": 2097,
+      "y": 395,
+      "width": 6,
+      "height": 4,
+      "pixels": 19
+    },
+    {
+      "x": 2104,
+      "y": 397,
+      "width": 6,
+      "height": 4,
+      "pixels": 16
+    },
+    {
+      "x": 2110,
+      "y": 399,
+      "width": 6,
+      "height": 4,
+      "pixels": 14
+    },
+    {
+      "x": 2116,
+      "y": 402,
+      "width": 6,
+      "height": 4,
+      "pixels": 14
+    },
+    {
+      "x": 2078,
+      "y": 415,
+      "width": 9,
+      "height": 8,
+      "pixels": 51
+    },
+    {
+      "x": 2047,
+      "y": 455,
+      "width": 23,
+      "height": 6,
+      "pixels": 63
+    },
+    {
+      "x": 2074,
+      "y": 458,
+      "width": 18,
+      "height": 8,
+      "pixels": 65
+    },
+    {
+      "x": 1901,
+      "y": 459,
+      "width": 19,
+      "height": 5,
+      "pixels": 34
+    },
+    {
+      "x": 1889,
+      "y": 461,
+      "width": 8,
+      "height": 6,
+      "pixels": 21
+    },
+    {
+      "x": 1773,
+      "y": 489,
+      "width": 5,
+      "height": 11,
+      "pixels": 29
+    },
+    {
+      "x": 2220,
+      "y": 492,
+      "width": 79,
+      "height": 41,
+      "pixels": 1537
+    },
+    {
+      "x": 1771,
+      "y": 500,
+      "width": 5,
+      "height": 10,
+      "pixels": 25
+    },
+    {
+      "x": 1705,
+      "y": 537,
+      "width": 11,
+      "height": 12,
+      "pixels": 94
+    },
+    {
+      "x": 2252,
+      "y": 559,
+      "width": 6,
+      "height": 5,
+      "pixels": 21
+    },
+    {
+      "x": 2110,
+      "y": 584,
+      "width": 5,
+      "height": 4,
+      "pixels": 14
+    },
+    {
+      "x": 1860,
+      "y": 615,
+      "width": 8,
+      "height": 9,
+      "pixels": 54
+    },
+    {
+      "x": 2114,
+      "y": 621,
+      "width": 6,
+      "height": 8,
+      "pixels": 37
+    },
+    {
+      "x": 1861,
+      "y": 638,
+      "width": 4,
+      "height": 5,
+      "pixels": 14
+    }
+  ],
+  "contentBounds": {
+    "x": 8,
+    "y": 35,
+    "width": 112,
+    "height": 185
+  },
+  "opaquePixels": 5653,
+  "greenSpill": 0,
+  "alpha": "binary; transparent RGB cleared",
+  "sampling": "nearest; proportional fit; no aspect stretching",
+  "provenance": {
+    "model": "doubao-seedream-5-0-pro-260628",
+    "references": [
+      {
+        "file": "assets/incoming/seedream-gameplay-heroes-20261019/sword/image.png",
+        "sha256": "020d4c02bfba115d70e9f82c035b78370bfcfc5742063fe2d12a33d98616e628"
+      }
+    ],
+    "requestBatch": "batch-02",
+    "rights": "生成素材受用户Volcengine Ark账户协议约束；仅参考既有铁剑像素材质，商业发布授权需账户持有人确认。"
+  },
+  "correction": null,
+  "actualObjectCount": 3,
+  "actualObjectIndex": 2,
+  "rejectedGeneratedObjects": [],
+  "compositeSourceParts": null,
+  "visualAcceptance": "pending native contact-sheet and in-game inspection"
+}

@@ -35,6 +35,7 @@ button:focus-visible, [role='button']:focus-visible, input:focus-visible { outli
 .workbench-title strong { flex: 1 1 100%; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 15px; color: inherit; }
 .workbench-title b { color: inherit; white-space: nowrap; }
 .workbench-details dl { margin: 7px 0; display: grid; gap: 4px; }
+.workbench-description { margin: 8px 0; color: #cec1a8; font-size: 11px; line-height: 1.6; overflow-wrap: anywhere; }
 .workbench-details dl > div { display: flex; justify-content: space-between; gap: 8px; }
 .workbench-details dt { color: #938574; }
 .workbench-details dd { margin: 0; text-align: right; overflow-wrap: anywhere; }
@@ -108,6 +109,7 @@ button:focus-visible, [role='button']:focus-visible, input:focus-visible { outli
 .weapon-entry-copy strong { font-size: 13px; overflow-wrap: anywhere; }
 .weapon-entry-copy small { color: #665034; font-size: 11px; }
 .weapon-unlock-status { font-size: 11px; color: #665034; }
+.weapon-codex-page .weapon-description { margin: 3px 0 0; color: #59432d; font-size: 12px; line-height: 1.65; overflow-wrap: anywhere; }
 .is-unlocked .weapon-unlock-status { color: #3e5829; font-weight: bold; }
 .book-relic { display: grid; grid-template-columns: 45px 1fr; gap: 8px; padding: 8px 0; border-bottom: 1px dashed #92764b; }
 .book-relic > span { font-size: 30px; }.book-relic p { margin: 3px 0; font-size: 12px; }
@@ -187,6 +189,7 @@ button:focus-visible, [role='button']:focus-visible, input:focus-visible { outli
   .status-ledger small { display: none; }
   .workbench-details { padding: 6px; font-size: 9px; }
   .workbench-title strong { font-size: 11px; }
+  .workbench-description { margin: 5px 0; font-size: 9px; line-height: 1.45; }
   .blade-status { font-size: 8px; gap: 2px 4px; }
   .camera-controls { bottom: 4px; gap: 5px; padding: 0 4px; }
   .camera-controls input { width: 120px; }

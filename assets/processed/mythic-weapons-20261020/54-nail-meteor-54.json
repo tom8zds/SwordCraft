@@ -1,0 +1,169 @@
+{
+  "index": 54,
+  "id": "nail:meteor:54",
+  "name": "星核镇锤",
+  "kind": "nail",
+  "path": "meteor",
+  "level": 54,
+  "evolutionStage": 18,
+  "family": "nail",
+  "familyLabel": "铁钉",
+  "slug": "54-nail-meteor-54",
+  "batch": "batch-11",
+  "design": "星核镇锤：多棱蓝黑星核锤头、厚金属链、多层天体环和陨晶铆件。",
+  "file": "54-nail-meteor-54.png",
+  "width": 128,
+  "height": 256,
+  "sha256": "bcc86e55d48beb8da39ec28901f000adf328f0760dd145638f136458ec11ed65",
+  "pixelSha256": "a08a584b857c07c1ca2ad93edc61a1c22539c86a94e0337e2b7e1cdbd84f5d64",
+  "silhouetteSha256": "16b19e3b3fef66d84254ae6005904770996f0d864c4589ad0991c79262dc23fb",
+  "source": "assets/incoming/seedream-mythic-weapons-20261020/batch-11/image.png",
+  "sourceSha256": "784e4bc3f4ca10314c17a75602fd6c8f521ba176820c53286fb8f127d6c59a6e",
+  "sourceMetadata": "assets/incoming/seedream-mythic-weapons-20261020/batch-11/generation.json",
+  "sourceDimensions": {
+    "width": 2400,
+    "height": 1080
+  },
+  "sourceCrop": {
+    "x": 172,
+    "y": 78,
+    "width": 553,
+    "height": 939
+  },
+  "sourceOpaquePixels": 160558,
+  "slotIndex": 0,
+  "slotBounds": {
+    "x": 0,
+    "y": 0,
+    "width": 800,
+    "height": 1080
+  },
+  "acceptedSlot": true,
+  "sourceComponents": [
+    {
+      "x": 172,
+      "y": 78,
+      "width": 553,
+      "height": 939,
+      "pixels": 159635
+    },
+    {
+      "x": 345,
+      "y": 125,
+      "width": 8,
+      "height": 8,
+      "pixels": 48
+    },
+    {
+      "x": 554,
+      "y": 125,
+      "width": 15,
+      "height": 16,
+      "pixels": 176
+    },
+    {
+      "x": 582,
+      "y": 150,
+      "width": 5,
+      "height": 4,
+      "pixels": 14
+    },
+    {
+      "x": 259,
+      "y": 209,
+      "width": 7,
+      "height": 10,
+      "pixels": 44
+    },
+    {
+      "x": 240,
+      "y": 220,
+      "width": 10,
+      "height": 9,
+      "pixels": 58
+    },
+    {
+      "x": 655,
+      "y": 226,
+      "width": 9,
+      "height": 10,
+      "pixels": 69
+    },
+    {
+      "x": 638,
+      "y": 372,
+      "width": 4,
+      "height": 4,
+      "pixels": 12
+    },
+    {
+      "x": 234,
+      "y": 382,
+      "width": 8,
+      "height": 9,
+      "pixels": 56
+    },
+    {
+      "x": 682,
+      "y": 383,
+      "width": 10,
+      "height": 8,
+      "pixels": 56
+    },
+    {
+      "x": 647,
+      "y": 416,
+      "width": 6,
+      "height": 4,
+      "pixels": 20
+    },
+    {
+      "x": 251,
+      "y": 428,
+      "width": 13,
+      "height": 11,
+      "pixels": 102
+    },
+    {
+      "x": 294,
+      "y": 470,
+      "width": 18,
+      "height": 15,
+      "pixels": 171
+    },
+    {
+      "x": 582,
+      "y": 478,
+      "width": 12,
+      "height": 13,
+      "pixels": 97
+    }
+  ],
+  "contentBounds": {
+    "x": 8,
+    "y": 33,
+    "width": 112,
+    "height": 190
+  },
+  "opaquePixels": 6585,
+  "greenSpill": 0,
+  "alpha": "binary; transparent RGB cleared",
+  "sampling": "nearest; proportional fit; no aspect stretching",
+  "provenance": {
+    "model": "doubao-seedream-5-0-pro-260628",
+    "references": [
+      {
+        "file": "assets/incoming/seedream-gameplay-heroes-20261019/sword/image.png",
+        "sha256": "020d4c02bfba115d70e9f82c035b78370bfcfc5742063fe2d12a33d98616e628"
+      }
+    ],
+    "requestBatch": "batch-11",
+    "rights": "生成素材受用户Volcengine Ark账户协议约束；仅参考既有铁剑像素材质，商业发布授权需账户持有人确认。"
+  },
+  "correction": null,
+  "actualObjectCount": 3,
+  "actualObjectIndex": 0,
+  "rejectedGeneratedObjects": [],
+  "compositeSourceParts": null,
+  "visualAcceptance": "pending native contact-sheet and in-game inspection"
+}

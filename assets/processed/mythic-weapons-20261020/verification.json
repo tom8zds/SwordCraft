@@ -1,0 +1,1110 @@
+{
+  "count": 73,
+  "batch": null,
+  "uniqueFiles": 73,
+  "uniquePixels": 73,
+  "uniqueSilhouettes": 73,
+  "uniqueSources": 45,
+  "allAlphaBinary": true,
+  "allTransparentRgbClean": true,
+  "allGreenSpillZero": true,
+  "allPaddingAtLeast8": true,
+  "sourceUniquenessPolicy": "同批三件允许共享原图哈希；每件裁剪、像素和剪影必须独立",
+  "assets": [
+    {
+      "id": "iron:base:0",
+      "name": "普通铁剑",
+      "opaquePixels": 4173,
+      "bounds": {
+        "x": 36,
+        "y": 8,
+        "width": 56,
+        "height": 240
+      },
+      "sha256": "024f2fa57fa2c017e5853439eff26cbfbcec4c999b9ca26247dcea6f160d5109",
+      "pixelSha256": "b64000116be9108a0a3d0796466517ed9eb164c6a30d512d66768cf8023a19e1",
+      "silhouetteSha256": "48d64ea90b7c4865613761269e0660e016b4681d63d20e72d8a5f2fbabc75dc6",
+      "sourceSha256": "7fa3eb9f58d89766c62f9451c5059a7ab3b7684eea563d2e32e792ce7398c7d0"
+    },
+    {
+      "id": "iron:base:3",
+      "name": "精良铁剑",
+      "opaquePixels": 5358,
+      "bounds": {
+        "x": 32,
+        "y": 8,
+        "width": 63,
+        "height": 240
+      },
+      "sha256": "5344675b017075bccc54cf3933f34fec795634b063858fcabaed86ac1b7e02f9",
+      "pixelSha256": "9aa6c8bb5aec3b0805e28121ed4d1eba18c9bad90c56159832d87618e9f59819",
+      "silhouetteSha256": "60e0f9fb6dc0ba7bb341f39fdbce3805ba3511ff602c28449d3c4edc36eefd11",
+      "sourceSha256": "cb7dccf5161d8391ae3f64e5d3abacba804607518cc1760ee1b2574c670ade3a"
+    },
+    {
+      "id": "iron:base:6",
+      "name": "骑士大剑",
+      "opaquePixels": 5094,
+      "bounds": {
+        "x": 32,
+        "y": 8,
+        "width": 64,
+        "height": 240
+      },
+      "sha256": "dceae3b1270fabdbb2263b7eb7888450e84be0f207d48860713d801c8b2ade8b",
+      "pixelSha256": "c391e31ade7f5aa50c802a223c839890eea0629b7befe675cb60365143975f1f",
+      "silhouetteSha256": "6f7b572775e1845c000a0fd253b75ca9d2ee92a28e6e0499dcf9a2a37189aaa0",
+      "sourceSha256": "39afda2ad476b6de80f43e76ccf13df254bf7ae5db9bd930d5ca80a4f9654ac2"
+    },
+    {
+      "id": "iron:one-hand:9",
+      "name": "御卫长剑",
+      "opaquePixels": 3478,
+      "bounds": {
+        "x": 35,
+        "y": 9,
+        "width": 57,
+        "height": 239
+      },
+      "sha256": "f0dca64a1551cb3a5ac7646034a4a0de09e85ab70e7ef52c35130c282ee9223a",
+      "pixelSha256": "3e9975e6bbc95d8caed45390f55c55c6027f48378eb1c14f080f6baf2ccfa90b",
+      "silhouetteSha256": "1855d4cc53107eddce27fb2c434cae6606823881a6378e37b2b23260b3bbb2cd",
+      "sourceSha256": "f57ddadbac5e17222fecb7d153292a66d1439802ee7240d94b6997adc01aefe0"
+    },
+    {
+      "id": "iron:one-hand:18",
+      "name": "银翼剑",
+      "opaquePixels": 4513,
+      "bounds": {
+        "x": 10,
+        "y": 8,
+        "width": 107,
+        "height": 240
+      },
+      "sha256": "cb2b2298c919ecd0c19da3977a3a2121536233a3af822d5a620a280c07e39c17",
+      "pixelSha256": "c843a5f712e4aa93a820a1c9d8d2cf5b58471c8161dcfc6bd369affe3f173e41",
+      "silhouetteSha256": "bfa738e65b7ff3ff2077fc5833ccd14cd011c446f8118dd49b4227147462bae7",
+      "sourceSha256": "74bdc41a2e21014aa322ca84a851ece3e72ae51d42cefa68f72a485dbe7f8626"
+    },
+    {
+      "id": "iron:one-hand:27",
+      "name": "黎明之刃",
+      "opaquePixels": 5166,
+      "bounds": {
+        "x": 35,
+        "y": 8,
+        "width": 58,
+        "height": 240
+      },
+      "sha256": "f3573a59521b38a4d50beb1de15eb44bb74e0d4b254e5aa186cc50934c53bf68",
+      "pixelSha256": "f40abc39b6473f42cfb8f3799f092256b1b0dae3765cd9336f8bbe2c7342db0a",
+      "silhouetteSha256": "b7a101e36b9740aa9ab5bf21fc4089c78af194c5eeed6e26976e8d84d4837968",
+      "sourceSha256": "a3a0dcb4b226e91cd82c4ae357c48e0b291bb184e4f7308ce00ffa1589183a8c"
+    },
+    {
+      "id": "iron:one-hand:36",
+      "name": "王者圣剑",
+      "opaquePixels": 6192,
+      "bounds": {
+        "x": 32,
+        "y": 8,
+        "width": 63,
+        "height": 240
+      },
+      "sha256": "812c01b647ff0ebf6357a0bb54841e9ebe169388630a38c13f75b56f4cc065c0",
+      "pixelSha256": "27118d8e40cc0391ac9316626ad4874a9f23488aa05a5c1b1ebdfaa4e703ca9d",
+      "silhouetteSha256": "04f59c79587ae26dd8baaf3079927d5af1fbe39b008592c0e8cd625462727e89",
+      "sourceSha256": "24e189ae2b8339e96981da6126d31fa08d70b9d2bf2e9d986fd55f7c061736fa"
+    },
+    {
+      "id": "iron:one-hand:45",
+      "name": "苍穹裁决",
+      "opaquePixels": 7068,
+      "bounds": {
+        "x": 23,
+        "y": 9,
+        "width": 82,
+        "height": 239
+      },
+      "sha256": "a09bed8cebd15f5385eba914842d774a6beba55977aba099b0c3a0d438a34e93",
+      "pixelSha256": "9c91c170e12acda611244deb86a17aaecc8ca54ec1178ea8037986ac4d31c6f7",
+      "silhouetteSha256": "5fdbcfa5475c307a5a6454cb0191bd3701ef7099761b98c580aa009e465a3d7f",
+      "sourceSha256": "f6906318dfd7f255d689cd9d829fcf051add46386a045fd279346705da5be7f4"
+    },
+    {
+      "id": "iron:one-hand:54",
+      "name": "星界锋芒",
+      "opaquePixels": 5919,
+      "bounds": {
+        "x": 8,
+        "y": 33,
+        "width": 112,
+        "height": 190
+      },
+      "sha256": "54d52214488c40a101d7999f8e14f7fe7cc98618c2e7b0c2a82b067dd288075f",
+      "pixelSha256": "15e942d0fd425c815b301f603325117295f2c0ca3de69407cf9fb1929e77d505",
+      "silhouetteSha256": "4286914e052b1f331d950eba1d8717eaf99ec11ac48fd8d2a498057379be1a8a",
+      "sourceSha256": "f6906318dfd7f255d689cd9d829fcf051add46386a045fd279346705da5be7f4"
+    },
+    {
+      "id": "iron:one-hand:63",
+      "name": "时光之刃",
+      "opaquePixels": 5653,
+      "bounds": {
+        "x": 8,
+        "y": 35,
+        "width": 112,
+        "height": 185
+      },
+      "sha256": "4e043a8be726c2b1e634467ea7befa37c471553fdff214daf15ece92897aec11",
+      "pixelSha256": "ddb399c976553d83790f97de2f01ea9d4b578803e3b86de6ce5582b4a8f31f42",
+      "silhouetteSha256": "95f7ea6f9a1f4abfa3a5a6d8e999028c6f753688f532ffe09b112932764099f1",
+      "sourceSha256": "f6906318dfd7f255d689cd9d829fcf051add46386a045fd279346705da5be7f4"
+    },
+    {
+      "id": "iron:one-hand:72",
+      "name": "天穹誓剑",
+      "opaquePixels": 6539,
+      "bounds": {
+        "x": 22,
+        "y": 8,
+        "width": 85,
+        "height": 240
+      },
+      "sha256": "f70c7ce2fd28d0e7a344a2d1673fbc2c412f57cf5625a22f5410909df48eda98",
+      "pixelSha256": "91440da291df27f5f49f58e6b138e0c98aaa9502d2e003c6ff0765beecdfd273",
+      "silhouetteSha256": "17e77f5a87fbf14e40014dd3e132f7c43d2172c7974b9a9eabaeaa0f8cf5c2b9",
+      "sourceSha256": "29656fe7976b1dd2a1ed1dbd4b9de660545c6560a3dc1f1c00794ba646e4a592"
+    },
+    {
+      "id": "iron:one-hand:81",
+      "name": "日冕圣剑",
+      "opaquePixels": 6408,
+      "bounds": {
+        "x": 12,
+        "y": 28,
+        "width": 107,
+        "height": 200
+      },
+      "sha256": "9515961696541f7bfd27a09103e6f38368bdafc2de3fda7f54c0b529463e7d7b",
+      "pixelSha256": "53b7dd283f22d2dd9b2c1e32404f991defd6ab91429c8dfaf71558c7e09b96f8",
+      "silhouetteSha256": "46d7fe458acbcf3f64f47fb3579c63804cb3c3125dd886a650f1e690d6d5e94d",
+      "sourceSha256": "29656fe7976b1dd2a1ed1dbd4b9de660545c6560a3dc1f1c00794ba646e4a592"
+    },
+    {
+      "id": "iron:one-hand:90",
+      "name": "万象剑",
+      "opaquePixels": 8309,
+      "bounds": {
+        "x": 8,
+        "y": 15,
+        "width": 112,
+        "height": 225
+      },
+      "sha256": "7d0f0844467dc4d478dead078fde028b91b6f9072746a7ea48ca54cf5ab14ae3",
+      "pixelSha256": "9de9088a5d9995497b6ddb5c75c08f892923315e3045177ad0f32fd4783ece3b",
+      "silhouetteSha256": "ad8ad40839ee052b57311eeb178adc287e1c84f753bacb1d9472e9e144d923cd",
+      "sourceSha256": "29656fe7976b1dd2a1ed1dbd4b9de660545c6560a3dc1f1c00794ba646e4a592"
+    },
+    {
+      "id": "iron:one-hand:99",
+      "name": "永昼神锋",
+      "opaquePixels": 7150,
+      "bounds": {
+        "x": 8,
+        "y": 21,
+        "width": 112,
+        "height": 213
+      },
+      "sha256": "370c77c3554b101af3ca0176f328c1a0dc0343e55864f3e03d340ddab9e0fa9e",
+      "pixelSha256": "8048e25773f1d9676c393bb71eeeb3f251a3c13ede20e15367a44ee02c60b0f7",
+      "silhouetteSha256": "0d02f87e44e44769a57e37994914aa1240b8294cd89f40aae5a332f132405e52",
+      "sourceSha256": "7094dbc482e03bcb27d30cb6eb62fd42ef5eb07354578eeed0232a725c002867"
+    },
+    {
+      "id": "iron:greatsword:9",
+      "name": "骑士双手剑",
+      "opaquePixels": 4236,
+      "bounds": {
+        "x": 31,
+        "y": 9,
+        "width": 66,
+        "height": 239
+      },
+      "sha256": "fec0534b86d067f9d917782b30d0d6e49b104e01184b3a59c6e8a59668538a7c",
+      "pixelSha256": "706f7de9a75ac6530b01b2f357541d27bdf43bec27d942d923183f2ef5415741",
+      "silhouetteSha256": "e3af781830516bdea6c0dd9fd2b3bc5782fdf392eda8d468ee8e9c5d097f3bc6",
+      "sourceSha256": "98a34d0e42c76512161bbc342381b2cc9ee78ce2fb614778bc3310eb7c1d8464"
+    },
+    {
+      "id": "iron:greatsword:18",
+      "name": "黑铁巨剑",
+      "opaquePixels": 6526,
+      "bounds": {
+        "x": 33,
+        "y": 8,
+        "width": 62,
+        "height": 240
+      },
+      "sha256": "d9f60b4caa37f15591a87a3252d6e5cb7e03554c5847dde71e189a3a9699241b",
+      "pixelSha256": "fb36b06fd0e6824ad45e6edcb4876ab2b2bcb42ca370e4737d22234638579005",
+      "silhouetteSha256": "8572260cea997ad484fa492e386c3f2523eb61ab1fa3fbde1c7cf0342f6fe7a5",
+      "sourceSha256": "fe1dd5fd563988169782d23fc91622844b964ae10433be2d305bba07378a1b1c"
+    },
+    {
+      "id": "iron:greatsword:27",
+      "name": "斩龙剑",
+      "opaquePixels": 4967,
+      "bounds": {
+        "x": 34,
+        "y": 8,
+        "width": 59,
+        "height": 240
+      },
+      "sha256": "337af8cf3382765ee227b44aa30f4af934ab98883b49dc8fd2e6a6e0a38c2e79",
+      "pixelSha256": "24e2f639ea98a292091cf474445c88dbb89f891d96b38c07aca67edb17ec28d2",
+      "silhouetteSha256": "b98d581493311ec2235deac6c2cd7f6acb6aea90c883cb03e964f3c4ac309d93",
+      "sourceSha256": "89fb25f293e9328ce12c6fe6c60f87f5ef7892e8d058fbc981519da0dcd6b874"
+    },
+    {
+      "id": "iron:greatsword:36",
+      "name": "山岳断刃",
+      "opaquePixels": 7422,
+      "bounds": {
+        "x": 32,
+        "y": 8,
+        "width": 64,
+        "height": 240
+      },
+      "sha256": "c6bb3f4c1c41ddae8269b3a481fe731893120fab067224e8317771bd8b7ef1ab",
+      "pixelSha256": "26ebaba69277ed414594a3d289537f6737222f6be57325f5569d32d30fe7f441",
+      "silhouetteSha256": "02fe8d5201039ba2e2a8550603177de78771c95c1e53dd01bd0c99f5d60cee69",
+      "sourceSha256": "401968238989ff4dea616fae9f3cc7acae592f6a4cb194c07fe3cf4801b958fc"
+    },
+    {
+      "id": "iron:greatsword:45",
+      "name": "末日重锋",
+      "opaquePixels": 8333,
+      "bounds": {
+        "x": 29,
+        "y": 9,
+        "width": 70,
+        "height": 239
+      },
+      "sha256": "3fee7d9f7f96fab98f34bb93b52434aa3e90e3e6d03121c7d59149ffa0e03674",
+      "pixelSha256": "4b49a1aec3353268b32cf5c3a60d182cd5f07481f1332fe572f5287f0c6755c7",
+      "silhouetteSha256": "adc9b06728c917de6031b93b1bbf5ca296f7f5826a6e8c66db9f7cc774da833d",
+      "sourceSha256": "7094dbc482e03bcb27d30cb6eb62fd42ef5eb07354578eeed0232a725c002867"
+    },
+    {
+      "id": "iron:greatsword:54",
+      "name": "泰坦巨剑",
+      "opaquePixels": 10450,
+      "bounds": {
+        "x": 26,
+        "y": 8,
+        "width": 76,
+        "height": 240
+      },
+      "sha256": "2ceca355b3fb541466114193419623cb15d1500e02f163d3f574cc840dcb9c26",
+      "pixelSha256": "fe632b5caaa26d568c8a2835f142cab566f01e128daff15c6ee0d02d10018662",
+      "silhouetteSha256": "bd6c104534a164062fdfea1bec31ab5b6784fec3ae12a69e015965ef5c7bb7ff",
+      "sourceSha256": "7094dbc482e03bcb27d30cb6eb62fd42ef5eb07354578eeed0232a725c002867"
+    },
+    {
+      "id": "iron:greatsword:63",
+      "name": "裂陆剑",
+      "opaquePixels": 9777,
+      "bounds": {
+        "x": 29,
+        "y": 8,
+        "width": 69,
+        "height": 240
+      },
+      "sha256": "a6b0e5864dd383ea574dc541b4235a04418f8d3d06d2585497a1207c59086134",
+      "pixelSha256": "5836f9d6803a5c7b917980e618f0bf92d152741307f6e34d231c8ca43896a406",
+      "silhouetteSha256": "237ce757d3885c6bc890d2745ced527a35014fbc4fc016a4766f5ca364c581c2",
+      "sourceSha256": "0adbeeec461428bf023b1bbd58e435ede46bb0b41064025809d28e691953d9f9"
+    },
+    {
+      "id": "iron:greatsword:72",
+      "name": "陨星重锋",
+      "opaquePixels": 10805,
+      "bounds": {
+        "x": 8,
+        "y": 41,
+        "width": 112,
+        "height": 173
+      },
+      "sha256": "f69c09d3a45f44dec6f09cd4ae74a0a234dbb9824b9c5ebcca2ea3af6d06355c",
+      "pixelSha256": "841dcfb3c8cfab017e9438dca95fbaee704d08cab8f7abe52422ceef228ca7dd",
+      "silhouetteSha256": "a65345a090414216a4ba293c0098066a9eb0f61d7fce915fbd6a18c117fb0a6e",
+      "sourceSha256": "0adbeeec461428bf023b1bbd58e435ede46bb0b41064025809d28e691953d9f9"
+    },
+    {
+      "id": "iron:greatsword:81",
+      "name": "诸神黄昏",
+      "opaquePixels": 8416,
+      "bounds": {
+        "x": 8,
+        "y": 24,
+        "width": 112,
+        "height": 208
+      },
+      "sha256": "77f58f8888aafb8db821a4f18a4955b1cc5f7d48ded2a990eb6a71614de8ef3e",
+      "pixelSha256": "18757f5df9bc68beabe183236e4c2e2ece37bea2752777aac47ef07edcc24649",
+      "silhouetteSha256": "b24246d165992cef72104ebf8a089bd9ec1785f41b574ee37a342fbaa7287209",
+      "sourceSha256": "0adbeeec461428bf023b1bbd58e435ede46bb0b41064025809d28e691953d9f9"
+    },
+    {
+      "id": "iron:greatsword:90",
+      "name": "创世巨刃",
+      "opaquePixels": 10489,
+      "bounds": {
+        "x": 8,
+        "y": 14,
+        "width": 112,
+        "height": 227
+      },
+      "sha256": "78854a0d19aacf2d29ba4ba2ac8269e83f4c41f903d6480b3d770d08d43c5cdc",
+      "pixelSha256": "e8af4b58bbd74b6bd2555f508a75a59c98213ff57d01e3e039f9208baea714e3",
+      "silhouetteSha256": "6cf7e60d738a9572d1f38a25e87bd5c42b2a4489a7445f2198f35e3a1cbfaff5",
+      "sourceSha256": "11b3412ae2ab270a7b0f9bf217d72f9da91fe8e35a320857f4e0bfac082a0ad5"
+    },
+    {
+      "id": "iron:greatsword:99",
+      "name": "终焉之剑",
+      "opaquePixels": 8172,
+      "bounds": {
+        "x": 13,
+        "y": 8,
+        "width": 101,
+        "height": 240
+      },
+      "sha256": "ad09b0b8c3868841fe5438048f3426c4d9480ca9ca87bfb28bb059c05164a821",
+      "pixelSha256": "e643df423a81b7b81b8ec4cce12e48a71f2d6e20414a2c3ea75a8ede8f9a6158",
+      "silhouetteSha256": "42993c601bfbfbbea971c262a7ad1c4303386d713b035dac9e28ee2992ccefce",
+      "sourceSha256": "bd250bd3640d794c4aea9afbadd47af1fe07f55904fb6e113e694748017a7756"
+    },
+    {
+      "id": "iron:sword-shield:9",
+      "name": "壁垒剑盾",
+      "opaquePixels": 6839,
+      "bounds": {
+        "x": 8,
+        "y": 52,
+        "width": 112,
+        "height": 151
+      },
+      "sha256": "2e0925b0f8c01a53b192abe577ea73c7dd1e0e3189f32506d28a1b090c0e3135",
+      "pixelSha256": "23fcc5be1fab7b10ba7b4b821fa9944a05dae1e993b74240115f4bd93742d745",
+      "silhouetteSha256": "b5917f797594a21ccd40507065b963f6a09541e33e6aadf2b1f6333fca085550",
+      "sourceSha256": "689d1f3f5424c7e4307063ad480af6c47c510c2fc4260d52f2c4cf0f331b18c2"
+    },
+    {
+      "id": "iron:sword-shield:18",
+      "name": "狮心剑盾",
+      "opaquePixels": 7614,
+      "bounds": {
+        "x": 8,
+        "y": 57,
+        "width": 112,
+        "height": 142
+      },
+      "sha256": "9a1f048b6a74cb3368d81a421df31d5a3fcf930ea250b1db5f1306294508c593",
+      "pixelSha256": "b5fe43de3c25359696afc42b363296087280aab39c5ca668523939f6c6a3872d",
+      "silhouetteSha256": "349aa4c555f1b65d394103c19b80998d32227bc87ceec8aadafe60e03f43199d",
+      "sourceSha256": "eb555e662714178fc84f75f924bd0665f06648e5272976893f339d853bd2ffca"
+    },
+    {
+      "id": "iron:sword-shield:27",
+      "name": "圣城守望",
+      "opaquePixels": 8630,
+      "bounds": {
+        "x": 8,
+        "y": 42,
+        "width": 112,
+        "height": 172
+      },
+      "sha256": "f1d28927a6c7fc3216236fa2ffaf2c8b3841791b6ee57a85d05de8d159a7e18e",
+      "pixelSha256": "cffa8ec8bc0d9ef5b647d4e4da41f638c3d3b088d82bb6ca547418b2ced95e9d",
+      "silhouetteSha256": "b13cc74f6d45a1e3b05b3a8935e97715900043bc21cb9c288622eebfc834d606",
+      "sourceSha256": "3bba39a5619f5274d0a69b945518a68373e5dfacd67c4e0e0b8b20f5a9c8be0d"
+    },
+    {
+      "id": "iron:sword-shield:36",
+      "name": "不落王庭",
+      "opaquePixels": 7757,
+      "bounds": {
+        "x": 8,
+        "y": 43,
+        "width": 112,
+        "height": 169
+      },
+      "sha256": "ed61d74dccc094cfa6e20b61266ca19197868386f1d4c08015964d6e072193cd",
+      "pixelSha256": "d45eb69f5afc9e5b73b06ff80750aa5fabc3d563ea16a0c7981d9e55a11a39e1",
+      "silhouetteSha256": "83edf96dc43b35586a4131311faa3495719ade6ba9417548acdc61052feadceb",
+      "sourceSha256": "0dc8b5e77092eb4916933a8beedc5b095498e21f9f6bcef6b6fc824ad6ee2a54"
+    },
+    {
+      "id": "iron:sword-shield:45",
+      "name": "永恒壁垒",
+      "opaquePixels": 13051,
+      "bounds": {
+        "x": 13,
+        "y": 8,
+        "width": 101,
+        "height": 240
+      },
+      "sha256": "e2a62389a82c645982984506614207742770d3d3033287683eaaeb6fb38c8b0d",
+      "pixelSha256": "ca690bd54cfbf1333b4a45b3e2594805a02bdeaaf7420222fdf6a8fd6a421b64",
+      "silhouetteSha256": "69659772e1eed54fe1062f3332e031983ebdcaa3e720a846a1d1601d178b7a9c",
+      "sourceSha256": "11b3412ae2ab270a7b0f9bf217d72f9da91fe8e35a320857f4e0bfac082a0ad5"
+    },
+    {
+      "id": "iron:sword-shield:54",
+      "name": "天国守门",
+      "opaquePixels": 15886,
+      "bounds": {
+        "x": 8,
+        "y": 8,
+        "width": 111,
+        "height": 240
+      },
+      "sha256": "f67ff440b3b662ac98d3a8c8f31fc12093ff854e69f95bcb0be1c2e969b8beda",
+      "pixelSha256": "0d5278c0c6207d4041277665636cb5f518771fe20758c792209a6383700f735f",
+      "silhouetteSha256": "390d5ec0c4e053251e08ff08c6155b832e8c3924b2b54098ba35261f6a3d8efc",
+      "sourceSha256": "11b3412ae2ab270a7b0f9bf217d72f9da91fe8e35a320857f4e0bfac082a0ad5"
+    },
+    {
+      "id": "iron:sword-shield:63",
+      "name": "曜日圣盾",
+      "opaquePixels": 11578,
+      "bounds": {
+        "x": 9,
+        "y": 19,
+        "width": 110,
+        "height": 219
+      },
+      "sha256": "b8782c6fd9649220b10b4493db5e12770323d3e43f27c4bc33edc631fe08fccb",
+      "pixelSha256": "d1bc283c924931f5fe354ee07f6070c629f326a51df7d924c066bd089c9072c2",
+      "silhouetteSha256": "591caf870f6fcba3b4c082653e5efa960289dd6bc88563d90c7fe4774c72a997",
+      "sourceSha256": "8bc8f14beb4575a931440afb15d2d0d86427c3bb0efcec23fac3514a4d67629b"
+    },
+    {
+      "id": "iron:sword-shield:72",
+      "name": "万民守护",
+      "opaquePixels": 15745,
+      "bounds": {
+        "x": 10,
+        "y": 8,
+        "width": 107,
+        "height": 240
+      },
+      "sha256": "1f4e3b446ab34f9a3796bd13b8f3c07d120e38a7ca77007046db9ffb1d38c5b9",
+      "pixelSha256": "3b6da0ef69a2e0d1978b1d37770ac3abe40aebc81418537e4052c117d46edde7",
+      "silhouetteSha256": "5f639edde08f550765d883c64b38bf437a4d41fc21822d7918af22d217fc70b2",
+      "sourceSha256": "8bc8f14beb4575a931440afb15d2d0d86427c3bb0efcec23fac3514a4d67629b"
+    },
+    {
+      "id": "iron:sword-shield:81",
+      "name": "不可侵犯",
+      "opaquePixels": 10479,
+      "bounds": {
+        "x": 10,
+        "y": 9,
+        "width": 108,
+        "height": 239
+      },
+      "sha256": "96e9cb9cec6b53aa82ce48c1a5be42ac1abe6da1580e38c6a4702b9de3c8ec4e",
+      "pixelSha256": "55079e9a5ac6e7effd79b646bba299815843c9b11b8f1df314e844199878778e",
+      "silhouetteSha256": "85817c5c9a6e0ed2cdfef71e1a41fad2ea1cc33a2055298580aa8ef9402d211a",
+      "sourceSha256": "8bc8f14beb4575a931440afb15d2d0d86427c3bb0efcec23fac3514a4d67629b"
+    },
+    {
+      "id": "iron:sword-shield:90",
+      "name": "永世王庭",
+      "opaquePixels": 13493,
+      "bounds": {
+        "x": 8,
+        "y": 9,
+        "width": 112,
+        "height": 238
+      },
+      "sha256": "225e7ca839b31b09ccea37f9af645e72ca758789a5a6c0fdc8d072491b96e9be",
+      "pixelSha256": "ed7ea3a6357451213dc257efe58594ea4d124634c99e7616c98779e156fbf8ae",
+      "silhouetteSha256": "49b6b1706dad750776e5c8beb07882cbcd822ec7fe95b103fa05a28f4d6c2fa5",
+      "sourceSha256": "e3df05627c50d9abf4aeed9ba2d30758de2ccc35c8ff409cb56df8a583962e21"
+    },
+    {
+      "id": "iron:sword-shield:99",
+      "name": "世界壁垒",
+      "opaquePixels": 17785,
+      "bounds": {
+        "x": 14,
+        "y": 8,
+        "width": 100,
+        "height": 240
+      },
+      "sha256": "410231d84d3c196a0acc8873dca865a75ba22ef0b1bb0a478b2e7b97bc9ab3c1",
+      "pixelSha256": "e43227a9654c57e275d98403ab9516980b81e43e7516ad3175f1371db85d37ba",
+      "silhouetteSha256": "09d339554d6caa90aedf3e07e37852de4dd573399e66ff32da760a94221cbaa5",
+      "sourceSha256": "bd250bd3640d794c4aea9afbadd47af1fe07f55904fb6e113e694748017a7756"
+    },
+    {
+      "id": "branch:world-tree:0",
+      "name": "树枝",
+      "opaquePixels": 3588,
+      "bounds": {
+        "x": 37,
+        "y": 8,
+        "width": 54,
+        "height": 240
+      },
+      "sha256": "3733d0eb6337da18be7c82b4cc0f8a8eb1be0657ef19dbd22410abac40ed8c05",
+      "pixelSha256": "5a8a5ed150a219c93268a2a904d8c43aee22cdc53a43e63119ee0b79a4f76141",
+      "silhouetteSha256": "efe8e0e6517397ed31c461e4614ad5028f3c4c07979502310c56b712cea190a4",
+      "sourceSha256": "c8218f667f0bc593afc35673fe3c420fcbc38b3503731f827c0df6fb4cd6e9ba"
+    },
+    {
+      "id": "branch:world-tree:9",
+      "name": "萌芽枝杖",
+      "opaquePixels": 2510,
+      "bounds": {
+        "x": 49,
+        "y": 9,
+        "width": 29,
+        "height": 239
+      },
+      "sha256": "92f91f85e3fb430b049c62812ff5f99a4f826d24a10a1d2988bba618e8bf37a8",
+      "pixelSha256": "024d4eadefad4d5703189fc11d491eae47551ded691249621a1de6f3a6e3de13",
+      "silhouetteSha256": "5d97fac2ccff56750fb7d53c229e5c2822c603319ac97239054bffc15a985a68",
+      "sourceSha256": "e4ba1d41ef521c2522c4ae1fe7f68feacecd14ce372b248fcb929e50712356b8"
+    },
+    {
+      "id": "branch:world-tree:18",
+      "name": "古木剑",
+      "opaquePixels": 7421,
+      "bounds": {
+        "x": 36,
+        "y": 8,
+        "width": 55,
+        "height": 240
+      },
+      "sha256": "50111f17fc2ae54dc578be05a267311384a33c600bea46496c4fffa8333b6c21",
+      "pixelSha256": "db54811eb52d7da803a486e9c093b22e5d9b9b9ab3bb7983280836ddf6858588",
+      "silhouetteSha256": "4aec9444ed9512f9d8f79e5fcafcc4dd483abc69907c4d5c05283b43a6961a49",
+      "sourceSha256": "f665b09b40df83aa33bdfe25b20010c25e39d4102514271396ce5392b56d2877"
+    },
+    {
+      "id": "branch:world-tree:27",
+      "name": "生命之枝",
+      "opaquePixels": 4487,
+      "bounds": {
+        "x": 33,
+        "y": 8,
+        "width": 61,
+        "height": 240
+      },
+      "sha256": "494bb3c62f4679d4a306ac4587095be95f912b0d1747d9788f31025ba38708b0",
+      "pixelSha256": "e44fcfa5329065da3eba8642e6363e26f5714e9572ec95424a9be9428b63ca6f",
+      "silhouetteSha256": "cd2f5b86b28caa77a5ce03f2c21013dc24a8ec470c799dffee629b0f0cd50da2",
+      "sourceSha256": "832d21d6581fcab01d01a1616338a2e0ac56c8b884941a09b093a39bc9bd321c"
+    },
+    {
+      "id": "branch:world-tree:36",
+      "name": "生命之树",
+      "opaquePixels": 8513,
+      "bounds": {
+        "x": 17,
+        "y": 8,
+        "width": 94,
+        "height": 240
+      },
+      "sha256": "1a474fb2f03e2ae1664cdbbb3b46d13cc95d53a52fc890507503cd1f6afe0bfc",
+      "pixelSha256": "95e3543edfc4be1025d018fa7c7c52a6cbb3df6b7fc0a441dbb91c5da9c46d3d",
+      "silhouetteSha256": "28771b5cf931c8a0eaaa1072df8d180369635aad5643f4b3bdbfd93c8714d835",
+      "sourceSha256": "60402b50f5fea1afc90a0e2ccb9e8bb11218e34498f654eb66a6ebb1cd4ed7ba"
+    },
+    {
+      "id": "branch:world-tree:45",
+      "name": "世界根须",
+      "opaquePixels": 9231,
+      "bounds": {
+        "x": 11,
+        "y": 8,
+        "width": 106,
+        "height": 240
+      },
+      "sha256": "9cdc91d173d1b3ad543319dc578cd26c080a153f4ddfb032072ab464e575c4b2",
+      "pixelSha256": "4180a7385e039265c08e3b946b75ae71d5af079b0382991de1f4191a1389b4a9",
+      "silhouetteSha256": "d414752cfe9ab78e472549c714f3b4ca7664e1c65258f5d773a3025e0a7df6a1",
+      "sourceSha256": "e3df05627c50d9abf4aeed9ba2d30758de2ccc35c8ff409cb56df8a583962e21"
+    },
+    {
+      "id": "branch:world-tree:54",
+      "name": "森罗神木",
+      "opaquePixels": 5761,
+      "bounds": {
+        "x": 8,
+        "y": 34,
+        "width": 112,
+        "height": 188
+      },
+      "sha256": "a551540f1bb40fd0a15f3b1deac61272e24f3e8e79b02ee6c33b93192d1c35fc",
+      "pixelSha256": "858380d3a58d23e573215b0050fe67d68240335cab92917440cf8930797790fa",
+      "silhouetteSha256": "1f4921053ae694bfc37cf8825a6f40668ba8396765731ef386a949dda1a1e3c2",
+      "sourceSha256": "e3df05627c50d9abf4aeed9ba2d30758de2ccc35c8ff409cb56df8a583962e21"
+    },
+    {
+      "id": "branch:world-tree:63",
+      "name": "四季王枝",
+      "opaquePixels": 8625,
+      "bounds": {
+        "x": 8,
+        "y": 32,
+        "width": 112,
+        "height": 191
+      },
+      "sha256": "0b997a82422de057becba26d306f02d84d22e48bd366fc64d5f5b5c5716889c3",
+      "pixelSha256": "f27faf758423ce54f718d4313d8c2fa034ee845d1255f079c076c7bddc72a63b",
+      "silhouetteSha256": "f41d40524a72de274c82a919e4ad4e4275de9ea563e37a7020dc80c96840719e",
+      "sourceSha256": "2b06e2d1668f45f6d11f045faab2aa9bc9714b3cd69588cc73b5cdbca7c5ddec"
+    },
+    {
+      "id": "branch:world-tree:72",
+      "name": "大地脉络",
+      "opaquePixels": 8837,
+      "bounds": {
+        "x": 8,
+        "y": 9,
+        "width": 112,
+        "height": 237
+      },
+      "sha256": "191c78c9c7f1803c73ab1b8b51f88d20be90a32d2f14ee4dbeb46c5e14c87824",
+      "pixelSha256": "f2d5425c60b70a391f5f85c833f9ef2269cec0d7db01a46b119ecb1fe0851bfb",
+      "silhouetteSha256": "42b70d2b1dfe952ba0349007e3a4bb6652506063ccaae520dd96dc7baee0d37d",
+      "sourceSha256": "2b06e2d1668f45f6d11f045faab2aa9bc9714b3cd69588cc73b5cdbca7c5ddec"
+    },
+    {
+      "id": "branch:world-tree:81",
+      "name": "万灵祖木",
+      "opaquePixels": 9379,
+      "bounds": {
+        "x": 8,
+        "y": 20,
+        "width": 112,
+        "height": 216
+      },
+      "sha256": "c0e0f675fbfaea3fe58409d69a845f96490d76f102236ce73dad54a96047e0b3",
+      "pixelSha256": "18536a54bf2068543ff522d1b316b96c030b8af7b77ed77d8e7f55798dbd48f6",
+      "silhouetteSha256": "1d46ca4186373ea9e05c52c9bc2d4b50c8d3673932216d052510915396bc9a36",
+      "sourceSha256": "2b06e2d1668f45f6d11f045faab2aa9bc9714b3cd69588cc73b5cdbca7c5ddec"
+    },
+    {
+      "id": "branch:world-tree:90",
+      "name": "永生世界树",
+      "opaquePixels": 3468,
+      "bounds": {
+        "x": 8,
+        "y": 52,
+        "width": 111,
+        "height": 152
+      },
+      "sha256": "8413036af8f824e4b67869d024ff0c0e7a579f77219da31cf8817e156e6d73f0",
+      "pixelSha256": "3a3ede398966d4cb4bfd3db1ef82f941dce876ba8d89921ef13035f8428e6d4d",
+      "silhouetteSha256": "1f929a92ae6f5074443b538959e3a93fb60517f9669e9e00426d2654c8e8a1ea",
+      "sourceSha256": "8fb1f84a804b17eb9fab63717c7388f56685fe9a7e1e4d6316c8fda30ea9bb28"
+    },
+    {
+      "id": "branch:world-tree:99",
+      "name": "星海神木",
+      "opaquePixels": 5046,
+      "bounds": {
+        "x": 8,
+        "y": 56,
+        "width": 112,
+        "height": 144
+      },
+      "sha256": "e0beb706ceeb4325f4589581c8fb92e5f6421f3dcfbd1a0e040a55917ed4077d",
+      "pixelSha256": "92678e9e8c99e31e914ca1ed870d6139567ec52d7e21330edda72325cae96d2c",
+      "silhouetteSha256": "63279aeae9a129d0e7c70c70bf5b49e22eb951f9f89948c2dbcc3aeacf3bc885",
+      "sourceSha256": "8fb1f84a804b17eb9fab63717c7388f56685fe9a7e1e4d6316c8fda30ea9bb28"
+    },
+    {
+      "id": "nail:meteor:0",
+      "name": "铁钉",
+      "opaquePixels": 9508,
+      "bounds": {
+        "x": 8,
+        "y": 24,
+        "width": 112,
+        "height": 207
+      },
+      "sha256": "91a56c76b3e99adac54e0058fc03c8fb6db71a473d10b6b858c4af319a81c9e8",
+      "pixelSha256": "7c9ed578d966a65682aa5e98c540c62df1f61521938708b1798efac7da2d475c",
+      "silhouetteSha256": "a778d9c1746d9262e36d82b2ae8a8b02ca701909ea04081d13c144ebb530f7e2",
+      "sourceSha256": "0b79808724fd6acc460ecaae94a596ead61d49955bff33ee30a242fb20b7e429"
+    },
+    {
+      "id": "nail:meteor:9",
+      "name": "铆钉锤",
+      "opaquePixels": 7885,
+      "bounds": {
+        "x": 8,
+        "y": 21,
+        "width": 112,
+        "height": 214
+      },
+      "sha256": "ea7a7ac8513c64f4cdc384861a40c699029c2965e6dccd13e2006805cc5401c7",
+      "pixelSha256": "9477e9e98c7ac509a5f238781f15aadaefcb8de20263c2faa2a042a1557968b6",
+      "silhouetteSha256": "53a5ad32bf9538426fed65da0e57622e99fbe26123728aeadf97b7ace34b2d2b",
+      "sourceSha256": "616bf6e79d881d779c25d77bb94f7cd56c9bfec45acb2f31420c384d16a67397"
+    },
+    {
+      "id": "nail:meteor:18",
+      "name": "锁链锤",
+      "opaquePixels": 8073,
+      "bounds": {
+        "x": 16,
+        "y": 8,
+        "width": 95,
+        "height": 240
+      },
+      "sha256": "63b50814d57419f915537c703702a1edd460244e90b4cc1dc0f07fb95e65f743",
+      "pixelSha256": "01b32e474a16d5cc599c12cb62bbc2caf30ee6ca14162fc24f3707e81287b6f9",
+      "silhouetteSha256": "f2b737319d72282804cad071e2501ea2ca1d42c608da9524fa50482f44a4fc73",
+      "sourceSha256": "174ec4415a871208e512aae3488ef086beaa9edea288e11e7a75024b90d0f131"
+    },
+    {
+      "id": "nail:meteor:27",
+      "name": "流星锤",
+      "opaquePixels": 4012,
+      "bounds": {
+        "x": 33,
+        "y": 8,
+        "width": 61,
+        "height": 240
+      },
+      "sha256": "c55071b1a4f9526bebf0aee706ee786191d2070f5b4c240f28357aa18014d240",
+      "pixelSha256": "3c868a41cef3e3c47b3117723acbd69000f97209b8c1d277d8d2d2a1f66038e3",
+      "silhouetteSha256": "22a7fb4bf13339f17104935dcf7c7c9ed9e25db921ef807391f503990f5fcd3a",
+      "sourceSha256": "f49d8243740c04745de717ec66482d76b44bf63e9d4bf80bbb3f9c64d993f62e"
+    },
+    {
+      "id": "nail:meteor:36",
+      "name": "彗星锁链",
+      "opaquePixels": 4447,
+      "bounds": {
+        "x": 18,
+        "y": 8,
+        "width": 92,
+        "height": 240
+      },
+      "sha256": "dbc4aff6f767070863ca7275a77bd81603b1406e517f190c0574fe9b55095a51",
+      "pixelSha256": "5bf9c4c2df052b2249605c8b965861c075915fe3209f66c4002a296e3df9dd76",
+      "silhouetteSha256": "06bfe04ade6dbac3df1276c5dce6118d93d8f9c53d316dca3d909a3bb53e071e",
+      "sourceSha256": "782a5abe19e61e5adbdbeadb6aba85e34f25c16347b0bee76b7729e86559973e"
+    },
+    {
+      "id": "nail:meteor:45",
+      "name": "天坠流星",
+      "opaquePixels": 7054,
+      "bounds": {
+        "x": 8,
+        "y": 14,
+        "width": 112,
+        "height": 228
+      },
+      "sha256": "852731dd492276739bacc56a6a4adee68f675c9c3f39eaeba4bef6d80519de13",
+      "pixelSha256": "29c6acccb9d50b9a6a75e3bbb02eb5d3f1c20c96b142e5cf6486a03285e52b78",
+      "silhouetteSha256": "f7e0498b40ca8524762b6724f09ad934916bcdeeaf9535b95f1a3d5e8582c31b",
+      "sourceSha256": "8fb1f84a804b17eb9fab63717c7388f56685fe9a7e1e4d6316c8fda30ea9bb28"
+    },
+    {
+      "id": "nail:meteor:54",
+      "name": "星核镇锤",
+      "opaquePixels": 6585,
+      "bounds": {
+        "x": 8,
+        "y": 33,
+        "width": 112,
+        "height": 190
+      },
+      "sha256": "bcc86e55d48beb8da39ec28901f000adf328f0760dd145638f136458ec11ed65",
+      "pixelSha256": "a08a584b857c07c1ca2ad93edc61a1c22539c86a94e0337e2b7e1cdbd84f5d64",
+      "silhouetteSha256": "16b19e3b3fef66d84254ae6005904770996f0d864c4589ad0991c79262dc23fb",
+      "sourceSha256": "784e4bc3f4ca10314c17a75602fd6c8f521ba176820c53286fb8f127d6c59a6e"
+    },
+    {
+      "id": "nail:meteor:63",
+      "name": "银河摆锤",
+      "opaquePixels": 6814,
+      "bounds": {
+        "x": 8,
+        "y": 35,
+        "width": 112,
+        "height": 186
+      },
+      "sha256": "29e59a936ef61076d96603c15fff6ad403f8756d13227e43d30f4e19d41d2001",
+      "pixelSha256": "eabbaf041133977ecf98a04f78200d0001f4a3d34e62cfb7fd7d144c589048d9",
+      "silhouetteSha256": "258bb235734c331e33021fba8087444e2d8c700cc0ba1b00e93f551b85a4c54a",
+      "sourceSha256": "784e4bc3f4ca10314c17a75602fd6c8f521ba176820c53286fb8f127d6c59a6e"
+    },
+    {
+      "id": "nail:meteor:72",
+      "name": "碎月重星",
+      "opaquePixels": 6560,
+      "bounds": {
+        "x": 8,
+        "y": 40,
+        "width": 112,
+        "height": 175
+      },
+      "sha256": "1ff52bf276df5822e078daad1790c84027bc600966397ee9385fdb55768326f2",
+      "pixelSha256": "d275a3efd6c7b7e97e6706b36160e7e97419339ac618f1d452bb0c660e4b909f",
+      "silhouetteSha256": "bdf01183d4b38154c64a6f03c81e61bf44b84687eeeecd665aad8f5153e401e8",
+      "sourceSha256": "784e4bc3f4ca10314c17a75602fd6c8f521ba176820c53286fb8f127d6c59a6e"
+    },
+    {
+      "id": "nail:meteor:81",
+      "name": "天体锁链",
+      "opaquePixels": 5915,
+      "bounds": {
+        "x": 8,
+        "y": 26,
+        "width": 112,
+        "height": 204
+      },
+      "sha256": "e3fb32eb7b39286b2089744ccf1f8a9b72312b0fbb332c9c6bb4f085bc6d3864",
+      "pixelSha256": "7b6fb33fd83c78ac5d4aea35183737651d1598b20759cdb5e57b7dbfb24d0039",
+      "silhouetteSha256": "eff346aaf52b42f72b58fdb2b5ee2f235d177375b73c55b35c803b6db42e7a4b",
+      "sourceSha256": "18f3b1bbb98ce1eb7566096c3ef00e5c901025450f25c95cb846053ea83c3c2a"
+    },
+    {
+      "id": "nail:meteor:90",
+      "name": "宇宙流星锤",
+      "opaquePixels": 6786,
+      "bounds": {
+        "x": 8,
+        "y": 31,
+        "width": 112,
+        "height": 194
+      },
+      "sha256": "ac25ade52b939b0652b115999ef5cfd8ab757f099dcc75b4d826e36ce272c27b",
+      "pixelSha256": "09edf32a064ce6327a1851634366b673637ca58a2e11bdd86bc21348832df982",
+      "silhouetteSha256": "cf9bf34b3353beb1ef90dded4f1f362ac95568dabfbbcd9fbe9cab8538d71273",
+      "sourceSha256": "18f3b1bbb98ce1eb7566096c3ef00e5c901025450f25c95cb846053ea83c3c2a"
+    },
+    {
+      "id": "nail:meteor:99",
+      "name": "终极星核",
+      "opaquePixels": 7030,
+      "bounds": {
+        "x": 8,
+        "y": 33,
+        "width": 112,
+        "height": 190
+      },
+      "sha256": "a3d817378fa62bf59e03d9a5336a1efa8f48777e2efae19e3905a47ca609f193",
+      "pixelSha256": "ca59595e8804c7ec98d6d5f7780bc2d4763be3c397230e58180a9b3e17466919",
+      "silhouetteSha256": "e52e0870cc194fac94358455dc30c88d313611824ab849cfc946c66b4aa02d21",
+      "sourceSha256": "18f3b1bbb98ce1eb7566096c3ef00e5c901025450f25c95cb846053ea83c3c2a"
+    },
+    {
+      "id": "dagger:assassin:0",
+      "name": "匕首",
+      "opaquePixels": 2906,
+      "bounds": {
+        "x": 44,
+        "y": 40,
+        "width": 39,
+        "height": 176
+      },
+      "sha256": "819680586b7de758d1f357fe6e3440ff8d4acac6ccf19b614121f405375f63ed",
+      "pixelSha256": "ede8be597812225375e6ba1aedb91925f6ead4f79756c01dd068ac175f3edca6",
+      "silhouetteSha256": "b0e75df269dcf212ebf2673f3fd82ded70e1ccd09b68a51c1772ef9b51fdae5d",
+      "sourceSha256": "4873b61fd18517c14e6abbffd0d2a50cf90257973e741b687ddc34db9f4c4e86"
+    },
+    {
+      "id": "dagger:assassin:9",
+      "name": "淬毒短刃",
+      "opaquePixels": 3061,
+      "bounds": {
+        "x": 42,
+        "y": 40,
+        "width": 43,
+        "height": 176
+      },
+      "sha256": "1ad6252b0f00cf06dbcb0536b62246669d3676dcdecb4e8ce17fc45815740e97",
+      "pixelSha256": "8761ab94b958866bd65b749b993b6984e04421dbf7fff172b463c09d026c6440",
+      "silhouetteSha256": "06253474e351a16e3d617ceeaf751f4e387d65ab3c00bdca7d29eeb481c1d34e",
+      "sourceSha256": "7f864b8f88db4e276fbc77b0d44c9d551173fd52eb7ddf4c76dc7ea5fd856e25"
+    },
+    {
+      "id": "dagger:assassin:18",
+      "name": "暗影刃",
+      "opaquePixels": 2771,
+      "bounds": {
+        "x": 45,
+        "y": 40,
+        "width": 37,
+        "height": 176
+      },
+      "sha256": "ce775822524104d58774995644dd98ecdd2f30decb5e340239af2cb23f02a53c",
+      "pixelSha256": "fd7a706b0b2fd3805b6ebc4b6e8a8cd87fa458753c7e38c356b36dc66df9ea82",
+      "silhouetteSha256": "f288618a3f69d76a0f8a962c4cb3099b83fa2684c1bd6cf3ac391f56a8964918",
+      "sourceSha256": "9423d4d8666cd70c27e1f9d41b1254da40a1a157b616e8b2b1dc4a41f14fcb3c"
+    },
+    {
+      "id": "dagger:assassin:27",
+      "name": "刺客双刃",
+      "opaquePixels": 3954,
+      "bounds": {
+        "x": 40,
+        "y": 41,
+        "width": 48,
+        "height": 175
+      },
+      "sha256": "12209ddd42dcae35651b59e51199a534bd8519e1959c8f0e2ffc4b9e6ec81ae0",
+      "pixelSha256": "4dc463c1d109a926d78dfc6488ccf28ab31b945b0f26a6e855e56652556a91eb",
+      "silhouetteSha256": "e7dfc3e4cd9a189113845e9c26c194ad11f88227434cfdbe0ec42f9ac678b356",
+      "sourceSha256": "c352a3338a274eb50c22506bc430b40348c42fc82567235b9f64ddc46b47f9de"
+    },
+    {
+      "id": "dagger:assassin:36",
+      "name": "夜幕獠牙",
+      "opaquePixels": 5978,
+      "bounds": {
+        "x": 22,
+        "y": 40,
+        "width": 84,
+        "height": 176
+      },
+      "sha256": "2df78e1a302e6559ca9d1d8dbef8972e84f6fc3d5d63cd0196718b66b3e8076a",
+      "pixelSha256": "00045f219f8de6f34968b09386f07822b9975295dba7460281af5b0acf9dc0de",
+      "silhouetteSha256": "13db9ea75a3a3803d57157dd7f6fd56adc7988f84e565adc27adbcee9591f7b0",
+      "sourceSha256": "f4ebdc70b2c20a11c8e9b05bed289acadfa9f9e9b1c2d7431b3996629428273b"
+    },
+    {
+      "id": "dagger:assassin:45",
+      "name": "无声死神",
+      "opaquePixels": 3371,
+      "bounds": {
+        "x": 33,
+        "y": 42,
+        "width": 61,
+        "height": 174
+      },
+      "sha256": "a3db7c5421672cd0051b6551e988aa15123e9235c9c51135e6f88ffe601ffb4c",
+      "pixelSha256": "771cec9b860bfb05b486f110a6fcb6aa4b773b09737edcd22fd9b1159ea6f747",
+      "silhouetteSha256": "dd0e13bee682167ccf2175925312fc80a229e813ad1079d4a9bf66e6924a598c",
+      "sourceSha256": "c75e5ee787173fa97c78588698b9a548cbab2fe195824f0d5e7df7e92e35b23f"
+    },
+    {
+      "id": "dagger:assassin:54",
+      "name": "命运终剪",
+      "opaquePixels": 5280,
+      "bounds": {
+        "x": 23,
+        "y": 41,
+        "width": 81,
+        "height": 175
+      },
+      "sha256": "c1945415a3e3f35f5cba52aac0dbf9f10a426a2c38b12f0a76ebd448c424d846",
+      "pixelSha256": "1538a1ca2dbdbbb94075200cc658e75f4112d8987bab039577d23b77b1bdb7fd",
+      "silhouetteSha256": "e0d7babea04b0918e5668ca7635f541e16d66a03efa1ac760e2713af5503e3fa",
+      "sourceSha256": "c75e5ee787173fa97c78588698b9a548cbab2fe195824f0d5e7df7e92e35b23f"
+    },
+    {
+      "id": "dagger:assassin:63",
+      "name": "虚空短刃",
+      "opaquePixels": 4088,
+      "bounds": {
+        "x": 31,
+        "y": 41,
+        "width": 67,
+        "height": 175
+      },
+      "sha256": "f85ceff3074a6c76c647ac38172809786cfef979488e3abf7d74b263bf4c17b0",
+      "pixelSha256": "64addb08c4faf7ca27c9de09bdfa9dbc3c5bbc41168a784b8be96e10389a63a7",
+      "silhouetteSha256": "7c2590513fdbea436823eb3f722eb7024d15bc96509b296f68019d3dd142a678",
+      "sourceSha256": "c75e5ee787173fa97c78588698b9a548cbab2fe195824f0d5e7df7e92e35b23f"
+    },
+    {
+      "id": "dagger:assassin:72",
+      "name": "时隙獠牙",
+      "opaquePixels": 9032,
+      "bounds": {
+        "x": 16,
+        "y": 40,
+        "width": 96,
+        "height": 176
+      },
+      "sha256": "fb71ed562cc9a6cea6a4ba64d85dc2dc75dd3347453da4213cb186515bce5977",
+      "pixelSha256": "33dc3003641b4e9fae6a15368e8bcfc40decf98d1c75a8c505d13b987cd7c587",
+      "silhouetteSha256": "b4729f7f21470ff9d46a5f5b9feb0463769a9dfcf5feceaa13ff28cc5b638b6a",
+      "sourceSha256": "f89849c10081151070f34a52fedf69e1520cce5910b31da630ba526ad319cab3"
+    },
+    {
+      "id": "dagger:assassin:81",
+      "name": "无形裁决",
+      "opaquePixels": 6017,
+      "bounds": {
+        "x": 20,
+        "y": 40,
+        "width": 87,
+        "height": 176
+      },
+      "sha256": "38eb53bc9807a4fe6bd4a603ce24b2c0923fc238d66b6797ba44589f798081ef",
+      "pixelSha256": "3af33d7b29ffe4c27621ef40e2fb25d44ad792d1b8f1a485e69de76a732c7cfb",
+      "silhouetteSha256": "14eed698d950dbb654c4d57e97115c9f997f03d5f9f70372759ed62a0edf20f5",
+      "sourceSha256": "f89849c10081151070f34a52fedf69e1520cce5910b31da630ba526ad319cab3"
+    },
+    {
+      "id": "dagger:assassin:90",
+      "name": "绝命双星",
+      "opaquePixels": 5378,
+      "bounds": {
+        "x": 15,
+        "y": 40,
+        "width": 97,
+        "height": 176
+      },
+      "sha256": "67c9ed6141552e20487a3fbc7f410015e186440cd233ee8d09d70d5199fddf70",
+      "pixelSha256": "022cd6a9f1f84fdd8ea41da0c8468ef159d9d0fe949e0284c8b2610194f8dad3",
+      "silhouetteSha256": "8c0fab3eb8a43a9fed2fde8adf9410d2b03d99a304ce1319ea5c6328c07b9d89",
+      "sourceSha256": "f89849c10081151070f34a52fedf69e1520cce5910b31da630ba526ad319cab3"
+    },
+    {
+      "id": "dagger:assassin:99",
+      "name": "因果断刃",
+      "opaquePixels": 5951,
+      "bounds": {
+        "x": 28,
+        "y": 40,
+        "width": 72,
+        "height": 176
+      },
+      "sha256": "1bb0d417116415244171f78f0c75860c29abbe53f5a2c43c1df0a30b205cc922",
+      "pixelSha256": "714fcb567e84643c56d532b99dba08c691c4d43939df3da08288ae224aa6070b",
+      "silhouetteSha256": "b2d119ebdd83808c59dc6891b21568f5611225b2464873c9a41f80b65911722c",
+      "sourceSha256": "bd250bd3640d794c4aea9afbadd47af1fe07f55904fb6e113e694748017a7756"
+    },
+    {
+      "id": "iron:one-hand:100",
+      "name": "无尽之剑",
+      "opaquePixels": 3873,
+      "bounds": {
+        "x": 41,
+        "y": 9,
+        "width": 45,
+        "height": 239
+      },
+      "sha256": "57edad9cfd256585c6dc96743a8478c174167dc1bf965abc7a404d268001fc08",
+      "pixelSha256": "e6710408b787da32bcda66398111e541fa97c1594c4410cf1815251504e3345e",
+      "silhouetteSha256": "b6be708370fbf7ea73d65265c174fb4f5ee06f86edc5ca32b223a6ada0bea9ea",
+      "sourceSha256": "167e3623bd8ea256f3a435dd4451980e33430670179996a52df5e3c7c869e020"
+    }
+  ]
+}

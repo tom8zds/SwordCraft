@@ -10,7 +10,7 @@ import { formatDivineDate } from './game/divineCalendar'
 import { weaponRarity } from './game/rarity'
 import { loadGame, saveGame } from './game/storage'
 import type { GameEvent, GameState, RelicId, SwordLocation, Transition } from './game/types'
-import type { ConsumableKind, WeaponAtlas } from './pixi/contracts'
+import { MIN_WORLD_X, type ConsumableKind, type WeaponAtlas } from './pixi/contracts'
 import './styles.css'
 import './components/hud-calendar.css'
 
@@ -26,7 +26,7 @@ function App() {
   const [toast, setToast] = useState<{ message: string; tone: string; id: number } | null>(loaded.recovered ? { message: '炉火仍温，上一局已恢复。', tone: 'neutral', id: Date.now() } : null)
   const [sacrifices, setSacrifices] = useState<string[]>([])
   const [saveFailed, setSaveFailed] = useState(false)
-  const [cameraX, setCameraX] = useState(-420)
+  const [cameraX, setCameraX] = useState(MIN_WORLD_X)
   const [weaponAtlas, setWeaponAtlas] = useState<WeaponAtlas | null>(null)
   const lastHammerAt = useRef(0)
   const eventsSequence = useRef(0)

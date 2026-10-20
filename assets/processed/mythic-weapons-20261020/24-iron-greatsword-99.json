@@ -1,0 +1,103 @@
+{
+  "index": 24,
+  "id": "iron:greatsword:99",
+  "name": "终焉之剑",
+  "kind": "iron",
+  "path": "greatsword",
+  "level": 99,
+  "evolutionStage": 33,
+  "family": "greatsword",
+  "familyLabel": "双手剑",
+  "slug": "24-iron-greatsword-99",
+  "batch": "batch-15",
+  "design": "终焉之剑：宽重巨刃、钛铁装甲脊、碎陆裂纹与赤金熔线，厚重正面竖直。",
+  "file": "24-iron-greatsword-99.png",
+  "width": 128,
+  "height": 256,
+  "sha256": "ad09b0b8c3868841fe5438048f3426c4d9480ca9ca87bfb28bb059c05164a821",
+  "pixelSha256": "e643df423a81b7b81b8ec4cce12e48a71f2d6e20414a2c3ea75a8ede8f9a6158",
+  "silhouetteSha256": "42993c601bfbfbbea971c262a7ad1c4303386d713b035dac9e28ee2992ccefce",
+  "source": "assets/incoming/seedream-mythic-weapons-20261020/batch-15/image.png",
+  "sourceSha256": "bd250bd3640d794c4aea9afbadd47af1fe07f55904fb6e113e694748017a7756",
+  "sourceMetadata": "assets/incoming/seedream-mythic-weapons-20261020/batch-15/generation.json",
+  "sourceDimensions": {
+    "width": 2400,
+    "height": 1080
+  },
+  "sourceCrop": {
+    "x": 1858,
+    "y": 49,
+    "width": 413,
+    "height": 985
+  },
+  "sourceOpaquePixels": 136586,
+  "slotIndex": 2,
+  "slotBounds": {
+    "x": 1600,
+    "y": 0,
+    "width": 800,
+    "height": 1080
+  },
+  "acceptedSlot": true,
+  "sourceComponents": [
+    {
+      "x": 1858,
+      "y": 49,
+      "width": 413,
+      "height": 985,
+      "pixels": 135606
+    },
+    {
+      "x": 2187,
+      "y": 529,
+      "width": 24,
+      "height": 25,
+      "pixels": 353
+    },
+    {
+      "x": 1958,
+      "y": 596,
+      "width": 31,
+      "height": 41,
+      "pixels": 627
+    }
+  ],
+  "contentBounds": {
+    "x": 13,
+    "y": 8,
+    "width": 101,
+    "height": 240
+  },
+  "opaquePixels": 8172,
+  "greenSpill": 0,
+  "alpha": "binary; transparent RGB cleared",
+  "sampling": "nearest; proportional fit; no aspect stretching",
+  "provenance": {
+    "model": "doubao-seedream-5-0-pro-260628",
+    "references": [
+      {
+        "file": "assets/incoming/seedream-gameplay-heroes-20261019/sword/image.png",
+        "sha256": "020d4c02bfba115d70e9f82c035b78370bfcfc5742063fe2d12a33d98616e628"
+      }
+    ],
+    "requestBatch": "batch-15",
+    "rights": "生成素材受用户Volcengine Ark账户协议约束；仅参考既有铁剑像素材质，商业发布授权需账户持有人确认。"
+  },
+  "correction": null,
+  "actualObjectCount": 4,
+  "actualObjectIndex": 3,
+  "rejectedGeneratedObjects": [
+    {
+      "sourceBounds": {
+        "x": 730,
+        "y": 70,
+        "width": 380,
+        "height": 960
+      },
+      "actualObjectIndex": 1,
+      "reason": "付费原图额外生成第四件单剑，不属于任何本轮目录需求；仅保留原图，不进入runtime"
+    }
+  ],
+  "compositeSourceParts": null,
+  "visualAcceptance": "pending native contact-sheet and in-game inspection"
+}

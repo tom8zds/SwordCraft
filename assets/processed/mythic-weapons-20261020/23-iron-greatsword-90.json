@@ -1,0 +1,134 @@
+{
+  "index": 23,
+  "id": "iron:greatsword:90",
+  "name": "创世巨刃",
+  "kind": "iron",
+  "path": "greatsword",
+  "level": 90,
+  "evolutionStage": 30,
+  "family": "greatsword",
+  "familyLabel": "双手剑",
+  "slug": "23-iron-greatsword-90",
+  "batch": "batch-06",
+  "design": "创世巨刃：创世宽刃、层层天体装甲、金蓝核心与尖角护手，最大实体结构。",
+  "file": "23-iron-greatsword-90.png",
+  "width": 128,
+  "height": 256,
+  "sha256": "78854a0d19aacf2d29ba4ba2ac8269e83f4c41f903d6480b3d770d08d43c5cdc",
+  "pixelSha256": "e8af4b58bbd74b6bd2555f508a75a59c98213ff57d01e3e039f9208baea714e3",
+  "silhouetteSha256": "6cf7e60d738a9572d1f38a25e87bd5c42b2a4489a7445f2198f35e3a1cbfaff5",
+  "source": "assets/incoming/seedream-mythic-weapons-20261020/batch-06/image.png",
+  "sourceSha256": "11b3412ae2ab270a7b0f9bf217d72f9da91fe8e35a320857f4e0bfac082a0ad5",
+  "sourceMetadata": "assets/incoming/seedream-mythic-weapons-20261020/batch-06/generation.json",
+  "sourceDimensions": {
+    "width": 2400,
+    "height": 1080
+  },
+  "sourceCrop": {
+    "x": 196,
+    "y": 70,
+    "width": 459,
+    "height": 929
+  },
+  "sourceOpaquePixels": 175779,
+  "slotIndex": 0,
+  "slotBounds": {
+    "x": 0,
+    "y": 0,
+    "width": 800,
+    "height": 1080
+  },
+  "acceptedSlot": true,
+  "sourceComponents": [
+    {
+      "x": 210,
+      "y": 70,
+      "width": 445,
+      "height": 929,
+      "pixels": 174096
+    },
+    {
+      "x": 553,
+      "y": 332,
+      "width": 67,
+      "height": 110,
+      "pixels": 990
+    },
+    {
+      "x": 545,
+      "y": 385,
+      "width": 11,
+      "height": 11,
+      "pixels": 72
+    },
+    {
+      "x": 601,
+      "y": 556,
+      "width": 11,
+      "height": 11,
+      "pixels": 87
+    },
+    {
+      "x": 269,
+      "y": 565,
+      "width": 6,
+      "height": 5,
+      "pixels": 20
+    },
+    {
+      "x": 217,
+      "y": 604,
+      "width": 16,
+      "height": 17,
+      "pixels": 65
+    },
+    {
+      "x": 214,
+      "y": 621,
+      "width": 5,
+      "height": 6,
+      "pixels": 22
+    },
+    {
+      "x": 196,
+      "y": 627,
+      "width": 24,
+      "height": 24,
+      "pixels": 355
+    },
+    {
+      "x": 221,
+      "y": 665,
+      "width": 11,
+      "height": 11,
+      "pixels": 72
+    }
+  ],
+  "contentBounds": {
+    "x": 8,
+    "y": 14,
+    "width": 112,
+    "height": 227
+  },
+  "opaquePixels": 10489,
+  "greenSpill": 0,
+  "alpha": "binary; transparent RGB cleared",
+  "sampling": "nearest; proportional fit; no aspect stretching",
+  "provenance": {
+    "model": "doubao-seedream-5-0-pro-260628",
+    "references": [
+      {
+        "file": "assets/incoming/seedream-gameplay-heroes-20261019/sword/image.png",
+        "sha256": "020d4c02bfba115d70e9f82c035b78370bfcfc5742063fe2d12a33d98616e628"
+      }
+    ],
+    "requestBatch": "batch-06",
+    "rights": "生成素材受用户Volcengine Ark账户协议约束；仅参考既有铁剑像素材质，商业发布授权需账户持有人确认。"
+  },
+  "correction": null,
+  "actualObjectCount": 3,
+  "actualObjectIndex": 0,
+  "rejectedGeneratedObjects": [],
+  "compositeSourceParts": null,
+  "visualAcceptance": "pending native contact-sheet and in-game inspection"
+}

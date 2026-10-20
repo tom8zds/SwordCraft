@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { dailyTarget, RELICS, swordName, swordValue } from './content'
 import { armDragonScale, buyMerchantItem, buyRelic, createInitialState, disarmDragonScale, hammerSword, moveSword, refreshRelicOffers, ringSubmissionBell, useHourglass } from './engine'
 import type { GameState, HammerRecord } from './types'
+import { nextRandom, randomIndex } from './rng'
 
 function putFirstSwordOnAnvil(state: GameState): GameState {
   const swordId = state.swords[0].id
@@ -102,7 +103,16 @@ describe('铸剑核心规则', () => {
     const beforeMerchant = { ...initial, day: 3, merchantItems: initial.merchantItems.map((item) => ({ ...item, stock: 0 })) }
     const merchantDay = ringSubmissionBell(ringSubmissionBell(beforeMerchant, 1000).state, 2000).state
     expect(merchantDay.day).toBe(4)
-    expect(merchantDay.merchantItems).toEqual(initial.merchantItems)
+    let rngState = beforeMerchant.rngState
+    for (const item of merchantDay.merchantItems) {
+      if (item.type === 'iron' || item.type === 'dragon-scale' || item.type === 'hourglass') {
+        const picked = randomIndex(rngState, 3)
+        expect(item.stock).toBe(3 + picked.index)
+        rngState = picked.state
+      } else expect(item.stock).toBe(1)
+    }
+    expect(merchantDay.rngState).toBe(rngState)
+    expect(ringSubmissionBell(ringSubmissionBell(beforeMerchant, 1000).state, 2000).state).toEqual(merchantDay)
     const beforeReward = { ...initial, day: 9 }
     const milestone = ringSubmissionBell(ringSubmissionBell(beforeReward, 1000).state, 2000).state
     expect(milestone).toMatchObject({ day: 10, health: 2, coins: 5000n })
@@ -275,7 +285,8 @@ describe('铸剑核心规则', () => {
     expect(reward.state.relics).toEqual(relics)
     const submittedValue = swordValue(ready.swords[0])
     expect(reward.state.coins).toBe(submittedValue + submittedValue / 10n)
-    expect(reward.state.rngState).toBe(ready.rngState)
+    // 第20日的赠礼不再抽取，但商人到访仍独立抽取三项库存。
+    expect(reward.state.rngState).toBe(nextRandom(nextRandom(nextRandom(ready.rngState).state).state).state)
     expect(reward.state.milestoneDays).toContain(20)
     expect(reward.events).toContainEqual(expect.objectContaining({ type: 'message', message: expect.stringContaining('遗物架已满') }))
 
@@ -328,6 +339,46 @@ describe('铸剑核心规则', () => {
     expect(failed.discoveredNames).toEqual(['普通铁剑'])
   })
 
+  it.each(['iron', 'dragon-scale', 'hourglass'] as const)('商人到访后的%s可连续逐件购买，售罄不再扣钱或消耗命运', (type) => {
+    const initial = { ...createInitialState(54), day: 3, coins: 100_000n }
+    const arrival = ringSubmissionBell(ringSubmissionBell(initial, 1000).state, 2000).state
+    const item = arrival.merchantItems.find((candidate) => candidate.type === type)!
+    expect(item.stock).toBeGreaterThanOrEqual(3)
+    expect(item.stock).toBeLessThanOrEqual(5)
+    let state = arrival
+    for (let purchase = 1; purchase <= item.stock; purchase += 1) {
+      state = buyMerchantItem(state, item.id).state
+      expect(state.merchantItems.find((candidate) => candidate.id === item.id)?.stock).toBe(item.stock - purchase)
+      expect(state.coins).toBe(arrival.coins - item.price * BigInt(purchase))
+      expect(state.rngState).toBe(arrival.rngState)
+      expect(state.swords.length).toBe(arrival.swords.length + (type === 'iron' ? purchase : 0))
+      expect(state.dragonScales).toBe(type === 'dragon-scale' ? purchase : 0)
+      expect(state.hourglasses).toBe(type === 'hourglass' ? purchase : 0)
+    }
+    expect(buyMerchantItem(state, item.id).state).toBe(state)
+    if (type === 'iron') expect(new Set(state.swords.map((sword) => sword.id)).size).toBe(state.swords.length)
+  })
+
+  it('仅每四日到访抽取三个独立库存，普通过日和熄炉不补货', () => {
+    const seenStocks = new Set<number>()
+    for (let seed = 1; seed <= 30; seed += 1) {
+      const initial = { ...createInitialState(seed), day: 7, rngState: seed * 100_000 }
+      const arrival = ringSubmissionBell(ringSubmissionBell(initial, 1000).state, 2000).state
+      const stocked = arrival.merchantItems.filter((item) => item.type === 'iron' || item.type === 'dragon-scale' || item.type === 'hourglass')
+      for (const item of stocked) seenStocks.add(item.stock)
+      expect(arrival.rngState).toBe(nextRandom(nextRandom(nextRandom(initial.rngState).state).state).state)
+      const nextDay = ringSubmissionBell(ringSubmissionBell(arrival, 3000).state, 4000).state
+      expect(nextDay.merchantItems).toBe(arrival.merchantItems)
+      expect(nextDay.rngState).toBe(arrival.rngState)
+      const doomed = { ...initial, health: 1 }
+      const ended = ringSubmissionBell(ringSubmissionBell(doomed, 1000).state, 2000).state
+      expect(ended.gameOver).toBe(true)
+      expect(ended.rngState).toBe(doomed.rngState)
+      expect(ended.merchantItems).toBe(doomed.merchantItems)
+    }
+    expect(seenStocks).toEqual(new Set([3, 4, 5]))
+  })
+
   it('降级不退化已解锁形态，普通3级和6级节点以及旧调用保持原名', () => {
     expect(swordName({ kind: 'iron', level: 3, path: null })).toBe('精良铁剑')
     expect(swordName({ kind: 'iron', level: 6, path: null })).toBe('骑士大剑')
@@ -340,7 +391,7 @@ describe('铸剑核心规则', () => {
   })
 
   it('高等级的每个主要进化节点都有独立名称', () => {
-    const oneHand = [9, 18, 27, 36, 45, 54, 63, 72, 81, 90, 99].map((level) => swordName({ kind: 'iron', level, path: 'one-hand' }))
+    const oneHand = [9, 18, 27, 36, 45, 54, 63, 72, 81, 90, 99, 100].map((level) => swordName({ kind: 'iron', level, path: 'one-hand' }))
     const worldTree = [0, 9, 18, 27, 36, 45, 54, 63, 72, 81, 90, 99].map((level) => swordName({ kind: 'branch', level, path: 'world-tree' }))
     expect(new Set(oneHand).size).toBe(oneHand.length)
     expect(new Set(worldTree).size).toBe(worldTree.length)

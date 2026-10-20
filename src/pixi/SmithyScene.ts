@@ -9,6 +9,7 @@ import { createConsumable, createFurnishing, createSceneObjects, type SceneObjec
 import { HOOK_SPACING, HOOK_X, HOOK_Y, MIN_WORLD_WIDTH, MIN_WORLD_X, SCENE_HEIGHT, SCENE_WIDTH, type ConsumableKind, type HammerArtwork, type SceneFocus, type SmithySceneCallbacks, type SmithyTextures, type SwordArtwork, type WeaponTextures } from './contracts'
 import type { FurnishingTextures } from './furnishingAssets'
 import { ASCENSION_GOLD, WeaponFeedback, type WeaponAura } from './WeaponFeedback'
+import { HammerMotion, type HammerPose } from './HammerMotion'
 
 interface SwordView {
   root: Container
@@ -20,10 +21,13 @@ interface SwordView {
   aura: WeaponAura
   sword: Sword
   bounds: Rectangle
+  baseScale: number
+  baseRotation: number
 }
 
 interface SwordFeedbackState {
-  stage: number
+  catalogId: string
+  formLevel: number
   deadline: number | null
   startedAt: number
   active: boolean
@@ -35,6 +39,12 @@ interface SwordFeedbackState {
   scale: number
 }
 
+interface HammerPresentation {
+  color: number
+  strong: boolean
+  swordId: string
+}
+
 type Gesture =
   | { kind: 'camera'; pointerId: number; startX: number; cameraX: number }
   | { kind: 'sword'; pointerId: number; id: string; root: Container; startX: number; startY: number; offsetX: number; offsetY: number; moved: boolean; pointerX: number; pointerY: number }
@@ -44,15 +54,14 @@ type Gesture =
 const FORGE_ZONE = new Rectangle(172, 445, 445, 300)
 const ANVIL_ZONE = new Rectangle(720, 500, 550, 260)
 const SUBMISSION_ZONE = new Rectangle(1470, 715, 370, 255)
-const ITEM_HOME = new Rectangle(-322.5, 718, 265, 95)
+const ITEM_HOME = new Rectangle(825, 775, 310, 130)
 // 原生柜四层台面 y=222/314/407/495，图像等比放大 1.25 后真实底边落在950。
 const CABINET_SURFACES = [557.5, 672.5, 788.75, 898.75] as const
 const CABINET_SLOT_X = -297.5
 const CABINET_SLOT_STEP = 43.75
 const RELIC_ALPHA_BOTTOM: Readonly<Record<string, number>> = { 'soft-anvil': 129, 'tempered-gloves': 140, 'double-bell': 119, 'fate-thread': 129 }
 const HAMMER_SCALE = 0.74
-const HAMMER_REST = -0.12
-const HAMMER_IMPACT = -1.35
+const HAMMER_CONTACT = { x: 30, y: 85 }
 const ANVIL_CENTER = { x: 972, y: 610 }
 const TARGET_POSITIONS = {
   forge: { x: 392, y: 635, rotation: Math.PI / 2, scale: 0.78 },
@@ -73,7 +82,6 @@ export class SmithyScene {
   private readonly hooks = new Container({ label: 'world-hook-row' })
   private readonly swordLayer = new Container({ label: 'world-swords' })
   private readonly dragLayer = new Container({ label: 'world-drag' })
-  private readonly feedback = new Graphics()
   private readonly weaponFeedback = new WeaponFeedback()
   private readonly swordFeedback = new Map<string, SwordFeedbackState>()
   private readonly targetOutline = new Graphics()
@@ -100,11 +108,16 @@ export class SmithyScene {
   private lastVisibleLast = -1
   private enabled = true
   private disposed = false
-  private lastRecord = ''
-  private swingTime = 0
-  private sparkTime = 0
-  private sparkDuration = 0
-  private sparkColor = 0xc99556
+  private readonly hammerMotion = new HammerMotion<HammerPresentation>()
+  private readonly pendingEvolutionBursts = new Map<string, number>()
+  private readonly hammerContact = (result: HammerPresentation): void => {
+    this.weaponFeedback.impact(ANVIL_CENTER.x, ANVIL_CENTER.y, result.color, result.strong, this.now)
+    const color = this.pendingEvolutionBursts.get(result.swordId)
+    if (color === undefined) return
+    this.pendingEvolutionBursts.delete(result.swordId)
+    const view = this.swordViews.get(result.swordId)
+    if (view) this.weaponFeedback.burst(view.root.x, view.root.y, view.art.rotation, view.art.scale.x, color, this.now)
+  }
   private now = 0
   private pulseStep = -1
   private lastOdds = ''
@@ -135,11 +148,12 @@ export class SmithyScene {
     this.objects.counter.position.set(1640, 790)
     this.objects.bell.position.set(1760, 744.75)
     this.objects.relic.position.set(CABINET_SLOT_X, CABINET_SURFACES[0] - (138 - 80) * 58 / 160)
-    this.objects.merchant.position.set(1322, 700)
-    this.objects.sign.position.set(1625, 682)
+    // 240×360 等比画布的可见底部为原生 y=335，精确落地950。
+    this.objects.merchant.position.set(-575, 950 - (335 - 192) * 360 / 384)
+    this.objects.sign.position.set(1625, 870)
     this.world.addChild(this.objects.counter, this.objects.sign, this.swordLayer, this.shards)
     this.submissionValue.anchor.set(0.5)
-    this.submissionValue.position.set(1625, 682)
+    this.submissionValue.position.set(1625, 870)
     this.world.addChild(this.submissionValue, this.objects.bell, this.objects.relic, this.objects.merchant)
     this.objectTooltip.anchor.set(0.5, 1)
     this.objectTooltip.visible = false
@@ -154,18 +168,11 @@ export class SmithyScene {
     })
     const offeringLabel = new Text({ text: '上供台', eventMode: 'none', style: { fontFamily: 'monospace', fontSize: 22, fill: 0xffdf9b } })
     offeringLabel.anchor.set(0.5)
-    offeringLabel.position.set(1640, 900)
+    offeringLabel.position.set(1640, 987)
     this.world.addChild(offeringLabel)
     this.hammer.pivot.set(hammerMetadata.pivot.x, hammerMetadata.pivot.y)
-    // 锤面局部接触点 (30, 85) 在挥打峰值时精确映射到砧台中心。
-    const contactX = 30 - hammerMetadata.pivot.x
-    const contactY = 85 - hammerMetadata.pivot.y
-    this.hammer.position.set(
-      ANVIL_CENTER.x - (contactX * Math.cos(HAMMER_IMPACT) - contactY * Math.sin(HAMMER_IMPACT)) * HAMMER_SCALE,
-      ANVIL_CENTER.y - (contactX * Math.sin(HAMMER_IMPACT) + contactY * Math.cos(HAMMER_IMPACT)) * HAMMER_SCALE,
-    )
     this.hammer.scale.set(HAMMER_SCALE)
-    this.hammer.rotation = HAMMER_REST
+    this.applyHammerPose(this.hammerMotion.pose)
     this.hammer.eventMode = 'static'
     this.hammer.cursor = 'pointer'
     this.hammer.hitArea = new Polygon([16, 0, 304, 0, 304, 180, 207, 180, 207, 402, 123, 402, 123, 180, 16, 180])
@@ -173,15 +180,15 @@ export class SmithyScene {
     this.ringCore.anchor.set(0.5)
     this.ringCore.position.set(hammerMetadata.ring.x, hammerMetadata.ring.y)
     this.world.addChild(this.hammer)
-    this.scaleItem.position.set(-265, CABINET_SURFACES[2] - (141 - 80) * 68 / 160)
-    this.hourglassItem.position.set(-125, CABINET_SURFACES[2] - (141 - 80) * 68 / 160)
+    this.scaleItem.position.set(880, 840)
+    this.hourglassItem.position.set(1065, 840)
     this.equippedScale.position.set(1050, 663)
     this.equippedScale.scale.set(0.64)
     this.scaleCount.anchor.set(0.5)
     this.hourglassCount.anchor.set(0.5)
-    this.scaleCount.position.set(-265, 812)
-    this.hourglassCount.position.set(-125, 812)
-    this.world.addChild(this.scaleItem, this.hourglassItem, this.equippedScale, this.scaleCount, this.hourglassCount, this.targetOutline, this.feedback, this.dragLayer, this.weaponFeedback.particles, this.objectTooltip)
+    this.scaleCount.position.set(880, 890)
+    this.hourglassCount.position.set(1065, 890)
+    this.world.addChild(this.scaleItem, this.hourglassItem, this.equippedScale, this.scaleCount, this.hourglassCount, this.targetOutline, this.dragLayer, this.weaponFeedback.particles, this.objectTooltip)
     this.objects.bell.on('pointerdown', (event: FederatedPointerEvent) => { event.stopPropagation(); if (this.enabled && !this.gesture && event.button === 0) this.callbacks.onBell() })
     this.objects.relic.on('pointerdown', (event: FederatedPointerEvent) => { event.stopPropagation(); if (this.enabled && !this.gesture && event.button === 0) this.callbacks.onRelic() })
     this.objects.merchant.on('pointerdown', (event: FederatedPointerEvent) => { event.stopPropagation(); if (this.enabled && !this.gesture && event.button === 0) this.callbacks.onMerchant() })
@@ -262,13 +269,11 @@ export class SmithyScene {
         angle = end
       }
     }
-    const record = state.records[state.records.length - 1]
-    if (record && record.id !== this.lastRecord && record.at > Date.now() - 2000) {
-      this.lastRecord = record.id
-      this.swingTime = 0.32
-      this.sparkTime = record.result === 'great' ? 0.5 : 0.28
-      this.sparkDuration = this.sparkTime
-      this.sparkColor = RESULT_COLORS[record.result]
+    if (this.enabled && old && state.nextRecordSerial > old.nextRecordSerial) {
+      const record = state.records[state.records.length - 1]
+      if (record && record.at > Date.now() - 2000) {
+        this.hammerMotion.enqueue({ color: RESULT_COLORS[record.result], strong: record.result === 'great', swordId: record.swordId })
+      }
     }
     const rackCount = state.swords.filter((sword) => sword.location === 'rack').length
     const requiredWidth = Math.max(MIN_WORLD_WIDTH, HOOK_X + Math.max(20, rackCount + 2) * HOOK_SPACING + 150)
@@ -338,38 +343,21 @@ export class SmithyScene {
         else held.root.position.set(point.x, point.y)
       }
     }
-    if (this.swingTime > 0) {
-      this.swingTime = Math.max(0, this.swingTime - delta)
-      const progress = 1 - this.swingTime / 0.32
-      const swing = progress < 0.45 ? Math.sin(progress / 0.45 * Math.PI / 2) : progress <= 0.55 ? 1 : Math.sin((1 - progress) / 0.45 * Math.PI / 2)
-      this.hammer.rotation = HAMMER_REST + swing * (HAMMER_IMPACT - HAMMER_REST)
-    }
-    this.feedback.clear()
-    if (this.sparkTime > 0) {
-      this.sparkTime = Math.max(0, this.sparkTime - delta)
-      const age = (this.sparkDuration - this.sparkTime) * 1.8
-      for (let index = 0; index < (this.weaponFeedback.reducedMotion ? 4 : 12); index += 1) {
-        const angle = -Math.PI + index * Math.PI / 12
-        const distance = age * (60 + index % 4 * 22)
-        this.feedback.rect(ANVIL_CENTER.x + Math.cos(angle) * distance, ANVIL_CENTER.y + Math.sin(angle) * distance + age * age * 50, index % 3 === 0 ? 5 : 3, 3).fill({ color: this.sparkColor, alpha: Math.min(1, this.sparkTime * 4) })
-      }
-    }
+    this.applyHammerPose(this.hammerMotion.advance(Math.min(ticker.deltaMS, 50), this.hammerContact))
     for (const [id, effect] of this.swordFeedback) {
       const view = this.swordViews.get(id)
       if (view) {
         effect.x = view.root.x
         effect.y = view.root.y
-        effect.rotation = view.art.rotation
-        effect.scale = view.art.scale.x
+        effect.rotation = view.baseRotation
+        effect.scale = view.baseScale * (effect.active ? 1.2 : 1)
       }
       if (effect.active && effect.deadline !== null && this.now >= effect.deadline) {
         effect.active = false
         this.weaponFeedback.burst(effect.x, effect.y, effect.rotation, effect.scale, ASCENSION_GOLD, effect.deadline)
       }
       if (view) {
-        const progress = effect.active ? Math.max(0, Math.min(1, (this.now - effect.startedAt) / 1100)) : 0
-        const highlight = Math.max(0, (effect.highlightUntil - this.now) / 750)
-        this.weaponFeedback.updateAura(view.aura, view.art, progress * progress * (3 - 2 * progress), highlight, effect.color)
+        this.applySwordVisual(view, effect, this.now)
       }
     }
     this.weaponFeedback.tick(this.now)
@@ -381,6 +369,7 @@ export class SmithyScene {
   }
 
   cancelGesture(): void {
+    this.resetHammerMotion()
     if (!this.gesture) return
     if (this.gesture.kind === 'sword') {
       const view = this.swordViews.get(this.gesture.id)
@@ -411,7 +400,11 @@ export class SmithyScene {
         return
       }
     }
-    this.cancelGesture()
+    // 松开锤柄仅停止连击输入，已结算的挥打仍完整回到原位。
+    if (gesture.kind === 'hammer' && !cancelled) {
+      this.gesture = null
+      this.root.cursor = 'grab'
+    } else this.cancelGesture()
     if (!cancelled && gesture.kind === 'sword') {
       if (gesture.moved && location) this.callbacks.onSwordDrop(gesture.id, location)
       else if (!gesture.moved) this.callbacks.onSwordSelect(gesture.id)
@@ -438,20 +431,37 @@ export class SmithyScene {
 
   private updateWeaponArt(sprite: Sprite, sword: SwordArtwork): void {
     const entry = getWeaponCatalogEntry(sword)
-    const texture = this.weapons[entry.id]
-    if (!texture) throw new Error(`场景缺少独立武器素材：${entry.name}（${entry.id}）`)
-    sprite.texture = texture
+    const asset = this.weapons[entry.id]
+    if (!asset) throw new Error(`场景缺少独立武器素材：${entry.name}（${entry.id}）`)
+    sprite.texture = asset.texture
     sprite.label = entry.id
     sprite.tint = sword.heated ? 0xf2ac81 : 0xffffff
   }
 
+  private applyHammerPose(pose: HammerPose): void {
+    const x = HAMMER_CONTACT.x - this.hammerMetadata.pivot.x
+    const y = HAMMER_CONTACT.y - this.hammerMetadata.pivot.y
+    const cos = Math.cos(pose.rotation)
+    const sin = Math.sin(pose.rotation)
+    this.hammer.position.set(pose.x - (x * cos - y * sin) * HAMMER_SCALE, pose.y - (x * sin + y * cos) * HAMMER_SCALE)
+    this.hammer.rotation = pose.rotation
+  }
+
+  private resetHammerMotion(): void {
+    this.applyHammerPose(this.hammerMotion.cancel())
+    this.weaponFeedback.clearImpacts()
+    this.pendingEvolutionBursts.clear()
+  }
+
   private rebuildExtension(): void {
     this.backdrop.removeChildren().forEach((child) => child.destroy())
-    // 同一获准砖墙/地面条带镜像铺在负世界区域，柜子后不重复火炉建筑。
-    const left = new Sprite(this.textures.wallExtension)
-    left.scale.x = -1
-    left.position.x = 0
-    this.backdrop.addChild(left)
+    // 同一获准砖墙/地面条带覆盖负世界区域，柜后不重复火炉建筑。
+    for (let right = 0; right > MIN_WORLD_X; right -= this.textures.wallExtension.width) {
+      const left = new Sprite(this.textures.wallExtension)
+      left.scale.x = -1
+      left.position.x = right
+      this.backdrop.addChild(left)
+    }
     for (let x = SCENE_WIDTH, index = 0; x < this.worldWidth; x += this.textures.wallExtension.width, index += 1) {
       const sprite = new Sprite(this.textures.wallExtension)
       if (index % 2 === 0) {
@@ -515,6 +525,11 @@ export class SmithyScene {
         if (existing.sword !== sword) {
           this.updateWeaponArt(existing.art, sword)
           existing.sword = sword
+          const content = this.weapons[getWeaponCatalogEntry(sword).id].contentBounds
+          existing.bounds.x = content.x - existing.art.texture.width / 2
+          existing.bounds.y = content.y - existing.art.texture.height / 2
+          existing.bounds.width = content.width
+          existing.bounds.height = content.height
           this.updateSwordLabel(existing)
         }
         if (!(this.gesture?.kind === 'sword' && this.gesture.id === sword.id)) this.placeSword(existing, index)
@@ -545,7 +560,7 @@ export class SmithyScene {
     root.interactiveChildren = false
     root.hitArea = new Rectangle()
     root.cursor = 'grab'
-    const bounds = art.getLocalBounds()
+    const bounds = this.weapons[getWeaponCatalogEntry(sword).id].contentBounds
     root.on('pointerdown', (event: FederatedPointerEvent) => {
       event.stopPropagation()
       if (!this.enabled || this.gesture || event.button !== 0) return
@@ -554,37 +569,47 @@ export class SmithyScene {
       this.dragLayer.addChild(root)
       root.alpha = 0.82
     })
-    const view = { root, art, label, labelText, labelBacking, labelKey: '', aura, sword, bounds: new Rectangle(bounds.minX, bounds.minY, bounds.width, bounds.height) }
+    const view = { root, art, label, labelText, labelBacking, labelKey: '', aura, sword, bounds: new Rectangle(bounds.x - art.texture.width / 2, bounds.y - art.texture.height / 2, bounds.width, bounds.height), baseScale: 1, baseRotation: 0 }
     this.updateSwordLabel(view)
     return view
+  }
+
+  private weaponVisualScale(sword: SwordArtwork): number {
+    const entry = getWeaponCatalogEntry(sword)
+    const asset = this.weapons[entry.id]
+    // 宽大的法环不能把下一阶主体挤小；按真实内容高度归一，再应用形态成长。
+    return entry.visualScale * (entry.level >= 45 ? (entry.kind === 'dagger' ? 176 : 240) / asset.contentBounds.height : 1)
   }
 
   private placeSword(view: SwordView, explicitRackIndex?: number): void {
     if (!this.state) return
     if (view.root.parent !== this.swordLayer) this.swordLayer.addChild(view.root)
     view.root.alpha = 1
+    const visualScale = this.weaponVisualScale(view.sword)
     if (view.sword.location === 'rack') {
       const index = explicitRackIndex ?? this.state.swords.filter((sword) => sword.location === 'rack').findIndex((sword) => sword.id === view.sword.id)
       view.root.position.set(HOOK_X + index * HOOK_SPACING + 25, HOOK_Y + 84)
-      view.art.rotation = Math.PI
-      view.art.scale.set(0.85)
-      view.label.position.set(0, 126)
+      view.baseRotation = Math.PI
+      view.baseScale = 0.85 * visualScale
+      view.label.position.set(0, 220)
     } else {
       const pose = TARGET_POSITIONS[view.sword.location]
       view.root.position.set(pose.x, pose.y)
-      view.art.rotation = pose.rotation
-      view.art.scale.set(pose.scale)
-      view.label.position.set(0, Math.max(50, view.bounds.width * pose.scale / 2 + 8))
+      view.baseRotation = pose.rotation
+      view.baseScale = pose.scale * visualScale
+      view.label.position.set(0, Math.max(50, view.bounds.width * view.baseScale * 1.2 / 2 + 12))
     }
-    const { bounds, art } = view
-    const cos = Math.cos(art.rotation)
-    const sin = Math.sin(art.rotation)
-    const centerX = (bounds.x + bounds.width / 2) * art.scale.x
-    const centerY = (bounds.y + bounds.height / 2) * art.scale.y
-    const width = Math.abs(bounds.width * art.scale.x * cos) + Math.abs(bounds.height * art.scale.y * sin)
-    const height = Math.abs(bounds.width * art.scale.x * sin) + Math.abs(bounds.height * art.scale.y * cos)
-    const hitWidth = Math.min(view.sword.location === 'rack' ? HOOK_SPACING - 1 : 340, Math.max(52, width + 8))
-    const hitHeight = Math.min(300, Math.max(60, height + 8))
+    this.applySwordVisual(view, this.swordFeedback.get(view.sword.id), Date.now())
+    const { bounds } = view
+    const cos = Math.cos(view.baseRotation)
+    const sin = Math.sin(view.baseRotation)
+    const maxScale = view.baseScale * 1.2
+    const centerX = (bounds.x + bounds.width / 2) * maxScale
+    const centerY = (bounds.y + bounds.height / 2) * maxScale
+    const width = Math.abs(bounds.width * maxScale * cos) + Math.abs(bounds.height * maxScale * sin)
+    const height = Math.abs(bounds.width * maxScale * sin) + Math.abs(bounds.height * maxScale * cos)
+    const hitWidth = view.sword.location === 'rack' ? Math.min(HOOK_SPACING - 1, Math.max(52, width + 14)) : Math.max(52, width + 14)
+    const hitHeight = Math.max(60, height + 14)
     const hitArea = view.root.hitArea as Rectangle
     hitArea.x = centerX * cos - centerY * sin - hitWidth / 2
     hitArea.y = centerX * sin + centerY * cos - hitHeight / 2
@@ -603,6 +628,18 @@ export class SmithyScene {
     view.labelBacking.clear().roundRect(-56.4, 0, 112.8, height, 4).fill({ color: 0x17141c, alpha: 0.94 }).stroke({ color: rarity.color, width: 1.2, alpha: 0.8 })
   }
 
+  private applySwordVisual(view: SwordView, effect: SwordFeedbackState | undefined, now: number): void {
+    const active = view.sword.invincibleUntil !== null && view.sword.invincibleUntil > now
+    const moving = active && !this.weaponFeedback.reducedMotion
+    const phase = (now - (effect?.startedAt ?? now)) / 1000
+    view.art.scale.set(view.baseScale * (active ? 1.2 : 1))
+    view.art.position.set(moving ? Math.sin(phase * 37) * 2.6 : 0, moving ? Math.sin(phase * 43 + 0.8) * 1.8 : 0)
+    view.art.rotation = view.baseRotation + (moving ? Math.sin(phase * 31) * 0.025 : 0)
+    const progress = active && effect ? Math.max(0, Math.min(1, (now - effect.startedAt) / 1100)) : 0
+    const highlight = effect ? Math.max(0, (effect.highlightUntil - now) / 750) : 0
+    this.weaponFeedback.updateAura(view.aura, view.art, progress * progress * (3 - 2 * progress), highlight, effect?.color ?? ASCENSION_GOLD)
+  }
+
   private updateSwordFeedback(state: GameState): void {
     const now = Date.now()
     // 从绝对截止时间还原渐金进度；读档、换位和沙漏不会重新开始无敌时长。
@@ -616,23 +653,27 @@ export class SmithyScene {
       const pose = sword.location === 'rack' ? null : TARGET_POSITIONS[sword.location]
       const x = view?.root.x ?? (pose?.x ?? HOOK_X + index * HOOK_SPACING + 25)
       const y = view?.root.y ?? (pose?.y ?? HOOK_Y + 84)
-      const rotation = view?.art.rotation ?? (pose?.rotation ?? Math.PI)
-      const scale = view?.art.scale.x ?? (pose?.scale ?? 0.85)
+      const rotation = view?.baseRotation ?? (pose?.rotation ?? Math.PI)
+      const scale = (view?.baseScale ?? (pose?.scale ?? 0.85) * this.weaponVisualScale(sword)) * (sword.invincibleUntil !== null && sword.invincibleUntil > now ? 1.2 : 1)
+      const entry = getWeaponCatalogEntry(sword)
+      const catalogId = entry.id
       let effect = this.swordFeedback.get(sword.id)
       if (!effect) {
-        effect = { stage: sword.evolutionStage, deadline: sword.invincibleUntil, startedAt: (sword.invincibleUntil ?? now) - duration, active: sword.invincibleUntil !== null && sword.invincibleUntil > now, highlightUntil: 0, color: weaponRarity(sword.level).color, x, y, rotation, scale }
+        effect = { catalogId, formLevel: entry.level, deadline: sword.invincibleUntil, startedAt: (sword.invincibleUntil ?? now) - duration, active: sword.invincibleUntil !== null && sword.invincibleUntil > now, highlightUntil: 0, color: weaponRarity(sword.level).color, x, y, rotation, scale }
         this.swordFeedback.set(sword.id, effect)
       } else {
         if (effect.active && effect.deadline !== null && effect.deadline <= now) {
           this.weaponFeedback.burst(x, y, rotation, scale, ASCENSION_GOLD, effect.deadline)
           effect.active = false
         }
-        if (sword.evolutionStage > effect.stage) {
+        if (catalogId !== effect.catalogId && entry.level > effect.formLevel) {
           effect.highlightUntil = now + 750
           effect.color = weaponRarity(sword.level).color
-          this.weaponFeedback.burst(x, y, rotation, scale, effect.color, now)
+          if (sword.location === 'anvil' && this.enabled) this.pendingEvolutionBursts.set(sword.id, effect.color)
+          else this.weaponFeedback.burst(x, y, rotation, scale, effect.color, now)
         }
-        effect.stage = sword.evolutionStage
+        effect.catalogId = catalogId
+        effect.formLevel = entry.level
         if (effect.deadline !== sword.invincibleUntil) {
           effect.deadline = sword.invincibleUntil
           effect.startedAt = (sword.invincibleUntil ?? now) - duration
@@ -644,8 +685,7 @@ export class SmithyScene {
         effect.scale = scale
       }
       if (view) {
-        const progress = effect.active ? Math.max(0, Math.min(1, (now - effect.startedAt) / 1100)) : 0
-        this.weaponFeedback.updateAura(view.aura, view.art, progress * progress * (3 - 2 * progress), Math.max(0, (effect.highlightUntil - now) / 750), effect.color)
+        this.applySwordVisual(view, effect, now)
       }
     }
     for (const id of this.swordFeedback.keys()) if (!live.has(id)) this.swordFeedback.delete(id)

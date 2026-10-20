@@ -1,4 +1,4 @@
-import { IRON_PATHS, swordName } from './content'
+import { IRON_PATHS, swordEvolutionStage, swordName } from './content'
 import { createInitialState } from './engine'
 import { buildCalendarEntries } from './divineCalendar'
 import type { GameState, Sword } from './types'
@@ -54,7 +54,7 @@ function deserialize(value: unknown): GameState {
   }
   const restoreAndBindSword = (rawSword: Sword): Sword => {
     const sword = restoreSword(rawSword)
-    const stage = Math.max(sword.evolutionStage, Math.floor(sword.level / 3))
+    const stage = swordEvolutionStage(sword)
     if (sword.kind !== 'iron' || sword.path || stage < 3) return sword
     const picked = randomIndex(rngState, IRON_PATHS.length)
     rngState = picked.state
@@ -67,7 +67,7 @@ function deserialize(value: unknown): GameState {
   if (lastHammer) {
     const snapshotSword = lastHammer.sword
     const current = swords.find((sword) => sword.id === snapshotSword.id)
-    if (current?.path && snapshotSword.kind === 'iron' && !snapshotSword.path && Math.max(snapshotSword.evolutionStage, Math.floor(snapshotSword.level / 3)) >= 3) {
+    if (current?.path && snapshotSword.kind === 'iron' && !snapshotSword.path && swordEvolutionStage(snapshotSword) >= 3) {
       lastHammer = { ...lastHammer, sword: { ...snapshotSword, path: current.path } }
     } else lastHammer = { ...lastHammer, sword: restoreAndBindSword(snapshotSword) }
   }

@@ -57,12 +57,13 @@ describe('等级风险与每剑锻造补偿', () => {
 
   it('等级提高会增加风险，但高等级封顶仍低于旧破坏8%和损伤17%', () => {
     const state = onAnvil()
-    const odds = [0, 1, 8, 16, 99].map((level) => effectiveOdds(state, { ...anvilSword(state), level }))
+    const odds = [0, 1, 8, 16, 99, 100].map((level) => effectiveOdds(state, { ...anvilSword(state), level }))
     for (let index = 1; index < 4; index += 1) {
       expect(odds[index].destroyed).toBeGreaterThan(odds[index - 1].destroyed)
       expect(odds[index].damaged).toBeGreaterThan(odds[index - 1].damaged)
     }
     expect(odds[4]).toEqual(odds[3])
+    expect(odds[5]).toEqual(odds[4])
     expect(odds[4].destroyed).toBeLessThan(8)
     expect(odds[4].damaged).toBeLessThan(17)
     for (const weights of odds) expect(Object.values(weights).reduce((sum, weight) => sum + weight, 0)).toBeCloseTo(100)

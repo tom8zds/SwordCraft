@@ -93,7 +93,7 @@ async function startPreview() {
   const swords: Container[] = []
   const template = createInitialState().swords[0]
   const entry = getWeaponCatalogEntry(template)
-  const weaponTexture = weaponTextures[entry.id]
+  const weaponTexture = weaponTextures[entry.id]?.texture
   if (!weaponTexture) throw new Error(`预览缺少独立武器素材：${entry.name}`)
   const hookTexture = assets[`${base}${hookLayout.file}`]
   hookTexture.source.scaleMode = 'nearest'

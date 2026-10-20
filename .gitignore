@@ -7,3 +7,5 @@ dist/
 .env.*
 !.env.example
 .download-urls.json
+# 用户提供的第三方造型参考仅留本地，来源与哈希记入素材记录。
+assets/incoming/seedream-mythic-weapons-20261020/references/infinity-blade-user-reference.jpg

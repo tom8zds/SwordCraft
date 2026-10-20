@@ -1,0 +1,78 @@
+{
+  "index": 29,
+  "id": "iron:sword-shield:45",
+  "name": "永恒壁垒",
+  "kind": "iron",
+  "path": "sword-shield",
+  "level": 45,
+  "evolutionStage": 15,
+  "family": "sword-shield",
+  "familyLabel": "剑盾",
+  "slug": "29-iron-sword-shield-45",
+  "batch": "batch-06",
+  "design": "永恒壁垒：长枪刃与窄长门板盾前后相叠，银铁枪尖、盾边铆钉、蓝宝石核心。",
+  "file": "29-iron-sword-shield-45.png",
+  "width": 128,
+  "height": 256,
+  "sha256": "e2a62389a82c645982984506614207742770d3d3033287683eaaeb6fb38c8b0d",
+  "pixelSha256": "ca690bd54cfbf1333b4a45b3e2594805a02bdeaaf7420222fdf6a8fd6a421b64",
+  "silhouetteSha256": "69659772e1eed54fe1062f3332e031983ebdcaa3e720a846a1d1601d178b7a9c",
+  "source": "assets/incoming/seedream-mythic-weapons-20261020/batch-06/image.png",
+  "sourceSha256": "11b3412ae2ab270a7b0f9bf217d72f9da91fe8e35a320857f4e0bfac082a0ad5",
+  "sourceMetadata": "assets/incoming/seedream-mythic-weapons-20261020/batch-06/generation.json",
+  "sourceDimensions": {
+    "width": 2400,
+    "height": 1080
+  },
+  "sourceCrop": {
+    "x": 994,
+    "y": 88,
+    "width": 383,
+    "height": 914
+  },
+  "sourceOpaquePixels": 188467,
+  "slotIndex": 1,
+  "slotBounds": {
+    "x": 800,
+    "y": 0,
+    "width": 800,
+    "height": 1080
+  },
+  "acceptedSlot": true,
+  "sourceComponents": [
+    {
+      "x": 994,
+      "y": 88,
+      "width": 383,
+      "height": 914,
+      "pixels": 188467
+    }
+  ],
+  "contentBounds": {
+    "x": 13,
+    "y": 8,
+    "width": 101,
+    "height": 240
+  },
+  "opaquePixels": 13051,
+  "greenSpill": 0,
+  "alpha": "binary; transparent RGB cleared",
+  "sampling": "nearest; proportional fit; no aspect stretching",
+  "provenance": {
+    "model": "doubao-seedream-5-0-pro-260628",
+    "references": [
+      {
+        "file": "assets/incoming/seedream-gameplay-heroes-20261019/sword/image.png",
+        "sha256": "020d4c02bfba115d70e9f82c035b78370bfcfc5742063fe2d12a33d98616e628"
+      }
+    ],
+    "requestBatch": "batch-06",
+    "rights": "生成素材受用户Volcengine Ark账户协议约束；仅参考既有铁剑像素材质，商业发布授权需账户持有人确认。"
+  },
+  "correction": null,
+  "actualObjectCount": 3,
+  "actualObjectIndex": 1,
+  "rejectedGeneratedObjects": [],
+  "compositeSourceParts": null,
+  "visualAcceptance": "pending native contact-sheet and in-game inspection"
+}

@@ -1,0 +1,477 @@
+{
+  "index": 47,
+  "id": "branch:world-tree:99",
+  "name": "星海神木",
+  "kind": "branch",
+  "path": "world-tree",
+  "level": 99,
+  "evolutionStage": 33,
+  "family": "branch",
+  "familyLabel": "树枝",
+  "slug": "47-branch-world-tree-99",
+  "batch": "batch-10",
+  "design": "星海神木：最厚神树躯干、枝冠包住星海圆环、根网与金青星体，竖直。",
+  "file": "47-branch-world-tree-99.png",
+  "width": 128,
+  "height": 256,
+  "sha256": "e0beb706ceeb4325f4589581c8fb92e5f6421f3dcfbd1a0e040a55917ed4077d",
+  "pixelSha256": "92678e9e8c99e31e914ca1ed870d6139567ec52d7e21330edda72325cae96d2c",
+  "silhouetteSha256": "63279aeae9a129d0e7c70c70bf5b49e22eb951f9f89948c2dbcc3aeacf3bc885",
+  "source": "assets/incoming/seedream-mythic-weapons-20261020/batch-10/image.png",
+  "sourceSha256": "8fb1f84a804b17eb9fab63717c7388f56685fe9a7e1e4d6316c8fda30ea9bb28",
+  "sourceMetadata": "assets/incoming/seedream-mythic-weapons-20261020/batch-10/generation.json",
+  "sourceDimensions": {
+    "width": 2400,
+    "height": 1080
+  },
+  "sourceCrop": {
+    "x": 768,
+    "y": 43,
+    "width": 892,
+    "height": 994
+  },
+  "sourceOpaquePixels": 494102,
+  "slotIndex": 1,
+  "slotBounds": {
+    "x": 800,
+    "y": 0,
+    "width": 800,
+    "height": 1080
+  },
+  "acceptedSlot": true,
+  "sourceComponents": [
+    {
+      "x": 768,
+      "y": 43,
+      "width": 892,
+      "height": 994,
+      "pixels": 492720
+    },
+    {
+      "x": 1086,
+      "y": 55,
+      "width": 7,
+      "height": 18,
+      "pixels": 43
+    },
+    {
+      "x": 984,
+      "y": 113,
+      "width": 17,
+      "height": 32,
+      "pixels": 179
+    },
+    {
+      "x": 935,
+      "y": 128,
+      "width": 10,
+      "height": 3,
+      "pixels": 14
+    },
+    {
+      "x": 1303,
+      "y": 157,
+      "width": 4,
+      "height": 5,
+      "pixels": 13
+    },
+    {
+      "x": 1326,
+      "y": 157,
+      "width": 5,
+      "height": 6,
+      "pixels": 13
+    },
+    {
+      "x": 1594,
+      "y": 257,
+      "width": 11,
+      "height": 12,
+      "pixels": 39
+    },
+    {
+      "x": 919,
+      "y": 342,
+      "width": 6,
+      "height": 6,
+      "pixels": 34
+    },
+    {
+      "x": 821,
+      "y": 366,
+      "width": 5,
+      "height": 12,
+      "pixels": 22
+    },
+    {
+      "x": 818,
+      "y": 371,
+      "width": 7,
+      "height": 13,
+      "pixels": 28
+    },
+    {
+      "x": 1561,
+      "y": 402,
+      "width": 8,
+      "height": 4,
+      "pixels": 14
+    },
+    {
+      "x": 1561,
+      "y": 415,
+      "width": 5,
+      "height": 5,
+      "pixels": 17
+    },
+    {
+      "x": 1212,
+      "y": 418,
+      "width": 10,
+      "height": 9,
+      "pixels": 37
+    },
+    {
+      "x": 1223,
+      "y": 428,
+      "width": 6,
+      "height": 8,
+      "pixels": 24
+    },
+    {
+      "x": 1576,
+      "y": 428,
+      "width": 3,
+      "height": 7,
+      "pixels": 12
+    },
+    {
+      "x": 1569,
+      "y": 431,
+      "width": 4,
+      "height": 6,
+      "pixels": 18
+    },
+    {
+      "x": 1124,
+      "y": 433,
+      "width": 11,
+      "height": 5,
+      "pixels": 35
+    },
+    {
+      "x": 1224,
+      "y": 434,
+      "width": 15,
+      "height": 18,
+      "pixels": 89
+    },
+    {
+      "x": 1205,
+      "y": 443,
+      "width": 7,
+      "height": 9,
+      "pixels": 23
+    },
+    {
+      "x": 859,
+      "y": 445,
+      "width": 5,
+      "height": 4,
+      "pixels": 15
+    },
+    {
+      "x": 1170,
+      "y": 450,
+      "width": 8,
+      "height": 11,
+      "pixels": 44
+    },
+    {
+      "x": 868,
+      "y": 505,
+      "width": 5,
+      "height": 13,
+      "pixels": 27
+    },
+    {
+      "x": 1522,
+      "y": 519,
+      "width": 4,
+      "height": 7,
+      "pixels": 25
+    },
+    {
+      "x": 1542,
+      "y": 567,
+      "width": 6,
+      "height": 8,
+      "pixels": 22
+    },
+    {
+      "x": 1497,
+      "y": 576,
+      "width": 4,
+      "height": 3,
+      "pixels": 12
+    },
+    {
+      "x": 1562,
+      "y": 596,
+      "width": 3,
+      "height": 5,
+      "pixels": 12
+    },
+    {
+      "x": 1548,
+      "y": 599,
+      "width": 5,
+      "height": 7,
+      "pixels": 24
+    },
+    {
+      "x": 851,
+      "y": 610,
+      "width": 7,
+      "height": 5,
+      "pixels": 18
+    },
+    {
+      "x": 1567,
+      "y": 617,
+      "width": 4,
+      "height": 4,
+      "pixels": 14
+    },
+    {
+      "x": 1538,
+      "y": 633,
+      "width": 5,
+      "height": 6,
+      "pixels": 19
+    },
+    {
+      "x": 1467,
+      "y": 636,
+      "width": 60,
+      "height": 81,
+      "pixels": 249
+    },
+    {
+      "x": 905,
+      "y": 649,
+      "width": 16,
+      "height": 24,
+      "pixels": 77
+    },
+    {
+      "x": 1553,
+      "y": 649,
+      "width": 5,
+      "height": 4,
+      "pixels": 14
+    },
+    {
+      "x": 1530,
+      "y": 655,
+      "width": 5,
+      "height": 8,
+      "pixels": 16
+    },
+    {
+      "x": 921,
+      "y": 673,
+      "width": 14,
+      "height": 18,
+      "pixels": 57
+    },
+    {
+      "x": 934,
+      "y": 691,
+      "width": 14,
+      "height": 16,
+      "pixels": 53
+    },
+    {
+      "x": 1568,
+      "y": 697,
+      "width": 7,
+      "height": 3,
+      "pixels": 18
+    },
+    {
+      "x": 925,
+      "y": 705,
+      "width": 7,
+      "height": 2,
+      "pixels": 12
+    }
+  ],
+  "contentBounds": {
+    "x": 8,
+    "y": 56,
+    "width": 112,
+    "height": 144
+  },
+  "opaquePixels": 5046,
+  "greenSpill": 0,
+  "alpha": "binary; transparent RGB cleared",
+  "sampling": "nearest; proportional fit; no aspect stretching",
+  "provenance": {
+    "model": "doubao-seedream-5-0-pro-260628",
+    "references": [
+      {
+        "file": "assets/incoming/seedream-gameplay-heroes-20261019/sword/image.png",
+        "sha256": "020d4c02bfba115d70e9f82c035b78370bfcfc5742063fe2d12a33d98616e628"
+      }
+    ],
+    "requestBatch": "batch-10",
+    "rights": "生成素材受用户Volcengine Ark账户协议约束；仅参考既有铁剑像素材质，商业发布授权需账户持有人确认。"
+  },
+  "correction": {
+    "reason": "本轮星海神木原图误混入完整门盾和骑枪，移除该误生结构；以既有真实神木主干和枝冠结合本轮真实星环、中心法阵，形成独立新神木武器",
+    "operation": "historical source RGB/alpha proportional composition with manually selected new-source annular and elliptical raster masks; no procedural tree geometry",
+    "paidRegenerations": 0,
+    "compositeMaskSha256": "cbea0e43e24ea43df899148849eafd15dc6f525aeca05b3c72ac8f6d0334291b",
+    "sourceParts": [
+      {
+        "source": "assets/incoming/seedream-catalog72-20261019/47-branch-world-tree-99/image.png",
+        "sha256": "661af7c2e9219964d77a6adccb1864467341dc5eae669a4455d92fc4fccc7f51",
+        "sourceRect": {
+          "x": 290,
+          "y": 88,
+          "width": 968,
+          "height": 1875
+        },
+        "destinationRect": {
+          "x": 169,
+          "y": 30,
+          "width": 562,
+          "height": 1089
+        },
+        "role": "真实星叶枝冠、木纹主干与盘根握柄"
+      },
+      {
+        "source": "assets/incoming/seedream-mythic-weapons-20261020/batch-10/image.png",
+        "role": "本轮外星环",
+        "sourceRegion": {
+          "x": 750,
+          "y": 30,
+          "width": 900,
+          "height": 1000
+        },
+        "mask": {
+          "ellipseCenter": [
+            1197,
+            484
+          ],
+          "radii": [
+            407,
+            407
+          ],
+          "radiusSquaredRange": [
+            0.77,
+            1.08
+          ],
+          "colorFilter": "cyan-blue or gold; excludes green and spear vertical band x1320..1410"
+        },
+        "retainedPixels": 30242,
+        "sha256": "8fb1f84a804b17eb9fab63717c7388f56685fe9a7e1e4d6316c8fda30ea9bb28"
+      },
+      {
+        "source": "assets/incoming/seedream-mythic-weapons-20261020/batch-10/image.png",
+        "role": "本轮青金中心宝石与圆形法阵",
+        "sourceRegion": {
+          "x": 1029,
+          "y": 300,
+          "width": 330,
+          "height": 330
+        },
+        "mask": {
+          "ellipseCenter": [
+            165,
+            165
+          ],
+          "radii": [
+            157,
+            157
+          ]
+        },
+        "retainedPixels": 73646,
+        "sha256": "8fb1f84a804b17eb9fab63717c7388f56685fe9a7e1e4d6316c8fda30ea9bb28"
+      }
+    ]
+  },
+  "actualObjectCount": 3,
+  "actualObjectIndex": 1,
+  "rejectedGeneratedObjects": [],
+  "compositeSourceParts": [
+    {
+      "source": "assets/incoming/seedream-catalog72-20261019/47-branch-world-tree-99/image.png",
+      "sha256": "661af7c2e9219964d77a6adccb1864467341dc5eae669a4455d92fc4fccc7f51",
+      "sourceRect": {
+        "x": 290,
+        "y": 88,
+        "width": 968,
+        "height": 1875
+      },
+      "destinationRect": {
+        "x": 169,
+        "y": 30,
+        "width": 562,
+        "height": 1089
+      },
+      "role": "真实星叶枝冠、木纹主干与盘根握柄"
+    },
+    {
+      "source": "assets/incoming/seedream-mythic-weapons-20261020/batch-10/image.png",
+      "role": "本轮外星环",
+      "sourceRegion": {
+        "x": 750,
+        "y": 30,
+        "width": 900,
+        "height": 1000
+      },
+      "mask": {
+        "ellipseCenter": [
+          1197,
+          484
+        ],
+        "radii": [
+          407,
+          407
+        ],
+        "radiusSquaredRange": [
+          0.77,
+          1.08
+        ],
+        "colorFilter": "cyan-blue or gold; excludes green and spear vertical band x1320..1410"
+      },
+      "retainedPixels": 30242,
+      "sha256": "8fb1f84a804b17eb9fab63717c7388f56685fe9a7e1e4d6316c8fda30ea9bb28"
+    },
+    {
+      "source": "assets/incoming/seedream-mythic-weapons-20261020/batch-10/image.png",
+      "role": "本轮青金中心宝石与圆形法阵",
+      "sourceRegion": {
+        "x": 1029,
+        "y": 300,
+        "width": 330,
+        "height": 330
+      },
+      "mask": {
+        "ellipseCenter": [
+          165,
+          165
+        ],
+        "radii": [
+          157,
+          157
+        ]
+      },
+      "retainedPixels": 73646,
+      "sha256": "8fb1f84a804b17eb9fab63717c7388f56685fe9a7e1e4d6316c8fda30ea9bb28"
+    }
+  ],
+  "visualAcceptance": "pending native contact-sheet and in-game inspection"
+}

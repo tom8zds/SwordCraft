@@ -39,7 +39,7 @@ export function createSceneObjects(textures: FurnishingTextures): SceneObjects {
   counter.children[0].y = 79
   const bell = createFurnishing(textures, 'offering-bell', 72, 84, true)
   const relic = createFurnishing(textures, 'relic-altar', 58, 58, true)
-  const merchant = createFurnishing(textures, 'merchant-entrance', 170, 255, true)
+  const merchant = createFurnishing(textures, 'merchant-entrance', 240, 360, true)
   const cabinet = createFurnishing(textures, 'cabinet', 384, 640)
   const sign = new Container({ label: 'offering-sign', eventMode: 'none' })
   // 裁去透明留白，以九宫格延展纸面，保留木框边角的原生比例。

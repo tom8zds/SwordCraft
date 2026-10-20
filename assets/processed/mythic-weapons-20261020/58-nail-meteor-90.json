@@ -1,0 +1,131 @@
+{
+  "index": 58,
+  "id": "nail:meteor:90",
+  "name": "宇宙流星锤",
+  "kind": "nail",
+  "path": "meteor",
+  "level": 90,
+  "evolutionStage": 30,
+  "family": "nail",
+  "familyLabel": "铁钉",
+  "slug": "58-nail-meteor-90",
+  "batch": "batch-12",
+  "design": "宇宙流星锤：超厚多棱星核锤头、复合粗链、三重天体环和陨晶装甲。",
+  "file": "58-nail-meteor-90.png",
+  "width": 128,
+  "height": 256,
+  "sha256": "ac25ade52b939b0652b115999ef5cfd8ab757f099dcc75b4d826e36ce272c27b",
+  "pixelSha256": "09edf32a064ce6327a1851634366b673637ca58a2e11bdd86bc21348832df982",
+  "silhouetteSha256": "cf9bf34b3353beb1ef90dded4f1f362ac95568dabfbbcd9fbe9cab8538d71273",
+  "source": "assets/incoming/seedream-mythic-weapons-20261020/batch-12/image.png",
+  "sourceSha256": "18f3b1bbb98ce1eb7566096c3ef00e5c901025450f25c95cb846053ea83c3c2a",
+  "sourceMetadata": "assets/incoming/seedream-mythic-weapons-20261020/batch-12/generation.json",
+  "sourceDimensions": {
+    "width": 2400,
+    "height": 1080
+  },
+  "sourceCrop": {
+    "x": 860,
+    "y": 72,
+    "width": 714,
+    "height": 917
+  },
+  "sourceOpaquePixels": 194478,
+  "slotIndex": 1,
+  "slotBounds": {
+    "x": 800,
+    "y": 0,
+    "width": 800,
+    "height": 1080
+  },
+  "acceptedSlot": true,
+  "sourceComponents": [
+    {
+      "x": 1301,
+      "y": 72,
+      "width": 4,
+      "height": 4,
+      "pixels": 13
+    },
+    {
+      "x": 860,
+      "y": 102,
+      "width": 714,
+      "height": 887,
+      "pixels": 194260
+    },
+    {
+      "x": 1235,
+      "y": 135,
+      "width": 14,
+      "height": 18,
+      "pixels": 155
+    },
+    {
+      "x": 962,
+      "y": 379,
+      "width": 9,
+      "height": 5,
+      "pixels": 22
+    },
+    {
+      "x": 1538,
+      "y": 402,
+      "width": 4,
+      "height": 5,
+      "pixels": 16
+    },
+    {
+      "x": 1357,
+      "y": 588,
+      "width": 4,
+      "height": 4,
+      "pixels": 12
+    }
+  ],
+  "contentBounds": {
+    "x": 8,
+    "y": 31,
+    "width": 112,
+    "height": 194
+  },
+  "opaquePixels": 6786,
+  "greenSpill": 0,
+  "alpha": "binary; transparent RGB cleared",
+  "sampling": "nearest; proportional fit; no aspect stretching",
+  "provenance": {
+    "model": "doubao-seedream-5-0-pro-260628",
+    "references": [
+      {
+        "file": "assets/incoming/seedream-gameplay-heroes-20261019/sword/image.png",
+        "sha256": "020d4c02bfba115d70e9f82c035b78370bfcfc5742063fe2d12a33d98616e628"
+      }
+    ],
+    "requestBatch": "batch-12",
+    "rights": "生成素材受用户Volcengine Ark账户协议约束；仅参考既有铁剑像素材质，商业发布授权需账户持有人确认。"
+  },
+  "correction": {
+    "reason": "本批三件完整武器主轴约向右倾30度，统一归为竖直挂钩武器",
+    "operation": "rotate whole isolated RGB/alpha raster -30 degrees using nearest sampling; retain all slot components; trim transparent bounds",
+    "sourceAngleDegrees": 30,
+    "rotationDegrees": -30,
+    "inputBounds": {
+      "x": 860,
+      "y": 72,
+      "width": 714,
+      "height": 917
+    },
+    "rotatedBounds": {
+      "x": 245,
+      "y": 107,
+      "width": 599,
+      "height": 1040
+    },
+    "paidRegenerations": 0
+  },
+  "actualObjectCount": 3,
+  "actualObjectIndex": 1,
+  "rejectedGeneratedObjects": [],
+  "compositeSourceParts": null,
+  "visualAcceptance": "pending native contact-sheet and in-game inspection"
+}

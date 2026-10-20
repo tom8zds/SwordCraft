@@ -6,7 +6,6 @@ import { DEFAULT_PORTRAIT_SIZE } from './image-pixel-budget.mjs'
 
 export const CATALOG72_SOURCE = 'assets/incoming/seedream-catalog72-20261019'
 export const CATALOG72_PROCESSED = 'assets/processed/catalog72-20261019'
-export const CATALOG72_PUBLIC = 'public/assets/game/weapons72'
 const reference = 'assets/incoming/seedream-gameplay-heroes-20261019/sword/image.png'
 const hash = (bytes) => createHash('sha256').update(bytes).digest('hex')
 export const readJson = async (path) => JSON.parse(await readFile(path, 'utf8'))
@@ -118,9 +117,7 @@ export async function normalizeCatalogWeapon(entry) {
   const bytes = output.toBuffer('image/png')
   const file = `${entry.slug}.png`
   await mkdir(CATALOG72_PROCESSED, { recursive: true })
-  await mkdir(CATALOG72_PUBLIC, { recursive: true })
   await writeFile(`${CATALOG72_PROCESSED}/${file}`, bytes)
-  await writeFile(`${CATALOG72_PUBLIC}/${file}`, bytes)
   const report = {
     ...entry, file, width: 128, height: 256, sha256: hash(bytes), pixelSha256: hash(data.data), silhouetteSha256: hash(mask),
     source, sourceSha256: hash(sourceBytes), sourceMetadata: `${directory}/generation.json`,
@@ -146,7 +143,7 @@ export async function createCatalogContactSheet(entries, name) {
     const x = index % columns * 192, y = Math.floor(index / columns) * 296
     ctx.fillStyle = '#252229'; ctx.fillRect(x, y, 192, 296)
     ctx.fillStyle = '#463f43'; ctx.fillRect(x + 1, y + 1, 190, 1)
-    const image = await loadImage(`${CATALOG72_PUBLIC}/${entry.slug}.png`)
+    const image = await loadImage(`${CATALOG72_PROCESSED}/${entry.slug}.png`)
     ctx.drawImage(image, x + 32, y + 2)
     ctx.fillStyle = '#eee0c7'; ctx.font = '14px Catalog72Cjk, sans-serif'; ctx.textAlign = 'center'
     ctx.fillText(`${entry.index + 1}. ${entry.name}`, x + 96, y + 276, 182)

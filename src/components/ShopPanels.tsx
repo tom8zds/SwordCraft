@@ -12,7 +12,7 @@ import './shop-panels.css'
 import './furnishing-panels.css'
 
 const WEAPON_IMAGES_BY_NAME: Readonly<Record<string, string>> = Object.fromEntries(WEAPON_CATALOG.map((entry, index) => [entry.name, `${WEAPON_ASSET_BASE}${String(index).padStart(2, '0')}-${entry.id.replaceAll(':', '-')}.png`]))
-// 文件名与既有 72 件武器目录的稳定顺序、ID 一致，不额外生成商店武器。
+// 文件名沿用武器目录的稳定索引与 ID，新形态只在目录末尾追加。
 const BASE_WEAPON_IMAGES = Object.fromEntries(WEAPON_CATALOG.flatMap((entry, index) => entry.level === 0
   ? [[entry.kind, `${WEAPON_ASSET_BASE}${String(index).padStart(2, '0')}-${entry.id.replaceAll(':', '-')}.png`]]
   : [])) as Record<'iron' | 'branch' | 'nail' | 'dagger', string>
@@ -171,7 +171,7 @@ export function MerchantPanel({ state, onBuy, onClose }: MerchantPanelProps) {
       <section className="shop-panel merchant-panel furnishing-panel" style={{ '--furnishing-panel-image': `url("${furnishingUrl('merchant-panel')}")` } as CSSProperties} role="dialog" aria-modal="true" aria-label="旅行商人" onDragStart={(event) => event.preventDefault()}>
         <button className="corner-close icon-button" onClick={onClose} aria-label="离开商人">×</button>
         <BookScroll className="shop-scroll" viewportClassName="shop-content" ariaLabel="旅行商人货架与结算">
-        <header><img className="merchant-face shop-header-image" src={furnishingUrl('merchant-entrance')} alt="" /><div><h2>旅行商人</h2><p id="merchant-help">货物拖上结算垫，敲铃成交；成交前可取回。也可 Tab 选中货物，Enter / 空格放上垫子。</p></div><strong className="coin-readout">◆ {formatCoins(state.coins)}</strong></header>
+        <header><img className="merchant-face shop-header-image" src={furnishingUrl('merchant-entrance')} alt="" /><div><h2>旅行商人</h2><p id="merchant-help">货物拖上结算垫，敲铃逐件成交，有库存可再次购买；成交前可取回。也可 Tab 选中货物，Enter / 空格放上垫子。普通铁剑、龙鳞和沙漏每次到访补货3～5件。</p></div><strong className="coin-readout">◆ {formatCoins(state.coins)}</strong></header>
         <div className="wares-grid" ref={wares}>
           {state.merchantItems.map((item) => {
             const price = merchantPrice(state, item)

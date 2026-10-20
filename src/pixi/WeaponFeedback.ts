@@ -7,6 +7,20 @@ const PARTICLE_DIRECTIONS = Array.from({ length: 28 }, (_, index) => {
   const angle = index * Math.PI * (3 - Math.sqrt(5))
   return { x: Math.cos(angle), y: Math.sin(angle), along: (index % 7 / 6 - 0.5) * 190, speed: 55 + index % 5 * 19 }
 })
+const IMPACT_DIRECTIONS = Array.from({ length: 32 }, (_, index) => {
+  const angle = -Math.PI + 0.12 + index / 31 * (Math.PI - 0.24)
+  const speed = 145 + index % 6 * 32
+  return { x: Math.cos(angle) * speed, y: Math.sin(angle) * speed }
+})
+
+interface Impact {
+  active: boolean
+  startedAt: number
+  x: number
+  y: number
+  color: number
+  strong: boolean
+}
 
 interface Burst {
   active: boolean
@@ -31,6 +45,8 @@ export class WeaponFeedback {
   readonly particles = new Graphics({ label: 'weapon-feedback-particles', eventMode: 'none' })
   private readonly silhouettes = new Map<Texture, Texture>()
   private readonly bursts: Burst[] = Array.from({ length: MAX_BURSTS }, () => ({ active: false, startedAt: 0, x: 0, y: 0, cos: 1, sin: 0, scale: 1, color: ASCENSION_GOLD }))
+  private readonly impacts: Impact[] = Array.from({ length: 8 }, () => ({ active: false, startedAt: 0, x: 0, y: 0, color: ASCENSION_GOLD, strong: false }))
+  private nextImpact = 0
   private readonly motionPreference = typeof window.matchMedia === 'function' ? window.matchMedia('(prefers-reduced-motion: reduce)') : null
   private nextBurst = 0
   private hadParticles = false
@@ -95,6 +111,21 @@ export class WeaponFeedback {
     burst.color = color
   }
 
+  impact(x: number, y: number, color: number, strong: boolean, now: number): void {
+    const impact = this.impacts[this.nextImpact]
+    this.nextImpact = (this.nextImpact + 1) % this.impacts.length
+    impact.active = true
+    impact.startedAt = now
+    impact.x = x
+    impact.y = y
+    impact.color = color
+    impact.strong = strong
+  }
+
+  clearImpacts(): void {
+    for (const impact of this.impacts) impact.active = false
+  }
+
   tick(now: number): void {
     if (this.hadParticles) this.particles.clear()
     this.hadParticles = false
@@ -115,6 +146,29 @@ export class WeaponFeedback {
         this.particles.circle(x, y, index % 4 === 0 ? 3.5 : 2).fill({ color: burst.color, alpha: (1 - progress) * 0.9 })
       }
     }
+    for (const impact of this.impacts) {
+      if (!impact.active) continue
+      const age = Math.max(0, (now - impact.startedAt) / 1000)
+      const duration = this.reducedMotion ? 0.16 : impact.strong ? 0.52 : 0.4
+      if (age >= duration) { impact.active = false; continue }
+      this.hadParticles = true
+      const alpha = (1 - age / duration) ** 1.3
+      if (age < 0.075) {
+        this.particles.ellipse(impact.x, impact.y, 18 + age * 100, 7 + age * 25).fill({ color: 0xffedb0, alpha: alpha * 0.85 })
+      }
+      const count = this.reducedMotion ? 6 : IMPACT_DIRECTIONS.length
+      for (let index = 0; index < count; index += 1) {
+        const direction = IMPACT_DIRECTIONS[this.reducedMotion ? index * 6 : index]
+        const travel = this.reducedMotion ? age * 0.15 : age
+        const tail = Math.max(0, travel - 0.026)
+        const x = impact.x + direction.x * travel
+        const y = impact.y + direction.y * travel + 360 * travel * travel
+        const color = index % 5 === 0 ? impact.color : index % 3 === 0 ? 0xfff8d6 : 0xffa52b
+        this.particles.moveTo(impact.x + direction.x * tail, impact.y + direction.y * tail + 360 * tail * tail)
+          .lineTo(x, y).stroke({ color, width: index % 3 === 0 ? 3 : 2, alpha })
+        this.particles.circle(x, y, index % 3 === 0 ? 2.4 : 1.5).fill({ color: 0xffedb0, alpha })
+      }
+    }
   }
 
   dispose(): void {
@@ -122,6 +176,7 @@ export class WeaponFeedback {
     for (const texture of this.silhouettes.values()) texture.destroy(true)
     this.silhouettes.clear()
     for (const burst of this.bursts) burst.active = false
+    this.clearImpacts()
   }
 
   private silhouette(source: Texture): Texture {

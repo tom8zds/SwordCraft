@@ -1,0 +1,78 @@
+{
+  "index": 19,
+  "id": "iron:greatsword:54",
+  "name": "泰坦巨剑",
+  "kind": "iron",
+  "path": "greatsword",
+  "level": 54,
+  "evolutionStage": 18,
+  "family": "greatsword",
+  "familyLabel": "双手剑",
+  "slug": "19-iron-greatsword-54",
+  "batch": "batch-04",
+  "design": "泰坦巨剑：宽重泰坦刃、银灰铆接护甲、蓝晶核心与厚重十字护手。",
+  "file": "19-iron-greatsword-54.png",
+  "width": 128,
+  "height": 256,
+  "sha256": "2ceca355b3fb541466114193419623cb15d1500e02f163d3f574cc840dcb9c26",
+  "pixelSha256": "fe632b5caaa26d568c8a2835f142cab566f01e128daff15c6ee0d02d10018662",
+  "silhouetteSha256": "bd6c104534a164062fdfea1bec31ab5b6784fec3ae12a69e015965ef5c7bb7ff",
+  "source": "assets/incoming/seedream-mythic-weapons-20261020/batch-04/image.png",
+  "sourceSha256": "7094dbc482e03bcb27d30cb6eb62fd42ef5eb07354578eeed0232a725c002867",
+  "sourceMetadata": "assets/incoming/seedream-mythic-weapons-20261020/batch-04/generation.json",
+  "sourceDimensions": {
+    "width": 2400,
+    "height": 1080
+  },
+  "sourceCrop": {
+    "x": 1793,
+    "y": 54,
+    "width": 312,
+    "height": 979
+  },
+  "sourceOpaquePixels": 174277,
+  "slotIndex": 2,
+  "slotBounds": {
+    "x": 1600,
+    "y": 0,
+    "width": 800,
+    "height": 1080
+  },
+  "acceptedSlot": true,
+  "sourceComponents": [
+    {
+      "x": 1793,
+      "y": 54,
+      "width": 312,
+      "height": 979,
+      "pixels": 174277
+    }
+  ],
+  "contentBounds": {
+    "x": 26,
+    "y": 8,
+    "width": 76,
+    "height": 240
+  },
+  "opaquePixels": 10450,
+  "greenSpill": 0,
+  "alpha": "binary; transparent RGB cleared",
+  "sampling": "nearest; proportional fit; no aspect stretching",
+  "provenance": {
+    "model": "doubao-seedream-5-0-pro-260628",
+    "references": [
+      {
+        "file": "assets/incoming/seedream-gameplay-heroes-20261019/sword/image.png",
+        "sha256": "020d4c02bfba115d70e9f82c035b78370bfcfc5742063fe2d12a33d98616e628"
+      }
+    ],
+    "requestBatch": "batch-04",
+    "rights": "生成素材受用户Volcengine Ark账户协议约束；仅参考既有铁剑像素材质，商业发布授权需账户持有人确认。"
+  },
+  "correction": null,
+  "actualObjectCount": 3,
+  "actualObjectIndex": 2,
+  "rejectedGeneratedObjects": [],
+  "compositeSourceParts": null,
+  "visualAcceptance": "pending native contact-sheet and in-game inspection"
+}

@@ -1,0 +1,267 @@
+{
+  "index": 44,
+  "id": "branch:world-tree:72",
+  "name": "大地脉络",
+  "kind": "branch",
+  "path": "world-tree",
+  "level": 72,
+  "evolutionStage": 24,
+  "family": "branch",
+  "familyLabel": "树枝",
+  "slug": "44-branch-world-tree-72",
+  "batch": "batch-09",
+  "design": "大地脉络：粗壮古树主干、根网护手、青金地脉环和分层枝冠，竖长。",
+  "file": "44-branch-world-tree-72.png",
+  "width": 128,
+  "height": 256,
+  "sha256": "191c78c9c7f1803c73ab1b8b51f88d20be90a32d2f14ee4dbeb46c5e14c87824",
+  "pixelSha256": "f2d5425c60b70a391f5f85c833f9ef2269cec0d7db01a46b119ecb1fe0851bfb",
+  "silhouetteSha256": "42b70d2b1dfe952ba0349007e3a4bb6652506063ccaae520dd96dc7baee0d37d",
+  "source": "assets/incoming/seedream-mythic-weapons-20261020/batch-09/image.png",
+  "sourceSha256": "2b06e2d1668f45f6d11f045faab2aa9bc9714b3cd69588cc73b5cdbca7c5ddec",
+  "sourceMetadata": "assets/incoming/seedream-mythic-weapons-20261020/batch-09/generation.json",
+  "sourceDimensions": {
+    "width": 2400,
+    "height": 1080
+  },
+  "sourceCrop": {
+    "x": 980,
+    "y": 66,
+    "width": 449,
+    "height": 952
+  },
+  "sourceOpaquePixels": 142123,
+  "slotIndex": 1,
+  "slotBounds": {
+    "x": 800,
+    "y": 0,
+    "width": 800,
+    "height": 1080
+  },
+  "acceptedSlot": true,
+  "sourceComponents": [
+    {
+      "x": 992,
+      "y": 66,
+      "width": 437,
+      "height": 952,
+      "pixels": 139606
+    },
+    {
+      "x": 1260,
+      "y": 154,
+      "width": 16,
+      "height": 20,
+      "pixels": 129
+    },
+    {
+      "x": 1160,
+      "y": 157,
+      "width": 18,
+      "height": 19,
+      "pixels": 140
+    },
+    {
+      "x": 1351,
+      "y": 181,
+      "width": 27,
+      "height": 17,
+      "pixels": 285
+    },
+    {
+      "x": 1025,
+      "y": 188,
+      "width": 27,
+      "height": 21,
+      "pixels": 254
+    },
+    {
+      "x": 1046,
+      "y": 191,
+      "width": 8,
+      "height": 12,
+      "pixels": 57
+    },
+    {
+      "x": 1085,
+      "y": 209,
+      "width": 6,
+      "height": 10,
+      "pixels": 32
+    },
+    {
+      "x": 1283,
+      "y": 209,
+      "width": 13,
+      "height": 19,
+      "pixels": 145
+    },
+    {
+      "x": 1039,
+      "y": 219,
+      "width": 11,
+      "height": 12,
+      "pixels": 76
+    },
+    {
+      "x": 1099,
+      "y": 250,
+      "width": 9,
+      "height": 14,
+      "pixels": 53
+    },
+    {
+      "x": 1050,
+      "y": 321,
+      "width": 6,
+      "height": 6,
+      "pixels": 19
+    },
+    {
+      "x": 1421,
+      "y": 336,
+      "width": 8,
+      "height": 7,
+      "pixels": 30
+    },
+    {
+      "x": 980,
+      "y": 354,
+      "width": 26,
+      "height": 15,
+      "pixels": 239
+    },
+    {
+      "x": 995,
+      "y": 369,
+      "width": 20,
+      "height": 11,
+      "pixels": 130
+    },
+    {
+      "x": 1027,
+      "y": 389,
+      "width": 21,
+      "height": 27,
+      "pixels": 310
+    },
+    {
+      "x": 1330,
+      "y": 468,
+      "width": 9,
+      "height": 9,
+      "pixels": 58
+    },
+    {
+      "x": 1066,
+      "y": 474,
+      "width": 7,
+      "height": 7,
+      "pixels": 32
+    },
+    {
+      "x": 1268,
+      "y": 515,
+      "width": 8,
+      "height": 5,
+      "pixels": 19
+    },
+    {
+      "x": 1278,
+      "y": 518,
+      "width": 43,
+      "height": 30,
+      "pixels": 202
+    },
+    {
+      "x": 1288,
+      "y": 528,
+      "width": 12,
+      "height": 6,
+      "pixels": 30
+    },
+    {
+      "x": 1300,
+      "y": 538,
+      "width": 7,
+      "height": 3,
+      "pixels": 12
+    },
+    {
+      "x": 1320,
+      "y": 543,
+      "width": 6,
+      "height": 14,
+      "pixels": 41
+    },
+    {
+      "x": 1078,
+      "y": 615,
+      "width": 7,
+      "height": 5,
+      "pixels": 22
+    },
+    {
+      "x": 1282,
+      "y": 623,
+      "width": 18,
+      "height": 9,
+      "pixels": 65
+    },
+    {
+      "x": 1073,
+      "y": 648,
+      "width": 8,
+      "height": 9,
+      "pixels": 49
+    },
+    {
+      "x": 1339,
+      "y": 649,
+      "width": 8,
+      "height": 10,
+      "pixels": 54
+    },
+    {
+      "x": 1195,
+      "y": 729,
+      "width": 4,
+      "height": 5,
+      "pixels": 13
+    },
+    {
+      "x": 1197,
+      "y": 735,
+      "width": 8,
+      "height": 9,
+      "pixels": 21
+    }
+  ],
+  "contentBounds": {
+    "x": 8,
+    "y": 9,
+    "width": 112,
+    "height": 237
+  },
+  "opaquePixels": 8837,
+  "greenSpill": 0,
+  "alpha": "binary; transparent RGB cleared",
+  "sampling": "nearest; proportional fit; no aspect stretching",
+  "provenance": {
+    "model": "doubao-seedream-5-0-pro-260628",
+    "references": [
+      {
+        "file": "assets/incoming/seedream-gameplay-heroes-20261019/sword/image.png",
+        "sha256": "020d4c02bfba115d70e9f82c035b78370bfcfc5742063fe2d12a33d98616e628"
+      }
+    ],
+    "requestBatch": "batch-09",
+    "rights": "生成素材受用户Volcengine Ark账户协议约束；仅参考既有铁剑像素材质，商业发布授权需账户持有人确认。"
+  },
+  "correction": null,
+  "actualObjectCount": 3,
+  "actualObjectIndex": 1,
+  "rejectedGeneratedObjects": [],
+  "compositeSourceParts": null,
+  "visualAcceptance": "pending native contact-sheet and in-game inspection"
+}
